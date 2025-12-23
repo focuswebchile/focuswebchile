@@ -1,26 +1,183 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Nueva paleta fresca y cercana: verde principal, azul secundario */
+
+  /* Fondo y textos base */
+  --background: oklch(0.99 0.002 80); /* #F9FAFB - blanco/gris muy claro */
+  --foreground: oklch(0.28 0.01 260); /* #1F2937 - gris oscuro */
+
+  --card: oklch(1 0 0); /* Blanco puro para cards */
+  --card-foreground: oklch(0.28 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.28 0.01 260);
+
+  /* Primary: Verde fresco #22C55E - para botones, CTAs y estados activos */
+  --primary: oklch(0.7 0.2 145);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary: Azul claro #3B82F6 - para acentos y detalles */
+  --secondary: oklch(0.97 0.01 240);
+  --secondary-foreground: oklch(0.32 0.05 260);
+
+  /* Muted: grises suaves */
+  --muted: oklch(0.96 0.005 260);
+  --muted-foreground: oklch(0.48 0.02 260);
+
+  /* Accent: Azul claro para links e íconos secundarios */
+  --accent: oklch(0.62 0.2 250);
+  --accent-foreground: oklch(1 0 0);
+
+  /* Success: Verde fresco (igual que primary para consistencia) */
+  --success: oklch(0.7 0.2 145);
+  --success-foreground: oklch(1 0 0);
+
+  /* Info: Azul claro (igual que accent) */
+  --info: oklch(0.62 0.2 250);
+  --info-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.01 260);
+  --input: oklch(0.95 0.008 260);
+  --ring: oklch(0.7 0.2 145); /* Verde para focus rings */
+
+  /* Charts con verde como primario y azul como secundario */
+  --chart-1: oklch(0.7 0.2 145); /* Verde fresco */
+  --chart-2: oklch(0.62 0.2 250); /* Azul claro */
+  --chart-3: oklch(0.68 0.17 35); /* Naranja suave */
+  --chart-4: oklch(0.65 0.15 180); /* Turquesa */
+  --chart-5: oklch(0.62 0.16 320); /* Púrpura suave */
+
+  --radius: 1.25rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* Dark mode con la misma paleta verde/azul adaptada */
+  --background: oklch(0.2 0.015 260);
+  --foreground: oklch(0.95 0.01 80);
+  --card: oklch(0.24 0.02 260);
+  --card-foreground: oklch(0.95 0.01 80);
+  --popover: oklch(0.22 0.02 260);
+  --popover-foreground: oklch(0.95 0.01 80);
+
+  /* Verde más brillante para dark mode */
+  --primary: oklch(0.75 0.22 145);
+  --primary-foreground: oklch(0.15 0.01 260);
+
+  --secondary: oklch(0.27 0.025 280);
+  --secondary-foreground: oklch(0.95 0.01 80);
+  --muted: oklch(0.26 0.02 260);
+  --muted-foreground: oklch(0.62 0.025 260);
+
+  /* Azul claro para dark mode */
+  --accent: oklch(0.67 0.22 250);
+  --accent-foreground: oklch(0.15 0.01 260);
+
+  --success: oklch(0.75 0.22 145);
+  --success-foreground: oklch(0.15 0.01 260);
+  --info: oklch(0.67 0.22 250);
+  --info-foreground: oklch(0.15 0.01 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.3 0.025 260);
+  --input: oklch(0.28 0.025 260);
+  --ring: oklch(0.75 0.22 145);
+
+  --chart-1: oklch(0.75 0.22 145);
+  --chart-2: oklch(0.67 0.22 250);
+  --chart-3: oklch(0.72 0.18 35);
+  --chart-4: oklch(0.7 0.16 180);
+  --chart-5: oklch(0.68 0.17 320);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
+  --font-sans: "Poppins", "Poppins Fallback", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
+  body {
+    @apply bg-background text-foreground;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Glassmorphism actualizado con colores frescos */
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-sm;
+  }
+
+  /* Gradientes con verde y azul suave */
+  .gradient-mesh {
+    background: radial-gradient(at 15% 15%, oklch(0.7 0.2 145 / 0.12) 0px, transparent 50%),
+      radial-gradient(at 85% 20%, oklch(0.62 0.2 250 / 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 85%, oklch(0.7 0.2 145 / 0.08) 0px, transparent 50%);
+  }
+
+  /* Animación de hover suave para cards */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
 }
