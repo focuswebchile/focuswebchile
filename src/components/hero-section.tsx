@@ -98,10 +98,10 @@ export function HeroSection() {
             >
               <div className="flex -space-x-2 sm:-space-x-3">
                 {[
-                  { src: "/alvaro.webp", alt: "Cliente Álvaro" },
-                  { src: "/verki.webp", alt: "Cliente Verki" },
-                  { src: "/james.webp", alt: "Cliente James" },
-                  { src: "/placeholder-user.jpg", alt: "Cliente FocusWeb" },
+                  { src: "/emprendedor_head1.webp", alt: "Cliente FocusWeb 1" },
+                  { src: "/emprendedor_head2.webp", alt: "Cliente FocusWeb 2" },
+                  { src: "/emprendedor_head3.webp", alt: "Cliente FocusWeb 3" },
+                  { src: "/emprendedor_head4.webp", alt: "Cliente FocusWeb 4" },
                 ].map((avatar) => (
                   <div
                     key={avatar.src}
