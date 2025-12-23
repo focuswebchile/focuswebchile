@@ -97,13 +97,28 @@ export function HeroSection() {
               className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-2 sm:pt-4"
             >
               <div className="flex -space-x-2 sm:-space-x-3">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-accent to-orange-400 border-2 border-background shadow-md" />
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-info border-2 border-background shadow-md" />
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-success to-emerald-400 border-2 border-background shadow-md" />
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 border-2 border-background shadow-md" />
+                {[
+                  { src: "/alvaro.webp", alt: "Cliente Álvaro" },
+                  { src: "/verki.webp", alt: "Cliente Verki" },
+                  { src: "/james.webp", alt: "Cliente James" },
+                  { src: "/placeholder-user.jpg", alt: "Cliente FocusWeb" },
+                ].map((avatar) => (
+                  <div
+                    key={avatar.src}
+                    className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-background shadow-md overflow-hidden"
+                  >
+                    <Image
+                      src={avatar.src}
+                      alt={avatar.alt}
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
               </div>
               <div className="text-xs sm:text-sm">
-                <p className="font-semibold text-foreground">+50 emprendedores</p>
+                <p className="font-semibold text-foreground">+20 emprendedores</p>
                 <p className="text-muted-foreground">confían en nosotros</p>
               </div>
             </motion.div>
