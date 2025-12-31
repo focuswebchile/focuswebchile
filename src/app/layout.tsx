@@ -47,11 +47,21 @@ export const metadata: Metadata = {
       "Creamos páginas web, landing pages y tiendas online para emprendedores en Chile. Diseño moderno, SEO y contacto directo por WhatsApp.",
     images: ["/og.png"],
   },
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
       {
         url: "/favicon.ico",
         rel: "icon",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/icon-light-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
       },
       {
         url: "/logo-512.png",
