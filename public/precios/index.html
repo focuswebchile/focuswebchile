@@ -1137,6 +1137,8 @@
             gap: 32px;
             align-items: flex-start;
             text-align: left;
+            position: relative;
+            z-index: 2;
         }
         .footer-col {
             position: relative;
@@ -1184,6 +1186,10 @@
             z-index: 2;
         }
         .footer-social a {
+            position: relative;
+            z-index: 3;
+        }
+        .footer-social a {
             width: 34px;
             height: 34px;
             border-radius: 50%;
@@ -1210,6 +1216,8 @@
             gap: 12px;
             font-size: 0.95rem;
             color: #4B5563;
+            position: relative;
+            z-index: 1;
         }
         .footer-dot {
             width: 8px;
@@ -1232,6 +1240,7 @@
             box-shadow: 0 12px 24px -10px rgba(59, 130, 246, 0.35);
             position: relative;
             z-index: 1;
+            margin-top: 4px;
         }
         .footer-cta:hover {
             transform: translateY(-2px);
