@@ -1141,7 +1141,7 @@
             align-items: flex-start;
             text-align: left;
             position: relative;
-            z-index: 2;
+            z-index: 4;
         }
         .footer-col {
             position: relative;
@@ -1221,6 +1221,10 @@
             color: #4B5563;
             position: relative;
             z-index: 1;
+            pointer-events: none;
+        }
+        .footer-bottom > * {
+            pointer-events: auto;
         }
         .footer-dot {
             width: 8px;
