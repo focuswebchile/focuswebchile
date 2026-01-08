@@ -51,6 +51,9 @@
         * {
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             min-height: 100vh;
@@ -1092,6 +1095,35 @@
                 height: 34px;
                 margin-bottom: 0;
             }
+            .whatsapp-widget {
+                bottom: 20px;
+                right: 16px;
+            }
+            .whatsapp-panel {
+                width: min(360px, 88vw);
+            }
+            .whatsapp-bubble {
+                font-size: 0.82rem;
+                padding: 9px 14px;
+            }
+            .whatsapp-panel {
+                display: none;
+            }
+            .top-nav {
+                margin: 16px auto 8px;
+                padding: 12px 16px;
+                border-radius: 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+            }
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
         }
         .contact-item {
             display: flex;
@@ -1252,6 +1284,179 @@
         .footer-cta:hover {
             box-shadow: 0 14px 26px -12px rgba(59, 130, 246, 0.45);
         }
+        .top-nav {
+            width: 1280px;
+            max-width: 100%;
+            margin: 16px auto 10px;
+            background: #ffffff;
+            border-radius: 999px;
+            padding: 12px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.2);
+            border: 1px solid #E5E7EB;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .slide-container {
+            scroll-margin-top: 78px;
+        }
+        .nav-logo {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4B5563;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .nav-cta {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            background: linear-gradient(135deg, #22C55E, #3B82F6);
+            padding: 10px 18px;
+            border-radius: 999px;
+            box-shadow: 0 12px 24px -16px rgba(59, 130, 246, 0.5);
+            white-space: nowrap;
+        }
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+            font-family: inherit;
+        }
+        .whatsapp-panel {
+            width: 360px;
+            background: transparent;
+            border-radius: 18px;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+        }
+        .whatsapp-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.25);
+            padding: 14px 16px 12px;
+        }
+        .whatsapp-title {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #1F2937;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+        .whatsapp-status {
+            margin: 2px 0 0;
+            font-size: 0.85rem;
+            color: #6B7280;
+        }
+        .whatsapp-bubbles {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+        }
+        .whatsapp-bubble {
+            background: #ffffff;
+            border-radius: 999px;
+            padding: 10px 16px;
+            border: 1px solid #E5E7EB;
+            color: #2563EB;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 18px -14px rgba(37, 99, 235, 0.35);
+            white-space: nowrap;
+            max-width: 100%;
+        }
+        .whatsapp-bubble:hover {
+            background: #F8FAFC;
+        }
+        .whatsapp-trigger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #22C55E, #3B82F6);
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 14px 30px -16px rgba(34, 197, 94, 0.6);
+            position: relative;
+            border: 2px solid #ffffff;
+            min-width: 160px;
+        }
+        .whatsapp-trigger i {
+            font-size: 18px;
+        }
+        .whatsapp-trigger span.label {
+            font-size: 1rem;
+        }
+        .whatsapp-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #EF4444;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 10px -6px rgba(239, 68, 68, 0.7);
+        }
+        .whatsapp-close {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: transparent;
+            border: none;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .whatsapp-widget[data-open="false"] .whatsapp-panel {
+            display: none;
+        }
         @keyframes fadeUp {
             from {opacity: 0; transform: translateY(12px);}
             to {opacity: 1; transform: translateY(0);}
@@ -1282,7 +1487,17 @@
     </style>
 </head>
 <body>
-    <div class="slide-container">
+    <nav class="top-nav">
+        <a class="nav-logo" href="https://www.focusweb.cl/" aria-label="Ir a FocusWeb.cl">FocusWeb</a>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#comparativa">Comparativa</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <a class="nav-cta" href="tel:+420733796959" aria-label="Cotizar por WhatsApp">Cotizar</a>
+    </nav>
+    <div class="slide-container" id="inicio">
         <div class="geo-shape circle-accent"></div>
         <div class="geo-shape circle-secondary"></div>
         <div class="dots-pattern dots-top-left"></div>
@@ -1400,7 +1615,7 @@
             </div>
         </div>
     </div>
-    <div class="slide-container slide-landing">
+    <div class="slide-container slide-landing" id="servicios">
         <div class="bg-shape circle-bg"></div>
         <div class="dots-bg"></div>
         <div class="content-wrapper">
@@ -1622,7 +1837,7 @@
             </div>
         </div>
     </div>
-    <div class="slide-container slide-comparison">
+    <div class="slide-container slide-comparison" id="comparativa">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="text-center mt-2 mb-1 relative z-10">
@@ -1757,7 +1972,7 @@
             <p class="text-xs text-gray-400">* Precios en CLP referenciales de mercado. Valores finales sujetos a evaluaci&oacute;n.</p>
         </div>
     </div>
-    <div class="slide-container slide-cta">
+    <div class="slide-container slide-cta" id="contacto">
         <div class="grid-pattern"></div>
         <div class="bg-blob blob-green"></div>
         <div class="bg-blob blob-blue"></div>
@@ -1836,5 +2051,43 @@
             </a>
         </div>
     </footer>
+    <div class="whatsapp-widget" data-open="true">
+        <div class="whatsapp-panel" aria-live="polite">
+            <button class="whatsapp-close" type="button" aria-label="Cerrar chat">✕</button>
+            <div class="whatsapp-header">
+                <p class="whatsapp-title">¡Hola! 👋 Aquí no hay robots, solo personas listas para ayudarte.</p>
+                <p class="whatsapp-status">Asistente · Ahora</p>
+            </div>
+            <div class="whatsapp-bubbles">
+                <a class="whatsapp-bubble" href="https://api.whatsapp.com/send?phone=420733796959&amp;text=Tengo%20una%20pregunta%20sobre%20los%20servicios" target="_blank" rel="noopener">Tengo una pregunta sobre los servicios</a>
+                <a class="whatsapp-bubble" href="https://api.whatsapp.com/send?phone=420733796959&amp;text=Soy%20cliente%20y%20necesito%20ayuda" target="_blank" rel="noopener">Soy cliente y necesito ayuda</a>
+            </div>
+        </div>
+        <button class="whatsapp-trigger" type="button" aria-label="Abrir chat de WhatsApp">
+            <span class="whatsapp-badge">1</span>
+            <i class="fab fa-whatsapp"></i>
+            <span class="label">WhatsApp</span>
+        </button>
+    </div>
+    <script>
+        (function () {
+            var widget = document.querySelector('.whatsapp-widget');
+            if (!widget) return;
+            var trigger = widget.querySelector('.whatsapp-trigger');
+            var closeBtn = widget.querySelector('.whatsapp-close');
+            var setOpen = function (isOpen) {
+                widget.setAttribute('data-open', isOpen ? 'true' : 'false');
+                trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            };
+            setOpen(true);
+            trigger.addEventListener('click', function () {
+                var isOpen = widget.getAttribute('data-open') !== 'false';
+                setOpen(!isOpen);
+            });
+            closeBtn.addEventListener('click', function () {
+                setOpen(false);
+            });
+        })();
+    </script>
 </body>
 </html>
