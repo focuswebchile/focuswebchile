@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion"
 const navItems = [
   { name: "Inicio", href: "#hero" },
   { name: "Servicios", href: "#servicios" },
+  { name: "Precios", href: "/precios" },
   { name: "Testimonios", href: "#testimonios" },
   { name: "Nuestro Proceso", href: "#proceso" },
   { name: "Contacto", href: "#contacto" },
@@ -76,17 +77,19 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
-                  className="text-xs lg:text-sm font-medium text-foreground/70 hover:text-accent transition-colors relative group whitespace-nowrap"
-                >
-                  {item.name}
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.href.startsWith("#")) {
+                        e.preventDefault()
+                        scrollToSection(item.href)
+                      }
+                    }}
+                    className="text-xs lg:text-sm font-medium text-foreground/70 hover:text-accent transition-colors relative group whitespace-nowrap"
+                  >
+                    {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-primary group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
@@ -132,8 +135,10 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => {
-                      e.preventDefault()
-                      scrollToSection(item.href)
+                      if (item.href.startsWith("#")) {
+                        e.preventDefault()
+                        scrollToSection(item.href)
+                      }
                     }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

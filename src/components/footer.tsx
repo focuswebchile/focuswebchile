@@ -27,6 +27,16 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href="https://www.focusweb.cl/precios"
+                  className="hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Precios
+                </a>
+              </li>
+              <li>
                 <a href="https://wa.me/420733796959" className="hover:text-primary transition-colors" target="_blank" rel="noreferrer">
                   Proceso
                 </a>
@@ -52,7 +62,7 @@ export function Footer() {
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </a>
               <a
-                href="https://wa.me/420733796959"
+                href="https://www.facebook.com/people/Focus-Web-Chile/61585246727387/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
