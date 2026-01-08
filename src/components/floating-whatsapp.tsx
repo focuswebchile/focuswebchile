@@ -1,20 +1,61 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { MessageCircle, X } from "lucide-react";
 
-const whatsappLink = "https://wa.me/420733796959";
+const whatsappNumber = "420733796959";
+const whatsappBase = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=`;
 
 export function FloatingWhatsApp() {
+  const [open, setOpen] = useState(true);
+
   return (
-    <a
-      href={whatsappLink}
-      target="_blank"
-      rel="noreferrer"
-      aria-label="Abrir WhatsApp"
-      className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 md:px-5 md:py-3 text-sm md:text-base font-semibold text-white shadow-lg shadow-primary/30 backdrop-blur transition hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/40"
-    >
-      <MessageCircle className="h-5 w-5" />
-      <span className="hidden sm:inline">WhatsApp</span>
-    </a>
+    <div className="whatsapp-widget" data-open={open ? "true" : "false"}>
+      <div className="whatsapp-panel" aria-live="polite">
+        <button
+          className="whatsapp-close"
+          type="button"
+          aria-label="Cerrar chat"
+          onClick={() => setOpen(false)}
+        >
+          <X size={14} />
+        </button>
+        <div className="whatsapp-header">
+          <p className="whatsapp-title">
+            ¡Hola! 👋 Aquí no hay robots, solo personas listas para ayudarte.
+          </p>
+          <p className="whatsapp-status">Asistente · Ahora</p>
+        </div>
+        <div className="whatsapp-bubbles">
+          <a
+            className="whatsapp-bubble"
+            href={`${whatsappBase}Tengo%20una%20pregunta%20sobre%20los%20servicios`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Tengo una pregunta sobre los servicios
+          </a>
+          <a
+            className="whatsapp-bubble"
+            href={`${whatsappBase}Soy%20cliente%20y%20necesito%20ayuda`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Soy cliente y necesito ayuda
+          </a>
+        </div>
+      </div>
+      <button
+        className="whatsapp-trigger"
+        type="button"
+        aria-label="Abrir chat de WhatsApp"
+        aria-expanded={open ? "true" : "false"}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        <span className="whatsapp-badge">1</span>
+        <MessageCircle className="whatsapp-icon" size={18} />
+        <span className="label">WhatsApp</span>
+      </button>
+    </div>
   );
 }

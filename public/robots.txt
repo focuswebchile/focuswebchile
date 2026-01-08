@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# If you add a sitemap, update the URL below:
-# Sitemap: https://focusweb.cl/sitemap.xml
+Sitemap: https://focusweb.cl/sitemap.xml
