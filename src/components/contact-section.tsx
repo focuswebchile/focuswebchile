@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,12 +11,23 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Send, Phone } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
+const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
+const CONTACT_CACHE_KEY = "focusweb_contact_content"
+
+const defaultContactContent = {
+  title: "Comienza tu proyecto hoy",
+  subtitle: "Cuéntanos sobre tu negocio y te contactaremos en menos de 24 horas",
+}
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     whatsapp: "",
     service: "",
   })
+  const [content, setContent] = useState(defaultContactContent)
 
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
@@ -26,6 +37,38 @@ export function ContactSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], [60, -60])
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
+
+  useEffect(() => {
+    const cached = window.localStorage.getItem(CONTACT_CACHE_KEY)
+    if (cached) {
+      try {
+        setContent((prev) => ({ ...prev, ...(JSON.parse(cached) as typeof defaultContactContent) }))
+      } catch (error) {
+        // ignore cache errors
+      }
+    }
+
+    const load = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/sites/${SITE_SLUG}/settings`, {
+          cache: "no-store",
+        })
+        if (!response.ok) return
+        const payload = await response.json()
+        const contact = payload?.settings?.content?.contact
+        if (!contact) return
+        const nextContent = {
+          title: contact.title ?? defaultContactContent.title,
+          subtitle: contact.subtitle ?? defaultContactContent.subtitle,
+        }
+        setContent(nextContent)
+        window.localStorage.setItem(CONTACT_CACHE_KEY, JSON.stringify(nextContent))
+      } catch (error) {
+        // keep cached content on failure
+      }
+    }
+    load()
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -54,11 +97,12 @@ export function ContactSection() {
           className="text-center mb-10 sm:mb-12 space-y-3 sm:space-y-4"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
-            Comienza tu{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">proyecto hoy</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              {content.title}
+            </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
-            Cuéntanos sobre tu negocio y te contactaremos en menos de 24 horas
+            {content.subtitle}
           </p>
         </motion.div>
 

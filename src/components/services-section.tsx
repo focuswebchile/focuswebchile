@@ -5,6 +5,17 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Zap, Building2, ShoppingCart, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
+const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
+const SERVICES_CACHE_KEY = "focusweb_services_content"
+
+const defaultServicesContent = {
+  title: "Servicios pensados para emprender",
+  intro: "Soluciones web claras y funcionales, diseñadas específicamente para emprendedores chilenos",
+}
 
 const services = [
   {
@@ -40,6 +51,40 @@ const services = [
 ]
 
 export function ServicesSection() {
+  const [content, setContent] = useState(defaultServicesContent)
+
+  useEffect(() => {
+    const cached = window.localStorage.getItem(SERVICES_CACHE_KEY)
+    if (cached) {
+      try {
+        setContent((prev) => ({ ...prev, ...(JSON.parse(cached) as typeof defaultServicesContent) }))
+      } catch (error) {
+        // ignore cache errors
+      }
+    }
+
+    const load = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/sites/${SITE_SLUG}/settings`, {
+          cache: "no-store",
+        })
+        if (!response.ok) return
+        const payload = await response.json()
+        const services = payload?.settings?.content?.services
+        if (!services) return
+        const nextContent = {
+          title: services.title ?? defaultServicesContent.title,
+          intro: services.intro ?? defaultServicesContent.intro,
+        }
+        setContent(nextContent)
+        window.localStorage.setItem(SERVICES_CACHE_KEY, JSON.stringify(nextContent))
+      } catch (error) {
+        // keep cached content on failure
+      }
+    }
+    load()
+  }, [])
+
   return (
     <section id="servicios" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
@@ -51,13 +96,12 @@ export function ServicesSection() {
           className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
-            Servicios pensados para{" "}
             <span className="bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent">
-              emprender
+              {content.title}
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty font-light px-4">
-            Soluciones web claras y funcionales, diseñadas específicamente para emprendedores chilenos
+            {content.intro}
           </p>
         </motion.div>
 

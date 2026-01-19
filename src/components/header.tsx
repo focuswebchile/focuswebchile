@@ -2,23 +2,27 @@
 
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
-  { name: "Inicio", href: "#hero" },
-  { name: "Servicios", href: "#servicios" },
-  { name: "Precios", href: "/precios" },
-  { name: "Testimonios", href: "#testimonios" },
-  { name: "Nuestro Proceso", href: "#proceso" },
-  { name: "Contacto", href: "#contacto" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Inicio", href: "/" },
+  { name: "Servicios", href: "/#servicios" },
+  { name: "Precios", href: "/precios/" },
+  { name: "Testimonios", href: "/#testimonios" },
+  { name: "Nuestro Proceso", href: "/#proceso" },
+  { name: "Contacto", href: "/contacto/" },
+  { name: "FAQ", href: "/faq/" },
 ]
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+  const shouldShowBackground = isScrolled || !isHome
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,16 +55,20 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/70 backdrop-blur-xl border-b border-border/40 shadow-md" : "bg-transparent"
+          shouldShowBackground
+            ? "bg-background/70 backdrop-blur-xl border-b border-border/40 shadow-md"
+            : "bg-transparent"
         }`}
       >
         <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <a
-              href="#hero"
+              href={isHome ? "#hero" : "https://focusweb.cl/"}
               onClick={(e) => {
-                e.preventDefault()
-                scrollToSection("#hero")
+                if (isHome) {
+                  e.preventDefault()
+                  scrollToSection("#hero")
+                }
               }}
               className="flex items-center gap-2 text-xl sm:text-2xl font-bold bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
@@ -82,9 +90,12 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => {
-                      if (item.href.startsWith("#")) {
+                      if (isHome && item.href.startsWith("/#")) {
                         e.preventDefault()
-                        scrollToSection(item.href)
+                        scrollToSection(item.href.replace("/#", "#"))
+                      } else if (item.href === "/" && isHome) {
+                        e.preventDefault()
+                        scrollToSection("#hero")
                       }
                     }}
                     className="text-xs lg:text-sm font-medium text-foreground/70 hover:text-accent transition-colors relative group whitespace-nowrap"
@@ -135,9 +146,12 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => {
-                      if (item.href.startsWith("#")) {
+                      if (isHome && item.href.startsWith("/#")) {
                         e.preventDefault()
-                        scrollToSection(item.href)
+                        scrollToSection(item.href.replace("/#", "#"))
+                      } else if (item.href === "/" && isHome) {
+                        e.preventDefault()
+                        scrollToSection("#hero")
                       }
                     }}
                     initial={{ opacity: 0, x: -20 }}

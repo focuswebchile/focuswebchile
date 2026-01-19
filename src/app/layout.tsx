@@ -1,14 +1,31 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Poppins } from "next/font/google"
+import { Inter, Nunito, Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ThemeProvider } from "@/components/theme-provider"
+import HashRedirect from "@/components/auth/hash-redirect"
+import { ThemeSync } from "@/components/theme-sync"
 import "./globals.css"
 
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+})
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
   weight: ["300", "400", "500", "600", "700"],
 })
 
@@ -79,22 +96,26 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es-CL">
-      <body className={`${poppins.variable} font-sans antialiased`}>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-33SDJFM25D');
-          `}
-        </Script>
-        {children}
-        <Analytics />
+    <html lang="es-CL" suppressHydrationWarning>
+      <body className={`${poppins.variable} ${inter.variable} ${nunito.variable} font-sans antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
+            strategy="afterInteractive"
+          />
+          <Script id="ga4" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-33SDJFM25D');
+            `}
+          </Script>
+          <HashRedirect />
+          <ThemeSync />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

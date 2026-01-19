@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-sans: var(--font-poppins);
   /* Nueva paleta fresca y cercana: verde principal, azul secundario */
 
   /* Fondo y textos base */
@@ -156,6 +157,24 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+:root[data-font="poppins"],
+body[data-font="poppins"] {
+  --font-sans: var(--font-poppins) !important;
+  font-family: "Poppins", "Poppins Fallback", system-ui, -apple-system, sans-serif !important;
+}
+
+:root[data-font="inter"],
+body[data-font="inter"] {
+  --font-sans: var(--font-inter) !important;
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif !important;
+}
+
+:root[data-font="nunito"],
+body[data-font="nunito"] {
+  --font-sans: var(--font-nunito) !important;
+  font-family: "Nunito", "Nunito Fallback", system-ui, -apple-system, sans-serif !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -171,6 +190,11 @@
 
   /* Gradientes con verde y azul suave */
   .gradient-mesh {
+    background-color: #f4f7f6;
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(34, 197, 94, 0.14) 0px, transparent 50%),
+      radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+      radial-gradient(circle at 50% 85%, rgba(34, 197, 94, 0.1) 0px, transparent 50%);
     background: radial-gradient(at 15% 15%, oklch(0.7 0.2 145 / 0.12) 0px, transparent 50%),
       radial-gradient(at 85% 20%, oklch(0.62 0.2 250 / 0.1) 0px, transparent 50%),
       radial-gradient(at 50% 85%, oklch(0.7 0.2 145 / 0.08) 0px, transparent 50%);
@@ -179,6 +203,47 @@
   /* Animación de hover suave para cards */
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-hero-bg {
+  background-color: #f4f7f6;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.12) 1px, transparent 0),
+    radial-gradient(circle at 15% 15%, rgba(34, 197, 94, 0.14) 0px, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(34, 197, 94, 0.1) 0px, transparent 50%);
+  background-size: 18px 18px, auto, auto, auto;
+}
+
+.faq-hero-bg-animate {
+  animation: faqDots 16s ease-in-out infinite;
+}
+
+@keyframes faqDots {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  50% {
+    background-position: 8px 12px, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
   }
 }
 

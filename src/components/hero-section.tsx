@@ -5,8 +5,71 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 import type { MouseEvent } from "react"
+import { useEffect, useState } from "react"
+
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
+const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
+
+const defaultHero = {
+  title: "Presencia digital clara para emprendedores en Chile",
+  subtitle:
+    "Desarrollo web funcional, rápido y sin costos ocultos. Convertimos tu idea en una presencia online lista para crecer.",
+  ctaText: "Comenzar ahora",
+  ctaUrl: "https://wa.me/420733796959",
+}
+const HERO_CACHE_KEY = "focusweb_hero_content"
 
 export function HeroSection() {
+  const [heroContent, setHeroContent] = useState(defaultHero)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const cached = window.localStorage.getItem(HERO_CACHE_KEY)
+      if (cached) {
+        try {
+          const parsed = JSON.parse(cached) as typeof defaultHero
+          setHeroContent((prev) => ({ ...prev, ...parsed }))
+        } catch (error) {
+          // Ignore cache parsing errors.
+        }
+      }
+    }
+
+    const load = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/sites/${SITE_SLUG}/settings`, {
+          cache: "no-store",
+        })
+        if (!response.ok) return
+        const payload = await response.json()
+        const content = payload?.settings?.content
+        if (!content) return
+        const hero = content.hero ?? {
+          title: content.hero_title,
+          subtitle: content.hero_subtitle,
+          cta: {
+            primary_text: content.primary_cta_text,
+            primary_url: content.primary_cta_url,
+          },
+        }
+        const nextHero = {
+          title: hero?.title ?? defaultHero.title,
+          subtitle: hero?.subtitle ?? defaultHero.subtitle,
+          ctaText: hero?.cta?.primary_text ?? defaultHero.ctaText,
+          ctaUrl: hero?.cta?.primary_url ?? defaultHero.ctaUrl,
+        }
+        setHeroContent(nextHero)
+        if (typeof window !== "undefined") {
+          window.localStorage.setItem(HERO_CACHE_KEY, JSON.stringify(nextHero))
+        }
+      } catch (error) {
+        // Keep default content on failure.
+      }
+    }
+    load()
+  }, [])
+
   const handleScrollToServices = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     const section = document.querySelector("#servicios")
@@ -49,16 +112,13 @@ export function HeroSection() {
 
             <div className="space-y-4 sm:space-y-6">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
-                Presencia digital{" "}
                 <span className="bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent">
-                  clara
-                </span>{" "}
-                para emprendedores en Chile
+                  {heroContent.title}
+                </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed text-pretty font-light">
-                Desarrollo web funcional, rápido y sin costos ocultos. Convertimos tu idea en una presencia online lista
-                para crecer.
+                {heroContent.subtitle}
               </p>
             </div>
 
@@ -73,8 +133,8 @@ export function HeroSection() {
                 className="text-base sm:text-lg group shadow-lg shadow-accent/30 font-medium h-12 sm:h-auto"
                 asChild
               >
-                <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
-                  Comenzar ahora
+                <a href={heroContent.ctaUrl} target="_blank" rel="noreferrer">
+                  {heroContent.ctaText}
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>

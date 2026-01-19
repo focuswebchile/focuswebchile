@@ -42,7 +42,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/420733796959" className="hover:text-primary transition-colors" target="_blank" rel="noreferrer">
+                <a href="/contacto/" className="hover:text-primary transition-colors">
                   Contacto
                 </a>
               </li>
@@ -80,7 +80,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 sm:pt-8 border-t border-border/50">
+        <div className="pt-6 sm:pt-8 pb-20 sm:pb-0 border-t border-border/50">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
             <p className="text-center sm:text-left">© {currentYear} FocusWeb Chile. Todos los derechos reservados.</p>
             <p className="flex items-center gap-2 text-center sm:text-right">
