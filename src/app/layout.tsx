@@ -81,6 +81,21 @@ export const metadata: Metadata = {
         sizes: "32x32",
       },
       {
+        url: "/icon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/icon-48x48.png",
+        type: "image/png",
+        sizes: "48x48",
+      },
+      {
+        url: "/icon-96x96.png",
+        type: "image/png",
+        sizes: "96x96",
+      },
+      {
         url: "/logo-512.png",
         type: "image/png",
         sizes: "512x512",
