@@ -204,7 +204,7 @@ export const DotScreenShader = () => {
         toneMapping: THREE.NoToneMapping,
       }}
       onCreated={({ gl }) => {
-        gl.setClearColor(0, 0, 0, 0)
+        gl.setClearColor(0x000000, 0)
       }}
     >
       <Scene />
