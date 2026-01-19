@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "FocusWeb Chile",
     images: [
       {
-        url: "/precios/favicon/og-precios.png",
+        url: "https://focusweb.cl/precios/favicon/og-precios.png",
         width: 1200,
         height: 630,
         alt: "Precios FocusWeb",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Precios Diseño Web en Chile | FocusWeb",
     description:
       "Planes y precios claros para diseño web, landing pages y tiendas online en Chile. Cotiza rápido con FocusWeb.",
-    images: ["/precios/favicon/og-precios.png"],
+    images: ["https://focusweb.cl/precios/favicon/og-precios.png"],
   },
 }
 

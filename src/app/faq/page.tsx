@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "FocusWeb Chile",
     images: [
       {
-        url: "/og-home.png",
+        url: "https://focusweb.cl/og-home.png",
         width: 1200,
         height: 630,
         alt: "FocusWeb Chile",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Preguntas frecuentes | FocusWeb",
     description: "Resuelve dudas comunes sobre nuestros servicios, tiempos y proceso de trabajo.",
-    images: ["/og-home.png"],
+    images: ["https://focusweb.cl/og-home.png"],
   },
 }
 
