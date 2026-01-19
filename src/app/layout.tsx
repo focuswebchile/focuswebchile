@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "FocusWeb Chile",
     images: [
       {
-        url: "https://focusweb.cl/og-home.png",
+        url: "https://focusweb.cl/og-home.png?v=2026-01-19",
         width: 1200,
         height: 630,
         alt: "FocusWeb Chile",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Diseño Web en Chile para Emprendedores | FocusWeb",
     description:
       "Creamos páginas web, landing pages y tiendas online para emprendedores en Chile. Diseño moderno, SEO y contacto directo por WhatsApp.",
-    images: ["https://focusweb.cl/og-home.png"],
+    images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
   manifest: "/site.webmanifest",
   icons: {
