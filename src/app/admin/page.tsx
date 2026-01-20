@@ -129,6 +129,42 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
         ...defaultSettings.toggles,
         ...(raw.toggles ?? {}),
       },
+      content: {
+        ...defaultSettings.content,
+        ...raw.content,
+        hero: {
+          ...defaultSettings.content.hero,
+          ...(raw.content?.hero ?? {}),
+          cta: {
+            ...defaultSettings.content.hero.cta,
+            ...(raw.content?.hero?.cta ?? {}),
+          },
+        },
+        services: {
+          ...defaultSettings.content.services,
+          ...(raw.content?.services ?? {}),
+          items: {
+            ...defaultSettings.content.services.items,
+            ...(raw.content?.services?.items ?? {}),
+            service_1: {
+              ...defaultSettings.content.services.items.service_1,
+              ...(raw.content?.services?.items?.service_1 ?? {}),
+            },
+            service_2: {
+              ...defaultSettings.content.services.items.service_2,
+              ...(raw.content?.services?.items?.service_2 ?? {}),
+            },
+            service_3: {
+              ...defaultSettings.content.services.items.service_3,
+              ...(raw.content?.services?.items?.service_3 ?? {}),
+            },
+          },
+        },
+        contact: {
+          ...defaultSettings.content.contact,
+          ...(raw.content?.contact ?? {}),
+        },
+      },
     }
   }
 
@@ -236,6 +272,8 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<string | null>(null)
   const [saveStatus, setSaveStatus] = useState<string | null>(null)
+  const serviceItems =
+    settings.content.services.items ?? defaultSettings.content.services.items
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -592,7 +630,7 @@ export default function AdminPage() {
                           <input
                             type="text"
                             className="h-10 rounded-lg border border-border/60 bg-background px-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/40"
-                            value={settings.content.services.items[key].title}
+                            value={serviceItems[key]?.title ?? ""}
                             onChange={(event) =>
                               setSettings((prev) => ({
                                 ...prev,
@@ -601,8 +639,10 @@ export default function AdminPage() {
                                   services: {
                                     ...prev.content.services,
                                     items: {
+                                      ...defaultSettings.content.services.items,
                                       ...prev.content.services.items,
                                       [key]: {
+                                        ...defaultSettings.content.services.items[key],
                                         ...prev.content.services.items[key],
                                         title: event.target.value,
                                       },
@@ -618,7 +658,7 @@ export default function AdminPage() {
                           <textarea
                             rows={3}
                             className="rounded-lg border border-border/60 bg-background px-3 py-2 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40"
-                            value={settings.content.services.items[key].description}
+                            value={serviceItems[key]?.description ?? ""}
                             onChange={(event) =>
                               setSettings((prev) => ({
                                 ...prev,
@@ -627,8 +667,10 @@ export default function AdminPage() {
                                   services: {
                                     ...prev.content.services,
                                     items: {
+                                      ...defaultSettings.content.services.items,
                                       ...prev.content.services.items,
                                       [key]: {
+                                        ...defaultSettings.content.services.items[key],
                                         ...prev.content.services.items[key],
                                         description: event.target.value,
                                       },
