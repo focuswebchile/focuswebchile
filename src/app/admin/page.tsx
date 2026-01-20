@@ -57,6 +57,15 @@ type SiteSettings = {
     contact: {
       title: string
       subtitle: string
+      link: string
+    }
+    faq: {
+      question_1: string
+      answer_1: string
+      question_2: string
+      answer_2: string
+      question_3: string
+      answer_3: string
     }
   }
   toggles: {
@@ -101,6 +110,18 @@ const defaultSettings: SiteSettings = {
     contact: {
       title: "",
       subtitle: "",
+      link: "",
+    },
+    faq: {
+      question_1: "¿Cuánto cuesta una página web en Chile?",
+      answer_1:
+        "Depende del tipo de proyecto: básica ($180.000 - $600.000), corporativa ($350.000 - $1.200.000), e-commerce ($650.000 - $2.000.000+) o proyectos personalizados (desde $3.000.000). A esto se suman hosting, dominio y mantenimiento anual.",
+      question_2: "¿Cómo se calcula el valor de una página web?",
+      answer_2:
+        "Se considera diseño, número de páginas, funcionalidades, integraciones, SEO y seguridad. También se puede calcular por horas de trabajo o sumando costos de dominio, hosting, diseño, desarrollo y contenido.",
+      question_3: "¿Cuál es la inversión real de una web?",
+      answer_3:
+        "Incluye diseño y desarrollo, dominio, hosting, SSL, SEO y mantenimiento. Un proyecto básico puede costar $300.000 - $800.000, uno medio $800.000 - $2.500.000 y e-commerce $2.000.000 - $6.000.000.",
     },
   },
   toggles: {
@@ -116,6 +137,7 @@ const THEME_CACHE_KEY = "focusweb_theme_settings"
 const HERO_CACHE_KEY = "focusweb_hero_content"
 const SERVICES_CACHE_KEY = "focusweb_services_content"
 const CONTACT_CACHE_KEY = "focusweb_contact_content"
+const FAQ_CACHE_KEY = "focusweb_faq_content"
 const TOGGLES_CACHE_KEY = "focusweb_section_toggles"
 
 const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
@@ -163,6 +185,10 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
         contact: {
           ...defaultSettings.content.contact,
           ...(raw.content?.contact ?? {}),
+        },
+        faq: {
+          ...defaultSettings.content.faq,
+          ...(raw.content?.faq ?? {}),
         },
       },
     }
@@ -222,6 +248,15 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
       contact: {
         title: legacyContent.contact?.title ?? defaultSettings.content.contact.title,
         subtitle: legacyContent.contact?.subtitle ?? defaultSettings.content.contact.subtitle,
+        link: legacyContent.contact?.link ?? defaultSettings.content.contact.link,
+      },
+      faq: {
+        question_1: legacyContent.faq?.question_1 ?? defaultSettings.content.faq.question_1,
+        answer_1: legacyContent.faq?.answer_1 ?? defaultSettings.content.faq.answer_1,
+        question_2: legacyContent.faq?.question_2 ?? defaultSettings.content.faq.question_2,
+        answer_2: legacyContent.faq?.answer_2 ?? defaultSettings.content.faq.answer_2,
+        question_3: legacyContent.faq?.question_3 ?? defaultSettings.content.faq.question_3,
+        answer_3: legacyContent.faq?.answer_3 ?? defaultSettings.content.faq.answer_3,
       },
     },
   }
@@ -256,6 +291,18 @@ const updateLocalCaches = (settings: SiteSettings) => {
       JSON.stringify({
         title: settings.content.contact.title,
         subtitle: settings.content.contact.subtitle,
+        link: settings.content.contact.link,
+      }),
+    )
+    window.localStorage.setItem(
+      FAQ_CACHE_KEY,
+      JSON.stringify({
+        question_1: settings.content.faq.question_1,
+        answer_1: settings.content.faq.answer_1,
+        question_2: settings.content.faq.question_2,
+        answer_2: settings.content.faq.answer_2,
+        question_3: settings.content.faq.question_3,
+        answer_3: settings.content.faq.answer_3,
       }),
     )
     window.localStorage.setItem(TOGGLES_CACHE_KEY, JSON.stringify(settings.toggles))
@@ -503,178 +550,89 @@ export default function AdminPage() {
               </section>
 
               <section className="rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6">
-                <h3 className="text-lg font-semibold">Textos clave</h3>
-                <div className="mt-4 grid gap-4">
-                  <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                    <span>Hero title</span>
-                    <input
-                      type="text"
-                      className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                      value={settings.content.hero.title}
-                      onChange={(event) =>
-                        setSettings((prev) => ({
-                          ...prev,
-                          content: {
-                            ...prev.content,
-                            hero: { ...prev.content.hero, title: event.target.value },
-                          },
-                        }))
-                      }
-                    />
-                  </label>
-                  <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                    <span>Hero subtitle</span>
-                    <textarea
-                      rows={3}
-                      className="rounded-xl border border-border/60 bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                      value={settings.content.hero.subtitle}
-                      onChange={(event) =>
-                        setSettings((prev) => ({
-                          ...prev,
-                          content: {
-                            ...prev.content,
-                            hero: { ...prev.content.hero, subtitle: event.target.value },
-                          },
-                        }))
-                      }
-                    />
-                  </label>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>CTA text</span>
-                      <input
-                        type="text"
-                        className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.hero.cta.primary_text}
-                        onChange={(event) =>
-                          setSettings((prev) => ({
-                            ...prev,
-                            content: {
-                              ...prev.content,
-                              hero: {
-                                ...prev.content.hero,
-                                cta: { ...prev.content.hero.cta, primary_text: event.target.value },
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-semibold">Contenido del sitio</h3>
+                  <p className="text-sm text-muted-foreground">Edita los textos de cada página</p>
+                </div>
+
+                <div className="mt-6 grid gap-8">
+                  <div className="rounded-2xl border border-border/40 bg-background/70 p-5">
+                    <div className="flex flex-col gap-1">
+                      <h4 className="text-base font-semibold text-foreground">Página de inicio</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Textos que aparecen en la portada del sitio
+                      </p>
+                    </div>
+                    <div className="mt-4 grid gap-4">
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                        <span>Título principal</span>
+                        <input
+                          type="text"
+                          className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.hero.title}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                hero: { ...prev.content.hero, title: event.target.value },
                               },
-                            },
-                          }))
-                        }
-                      />
-                    </label>
-                    <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>CTA url</span>
-                      <input
-                        type="url"
-                        className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.hero.cta.primary_url}
-                        onChange={(event) =>
-                          setSettings((prev) => ({
-                            ...prev,
-                            content: {
-                              ...prev.content,
-                              hero: {
-                                ...prev.content.hero,
-                                cta: { ...prev.content.hero.cta, primary_url: event.target.value },
+                            }))
+                          }
+                        />
+                      </label>
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                        <span>Texto de presentación</span>
+                        <textarea
+                          rows={3}
+                          className="rounded-xl border border-border/60 bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.hero.subtitle}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                hero: { ...prev.content.hero, subtitle: event.target.value },
                               },
-                            },
-                          }))
-                        }
-                      />
-                    </label>
-                  </div>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>Servicios title</span>
-                      <input
-                        type="text"
-                        className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.services.title}
-                        onChange={(event) =>
-                          setSettings((prev) => ({
-                            ...prev,
-                            content: {
-                              ...prev.content,
-                              services: { ...prev.content.services, title: event.target.value },
-                            },
-                          }))
-                        }
-                      />
-                    </label>
-                    <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>Servicios subtitle</span>
-                      <input
-                        type="text"
-                        className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.services.subtitle}
-                        onChange={(event) =>
-                          setSettings((prev) => ({
-                            ...prev,
-                            content: {
-                              ...prev.content,
-                              services: { ...prev.content.services, subtitle: event.target.value },
-                            },
-                          }))
-                        }
-                      />
-                    </label>
-                  </div>
-                  <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
-                    {([
-                      ["service_1", "Servicio 1"],
-                      ["service_2", "Servicio 2"],
-                      ["service_3", "Servicio 3"],
-                    ] as const).map(([key, label]) => (
-                      <div key={key} className="flex flex-col gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
-                        <span className="text-xs font-semibold text-foreground">{label}</span>
-                        <label className="flex flex-col gap-2">
-                          <span className="text-xs">Título</span>
+                            }))
+                          }
+                        />
+                      </label>
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                          <span>Texto del botón principal</span>
                           <input
                             type="text"
-                            className="h-10 rounded-lg border border-border/60 bg-background px-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/40"
-                            value={serviceItems[key]?.title ?? ""}
+                            className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.hero.cta.primary_text}
                             onChange={(event) =>
                               setSettings((prev) => ({
                                 ...prev,
                                 content: {
                                   ...prev.content,
-                                  services: {
-                                    ...prev.content.services,
-                                    items: {
-                                      ...defaultSettings.content.services.items,
-                                      ...prev.content.services.items,
-                                      [key]: {
-                                        ...defaultSettings.content.services.items[key],
-                                        ...prev.content.services.items[key],
-                                        title: event.target.value,
-                                      },
-                                    },
+                                  hero: {
+                                    ...prev.content.hero,
+                                    cta: { ...prev.content.hero.cta, primary_text: event.target.value },
                                   },
                                 },
                               }))
                             }
                           />
                         </label>
-                        <label className="flex flex-col gap-2">
-                          <span className="text-xs">Descripción</span>
-                          <textarea
-                            rows={3}
-                            className="rounded-lg border border-border/60 bg-background px-3 py-2 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40"
-                            value={serviceItems[key]?.description ?? ""}
+                        <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                          <span>Enlace del botón principal</span>
+                          <input
+                            type="url"
+                            className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.hero.cta.primary_url}
                             onChange={(event) =>
                               setSettings((prev) => ({
                                 ...prev,
                                 content: {
                                   ...prev.content,
-                                  services: {
-                                    ...prev.content.services,
-                                    items: {
-                                      ...defaultSettings.content.services.items,
-                                      ...prev.content.services.items,
-                                      [key]: {
-                                        ...defaultSettings.content.services.items[key],
-                                        ...prev.content.services.items[key],
-                                        description: event.target.value,
-                                      },
-                                    },
+                                  hero: {
+                                    ...prev.content.hero,
+                                    cta: { ...prev.content.hero.cta, primary_url: event.target.value },
                                   },
                                 },
                               }))
@@ -682,43 +640,307 @@ export default function AdminPage() {
                           />
                         </label>
                       </div>
-                    ))}
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                          <span>Título de servicios</span>
+                          <input
+                            type="text"
+                            className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.services.title}
+                            onChange={(event) =>
+                              setSettings((prev) => ({
+                                ...prev,
+                                content: {
+                                  ...prev.content,
+                                  services: { ...prev.content.services, title: event.target.value },
+                                },
+                              }))
+                            }
+                          />
+                        </label>
+                        <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                          <span>Texto de servicios</span>
+                          <input
+                            type="text"
+                            className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.services.subtitle}
+                            onChange={(event) =>
+                              setSettings((prev) => ({
+                                ...prev,
+                                content: {
+                                  ...prev.content,
+                                  services: { ...prev.content.services, subtitle: event.target.value },
+                                },
+                              }))
+                            }
+                          />
+                        </label>
+                      </div>
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                          <span>Título de contacto</span>
+                          <input
+                            type="text"
+                            className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.contact.title}
+                            onChange={(event) =>
+                              setSettings((prev) => ({
+                                ...prev,
+                                content: {
+                                  ...prev.content,
+                                  contact: { ...prev.content.contact, title: event.target.value },
+                                },
+                              }))
+                            }
+                          />
+                        </label>
+                        <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                          <span>Texto de contacto</span>
+                          <input
+                            type="text"
+                            className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.contact.subtitle}
+                            onChange={(event) =>
+                              setSettings((prev) => ({
+                                ...prev,
+                                content: {
+                                  ...prev.content,
+                                  contact: { ...prev.content.contact, subtitle: event.target.value },
+                                },
+                              }))
+                            }
+                          />
+                        </label>
+                      </div>
+                    </div>
                   </div>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>Contacto title</span>
-                      <input
-                        type="text"
-                        className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.contact.title}
-                        onChange={(event) =>
-                          setSettings((prev) => ({
-                            ...prev,
-                            content: {
-                              ...prev.content,
-                              contact: { ...prev.content.contact, title: event.target.value },
-                            },
-                          }))
-                        }
-                      />
-                    </label>
-                    <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>Contacto subtitle</span>
-                      <input
-                        type="text"
-                        className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.contact.subtitle}
-                        onChange={(event) =>
-                          setSettings((prev) => ({
-                            ...prev,
-                            content: {
-                              ...prev.content,
-                              contact: { ...prev.content.contact, subtitle: event.target.value },
-                            },
-                          }))
-                        }
-                      />
-                    </label>
+
+                  <div className="rounded-2xl border border-border/40 bg-background/70 p-5">
+                    <div className="flex flex-col gap-1">
+                      <h4 className="text-base font-semibold text-foreground">Servicios</h4>
+                      <p className="text-sm text-muted-foreground">Información de los servicios que ofreces</p>
+                    </div>
+                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                        <span>Título de servicios</span>
+                        <input
+                          type="text"
+                          className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.services.title}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                services: { ...prev.content.services, title: event.target.value },
+                              },
+                            }))
+                          }
+                        />
+                      </label>
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                        <span>Texto introductorio</span>
+                        <input
+                          type="text"
+                          className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.services.subtitle}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                services: { ...prev.content.services, subtitle: event.target.value },
+                              },
+                            }))
+                          }
+                        />
+                      </label>
+                    </div>
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
+                      {([
+                        ["service_1", "Servicio 1"],
+                        ["service_2", "Servicio 2"],
+                        ["service_3", "Servicio 3"],
+                      ] as const).map(([key, label]) => (
+                        <div key={key} className="flex flex-col gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
+                          <span className="text-xs font-semibold text-foreground">{label}</span>
+                          <label className="flex flex-col gap-2">
+                            <span className="text-xs">Nombre</span>
+                            <input
+                              type="text"
+                              className="h-10 rounded-lg border border-border/60 bg-background px-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/40"
+                              value={serviceItems[key]?.title ?? ""}
+                              onChange={(event) =>
+                                setSettings((prev) => ({
+                                  ...prev,
+                                  content: {
+                                    ...prev.content,
+                                    services: {
+                                      ...prev.content.services,
+                                      items: {
+                                        ...defaultSettings.content.services.items,
+                                        ...prev.content.services.items,
+                                        [key]: {
+                                          ...defaultSettings.content.services.items[key],
+                                          ...prev.content.services.items[key],
+                                          title: event.target.value,
+                                        },
+                                      },
+                                    },
+                                  },
+                                }))
+                              }
+                            />
+                          </label>
+                          <label className="flex flex-col gap-2">
+                            <span className="text-xs">Descripción</span>
+                            <textarea
+                              rows={3}
+                              className="rounded-lg border border-border/60 bg-background px-3 py-2 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40"
+                              value={serviceItems[key]?.description ?? ""}
+                              onChange={(event) =>
+                                setSettings((prev) => ({
+                                  ...prev,
+                                  content: {
+                                    ...prev.content,
+                                    services: {
+                                      ...prev.content.services,
+                                      items: {
+                                        ...defaultSettings.content.services.items,
+                                        ...prev.content.services.items,
+                                        [key]: {
+                                          ...defaultSettings.content.services.items[key],
+                                          ...prev.content.services.items[key],
+                                          description: event.target.value,
+                                        },
+                                      },
+                                    },
+                                  },
+                                }))
+                              }
+                            />
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border border-border/40 bg-background/70 p-5">
+                    <div className="flex flex-col gap-1">
+                      <h4 className="text-base font-semibold text-foreground">Contacto</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Textos que invitan a las personas a contactarte
+                      </p>
+                    </div>
+                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                        <span>Título de contacto</span>
+                        <input
+                          type="text"
+                          className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.contact.title}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                contact: { ...prev.content.contact, title: event.target.value },
+                              },
+                            }))
+                          }
+                        />
+                      </label>
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                        <span>Texto de contacto</span>
+                        <input
+                          type="text"
+                          className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.contact.subtitle}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                contact: { ...prev.content.contact, subtitle: event.target.value },
+                              },
+                            }))
+                          }
+                        />
+                      </label>
+                      <label className="text-sm text-muted-foreground flex flex-col gap-2 sm:col-span-2">
+                        <span>Enlace de contacto</span>
+                        <input
+                          type="url"
+                          className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                          value={settings.content.contact.link}
+                          onChange={(event) =>
+                            setSettings((prev) => ({
+                              ...prev,
+                              content: {
+                                ...prev.content,
+                                contact: { ...prev.content.contact, link: event.target.value },
+                              },
+                            }))
+                          }
+                        />
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border border-border/40 bg-background/70 p-5">
+                    <div className="flex flex-col gap-1">
+                      <h4 className="text-base font-semibold text-foreground">Preguntas frecuentes</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Respuestas a las dudas más comunes de tus clientes
+                      </p>
+                    </div>
+                    <div className="mt-4 grid gap-4">
+                      {([
+                        ["question_1", "answer_1", "Pregunta 1", "Respuesta 1"],
+                        ["question_2", "answer_2", "Pregunta 2", "Respuesta 2"],
+                        ["question_3", "answer_3", "Pregunta 3", "Respuesta 3"],
+                      ] as const).map(([questionKey, answerKey, questionLabel, answerLabel]) => {
+                        const qKey = questionKey as keyof typeof settings.content.faq
+                        const aKey = answerKey as keyof typeof settings.content.faq
+                        return (
+                        <div key={questionKey} className="grid gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
+                          <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                            <span>{questionLabel}</span>
+                            <input
+                              type="text"
+                              className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                              value={settings.content.faq[qKey]}
+                              onChange={(event) =>
+                                setSettings((prev) => ({
+                                  ...prev,
+                                  content: {
+                                    ...prev.content,
+                                    faq: { ...prev.content.faq, [qKey]: event.target.value },
+                                  },
+                                }))
+                              }
+                            />
+                          </label>
+                          <label className="text-sm text-muted-foreground flex flex-col gap-2">
+                            <span>{answerLabel}</span>
+                            <textarea
+                              rows={3}
+                              className="rounded-xl border border-border/60 bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                              value={settings.content.faq[aKey]}
+                              onChange={(event) =>
+                                setSettings((prev) => ({
+                                  ...prev,
+                                  content: {
+                                    ...prev.content,
+                                    faq: { ...prev.content.faq, [aKey]: event.target.value },
+                                  },
+                                }))
+                              }
+                            />
+                          </label>
+                        </div>
+                      )})}
+                    </div>
                   </div>
                 </div>
               </section>

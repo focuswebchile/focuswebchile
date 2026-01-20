@@ -19,6 +19,7 @@ const CONTACT_CACHE_KEY = "focusweb_contact_content"
 const defaultContactContent = {
   title: "Comienza tu proyecto hoy",
   subtitle: "Cuéntanos sobre tu negocio y te contactaremos en menos de 24 horas",
+  link: "",
 }
 
 export function ContactSection() {
@@ -60,6 +61,7 @@ export function ContactSection() {
         const nextContent = {
           title: contact.title ?? defaultContactContent.title,
           subtitle: contact.subtitle ?? defaultContactContent.subtitle,
+          link: contact.link ?? defaultContactContent.link,
         }
         setContent(nextContent)
         window.localStorage.setItem(CONTACT_CACHE_KEY, JSON.stringify(nextContent))
