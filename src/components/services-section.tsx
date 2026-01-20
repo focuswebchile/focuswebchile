@@ -69,7 +69,20 @@ const services = [
 
 export function ServicesSection() {
   const [content, setContent] = useState(defaultServicesContent)
-  const serviceItems = content.items ?? defaultServicesContent.items
+  const serviceItems = {
+    service_1: {
+      ...defaultServicesContent.items.service_1,
+      ...(content.items?.service_1 ?? {}),
+    },
+    service_2: {
+      ...defaultServicesContent.items.service_2,
+      ...(content.items?.service_2 ?? {}),
+    },
+    service_3: {
+      ...defaultServicesContent.items.service_3,
+      ...(content.items?.service_3 ?? {}),
+    },
+  }
 
   useEffect(() => {
     const cached = window.localStorage.getItem(SERVICES_CACHE_KEY)
@@ -143,7 +156,7 @@ export function ServicesSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => {
-            const itemOverride = serviceItems?.[service.key as keyof typeof serviceItems]
+            const itemOverride = serviceItems[service.key as keyof typeof serviceItems]
             const title = itemOverride?.title ?? service.title
             const description = itemOverride?.description ?? service.description
             return (
