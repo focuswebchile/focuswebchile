@@ -14,14 +14,29 @@ const SERVICES_CACHE_KEY = "focusweb_services_content"
 
 const defaultServicesContent = {
   title: "Servicios pensados para emprender",
-  intro: "Soluciones web claras y funcionales, diseñadas específicamente para emprendedores chilenos",
+  subtitle: "Soluciones web claras y funcionales, diseñadas específicamente para emprendedores chilenos",
+  items: {
+    service_1: {
+      title: "Landing Page",
+      description: "Página enfocada en convertir, con formulario simple y botón de WhatsApp.",
+    },
+    service_2: {
+      title: "Sitio Web Corporativo",
+      description: "Presencia profesional completa con múltiples secciones y optimización SEO.",
+    },
+    service_3: {
+      title: "E-commerce",
+      description: "Tienda online completa con pagos y gestión de productos lista para vender.",
+    },
+  },
 }
 
 const services = [
   {
+    key: "service_1",
     icon: Zap,
-    title: "Landing Page",
-    description: "Página enfocada en convertir, con formulario simple y botón de WhatsApp.",
+    title: defaultServicesContent.items.service_1.title,
+    description: defaultServicesContent.items.service_1.description,
     features: ["Entrega en 5-7 días", "Diseño responsive", "Botón WhatsApp flotante", "Optimizada para conversión"],
     badge: "Ideal para partir",
     color: "from-accent to-orange-400",
@@ -29,9 +44,10 @@ const services = [
     delay: 0.1,
   },
   {
+    key: "service_2",
     icon: Building2,
-    title: "Sitio Web Corporativo",
-    description: "Presencia profesional completa con múltiples secciones y optimización SEO.",
+    title: defaultServicesContent.items.service_2.title,
+    description: defaultServicesContent.items.service_2.description,
     features: ["Hasta 7 secciones", "Base SEO incluida", "Panel de administración", "Blog integrado opcional"],
     badge: "Presencia profesional",
     color: "from-primary to-info",
@@ -39,9 +55,10 @@ const services = [
     delay: 0.2,
   },
   {
+    key: "service_3",
     icon: ShoppingCart,
-    title: "E-commerce",
-    description: "Tienda online completa con pagos y gestión de productos lista para vender.",
+    title: defaultServicesContent.items.service_3.title,
+    description: defaultServicesContent.items.service_3.description,
     features: ["Integración Webpay/Flow", "Gestión de inventario", "Sistema de envíos", "Panel administrativo"],
     badge: "Listo para vender",
     color: "from-success to-emerald-400",
@@ -74,7 +91,25 @@ export function ServicesSection() {
         if (!services) return
         const nextContent = {
           title: services.title ?? defaultServicesContent.title,
-          intro: services.intro ?? defaultServicesContent.intro,
+          subtitle:
+            services.subtitle ?? services.intro ?? defaultServicesContent.subtitle,
+          items: {
+            service_1: {
+              title: services.items?.service_1?.title ?? defaultServicesContent.items.service_1.title,
+              description:
+                services.items?.service_1?.description ?? defaultServicesContent.items.service_1.description,
+            },
+            service_2: {
+              title: services.items?.service_2?.title ?? defaultServicesContent.items.service_2.title,
+              description:
+                services.items?.service_2?.description ?? defaultServicesContent.items.service_2.description,
+            },
+            service_3: {
+              title: services.items?.service_3?.title ?? defaultServicesContent.items.service_3.title,
+              description:
+                services.items?.service_3?.description ?? defaultServicesContent.items.service_3.description,
+            },
+          },
         }
         setContent(nextContent)
         window.localStorage.setItem(SERVICES_CACHE_KEY, JSON.stringify(nextContent))
@@ -101,12 +136,16 @@ export function ServicesSection() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty font-light px-4">
-            {content.intro}
+            {content.subtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {services.map((service) => (
+          {services.map((service) => {
+            const itemOverride = content.items?.[service.key as keyof typeof content.items]
+            const title = itemOverride?.title ?? service.title
+            const description = itemOverride?.description ?? service.description
+            return (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
@@ -138,10 +177,10 @@ export function ServicesSection() {
                   {/* Content */}
                   <div className="space-y-2.5 sm:space-y-3">
                     <h3 className="text-xl sm:text-2xl font-semibold group-hover:text-accent transition-colors">
-                      {service.title}
+                      {title}
                     </h3>
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-light">
-                      {service.description}
+                      {description}
                     </p>
                   </div>
 
@@ -170,7 +209,8 @@ export function ServicesSection() {
                 </div>
               </Card>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

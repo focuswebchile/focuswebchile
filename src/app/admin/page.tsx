@@ -38,7 +38,21 @@ type SiteSettings = {
     }
     services: {
       title: string
-      intro: string
+      subtitle: string
+      items: {
+        service_1: {
+          title: string
+          description: string
+        }
+        service_2: {
+          title: string
+          description: string
+        }
+        service_3: {
+          title: string
+          description: string
+        }
+      }
     }
     contact: {
       title: string
@@ -77,7 +91,12 @@ const defaultSettings: SiteSettings = {
     },
     services: {
       title: "",
-      intro: "",
+      subtitle: "",
+      items: {
+        service_1: { title: "", description: "" },
+        service_2: { title: "", description: "" },
+        service_3: { title: "", description: "" },
+      },
     },
     contact: {
       title: "",
@@ -133,7 +152,36 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
       },
       services: {
         title: legacyContent.services?.title ?? defaultSettings.content.services.title,
-        intro: legacyContent.services?.intro ?? defaultSettings.content.services.intro,
+        subtitle:
+          legacyContent.services?.subtitle ??
+          legacyContent.services?.intro ??
+          defaultSettings.content.services.subtitle,
+        items: {
+          service_1: {
+            title:
+              legacyContent.services?.items?.service_1?.title ??
+              defaultSettings.content.services.items.service_1.title,
+            description:
+              legacyContent.services?.items?.service_1?.description ??
+              defaultSettings.content.services.items.service_1.description,
+          },
+          service_2: {
+            title:
+              legacyContent.services?.items?.service_2?.title ??
+              defaultSettings.content.services.items.service_2.title,
+            description:
+              legacyContent.services?.items?.service_2?.description ??
+              defaultSettings.content.services.items.service_2.description,
+          },
+          service_3: {
+            title:
+              legacyContent.services?.items?.service_3?.title ??
+              defaultSettings.content.services.items.service_3.title,
+            description:
+              legacyContent.services?.items?.service_3?.description ??
+              defaultSettings.content.services.items.service_3.description,
+          },
+        },
       },
       contact: {
         title: legacyContent.contact?.title ?? defaultSettings.content.contact.title,
@@ -163,7 +211,8 @@ const updateLocalCaches = (settings: SiteSettings) => {
       SERVICES_CACHE_KEY,
       JSON.stringify({
         title: settings.content.services.title,
-        intro: settings.content.services.intro,
+        subtitle: settings.content.services.subtitle,
+        items: settings.content.services.items,
       }),
     )
     window.localStorage.setItem(
@@ -513,22 +562,85 @@ export default function AdminPage() {
                       />
                     </label>
                     <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                      <span>Servicios intro</span>
+                      <span>Servicios subtitle</span>
                       <input
                         type="text"
                         className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                        value={settings.content.services.intro}
+                        value={settings.content.services.subtitle}
                         onChange={(event) =>
                           setSettings((prev) => ({
                             ...prev,
                             content: {
                               ...prev.content,
-                              services: { ...prev.content.services, intro: event.target.value },
+                              services: { ...prev.content.services, subtitle: event.target.value },
                             },
                           }))
                         }
                       />
                     </label>
+                  </div>
+                  <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
+                    {([
+                      ["service_1", "Servicio 1"],
+                      ["service_2", "Servicio 2"],
+                      ["service_3", "Servicio 3"],
+                    ] as const).map(([key, label]) => (
+                      <div key={key} className="flex flex-col gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
+                        <span className="text-xs font-semibold text-foreground">{label}</span>
+                        <label className="flex flex-col gap-2">
+                          <span className="text-xs">Título</span>
+                          <input
+                            type="text"
+                            className="h-10 rounded-lg border border-border/60 bg-background px-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.services.items[key].title}
+                            onChange={(event) =>
+                              setSettings((prev) => ({
+                                ...prev,
+                                content: {
+                                  ...prev.content,
+                                  services: {
+                                    ...prev.content.services,
+                                    items: {
+                                      ...prev.content.services.items,
+                                      [key]: {
+                                        ...prev.content.services.items[key],
+                                        title: event.target.value,
+                                      },
+                                    },
+                                  },
+                                },
+                              }))
+                            }
+                          />
+                        </label>
+                        <label className="flex flex-col gap-2">
+                          <span className="text-xs">Descripción</span>
+                          <textarea
+                            rows={3}
+                            className="rounded-lg border border-border/60 bg-background px-3 py-2 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40"
+                            value={settings.content.services.items[key].description}
+                            onChange={(event) =>
+                              setSettings((prev) => ({
+                                ...prev,
+                                content: {
+                                  ...prev.content,
+                                  services: {
+                                    ...prev.content.services,
+                                    items: {
+                                      ...prev.content.services.items,
+                                      [key]: {
+                                        ...prev.content.services.items[key],
+                                        description: event.target.value,
+                                      },
+                                    },
+                                  },
+                                },
+                              }))
+                            }
+                          />
+                        </label>
+                      </div>
+                    ))}
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="text-sm text-muted-foreground flex flex-col gap-2">
