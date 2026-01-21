@@ -37,8 +37,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/420733796959" className="hover:text-primary transition-colors" target="_blank" rel="noreferrer">
-                  Proceso
+                <a href="/nuestro-proceso/" className="hover:text-primary transition-colors">
+                  Nuestro proceso
                 </a>
               </li>
               <li>

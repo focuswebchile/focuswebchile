@@ -12,7 +12,7 @@ const navItems = [
   { name: "Servicios", href: "/#servicios" },
   { name: "Precios", href: "/precios/" },
   { name: "Testimonios", href: "/#testimonios" },
-  { name: "Nuestro Proceso", href: "/#proceso" },
+  { name: "Nuestro Proceso", href: "/nuestro-proceso" },
   { name: "Contacto", href: "/contacto/" },
   { name: "FAQ", href: "/faq/" },
 ]
