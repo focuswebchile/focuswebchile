@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -7,17 +9,56 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Send, User } from "lucide-react"
 
-export default function FormOne() {
+type FormOneProps = {
+  badge?: string
+  title?: string
+  subtitle?: string
+  showEmailLine?: boolean
+  showServiceSelect?: boolean
+  submitLabel?: string
+  serviceOptions?: Array<{ value: string; label: string }>
+  onSubmit?: (data: {
+    name: string
+    email: string
+    message: string
+    service?: string
+  }) => void
+}
+
+const defaultServiceOptions = [
+  { value: "landing", label: "Landing Page" },
+  { value: "corporativo", label: "Sitio Web Corporativo" },
+  { value: "ecommerce", label: "E-commerce" },
+  { value: "otro", label: "Otro / No estoy seguro" },
+]
+
+export default function FormOne({
+  badge = "Contacto",
+  title = "Hablemos de tu proyecto",
+  subtitle = "Escríbenos y te respondemos en menos de 24 horas.",
+  showEmailLine = true,
+  showServiceSelect = false,
+  submitLabel = "Enviar mensaje",
+  serviceOptions = defaultServiceOptions,
+  onSubmit,
+}: FormOneProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
+    service: "",
   })
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
+    if (onSubmit) {
+      onSubmit(formData)
+      return
+    }
+
     const subject = `Contacto FocusWeb - ${formData.name}`
-    const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}%0A%0AMensaje:%0A${encodeURIComponent(
+    const serviceLine = formData.service ? `%0AServicio: ${formData.service}` : ""
+    const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}${serviceLine}%0A%0AMensaje:%0A${encodeURIComponent(
       formData.message,
     )}`
     window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
@@ -25,16 +66,21 @@ export default function FormOne() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-foreground">
-      <p className="text-xs bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">Contacto</p>
+      <p className="text-xs bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">{badge}</p>
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold py-4 text-center text-balance">
-        Hablemos de tu proyecto
+        {title}
       </h1>
       <p className="max-md:text-sm text-muted-foreground pb-8 text-center max-w-xl">
-        Escríbenos y te respondemos en menos de 24 horas. También puedes escribir a{" "}
-        <a href="mailto:focuswebchile@gmail.com" className="text-primary hover:underline">
-          focuswebchile@gmail.com
-        </a>
-        .
+        {subtitle}{" "}
+        {showEmailLine && (
+          <>
+            También puedes escribir a{" "}
+            <a href="mailto:focuswebchile@gmail.com" className="text-primary hover:underline">
+              focuswebchile@gmail.com
+            </a>
+            .
+          </>
+        )}
       </p>
 
       <div className="max-w-md w-full px-2 sm:px-4">
@@ -70,6 +116,34 @@ export default function FormOne() {
           />
         </div>
 
+        {showServiceSelect && (
+          <>
+            <Label htmlFor="service" className="font-medium mt-4">
+              Servicio de interés
+            </Label>
+            <select
+              id="service"
+              value={formData.service}
+              onChange={(event) => setFormData({ ...formData, service: event.target.value })}
+              required
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>\")",
+              }}
+              className="h-11 mt-2 w-full rounded-full border border-border bg-background px-3 pr-14 text-sm text-foreground focus-visible:ring-2 focus-visible:ring-primary/40 appearance-none bg-no-repeat bg-[length:16px_16px] bg-[right_1.5rem_center]"
+            >
+              <option value="" disabled>
+                Selecciona un servicio
+              </option>
+              {serviceOptions.map((option) => (
+                <option key={option.value} value={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
+
         <Label htmlFor="message" className="font-medium mt-4">
           Mensaje
         </Label>
@@ -84,7 +158,7 @@ export default function FormOne() {
         />
 
         <Button type="submit" className="flex items-center justify-center gap-2 mt-5 w-full rounded-full text-sm">
-          Enviar mensaje
+          {submitLabel}
           <Send className="h-4 w-4" />
         </Button>
       </div>

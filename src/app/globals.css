@@ -3,6 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+html[data-scroll-locked],
+body[data-scroll-locked] {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
+
 :root {
   --font-sans: var(--font-poppins);
   /* Nueva paleta fresca y cercana: verde principal, azul secundario */

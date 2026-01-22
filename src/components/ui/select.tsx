@@ -67,6 +67,7 @@ function SelectContent({
           className,
         )}
         position={position}
+        avoidCollisions={false}
         {...props}
       >
         <SelectScrollUpButton />

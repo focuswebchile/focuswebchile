@@ -22,17 +22,12 @@ export function Footer() {
             <h4 className="font-semibold text-sm sm:text-base">Enlaces rápidos</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li>
-                <a href="https://wa.me/420733796959" className="hover:text-primary transition-colors" target="_blank" rel="noreferrer">
+                <a href="/#servicios" className="hover:text-primary transition-colors">
                   Servicios
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.focusweb.cl/precios"
-                  className="hover:text-primary transition-colors"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="/precios/" className="hover:text-primary transition-colors">
                   Precios
                 </a>
               </li>

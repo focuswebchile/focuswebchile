@@ -262,8 +262,8 @@ export default function ProcessContent() {
                 >
                   <div className="relative z-10 flex flex-col gap-5 p-7 sm:p-9">
                     <div className="space-y-4">
-                      <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#52a9ff]/40">
-                        <span className="h-2 w-2 rounded-full bg-[#52a9ff]/30" />
+                      <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#22c55e]/40">
+                        <span className="h-2 w-2 rounded-full bg-[#22c55e]/30" />
                         {item.label}
                       </div>
                       <h3 className="text-2xl sm:text-3xl font-semibold text-[#52a9ff]">
