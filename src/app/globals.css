@@ -6,6 +6,7 @@
 html {
   scrollbar-gutter: stable;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 html[data-scroll-locked],
@@ -340,8 +341,10 @@ body[data-font="nunito"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 22px;
+  gap: 0;
+  width: 56px;
+  height: 56px;
+  padding: 0;
   border-radius: 999px;
   background: linear-gradient(135deg, #22c55e, #3b82f6);
   color: #ffffff;
@@ -350,7 +353,7 @@ body[data-font="nunito"] {
   box-shadow: 0 14px 30px -16px rgba(34, 197, 94, 0.6);
   position: relative;
   border: 2px solid #ffffff;
-  min-width: 160px;
+  min-width: 0;
 }
 
 .whatsapp-icon {
@@ -358,7 +361,7 @@ body[data-font="nunito"] {
 }
 
 .whatsapp-trigger .label {
-  font-size: 1rem;
+  display: none;
 }
 
 .whatsapp-badge {

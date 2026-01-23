@@ -1,7 +1,7 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Search, Code2, Rocket } from "lucide-react"
+import { Search, Code2, Rocket, LifeBuoy } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
@@ -26,12 +26,21 @@ const steps = [
   },
   {
     icon: Rocket,
-    title: "Lanzamiento y soporte",
+    title: "Lanzamiento",
     description:
-      "Publicamos tu sitio y te enseñamos a gestionarlo. Quedamos disponibles para cualquier ajuste o consulta.",
+      "Publicamos tu sitio y te enseñamos a gestionarlo para que quede operativo desde el primer día.",
     color: "from-primary via-accent to-primary",
     iconColor: "text-primary",
     step: "03",
+  },
+  {
+    icon: LifeBuoy,
+    title: "Soporte",
+    description:
+      "Seguimos disponibles para resolver dudas, ajustes o mejoras puntuales cuando lo necesites.",
+    color: "from-accent to-primary",
+    iconColor: "text-accent",
+    step: "04",
   },
 ]
 
@@ -67,11 +76,11 @@ export function ProcessSection() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Tres pasos para llevar tu negocio al mundo digital
+            Cuatro pasos para llevar tu negocio al mundo digital
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 relative">
           {/* Connecting line - hide on mobile */}
           <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20" />
 

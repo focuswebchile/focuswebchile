@@ -48,6 +48,9 @@ export default function FormOne({
     message: "",
     service: "",
   })
+  const titleParts = title.trim().split(/\s+/)
+  const titleTail = titleParts.length > 0 ? titleParts.pop() : ""
+  const titleHead = titleParts.join(" ")
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
@@ -68,7 +71,8 @@ export default function FormOne({
     <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-foreground">
       <p className="text-xs bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">{badge}</p>
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold py-4 text-center text-balance">
-        {title}
+        {titleHead && <span className="text-foreground">{titleHead} </span>}
+        <span className="bg-gradient-to-r from-primary to-info bg-clip-text text-transparent">{titleTail}</span>
       </h1>
       <p className="max-md:text-sm text-muted-foreground pb-8 text-center max-w-xl">
         {subtitle}{" "}

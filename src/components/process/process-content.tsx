@@ -31,11 +31,18 @@ const steps = [
   },
   {
     number: "03",
-    title: "Lanzamiento y soporte",
+    title: "Lanzamiento",
     description:
-      "Publicamos tu sitio y te enseñamos a gestionarlo. Quedamos disponibles para cualquier ajuste o consulta.",
-    bullets: ["Publicación y configuración final", "Capacitación breve y práctica", "Soporte inicial disponible"],
+      "Publicamos tu sitio y dejamos todo listo para que puedas empezar a compartirlo.",
+    bullets: ["Publicación y configuración final", "Checklist antes de salir", "Sitio listo para compartir"],
     cta: { label: "Partir ahora", href: "https://wa.me/420733796959" },
+  },
+  {
+    number: "04",
+    title: "Soporte",
+    description: "Te acompañamos en el inicio y resolvemos dudas para que avances con confianza.",
+    bullets: ["Ajustes iniciales y dudas", "Guía para administrar el sitio", "Soporte cercano cuando lo necesitas"],
+    cta: { label: "Hablar con soporte", href: "https://wa.me/420733796959" },
   },
 ]
 
