@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Typewriter } from "@/components/ui/typewriter-text"
 import { Button } from "@/components/ui/button"
 
-const bridgeLines = ["Estás pensando en una web", "No sabes por dónde partir", "Ni cómo ordenarla"]
+const bridgeLines = ["Tienes una idea en mente", "Esta es tu señal", "Bienvenido a FocusWeb"]
 
 export function BridgeTyping() {
   const [reducedMotion, setReducedMotion] = useState(false)
@@ -47,7 +47,8 @@ export function BridgeTyping() {
         </div>
 
         <p className="mt-10 mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground text-pretty font-light px-4">
-          Una web no es magia: no es automática ni inmediata, pero cuando está bien pensada, ordena y ayuda a llegar mejor.
+          <span className="block">Compártenos tu idea o el proyecto que tienes en mente</span>
+          <span className="block">Te ayudamos a ordenar las piezas y darle forma</span>
         </p>
 
         <div className="mt-8 flex justify-center">
