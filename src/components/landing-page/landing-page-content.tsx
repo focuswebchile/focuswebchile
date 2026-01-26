@@ -246,7 +246,9 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
       {sections.map((section, index) => (
         <section
           key={section.id}
-          ref={(el) => (sectionRefs.current[index] = el)}
+          ref={(el) => {
+            sectionRefs.current[index] = el;
+          }}
           className={cn(
             section.custom
               ? "relative w-full max-w-full px-0 z-20 py-0 overflow-visible"
