@@ -247,7 +247,7 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
         <section
           key={section.id}
           ref={(el) => {
-            sectionRefs.current[index] = el;
+            sectionRefs.current[index] = el as HTMLDivElement | null;
           }}
           className={cn(
             section.custom
