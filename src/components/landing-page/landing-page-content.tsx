@@ -125,7 +125,7 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | null>(null);
   const navLabelTimeoutRef = useRef<NodeJS.Timeout>();
 
   const updateScrollPosition = useCallback(() => {
