@@ -42,6 +42,11 @@ const services = [
     color: "from-accent to-orange-400",
     bgColor: "bg-accent/10",
     delay: 0.1,
+    cta: {
+      label: "Ver landing page",
+      href: "/landing-page/",
+      external: false,
+    },
   },
   {
     key: "service_2",
@@ -53,6 +58,11 @@ const services = [
     color: "from-primary to-info",
     bgColor: "bg-primary/10",
     delay: 0.2,
+    cta: {
+      label: "Solicitar cotización",
+      href: "https://wa.me/420733796959",
+      external: true,
+    },
   },
   {
     key: "service_3",
@@ -64,6 +74,11 @@ const services = [
     color: "from-success to-emerald-400",
     bgColor: "bg-success/10",
     delay: 0.3,
+    cta: {
+      label: "Solicitar cotización",
+      href: "https://wa.me/420733796959",
+      external: true,
+    },
   },
 ]
 
@@ -197,8 +212,11 @@ export function ServicesSection() {
                 className="group/btn w-full justify-between mt-3 sm:mt-4 hover:bg-accent/10 hover:text-accent rounded-xl font-medium text-sm sm:text-base h-11 sm:h-auto"
                 asChild
               >
-                <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
-                  <span>Solicitar cotización</span>
+                <a
+                  href={service.cta.href}
+                  {...(service.cta.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                >
+                  <span>{service.cta.label}</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </Button>

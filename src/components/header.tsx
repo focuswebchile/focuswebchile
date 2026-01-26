@@ -9,11 +9,11 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
   { name: "Inicio", href: "/" },
-  { name: "Servicios", href: "/#servicios" },
+  { name: "Nuestro Proceso", href: "/nuestro-proceso" },
   { name: "Precios", href: "/precios/" },
   { name: "Testimonios", href: "/#testimonios" },
-  { name: "Nuestro Proceso", href: "/nuestro-proceso" },
   { name: "Contacto", href: "/contacto/" },
+  { name: "Noticias", href: "/blog/" },
   { name: "FAQ", href: "/faq/" },
 ]
 

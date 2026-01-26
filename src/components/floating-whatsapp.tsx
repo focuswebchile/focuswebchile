@@ -22,7 +22,9 @@ export function FloatingWhatsApp() {
         </button>
         <div className="whatsapp-header">
           <p className="whatsapp-title">
-            ¡Hola! 👋 Aquí no hay robots, solo personas listas para ayudarte.
+            Hola, soy Felipe 👋
+            <br />
+            Conversemos sobre tu idea o proyecto.
           </p>
           <p className="whatsapp-status">Asistente · Ahora</p>
         </div>

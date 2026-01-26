@@ -55,7 +55,7 @@ export function ProcessSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   return (
-    <section ref={ref} id="proceso" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section ref={ref} id="proceso" className="py-16 sm:py-20 lg:py-24 px-8 sm:px-6 relative overflow-hidden">
       <motion.div
         style={{ y, opacity }}
         className="hidden sm:block absolute top-10 left-20 w-56 h-56 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-3xl pointer-events-none"
@@ -91,9 +91,9 @@ export function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative"
+              className="relative w-full max-w-[420px] mx-auto md:max-w-none"
             >
-              <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl transition-all duration-500 border-border/50 overflow-hidden group">
+              <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl transition-all duration-500 border-border/60 overflow-hidden group border-2 border-emerald-300 sm:border sm:border-border/50 text-left">
                 {/* Step number background */}
                 <div className="absolute -top-4 -right-4 text-7xl sm:text-8xl font-bold text-primary/5 group-hover:text-primary/10 transition-colors">
                   {step.step}
