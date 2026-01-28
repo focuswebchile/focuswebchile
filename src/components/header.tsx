@@ -14,6 +14,7 @@ const navItems = [
   { name: "Testimonios", href: "/#testimonios" },
   { name: "Contacto", href: "/contacto/" },
   { name: "Noticias", href: "/blog/" },
+  { name: "Mi historia", href: "/mi-historia/" },
   { name: "FAQ", href: "/faq/" },
 ]
 

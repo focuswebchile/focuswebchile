@@ -62,9 +62,10 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className, textClas
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const paragraphs = text.split(/\n{2,}/);
-  const totalWords = paragraphs.reduce((count, paragraph) => count + paragraph.split(" ").length, 0);
-  let globalWordIndex = 0;
+  const normalizedText = text.replace(/\\n/g, "\n");
+  const paragraphs = normalizedText.split(/\n{2,}/);
+  const countWords = (value: string) => value.split(/\s+/).filter(Boolean).length;
+  const totalWords = paragraphs.reduce((count, paragraph) => count + countWords(paragraph), 0);
 
   return (
     <div ref={sectionRef} className={cn("relative z-0 w-full min-h-[140vh]", className)}>
@@ -74,35 +75,53 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className, textClas
       >
         <div className="flex w-full flex-col items-center justify-center text-center">
           {paragraphs.map((paragraph, paragraphIndex) => {
-            const words = paragraph.split(" ");
+            const lines = paragraph.split("\n");
+            const paragraphStart = paragraphs
+              .slice(0, paragraphIndex)
+              .reduce((count, item) => count + countWords(item), 0);
             return reducedMotion ? (
               <p
                 key={paragraphIndex}
                 className={cn(
-                  "mx-auto w-full max-w-[48ch] text-center text-balance text-4xl font-semibold leading-[1.1] text-foreground sm:text-5xl md:text-6xl lg:text-[64px]",
+                  "mx-auto w-full text-center break-normal hyphens-none text-balance",
+                  paragraphIndex > 0 && "mt-2 md:mt-3",
                   textClassName,
                 )}
               >
-                {paragraph}
+                {lines.map((line, lineIndex) => (
+                  <span key={lineIndex}>
+                    {line}
+                    {lineIndex < lines.length - 1 ? <br /> : null}
+                  </span>
+                ))}
               </p>
             ) : (
               <p
                 key={paragraphIndex}
                 className={cn(
-                  "mx-auto w-full max-w-[48ch] text-center text-balance text-4xl font-semibold leading-[1.1] text-foreground/30 sm:text-5xl md:text-6xl lg:text-[64px]",
+                  "mx-auto w-full text-center break-normal hyphens-none text-balance",
+                  paragraphIndex > 0 && "mt-2 md:mt-3",
                   textClassName,
                 )}
               >
-                {words.map((word, i) => {
-                  const start = globalWordIndex / totalWords;
-                  const end = (globalWordIndex + 1) / totalWords;
-                  globalWordIndex += 1;
-                  return (
-                    <Word key={`${paragraphIndex}-${i}`} progress={scrollYProgress} range={[start, end]}>
-                      {word}
-                    </Word>
-                  );
-                })}
+                {lines.map((line, lineIndex) => (
+                  <span key={lineIndex} className="inline-flex w-full flex-wrap justify-center gap-x-2">
+                    {line.split(/\s+/).filter(Boolean).map((word, i) => {
+                      const lineStart = lines
+                        .slice(0, lineIndex)
+                        .reduce((count, item) => count + countWords(item), 0);
+                      const wordIndex = paragraphStart + lineStart + i;
+                      const start = wordIndex / totalWords;
+                      const end = (wordIndex + 1) / totalWords;
+                      return (
+                        <Word key={`${paragraphIndex}-${lineIndex}-${i}`} progress={scrollYProgress} range={[start, end]}>
+                          {word}
+                        </Word>
+                      );
+                    })}
+                    {lineIndex < lines.length - 1 ? <span className="w-full" /> : null}
+                  </span>
+                ))}
               </p>
             );
           })}
