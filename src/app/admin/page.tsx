@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
+const DEFAULT_SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG
 
 const TOKEN_KEY = "focusweb_admin_token"
 
@@ -314,6 +315,7 @@ const updateLocalCaches = (settings: SiteSettings) => {
 export default function AdminPage() {
   const [email, setEmail] = useState("focuswebchile@gmail.com")
   const [token, setToken] = useState<string | null>(null)
+  const [sites, setSites] = useState<Site[]>([])
   const [site, setSite] = useState<Site | null>(null)
   const [settings, setSettings] = useState<SiteSettings>(defaultSettings)
   const [loading, setLoading] = useState(false)
@@ -353,30 +355,49 @@ export default function AdminPage() {
           throw new Error("No autorizado")
         }
         const payload = await response.json()
-        const firstSite = payload.sites?.[0]
-        if (!firstSite) {
+        const availableSites: Site[] = payload.sites ?? []
+        if (!availableSites.length) {
           throw new Error("No hay sitios asociados")
         }
-        setSite(firstSite)
+        setSites(availableSites)
 
-        const settingsResponse = await fetch(`${BACKEND_URL}/api/sites/${firstSite.slug}/settings`)
-        if (!settingsResponse.ok) {
-          throw new Error("No se pudieron cargar los settings")
-        }
-        const settingsPayload = await settingsResponse.json()
-        setSettings(normalizeSettings(settingsPayload.settings))
+        const preferred = DEFAULT_SITE_SLUG
+          ? availableSites.find((entry) => entry.slug === DEFAULT_SITE_SLUG)
+          : undefined
+        setSite(preferred ?? availableSites[0])
         setStatus("Datos cargados correctamente.")
       } catch (error) {
         setStatus("No fue posible validar la sesión. Inicia sesión nuevamente.")
         localStorage.removeItem(TOKEN_KEY)
         setToken(null)
         setSite(null)
+        setSites([])
       } finally {
         setLoading(false)
       }
     }
     load()
   }, [token])
+
+  useEffect(() => {
+    if (!token || !site) return
+    const loadSettings = async () => {
+      setLoading(true)
+      try {
+        const settingsResponse = await fetch(`${BACKEND_URL}/api/sites/${site.slug}/settings`)
+        if (!settingsResponse.ok) {
+          throw new Error("No se pudieron cargar los settings")
+        }
+        const settingsPayload = await settingsResponse.json()
+        setSettings(normalizeSettings(settingsPayload.settings))
+      } catch (error) {
+        setStatus("No se pudieron cargar los settings del sitio seleccionado.")
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadSettings()
+  }, [site, token])
 
   const handleSendMagicLink = async () => {
     setLoading(true)
@@ -480,8 +501,32 @@ export default function AdminPage() {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="text-sm text-muted-foreground">Sitio activo</p>
-                  <p className="text-lg font-semibold">{site?.name ?? "Cargando..."}</p>
-                  <p className="text-xs text-muted-foreground">Slug: {site?.slug}</p>
+                  {sites.length > 1 ? (
+                    <div className="mt-2">
+                      <label className="text-xs text-muted-foreground">Selecciona sitio</label>
+                      <select
+                        className="mt-1 h-10 w-full rounded-xl border border-border/60 bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                        value={site?.id ?? ""}
+                        onChange={(event) => {
+                          const next = sites.find((entry) => entry.id === event.target.value)
+                          if (next) {
+                            setSite(next)
+                          }
+                        }}
+                      >
+                        {sites.map((entry) => (
+                          <option key={entry.id} value={entry.id}>
+                            {entry.name} ({entry.slug})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ) : (
+                    <>
+                      <p className="text-lg font-semibold">{site?.name ?? "Cargando..."}</p>
+                      <p className="text-xs text-muted-foreground">Slug: {site?.slug}</p>
+                    </>
+                  )}
                 </div>
                 <Button variant="outline" onClick={handleLogout}>
                   Cerrar sesión
