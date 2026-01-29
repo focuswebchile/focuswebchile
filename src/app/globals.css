@@ -169,6 +169,15 @@ body[data-scroll-locked] {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 :root[data-font="poppins"],
 body[data-font="poppins"] {
   --font-sans: var(--font-poppins) !important;

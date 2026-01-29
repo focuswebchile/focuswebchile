@@ -69,20 +69,20 @@ export function ProcessSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-balance px-4">
             Un proceso{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               simple y claro
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-[1.05rem] lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Cuatro pasos para llevar tu negocio al mundo digital
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 relative">
-          {/* Connecting line - hide on mobile */}
-          <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20" />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 relative">
+          {/* Connecting line - show only on extra large screens */}
+          <div className="hidden xl:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20" />
 
           {steps.map((step, index) => (
             <motion.div
@@ -117,9 +117,11 @@ export function ProcessSection() {
                   <div className="space-y-2.5 sm:space-y-3">
                     <div className="flex items-center gap-2.5 sm:gap-3">
                       <span className="text-xs sm:text-sm font-mono text-muted-foreground">{step.step}</span>
-                      <h3 className="text-xl sm:text-2xl font-bold">{step.title}</h3>
+                      <h3 className="text-xl sm:text-2xl md:text-[1.35rem] lg:text-2xl font-bold">{step.title}</h3>
                     </div>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{step.description}</p>
+                    <p className="text-sm sm:text-base md:text-[0.95rem] lg:text-base text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               </Card>

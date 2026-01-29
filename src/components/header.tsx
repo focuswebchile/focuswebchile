@@ -71,7 +71,7 @@ export function Header() {
                   scrollToSection("#hero")
                 }
               }}
-              className="flex items-center gap-2 text-xl sm:text-2xl font-bold bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+              className="flex items-center gap-2 text-xl sm:text-2xl font-bold hover:opacity-80 transition-opacity shrink-0"
             >
               <Image
                 src="/logo.png"
@@ -81,11 +81,13 @@ export function Header() {
                 className="h-9 w-9 sm:h-10 sm:w-10 rounded-full"
                 priority
               />
-              <span>FocusWeb</span>
+              <span className="hidden xl:inline bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent">
+                FocusWeb
+              </span>
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
@@ -99,7 +101,7 @@ export function Header() {
                         scrollToSection("#hero")
                       }
                     }}
-                    className="text-xs lg:text-sm font-medium text-foreground/70 hover:text-accent transition-colors relative group whitespace-nowrap"
+                    className="text-[11px] lg:text-sm font-medium text-foreground/70 hover:text-accent transition-colors relative group whitespace-nowrap"
                   >
                     {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-primary group-hover:w-full transition-all duration-300" />

@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/faq/`, lastModified: now },
     { url: `${baseUrl}/blog/`, lastModified: now },
     { url: `${baseUrl}/blog/como-crear-una-pagina-web-en-chile/`, lastModified: now },
+    { url: `${baseUrl}/blog/landing-page-vs-pagina-web/`, lastModified: now },
     { url: `${baseUrl}/crear-pagina-web-desde-cero/`, lastModified: now },
     { url: `${baseUrl}/mi-historia/`, lastModified: now },
   ]

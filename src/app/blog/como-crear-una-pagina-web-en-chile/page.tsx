@@ -1,13 +1,14 @@
 import type { Metadata } from "next"
 import Image from "next/image"
+import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 
 export const metadata: Metadata = {
-  title: "¿Cuándo necesitas una landing page y cuándo una página web completa? | Focus Web",
+  title: "Cómo crear una página web en Chile: guía clara para pymes | Focus Web",
   description:
-    "¿No sabes si tu negocio necesita una landing page o una web completa? Te lo explicamos con ejemplos claros y sin tecnicismos.",
+    "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
   alternates: {
     canonical: "/blog/como-crear-una-pagina-web-en-chile/",
   },
@@ -15,9 +16,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/como-crear-una-pagina-web-en-chile/",
-    title: "¿Cuándo necesitas una landing page y cuándo una página web completa? | Focus Web",
+    title: "Cómo crear una página web en Chile: guía clara para pymes | Focus Web",
     description:
-      "¿No sabes si tu negocio necesita una landing page o una web completa? Te lo explicamos con ejemplos claros y sin tecnicismos.",
+      "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -30,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "¿Cuándo necesitas una landing page y cuándo una página web completa? | Focus Web",
+    title: "Cómo crear una página web en Chile: guía clara para pymes | Focus Web",
     description:
-      "¿No sabes si tu negocio necesita una landing page o una web completa? Te lo explicamos con ejemplos claros y sin tecnicismos.",
+      "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
     images: ["https://focusweb.cl/og-como-crea-una-pagina.webp"],
   },
 }
@@ -60,6 +61,9 @@ export default function BlogPostPage() {
         <section className="pb-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <article className="space-y-6 text-foreground">
+              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
+                Tiempo de lectura: 5 min
+              </p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Cómo crear una página web en Chile: guía clara para negocios y pymes
               </h1>
@@ -161,10 +165,10 @@ export default function BlogPostPage() {
               <p>
                 Si este es tu caso, puedes revisar cómo trabajamos este tipo de proyectos en nuestras{" "}
                 <a
-                  href="https://focusweb.cl/landing-page"
+                  href="/landing-page/"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
-                  landing pages pensadas para generar contactos
+                  landing pages enfocadas en conversión
                 </a>
                 .
               </p>
@@ -208,12 +212,12 @@ export default function BlogPostPage() {
 
               <p>
                 Si no quieres enredarte con esta parte técnica, en{" "}
-                <a
-                  href="https://focusweb.cl"
+                <Link
+                  href="/"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   Focus Web nos encargamos de dejar todo listo desde el inicio
-                </a>
+                </Link>
                 , sin que tengas que aprender términos raros.
               </p>
 
@@ -302,7 +306,7 @@ export default function BlogPostPage() {
               <p>
                 Si quieres ver cómo trabajamos con negocios y pymes en Chile, puedes revisar nuestras{" "}
                 <a
-                  href="https://focusweb.cl/nuestro-proceso"
+                  href="/nuestro-proceso/"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   soluciones de desarrollo web en Focus Web

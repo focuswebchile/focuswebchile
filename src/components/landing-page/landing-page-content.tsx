@@ -50,11 +50,19 @@ function FloatingPaths({ position }: { position: number }) {
   );
 }
 
-function LandingHero({ title, subtitle }: { title: string; subtitle: string }) {
+function LandingHero({
+  title,
+  subtitle,
+  links = [],
+}: {
+  title: string;
+  subtitle: string;
+  links?: { label: string; href: string }[];
+}) {
   const words = title.split(" ");
 
   return (
-    <div className="relative min-h-[100vh] w-full flex items-center justify-center overflow-hidden bg-background">
+    <div className="relative min-h-[100vh] w-full flex items-center justify-center overflow-hidden bg-background pt-16 sm:pt-0">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
@@ -67,7 +75,7 @@ function LandingHero({ title, subtitle }: { title: string; subtitle: string }) {
           transition={{ duration: 1.6 }}
           className="mx-auto max-w-5xl"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-6 tracking-tight text-balance leading-[1.05] overflow-visible">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-6 tracking-tight text-balance leading-[1.13] overflow-visible">
             {words.map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block mr-3 last:mr-0">
                 {word.split("").map((letter, letterIndex) => (
@@ -90,12 +98,26 @@ function LandingHero({ title, subtitle }: { title: string; subtitle: string }) {
             ))}
           </h1>
 
-          <p className="mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="mx-auto max-w-3xl text-base sm:text-lg md:text-xl font-medium text-foreground/75 leading-relaxed">
             {subtitle}
           </p>
 
-          <div className="mt-8 flex justify-center">
-            <Button size="lg" className="text-base sm:text-lg font-semibold" asChild>
+          {links.length > 0 ? (
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm sm:text-base">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center rounded-full border border-border/60 px-4 py-1.5 text-foreground/80 transition-colors hover:border-primary/60 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          ) : null}
+
+          <div className="mt-6 flex justify-center">
+            <Button size="lg" className="text-sm sm:text-base font-semibold px-5 sm:px-6" asChild>
               <a href="#cta-final">Hablemos por WhatsApp</a>
             </Button>
           </div>
@@ -271,7 +293,7 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
               section.custom
             ) : (
               <>
-                <h1
+                <h2
                   className={cn(
                     "font-bold mb-6 sm:mb-8 leading-[1.1] tracking-tight",
                     index === 0
@@ -293,7 +315,7 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
                       {section.title}
                     </div>
                   )}
-                </h1>
+                </h2>
 
                 <div
                   className={cn(
@@ -373,15 +395,21 @@ export default function LandingPageContent() {
     {
       id: "que-es",
       badge: "Que es",
-      title: "¿Que es una landing page y cuando realmente la necesitas?",
+      title: "Landing pages en Chile que convierten",
       description:
         "Es una pagina disenada para un solo objetivo: convertir visitas en contactos, clientes o acciones concretas",
       align: "left" as const,
       custom: (
         <div className="relative left-1/2 w-screen -translate-x-1/2">
           <LandingHero
-            title="¿Que es una landing page y cuando realmente la necesitas?"
-            subtitle="Es una pagina disenada para un solo objetivo: convertir visitas en contactos, clientes o acciones concretas."
+            title="Landing pages en Chile que convierten"
+            subtitle="Diseño web en Chile para pymes: landing pages claras, rápidas y enfocadas en contacto real, con desarrollo profesional."
+            links={[
+              { label: "Mira nuestro proceso de trabajo", href: "/nuestro-proceso/" },
+              { label: "Cómo crear una página web en Chile", href: "/blog/como-crear-una-pagina-web-en-chile/" },
+              { label: "Crear una página web desde cero", href: "/crear-pagina-web-desde-cero/" },
+              { label: "Ver precios y opciones", href: "/precios/" },
+            ]}
           />
         </div>
       ),
@@ -443,7 +471,8 @@ export default function LandingPageContent() {
               </h2>
               <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
                 Depende de lo que busques lograr. Algunas funcionan como tu carta de presentacion online, otras estan
-                pensadas para una accion muy concreta, como vender un producto o promocionar una oferta.
+                pensadas para una accion muy concreta, como vender un producto o promocionar una oferta. Es una forma
+                de creacion web pensada para conversion.
               </p>
             </div>
 
@@ -507,7 +536,7 @@ export default function LandingPageContent() {
     {
       id: "cuando",
       badge: "Cuando",
-      title: "Cuando y cual landing necesito",
+      title: "Cuándo conviene diseñar una landing page",
       description: "Seccion comparativa sin cards.",
       align: "center" as const,
       custom: (
@@ -517,7 +546,7 @@ export default function LandingPageContent() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-foreground">
                 <span className="text-foreground">Cuándo </span>
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  conviene una landing page
+                  conviene diseñar una landing page
                 </span>
               </h2>
               <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
@@ -539,8 +568,9 @@ export default function LandingPageContent() {
                 <h3 className="text-2xl sm:text-3xl font-semibold text-foreground">Cuándo no aplica</h3>
                 <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                   Si tu objetivo es presentar tu marca, contar tu historia o mejorar tu SEO, una landing page no es la
-                  mejor opción. En ese caso, revisa nuestra sección de Sitio Web Corporativo, donde te mostramos cómo
-                  crear una presencia online completa y efectiva.
+                  mejor opción. Si buscas creacion web completa o paginas web chilenas para presentar tu marca, revisa
+                  nuestra sección de Sitio Web Corporativo, donde te mostramos cómo crear una presencia online efectiva
+                  con un sitio web profesional.
                 </p>
               </div>
             </div>
@@ -551,7 +581,7 @@ export default function LandingPageContent() {
     {
       id: "proceso",
       badge: "Proceso",
-      title: "Proceso",
+      title: "Proceso de diseño y desarrollo de páginas web",
       description: "Seccion de proceso.",
       align: "center" as const,
       custom: (
@@ -563,7 +593,7 @@ export default function LandingPageContent() {
     {
       id: "practica",
       badge: "Practica",
-      title: "Asi se ve en la practica",
+      title: "Asi se ve el diseño web en la práctica",
       description: "Seccion de ejemplos.",
       align: "center" as const,
       custom: (
@@ -572,11 +602,11 @@ export default function LandingPageContent() {
             <div className="space-y-4 text-center">
               <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-muted-foreground">Casos reales</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground">
-                Asi se ve en la practica
+                Asi se ve el diseño web en la práctica
               </h2>
               <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
-                Dos ejemplos de landing pages que cumplen un objetivo concreto: captar clientes o promover un producto
-                de manera clara y directa.
+                Dos ejemplos de diseños web reales que cumplen un objetivo concreto: captar clientes o promover un
+                producto de manera clara y directa.
               </p>
             </div>
 
@@ -642,6 +672,72 @@ export default function LandingPageContent() {
                       </a>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ),
+    },
+    {
+      id: "faq",
+      badge: "FAQ",
+      title: "Preguntas frecuentes",
+      description: "FAQ sobre landing pages.",
+      align: "center" as const,
+      custom: (
+        <section className="w-full">
+          <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-20">
+            <div className="space-y-4 text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">
+                Preguntas frecuentes
+              </h2>
+              <p className="mx-auto max-w-3xl text-base sm:text-lg text-muted-foreground">
+                Respuestas claras para decidir si una landing page es lo que tu negocio necesita.
+              </p>
+            </div>
+
+            <div className="mt-10 space-y-6 text-left">
+              {[
+                {
+                  question: "¿Qué es una landing page y para qué sirve?",
+                  answer:
+                    "Es una página enfocada en una sola acción: contacto, venta o registro. Está diseñada para convertir visitas en resultados concretos.",
+                },
+                {
+                  question: "¿Cuándo conviene una landing page en lugar de un sitio web?",
+                  answer:
+                    "Cuando tienes un objetivo puntual y quieres guiar al usuario sin distracciones. Es ideal para campañas, productos o servicios específicos.",
+                },
+                {
+                  question: "¿Cuánto demora una landing page?",
+                  answer:
+                    "Depende del contenido, pero normalmente puede estar lista en pocos días una vez que tenemos textos e imágenes.",
+                },
+                {
+                  question: "¿Qué necesito para comenzar?",
+                  answer:
+                    "Una idea clara de tu oferta, algunos textos base y material visual si lo tienes. Nosotros te ayudamos a ordenar todo.",
+                },
+                {
+                  question: "¿Incluye diseño y texto?",
+                  answer:
+                    "Sí. El servicio contempla diseño de página web y apoyo en la estructura del contenido para que tu mensaje quede claro y efectivo.",
+                },
+                {
+                  question: "¿Cuál es el precio de una página web o landing page?",
+                  answer:
+                    "Depende del alcance y del contenido. En general, una landing page es la opción más directa y accesible para empezar.",
+                },
+                {
+                  question: "¿También hacen página web e-commerce?",
+                  answer:
+                    "Sí. Si necesitas vender online, también desarrollamos página web e-commerce (e commerce). Podemos ayudarte a elegir la mejor opción.",
+                },
+              ].map((item) => (
+                <div key={item.question} className="rounded-2xl border border-border/60 bg-white/70 p-6 sm:p-8 shadow-lg shadow-primary/5">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground">{item.question}</h3>
+                  <p className="mt-3 text-sm sm:text-base text-muted-foreground">{item.answer}</p>
                 </div>
               ))}
             </div>

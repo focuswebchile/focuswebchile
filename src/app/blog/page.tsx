@@ -38,10 +38,26 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    category: "Comparativa",
+    title: "Landing Page vs Página Web: diferencias clave en diseño web",
+    excerpt:
+      "Te explicamos cuándo conviene cada una, con ejemplos reales y diseño web pensado para pymes en Chile.",
+    href: "/blog/landing-page-vs-pagina-web/",
+    image: {
+      src: "/landingpagevswebsite.webp",
+      alt: "Landing Page vs Página Web",
+    },
+  },
+  {
     category: "Guía",
     title: "Cómo crear una página web en Chile: guía clara para negocios y pymes",
     excerpt:
       "Todo lo que necesitas saber para elegir bien entre landing, web completa o tienda online, sin tecnicismos.",
+    href: "/blog/como-crear-una-pagina-web-en-chile/",
+    image: {
+      src: "/guiaclaraparanegociosypymes.webp",
+      alt: "Guía clara para negocios y pymes en Chile",
+    },
   },
   {
     category: "Consejos",
@@ -49,12 +65,10 @@ const posts = [
     excerpt:
       "Guía paso a paso para emprendedores y pymes que quieren crear su web desde cero, sin enredos.",
     href: "/crear-pagina-web-desde-cero/",
-  },
-  {
-    category: "Tendencias",
-    title: "Qué necesitas para crear una página web (y qué no)",
-    excerpt:
-      "Un resumen claro para no sobredimensionar tu web: lo esencial es objetivo, contenido y un contacto visible.",
+    image: {
+      src: "/sintecnisimo.webp",
+      alt: "Crear una página web desde cero",
+    },
   },
 ]
 
@@ -68,8 +82,8 @@ export default function BlogPage() {
             <div className="mt-4">
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10">
                 <Image
-                  src="/como-crea-una-pagina-web-en-chile.webp"
-                  alt="Cómo crear una página web en Chile"
+                  src={posts[0].image.src}
+                  alt={posts[0].image.alt}
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 960px, (min-width: 640px) 90vw, 100vw"
@@ -91,7 +105,7 @@ export default function BlogPage() {
               </div>
               <div className="flex flex-col gap-2">
                 <a
-                  href="/blog/como-crear-una-pagina-web-en-chile/"
+                  href={posts[0].href}
                   className="block max-w-3xl text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
                 >
                   {posts[0].title}
@@ -107,25 +121,15 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {posts.slice(1).map((post) => (
                 <article key={post.title} className="flex flex-col gap-4 hover:opacity-90 transition-opacity">
-                  {post.href ? (
-                    <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70">
-                      <Image
-                        src="/web-desde-cero-focusweb.webp"
-                        alt="Crear una página web desde cero"
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70">
-                      <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-                        <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-muted-foreground">
-                          Pronto más artículos
-                        </span>
-                      </div>
-                    </div>
-                  )}
+                  <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70">
+                    <Image
+                      src={post.image.src}
+                      alt={post.image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
+                    />
+                  </div>
                   <div className="flex flex-row gap-4 items-center">
                     <Badge>{post.category}</Badge>
                     <div className="flex flex-row gap-2 text-sm items-center text-muted-foreground">
@@ -138,16 +142,12 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    {post.href ? (
-                      <a
-                        href={post.href}
-                        className="max-w-3xl text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
-                      >
-                        {post.title}
-                      </a>
-                    ) : (
-                      <h3 className="max-w-3xl text-2xl tracking-tight text-foreground">{post.title}</h3>
-                    )}
+                    <a
+                      href={post.href}
+                      className="max-w-3xl text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
+                    >
+                      {post.title}
+                    </a>
                     <p className="max-w-3xl text-muted-foreground text-base">
                       {post.excerpt}
                     </p>

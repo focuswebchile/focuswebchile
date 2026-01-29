@@ -44,6 +44,18 @@ export default function ContactoPage() {
             <FormOne />
           </div>
         </section>
+        <section className="pb-16 px-6 md:px-10">
+          <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
+            Si buscas una página clara y enfocada en resultados, revisa nuestras{" "}
+            <a
+              href="/landing-page/"
+              className="text-primary hover:text-primary/80 underline underline-offset-4"
+            >
+              landing pages enfocadas en conversión
+            </a>
+            .
+          </div>
+        </section>
         <Footer />
       </main>
       <FloatingWhatsApp />

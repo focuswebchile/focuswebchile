@@ -110,6 +110,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Focus Web",
+      url: "https://focusweb.cl",
+      logo: "https://focusweb.cl/logo-512.png",
+      description:
+        "Estudio de desarrollo y diseño web en Chile enfocado en pymes y emprendedores.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Focus Web",
+      url: "https://focusweb.cl",
+      serviceType: "Desarrollo web",
+      areaServed: "Chile",
+      availableLanguage: "es-CL",
+      description:
+        "Servicios de desarrollo web, landing pages y diseño web profesional para pymes y emprendedores en Chile.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Focus Web",
+      url: "https://focusweb.cl",
+    },
+  ]
+
   return (
     <html lang="es-CL" suppressHydrationWarning>
       <body className={`${poppins.variable} ${inter.variable} ${nunito.variable} font-sans antialiased`}>
@@ -117,6 +146,12 @@ export default function RootLayout({
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
             strategy="afterInteractive"
+          />
+          <Script
+            id="structured-data"
+            type="application/ld+json"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
           <Script id="ga4" strategy="afterInteractive">
             {`

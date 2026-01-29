@@ -5,9 +5,9 @@ import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 
 export const metadata: Metadata = {
-  title: "Crear una página web desde cero: pasos reales sin tecnicismos | Focus Web",
+  title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
   description:
-    "Aprende paso a paso cómo crear una página web desde cero, sin tecnicismos y con ejemplos claros para emprendedores y pymes en Chile.",
+    "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
   alternates: {
     canonical: "/crear-pagina-web-desde-cero/",
   },
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/crear-pagina-web-desde-cero/",
-    title: "Crear una página web desde cero: pasos reales sin tecnicismos | Focus Web",
+    title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     description:
-      "Aprende paso a paso cómo crear una página web desde cero, sin tecnicismos y con ejemplos claros para emprendedores y pymes en Chile.",
+      "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crear una página web desde cero: pasos reales sin tecnicismos | Focus Web",
+    title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     description:
-      "Aprende paso a paso cómo crear una página web desde cero, sin tecnicismos y con ejemplos claros para emprendedores y pymes en Chile.",
+      "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
     images: ["https://focusweb.cl/crea-pagina-web-desde-cero.webp"],
   },
 }
@@ -60,6 +60,9 @@ export default function BlogPostPage() {
         <section className="pb-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <article className="space-y-6 text-foreground">
+              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
+                Tiempo de lectura: 4 min
+              </p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Crear una página web desde cero: pasos reales (sin tecnicismos)
               </h1>
@@ -103,6 +106,17 @@ export default function BlogPostPage() {
                 Antes de pensar en diseño o herramientas, pregúntate: ¿para qué quiero esta web? ¿Quieres que te
                 contacten? ¿Que compren un producto? ¿O simplemente mostrar quién eres y qué haces?
               </p>
+
+              <div className="rounded-2xl border border-border/60 bg-muted/40 px-5 py-4 text-sm text-foreground/80 sm:text-base">
+                Si buscas una página simple y enfocada en convertir, mira{" "}
+                <a
+                  href="/landing-page/"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  nuestras landing pages enfocadas en conversión
+                </a>
+                .
+              </div>
 
               <p>
                 Por ejemplo, un gasfíter que recién empieza probablemente solo necesita que la gente lo contacte para
@@ -316,10 +330,10 @@ export default function BlogPostPage() {
                 Si quieres que alguien te acompañe desde el inicio y asegure que tu web quede profesional y lista para
                 tus clientes, en{" "}
                 <a
-                  href="/contacto/"
+                  href="/landing-page/"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
-                  Focus Web
+                  nuestras landing pages enfocadas en conversión
                 </a>{" "}
                 ayudamos a negocios como el tuyo a crear páginas web claras, confiables y efectivas.
               </p>

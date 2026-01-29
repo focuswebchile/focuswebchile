@@ -1,70 +1,51 @@
 "use client"
 
 import Image from "next/image"
-import { motion } from "framer-motion"
 
 export function SobreMiHero() {
+  const marqueeText = "Hola, soy Felipe · Focus Web ·"
+  const imageSrc = "/Imagen-hero.webp"
+
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden bg-gradient-to-br from-emerald-50 via-[#22c55eab] to-sky-50 px-6 md:h-[85vh] md:px-10">
-      <div className="mx-auto grid h-full w-full max-w-6xl grid-cols-1 items-stretch gap-12 pt-14 md:grid-cols-[1.35fr_0.65fr] md:gap-0 md:pt-0">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mt-6 flex flex-col items-center justify-center space-y-6 pb-6 text-center md:mt-12 md:items-start md:pb-0 md:pr-12 md:-ml-6 md:text-left"
-        >
-          <motion.h1
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-            className="text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-7xl"
-          >
-            Hola, soy <span className="font-semibold">Felipe</span>
-            <br />
-            y esto es <span className="font-semibold">Focus Web</span>
-          </motion.h1>
-          <div className="w-full max-w-sm text-base text-foreground/80 md:text-lg">
-            <p className="font-medium text-foreground">Trabajo con pymes y emprendedores</p>
-            <p className="mt-1">Si tienes una idea en mente, conversemos</p>
+    <section className="w-full px-6 md:px-10 pt-20 md:pt-24 pb-12 md:pb-16">
+      <div className="mx-auto w-full rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-50 via-[#22c55eab] to-sky-50 md:min-h-[70vh] lg:min-h-[85vh]">
+        <div className="relative h-full w-full overflow-hidden">
+          <div className="relative w-full min-h-[70vh] sm:min-h-[75vh] md:aspect-auto md:min-h-[70vh] lg:min-h-[85vh]">
+            <Image
+              src={imageSrc}
+              alt="Felipe Ibar"
+              fill
+              priority
+              className="object-cover object-top md:object-cover lg:object-contain lg:object-top"
+              sizes="(min-width: 1280px) 1100px, (min-width: 1024px) 90vw, 100vw"
+            />
           </div>
-        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-            className="relative h-[60vh] sm:h-[65vh] md:h-full md:translate-x-14"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="
-               absolute
-               left-1/2
-               md:left-[48%]
-               top-1/2
-               h-[52vh]
-               w-[52vh]
-               md:h-[60vh]
-               md:w-[60vh]
-               -translate-x-1/2
-             -translate-y-1/2
-             rounded-full
-             bg-[#52a9ff]
-            "
-            aria-hidden="true"
-          />
-
-          <Image
-            src="/Imagen-hero.webp"
-            alt="Felipe Ibar"
-            fill
-            priority
-            className="origin-bottom scale-[1.3] object-contain [object-position:center_bottom] md:origin-[64%_100%] md:scale-[1.6] md:[object-position:right_bottom]"
-            sizes="(max-width: 768px) 100vw, 42vw"
-          />
-        </motion.div>
+          <div className="absolute inset-0 flex items-end justify-center md:items-center md:justify-center">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/35 via-black/10 to-transparent md:hidden" />
+            <div className="relative w-full overflow-hidden">
+              <p className="sr-only">{marqueeText}</p>
+              <div className="flex w-full overflow-hidden">
+                <div className="flex w-max items-center gap-8 whitespace-nowrap animate-[marquee_22s_linear_infinite]" aria-hidden="true">
+                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-white lg:text-white lg:uppercase">
+                    {marqueeText}
+                  </span>
+                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-white lg:text-white lg:uppercase">
+                    {marqueeText}
+                  </span>
+                </div>
+                <div className="flex w-max items-center gap-8 whitespace-nowrap animate-[marquee_22s_linear_infinite]" aria-hidden="true">
+                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-white lg:text-white lg:uppercase">
+                    {marqueeText}
+                  </span>
+                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-white lg:text-white lg:uppercase">
+                    {marqueeText}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

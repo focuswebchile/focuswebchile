@@ -5,9 +5,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import ProcessContent from "@/components/process/process-content"
 
 export const metadata: Metadata = {
-  title: "Nuestro proceso | FocusWeb",
+  title: "Proceso de diseño web en Chile | Focus Web",
   description:
-    "Conoce nuestro proceso de trabajo: diagnóstico, desarrollo y lanzamiento. Transparente, claro y enfocado en resultados.",
+    "Así trabajamos: diagnóstico, diseño, desarrollo y lanzamiento de páginas web para pymes en Chile.",
   alternates: {
     canonical: "/nuestro-proceso/",
   },
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/nuestro-proceso/",
-    title: "Nuestro proceso | FocusWeb",
+    title: "Proceso de diseño web en Chile | Focus Web",
     description:
-      "Conoce nuestro proceso de trabajo: diagnóstico, desarrollo y lanzamiento. Transparente, claro y enfocado en resultados.",
+      "Así trabajamos: diagnóstico, diseño, desarrollo y lanzamiento de páginas web para pymes en Chile.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nuestro proceso | FocusWeb",
+    title: "Proceso de diseño web en Chile | Focus Web",
     description:
-      "Conoce nuestro proceso de trabajo: diagnóstico, desarrollo y lanzamiento. Transparente, claro y enfocado en resultados.",
+      "Así trabajamos: diagnóstico, diseño, desarrollo y lanzamiento de páginas web para pymes en Chile.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
 }
@@ -43,6 +43,18 @@ export default function NuestroProcesoPage() {
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <ProcessContent />
+        <section className="pb-16 px-6 md:px-10">
+          <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
+            ¿Buscas una página enfocada en convertir? Revisa nuestras{" "}
+            <a
+              href="/landing-page/"
+              className="text-primary hover:text-primary/80 underline underline-offset-4"
+            >
+              landing pages enfocadas en conversión
+            </a>
+            .
+          </div>
+        </section>
         <Footer />
       </main>
       <FloatingWhatsApp />
