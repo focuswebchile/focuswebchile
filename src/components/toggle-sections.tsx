@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
 const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
-const TOGGLES_CACHE_KEY = "focusweb_section_toggles"
+const TOGGLES_CACHE_KEY = `focusweb_section_toggles:${SITE_SLUG}`
 
 export type SectionToggles = {
   showServices: boolean

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
 const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
-const SERVICES_CACHE_KEY = "focusweb_services_content"
+const SERVICES_CACHE_KEY = `focusweb_services_content:${SITE_SLUG}`
 
 const defaultServicesContent = {
   title: "Servicios pensados para emprender",

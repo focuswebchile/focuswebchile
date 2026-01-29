@@ -14,7 +14,7 @@ const defaultHero = {
   subtitle:
     "Desarrollo web funcional, rápido y sin costos ocultos. Convertimos tu idea en una presencia online lista para crecer.",
 }
-const HERO_CACHE_KEY = "focusweb_hero_content"
+const HERO_CACHE_KEY = `focusweb_hero_content:${SITE_SLUG}`
 
 const meshColors = ["#22c55e", "#3b82f6", "#52a9ff", "#bff1d0", "#e6f6ff", "#c7f9d4"]
 

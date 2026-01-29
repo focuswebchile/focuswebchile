@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
 const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
-const FAQ_CACHE_KEY = "focusweb_faq_content"
+const FAQ_CACHE_KEY = `focusweb_faq_content:${SITE_SLUG}`
 
 const defaultFaqContent = {
   question_1: "¿Cuánto cuesta una página web en Chile?",

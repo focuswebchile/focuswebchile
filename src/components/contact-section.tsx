@@ -6,7 +6,7 @@ import FormOne from "@/components/ui/form-1"
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
 const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
-const CONTACT_CACHE_KEY = "focusweb_contact_content"
+const CONTACT_CACHE_KEY = `focusweb_contact_content:${SITE_SLUG}`
 
 const defaultContactContent = {
   title: "Comienza tu proyecto hoy",

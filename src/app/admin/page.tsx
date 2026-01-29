@@ -141,6 +141,8 @@ const CONTACT_CACHE_KEY = "focusweb_contact_content"
 const FAQ_CACHE_KEY = "focusweb_faq_content"
 const TOGGLES_CACHE_KEY = "focusweb_section_toggles"
 
+const buildCacheKey = (key: string, slug: string) => `${key}:${slug}`
+
 const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
   if (!raw) return defaultSettings
 
@@ -263,15 +265,15 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
   }
 }
 
-const updateLocalCaches = (settings: SiteSettings) => {
+const updateLocalCaches = (settings: SiteSettings, siteSlug: string) => {
   if (typeof window === "undefined") return
   try {
     window.localStorage.setItem(
-      THEME_CACHE_KEY,
+      buildCacheKey(THEME_CACHE_KEY, siteSlug),
       JSON.stringify({ colors: settings.colors, typography: settings.typography }),
     )
     window.localStorage.setItem(
-      HERO_CACHE_KEY,
+      buildCacheKey(HERO_CACHE_KEY, siteSlug),
       JSON.stringify({
         title: settings.content.hero.title,
         subtitle: settings.content.hero.subtitle,
@@ -280,7 +282,7 @@ const updateLocalCaches = (settings: SiteSettings) => {
       }),
     )
     window.localStorage.setItem(
-      SERVICES_CACHE_KEY,
+      buildCacheKey(SERVICES_CACHE_KEY, siteSlug),
       JSON.stringify({
         title: settings.content.services.title,
         subtitle: settings.content.services.subtitle,
@@ -288,7 +290,7 @@ const updateLocalCaches = (settings: SiteSettings) => {
       }),
     )
     window.localStorage.setItem(
-      CONTACT_CACHE_KEY,
+      buildCacheKey(CONTACT_CACHE_KEY, siteSlug),
       JSON.stringify({
         title: settings.content.contact.title,
         subtitle: settings.content.contact.subtitle,
@@ -296,7 +298,7 @@ const updateLocalCaches = (settings: SiteSettings) => {
       }),
     )
     window.localStorage.setItem(
-      FAQ_CACHE_KEY,
+      buildCacheKey(FAQ_CACHE_KEY, siteSlug),
       JSON.stringify({
         question_1: settings.content.faq.question_1,
         answer_1: settings.content.faq.answer_1,
@@ -306,7 +308,10 @@ const updateLocalCaches = (settings: SiteSettings) => {
         answer_3: settings.content.faq.answer_3,
       }),
     )
-    window.localStorage.setItem(TOGGLES_CACHE_KEY, JSON.stringify(settings.toggles))
+    window.localStorage.setItem(
+      buildCacheKey(TOGGLES_CACHE_KEY, siteSlug),
+      JSON.stringify(settings.toggles),
+    )
   } catch (error) {
     // Ignore cache errors.
   }
@@ -438,7 +443,7 @@ export default function AdminPage() {
         const message = payload?.error ?? "No se pudieron guardar los cambios"
         throw new Error(message)
       }
-      updateLocalCaches(settings)
+      updateLocalCaches(settings, site.slug)
       setSaveStatus("Cambios guardados correctamente.")
     } catch (error) {
       setSaveStatus(error instanceof Error ? error.message : "No se pudieron guardar los cambios.")

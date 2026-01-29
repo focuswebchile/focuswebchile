@@ -5,7 +5,7 @@ import { useEffect } from "react"
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
 const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
-const THEME_CACHE_KEY = "focusweb_theme_settings"
+const THEME_CACHE_KEY = `focusweb_theme_settings:${SITE_SLUG}`
 
 type ThemeSettings = {
   colors?: {
