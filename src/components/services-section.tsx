@@ -15,28 +15,26 @@ const SERVICES_CACHE_KEY = `focusweb_services_content:${SITE_SLUG}`
 const defaultServicesContent = {
   title: "Servicios pensados para emprender",
   subtitle: "Soluciones web claras y funcionales, diseñadas específicamente para emprendedores chilenos",
-  items: {
-    service_1: {
+  items: [
+    {
       title: "Landing Page",
       description: "Página enfocada en convertir, con formulario simple y botón de WhatsApp.",
     },
-    service_2: {
+    {
       title: "Sitio Web Corporativo",
       description: "Presencia profesional completa con múltiples secciones y optimización SEO.",
     },
-    service_3: {
+    {
       title: "E-commerce",
       description: "Tienda online completa con pagos y gestión de productos lista para vender.",
     },
-  },
+  ],
 }
 
-const services = [
+const serviceConfigs = [
   {
-    key: "service_1",
+    key: "service-1",
     icon: Zap,
-    title: defaultServicesContent.items.service_1.title,
-    description: defaultServicesContent.items.service_1.description,
     features: ["Entrega en 5-7 días", "Diseño responsive", "Botón WhatsApp flotante", "Optimizada para conversión"],
     badge: "Ideal para partir",
     color: "from-accent to-orange-400",
@@ -49,10 +47,8 @@ const services = [
     },
   },
   {
-    key: "service_2",
+    key: "service-2",
     icon: Building2,
-    title: defaultServicesContent.items.service_2.title,
-    description: defaultServicesContent.items.service_2.description,
     features: ["Hasta 7 secciones", "Base SEO incluida", "Panel de administración", "Blog integrado opcional"],
     badge: "Presencia profesional",
     color: "from-primary to-info",
@@ -65,10 +61,8 @@ const services = [
     },
   },
   {
-    key: "service_3",
+    key: "service-3",
     icon: ShoppingCart,
-    title: defaultServicesContent.items.service_3.title,
-    description: defaultServicesContent.items.service_3.description,
     features: ["Integración Webpay/Flow", "Gestión de inventario", "Sistema de envíos", "Panel administrativo"],
     badge: "Listo para vender",
     color: "from-success to-emerald-400",
@@ -84,26 +78,16 @@ const services = [
 
 export function ServicesSection() {
   const [content, setContent] = useState(defaultServicesContent)
-  const serviceItems = {
-    service_1: {
-      ...defaultServicesContent.items.service_1,
-      ...(content.items?.service_1 ?? {}),
-    },
-    service_2: {
-      ...defaultServicesContent.items.service_2,
-      ...(content.items?.service_2 ?? {}),
-    },
-    service_3: {
-      ...defaultServicesContent.items.service_3,
-      ...(content.items?.service_3 ?? {}),
-    },
-  }
-  const servicesData = services.map((service) => {
-    const itemOverride = serviceItems[service.key as keyof typeof serviceItems]
+  const serviceItems = content.items ?? defaultServicesContent.items
+  const fallbackItems = defaultServicesContent.items
+  const servicesData = serviceItems.map((item, index) => {
+    const config = serviceConfigs[index % serviceConfigs.length]
+    const fallbackItem = fallbackItems[index] ?? fallbackItems[index % fallbackItems.length]
     return {
-      ...service,
-      title: itemOverride?.title ?? service.title,
-      description: itemOverride?.description ?? service.description,
+      ...config,
+      key: `${config.key}-${index}`,
+      title: item?.title ?? fallbackItem?.title ?? "Servicio",
+      description: item?.description ?? fallbackItem?.description ?? "",
     }
   })
 
@@ -126,27 +110,19 @@ export function ServicesSection() {
         const payload = await response.json()
         const services = payload?.settings?.content?.services
         if (!services) return
+        const items = Array.isArray(services)
+          ? services
+          : Array.isArray(services.items)
+          ? services.items
+          : services.items
+          ? [services.items.service_1, services.items.service_2, services.items.service_3].filter(Boolean)
+          : defaultServicesContent.items
         const nextContent = {
-          title: services.title ?? defaultServicesContent.title,
+          title: (Array.isArray(services) ? defaultServicesContent.title : services.title) ?? defaultServicesContent.title,
           subtitle:
-            services.subtitle ?? services.intro ?? defaultServicesContent.subtitle,
-          items: {
-            service_1: {
-              title: services.items?.service_1?.title ?? defaultServicesContent.items.service_1.title,
-              description:
-                services.items?.service_1?.description ?? defaultServicesContent.items.service_1.description,
-            },
-            service_2: {
-              title: services.items?.service_2?.title ?? defaultServicesContent.items.service_2.title,
-              description:
-                services.items?.service_2?.description ?? defaultServicesContent.items.service_2.description,
-            },
-            service_3: {
-              title: services.items?.service_3?.title ?? defaultServicesContent.items.service_3.title,
-              description:
-                services.items?.service_3?.description ?? defaultServicesContent.items.service_3.description,
-            },
-          },
+            (Array.isArray(services) ? defaultServicesContent.subtitle : services.subtitle ?? services.intro) ??
+            defaultServicesContent.subtitle,
+          items,
         }
         setContent(nextContent)
         window.localStorage.setItem(SERVICES_CACHE_KEY, JSON.stringify(nextContent))

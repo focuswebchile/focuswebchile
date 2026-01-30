@@ -40,34 +40,20 @@ type SiteSettings = {
     services: {
       title: string
       subtitle: string
-      items: {
-        service_1: {
-          title: string
-          description: string
-        }
-        service_2: {
-          title: string
-          description: string
-        }
-        service_3: {
-          title: string
-          description: string
-        }
-      }
+      items: Array<{
+        title: string
+        description: string
+      }>
     }
     contact: {
       title: string
       subtitle: string
       link: string
     }
-    faq: {
-      question_1: string
-      answer_1: string
-      question_2: string
-      answer_2: string
-      question_3: string
-      answer_3: string
-    }
+    faqs: Array<{
+      question: string
+      answer: string
+    }>
   }
   toggles: {
     showServices: boolean
@@ -102,28 +88,34 @@ const defaultSettings: SiteSettings = {
     services: {
       title: "",
       subtitle: "",
-      items: {
-        service_1: { title: "", description: "" },
-        service_2: { title: "", description: "" },
-        service_3: { title: "", description: "" },
-      },
+      items: [
+        { title: "", description: "" },
+        { title: "", description: "" },
+        { title: "", description: "" },
+      ],
     },
     contact: {
       title: "",
       subtitle: "",
       link: "",
     },
-    faq: {
-      question_1: "¿Cuánto cuesta una página web en Chile?",
-      answer_1:
-        "Depende del tipo de proyecto: básica ($180.000 - $600.000), corporativa ($350.000 - $1.200.000), e-commerce ($650.000 - $2.000.000+) o proyectos personalizados (desde $3.000.000). A esto se suman hosting, dominio y mantenimiento anual.",
-      question_2: "¿Cómo se calcula el valor de una página web?",
-      answer_2:
-        "Se considera diseño, número de páginas, funcionalidades, integraciones, SEO y seguridad. También se puede calcular por horas de trabajo o sumando costos de dominio, hosting, diseño, desarrollo y contenido.",
-      question_3: "¿Cuál es la inversión real de una web?",
-      answer_3:
-        "Incluye diseño y desarrollo, dominio, hosting, SSL, SEO y mantenimiento. Un proyecto básico puede costar $300.000 - $800.000, uno medio $800.000 - $2.500.000 y e-commerce $2.000.000 - $6.000.000.",
-    },
+    faqs: [
+      {
+        question: "¿Cuánto cuesta una página web en Chile?",
+        answer:
+          "Depende del tipo de proyecto: básica ($180.000 - $600.000), corporativa ($350.000 - $1.200.000), e-commerce ($650.000 - $2.000.000+) o proyectos personalizados (desde $3.000.000). A esto se suman hosting, dominio y mantenimiento anual.",
+      },
+      {
+        question: "¿Cómo se calcula el valor de una página web?",
+        answer:
+          "Se considera diseño, número de páginas, funcionalidades, integraciones, SEO y seguridad. También se puede calcular por horas de trabajo o sumando costos de dominio, hosting, diseño, desarrollo y contenido.",
+      },
+      {
+        question: "¿Cuál es la inversión real de una web?",
+        answer:
+          "Incluye diseño y desarrollo, dominio, hosting, SSL, SEO y mantenimiento. Un proyecto básico puede costar $300.000 - $800.000, uno medio $800.000 - $2.500.000 y e-commerce $2.000.000 - $6.000.000.",
+      },
+    ],
   },
   toggles: {
     showServices: true,
@@ -167,32 +159,20 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
         },
         services: {
           ...defaultSettings.content.services,
-          ...(raw.content?.services ?? {}),
-          items: {
-            ...defaultSettings.content.services.items,
-            ...(raw.content?.services?.items ?? {}),
-            service_1: {
-              ...defaultSettings.content.services.items.service_1,
-              ...(raw.content?.services?.items?.service_1 ?? {}),
-            },
-            service_2: {
-              ...defaultSettings.content.services.items.service_2,
-              ...(raw.content?.services?.items?.service_2 ?? {}),
-            },
-            service_3: {
-              ...defaultSettings.content.services.items.service_3,
-              ...(raw.content?.services?.items?.service_3 ?? {}),
-            },
-          },
+          ...(Array.isArray(raw.content?.services) ? {} : (raw.content?.services ?? {})),
+          items: Array.isArray(raw.content?.services)
+            ? raw.content?.services
+            : Array.isArray(raw.content?.services?.items)
+            ? raw.content?.services?.items
+            : defaultSettings.content.services.items,
         },
         contact: {
           ...defaultSettings.content.contact,
           ...(raw.content?.contact ?? {}),
         },
-        faq: {
-          ...defaultSettings.content.faq,
-          ...(raw.content?.faq ?? {}),
-        },
+        faqs: Array.isArray(raw.content?.faqs)
+          ? raw.content?.faqs
+          : defaultSettings.content.faqs,
       },
     }
   }
@@ -221,46 +201,37 @@ const normalizeSettings = (raw: SiteSettings | any): SiteSettings => {
           legacyContent.services?.subtitle ??
           legacyContent.services?.intro ??
           defaultSettings.content.services.subtitle,
-        items: {
-          service_1: {
-            title:
-              legacyContent.services?.items?.service_1?.title ??
-              defaultSettings.content.services.items.service_1.title,
-            description:
-              legacyContent.services?.items?.service_1?.description ??
-              defaultSettings.content.services.items.service_1.description,
-          },
-          service_2: {
-            title:
-              legacyContent.services?.items?.service_2?.title ??
-              defaultSettings.content.services.items.service_2.title,
-            description:
-              legacyContent.services?.items?.service_2?.description ??
-              defaultSettings.content.services.items.service_2.description,
-          },
-          service_3: {
-            title:
-              legacyContent.services?.items?.service_3?.title ??
-              defaultSettings.content.services.items.service_3.title,
-            description:
-              legacyContent.services?.items?.service_3?.description ??
-              defaultSettings.content.services.items.service_3.description,
-          },
-        },
+        items: Array.isArray(legacyContent.services)
+          ? legacyContent.services
+          : Array.isArray(legacyContent.services?.items)
+          ? legacyContent.services?.items
+          : [
+              legacyContent.services?.items?.service_1 ?? defaultSettings.content.services.items[0],
+              legacyContent.services?.items?.service_2 ?? defaultSettings.content.services.items[1],
+              legacyContent.services?.items?.service_3 ?? defaultSettings.content.services.items[2],
+            ],
       },
       contact: {
         title: legacyContent.contact?.title ?? defaultSettings.content.contact.title,
         subtitle: legacyContent.contact?.subtitle ?? defaultSettings.content.contact.subtitle,
         link: legacyContent.contact?.link ?? defaultSettings.content.contact.link,
       },
-      faq: {
-        question_1: legacyContent.faq?.question_1 ?? defaultSettings.content.faq.question_1,
-        answer_1: legacyContent.faq?.answer_1 ?? defaultSettings.content.faq.answer_1,
-        question_2: legacyContent.faq?.question_2 ?? defaultSettings.content.faq.question_2,
-        answer_2: legacyContent.faq?.answer_2 ?? defaultSettings.content.faq.answer_2,
-        question_3: legacyContent.faq?.question_3 ?? defaultSettings.content.faq.question_3,
-        answer_3: legacyContent.faq?.answer_3 ?? defaultSettings.content.faq.answer_3,
-      },
+      faqs: Array.isArray(legacyContent.faqs)
+        ? legacyContent.faqs
+        : [
+            {
+              question: legacyContent.faq?.question_1 ?? defaultSettings.content.faqs[0].question,
+              answer: legacyContent.faq?.answer_1 ?? defaultSettings.content.faqs[0].answer,
+            },
+            {
+              question: legacyContent.faq?.question_2 ?? defaultSettings.content.faqs[1].question,
+              answer: legacyContent.faq?.answer_2 ?? defaultSettings.content.faqs[1].answer,
+            },
+            {
+              question: legacyContent.faq?.question_3 ?? defaultSettings.content.faqs[2].question,
+              answer: legacyContent.faq?.answer_3 ?? defaultSettings.content.faqs[2].answer,
+            },
+          ],
     },
   }
 }
@@ -299,14 +270,7 @@ const updateLocalCaches = (settings: SiteSettings, siteSlug: string) => {
     )
     window.localStorage.setItem(
       buildCacheKey(FAQ_CACHE_KEY, siteSlug),
-      JSON.stringify({
-        question_1: settings.content.faq.question_1,
-        answer_1: settings.content.faq.answer_1,
-        question_2: settings.content.faq.question_2,
-        answer_2: settings.content.faq.answer_2,
-        question_3: settings.content.faq.question_3,
-        answer_3: settings.content.faq.answer_3,
-      }),
+      JSON.stringify(settings.content.faqs),
     )
     window.localStorage.setItem(
       buildCacheKey(TOGGLES_CACHE_KEY, siteSlug),
@@ -326,8 +290,7 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<string | null>(null)
   const [saveStatus, setSaveStatus] = useState<string | null>(null)
-  const serviceItems =
-    settings.content.services.items ?? defaultSettings.content.services.items
+  const serviceItems = settings.content.services.items ?? defaultSettings.content.services.items
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -806,20 +769,41 @@ export default function AdminPage() {
                         />
                       </label>
                     </div>
-                    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
-                      {([
-                        ["service_1", "Servicio 1"],
-                        ["service_2", "Servicio 2"],
-                        ["service_3", "Servicio 3"],
-                      ] as const).map(([key, label]) => (
-                        <div key={key} className="flex flex-col gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
-                          <span className="text-xs font-semibold text-foreground">{label}</span>
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+                      {serviceItems.map((item, index) => (
+                        <div
+                          key={`service-${index}`}
+                          className="flex flex-col gap-3 rounded-xl border border-border/40 bg-background/70 p-4"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-semibold text-foreground">
+                              Servicio {index + 1}
+                            </span>
+                            <button
+                              type="button"
+                              className="text-xs text-muted-foreground hover:text-primary"
+                              onClick={() =>
+                                setSettings((prev) => ({
+                                  ...prev,
+                                  content: {
+                                    ...prev.content,
+                                    services: {
+                                      ...prev.content.services,
+                                      items: prev.content.services.items.filter((_, idx) => idx !== index),
+                                    },
+                                  },
+                                }))
+                              }
+                            >
+                              Eliminar
+                            </button>
+                          </div>
                           <label className="flex flex-col gap-2">
                             <span className="text-xs">Nombre</span>
                             <input
                               type="text"
                               className="h-10 rounded-lg border border-border/60 bg-background px-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/40"
-                              value={serviceItems[key]?.title ?? ""}
+                              value={item.title}
                               onChange={(event) =>
                                 setSettings((prev) => ({
                                   ...prev,
@@ -827,15 +811,9 @@ export default function AdminPage() {
                                     ...prev.content,
                                     services: {
                                       ...prev.content.services,
-                                      items: {
-                                        ...defaultSettings.content.services.items,
-                                        ...prev.content.services.items,
-                                        [key]: {
-                                          ...defaultSettings.content.services.items[key],
-                                          ...prev.content.services.items[key],
-                                          title: event.target.value,
-                                        },
-                                      },
+                                      items: prev.content.services.items.map((current, idx) =>
+                                        idx === index ? { ...current, title: event.target.value } : current,
+                                      ),
                                     },
                                   },
                                 }))
@@ -847,7 +825,7 @@ export default function AdminPage() {
                             <textarea
                               rows={3}
                               className="rounded-lg border border-border/60 bg-background px-3 py-2 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40"
-                              value={serviceItems[key]?.description ?? ""}
+                              value={item.description}
                               onChange={(event) =>
                                 setSettings((prev) => ({
                                   ...prev,
@@ -855,15 +833,9 @@ export default function AdminPage() {
                                     ...prev.content,
                                     services: {
                                       ...prev.content.services,
-                                      items: {
-                                        ...defaultSettings.content.services.items,
-                                        ...prev.content.services.items,
-                                        [key]: {
-                                          ...defaultSettings.content.services.items[key],
-                                          ...prev.content.services.items[key],
-                                          description: event.target.value,
-                                        },
-                                      },
+                                      items: prev.content.services.items.map((current, idx) =>
+                                        idx === index ? { ...current, description: event.target.value } : current,
+                                      ),
                                     },
                                   },
                                 }))
@@ -872,6 +844,26 @@ export default function AdminPage() {
                           </label>
                         </div>
                       ))}
+                    </div>
+                    <div className="mt-4">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() =>
+                          setSettings((prev) => ({
+                            ...prev,
+                            content: {
+                              ...prev.content,
+                              services: {
+                                ...prev.content.services,
+                                items: [...prev.content.services.items, { title: "", description: "" }],
+                              },
+                            },
+                          }))
+                        }
+                      >
+                        Agregar servicio
+                      </Button>
                     </div>
                   </div>
 
@@ -945,51 +937,83 @@ export default function AdminPage() {
                       </p>
                     </div>
                     <div className="mt-4 grid gap-4">
-                      {([
-                        ["question_1", "answer_1", "Pregunta 1", "Respuesta 1"],
-                        ["question_2", "answer_2", "Pregunta 2", "Respuesta 2"],
-                        ["question_3", "answer_3", "Pregunta 3", "Respuesta 3"],
-                      ] as const).map(([questionKey, answerKey, questionLabel, answerLabel]) => {
-                        const qKey = questionKey as keyof typeof settings.content.faq
-                        const aKey = answerKey as keyof typeof settings.content.faq
-                        return (
-                        <div key={questionKey} className="grid gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
+                      {settings.content.faqs.map((faq, index) => (
+                        <div key={`faq-${index}`} className="grid gap-3 rounded-xl border border-border/40 bg-background/70 p-4">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-semibold text-foreground">FAQ {index + 1}</span>
+                            <button
+                              type="button"
+                              className="text-xs text-muted-foreground hover:text-primary"
+                              onClick={() =>
+                                setSettings((prev) => ({
+                                  ...prev,
+                                  content: {
+                                    ...prev.content,
+                                    faqs: prev.content.faqs.filter((_, idx) => idx !== index),
+                                  },
+                                }))
+                              }
+                            >
+                              Eliminar
+                            </button>
+                          </div>
                           <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                            <span>{questionLabel}</span>
+                            <span>Pregunta</span>
                             <input
                               type="text"
                               className="h-11 rounded-xl border border-border/60 bg-background px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                              value={settings.content.faq[qKey]}
+                              value={faq.question}
                               onChange={(event) =>
                                 setSettings((prev) => ({
                                   ...prev,
                                   content: {
                                     ...prev.content,
-                                    faq: { ...prev.content.faq, [qKey]: event.target.value },
+                                    faqs: prev.content.faqs.map((current, idx) =>
+                                      idx === index ? { ...current, question: event.target.value } : current,
+                                    ),
                                   },
                                 }))
                               }
                             />
                           </label>
                           <label className="text-sm text-muted-foreground flex flex-col gap-2">
-                            <span>{answerLabel}</span>
+                            <span>Respuesta</span>
                             <textarea
                               rows={3}
                               className="rounded-xl border border-border/60 bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
-                              value={settings.content.faq[aKey]}
+                              value={faq.answer}
                               onChange={(event) =>
                                 setSettings((prev) => ({
                                   ...prev,
                                   content: {
                                     ...prev.content,
-                                    faq: { ...prev.content.faq, [aKey]: event.target.value },
+                                    faqs: prev.content.faqs.map((current, idx) =>
+                                      idx === index ? { ...current, answer: event.target.value } : current,
+                                    ),
                                   },
                                 }))
                               }
                             />
                           </label>
                         </div>
-                      )})}
+                      ))}
+                    </div>
+                    <div className="mt-4">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() =>
+                          setSettings((prev) => ({
+                            ...prev,
+                            content: {
+                              ...prev.content,
+                              faqs: [...prev.content.faqs, { question: "", answer: "" }],
+                            },
+                          }))
+                        }
+                      >
+                        Agregar FAQ
+                      </Button>
                     </div>
                   </div>
                 </div>
