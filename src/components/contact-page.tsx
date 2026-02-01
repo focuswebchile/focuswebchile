@@ -20,16 +20,14 @@ export function ContactPage() {
 
   const executeRecaptcha = (action: string) =>
     new Promise<string>((resolve, reject) => {
-      if (!recaptchaSiteKey || !window.grecaptcha?.execute) {
+      const grecaptcha = window.grecaptcha
+      if (!recaptchaSiteKey || !grecaptcha?.execute) {
         reject(new Error("reCAPTCHA no disponible"))
         return
       }
 
-      window.grecaptcha.ready(() => {
-        window.grecaptcha
-          .execute(recaptchaSiteKey, { action })
-          .then(resolve)
-          .catch(reject)
+      grecaptcha.ready(() => {
+        grecaptcha.execute(recaptchaSiteKey, { action }).then(resolve).catch(reject)
       })
     })
 
