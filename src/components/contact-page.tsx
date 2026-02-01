@@ -14,14 +14,53 @@ export function ContactPage() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const executeRecaptcha = (action: string) =>
+    new Promise<string>((resolve, reject) => {
+      if (!recaptchaSiteKey || !window.grecaptcha?.execute) {
+        reject(new Error("reCAPTCHA no disponible"))
+        return
+      }
+
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(recaptchaSiteKey, { action })
+          .then(resolve)
+          .catch(reject)
+      })
+    })
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = `Contacto FocusWeb - ${formData.name}`
-    const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}%0A%0AMensaje:%0A${encodeURIComponent(
-      formData.message,
-    )}`
-    window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+    setErrorMessage(null)
+    setIsSubmitting(true)
+
+    try {
+      const token = await executeRecaptcha("contact_page")
+      const verifyResponse = await fetch("/api/recaptcha/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, action: "contact_page" }),
+      })
+      const verifyData = await verifyResponse.json()
+
+      if (!verifyData.success) {
+        throw new Error("reCAPTCHA inválido")
+      }
+
+      const subject = `Contacto FocusWeb - ${formData.name}`
+      const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}%0A%0AMensaje:%0A${encodeURIComponent(
+        formData.message,
+      )}`
+      window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+    } catch (error) {
+      setErrorMessage("No pudimos validar el envío. Intenta nuevamente.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -50,6 +89,7 @@ export function ContactPage() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  disabled={isSubmitting}
                   className="h-11 sm:h-12 text-sm sm:text-base"
                 />
               </div>
@@ -67,6 +107,7 @@ export function ContactPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
+                    disabled={isSubmitting}
                     className="h-11 sm:h-12 pl-10 text-sm sm:text-base"
                   />
                 </div>
@@ -82,13 +123,21 @@ export function ContactPage() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
+                  disabled={isSubmitting}
                   className="min-h-32 text-sm sm:text-base"
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full group h-12 sm:h-auto text-sm sm:text-base">
-                Enviar mensaje
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full group h-12 sm:h-auto text-sm sm:text-base"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
               </Button>
+
+              {errorMessage ? <p className="text-xs text-center text-destructive">{errorMessage}</p> : null}
 
               <p className="text-xs sm:text-sm text-center text-muted-foreground">
                 También puedes escribirnos directo por WhatsApp o email.
@@ -125,4 +174,13 @@ export function ContactPage() {
       </div>
     </section>
   )
+}
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
+    }
+  }
 }

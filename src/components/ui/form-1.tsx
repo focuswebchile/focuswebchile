@@ -48,24 +48,66 @@ export default function FormOne({
     message: "",
     service: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
   const titleParts = title.trim().split(/\s+/)
   const titleTail = titleParts.length > 0 ? titleParts.pop() : ""
   const titleHead = titleParts.join(" ")
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
-    if (onSubmit) {
-      onSubmit(formData)
-      return
-    }
+  const executeRecaptcha = (action: string) =>
+    new Promise<string>((resolve, reject) => {
+      if (!recaptchaSiteKey || !window.grecaptcha?.execute) {
+        reject(new Error("reCAPTCHA no disponible"))
+        return
+      }
 
-    const subject = `Contacto FocusWeb - ${formData.name}`
-    const serviceLine = formData.service ? `%0AServicio: ${formData.service}` : ""
-    const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}${serviceLine}%0A%0AMensaje:%0A${encodeURIComponent(
-      formData.message,
-    )}`
-    window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(recaptchaSiteKey, { action })
+          .then(resolve)
+          .catch(reject)
+      })
+    })
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
+    setErrorMessage(null)
+    setIsSubmitting(true)
+
+    try {
+      const token = await executeRecaptcha("contact_main")
+      const verifyResponse = await fetch("/api/recaptcha/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, action: "contact_main" }),
+      })
+      const verifyData = await verifyResponse.json()
+
+      if (!verifyData.success) {
+        throw new Error("reCAPTCHA inválido")
+      }
+
+      if (onSubmit) {
+        onSubmit(formData)
+        return
+      }
+
+      const subject = `Contacto FocusWeb - ${formData.name}`
+      const serviceLine = formData.service ? `%0AServicio: ${formData.service}` : ""
+      const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}${serviceLine}%0A%0AMensaje:%0A${encodeURIComponent(
+        formData.message,
+      )}`
+      window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+    } catch (error) {
+      setErrorMessage("No pudimos validar el envío. Intenta nuevamente.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
+
+  const isDisabled = isSubmitting
+  
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-foreground">
@@ -93,15 +135,16 @@ export default function FormOne({
         </Label>
         <div className="flex items-center mt-2 mb-4 h-11 pl-3 border border-border rounded-full focus-within:ring-2 focus-within:ring-primary/40 transition-all overflow-hidden bg-background">
           <User className="h-4 w-4 text-muted-foreground" />
-          <Input
-            id="name"
-            type="text"
-            className="h-full px-2 w-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
-            placeholder="Tu nombre"
-            value={formData.name}
-            onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-            required
-          />
+        <Input
+          id="name"
+          type="text"
+          className="h-full px-2 w-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
+          placeholder="Tu nombre"
+          value={formData.name}
+          onChange={(event) => setFormData({ ...formData, name: event.target.value })}
+          required
+          disabled={isDisabled}
+        />
         </div>
 
         <Label htmlFor="email" className="font-medium mt-4">
@@ -109,15 +152,16 @@ export default function FormOne({
         </Label>
         <div className="flex items-center mt-2 mb-4 h-11 pl-3 border border-border rounded-full focus-within:ring-2 focus-within:ring-primary/40 transition-all overflow-hidden bg-background">
           <Mail className="h-4 w-4 text-muted-foreground" />
-          <Input
-            id="email"
-            type="email"
-            className="h-full px-2 w-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
-            placeholder="tu@email.com"
-            value={formData.email}
-            onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-            required
-          />
+        <Input
+          id="email"
+          type="email"
+          className="h-full px-2 w-full border-0 shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
+          placeholder="tu@email.com"
+          value={formData.email}
+          onChange={(event) => setFormData({ ...formData, email: event.target.value })}
+          required
+          disabled={isDisabled}
+        />
         </div>
 
         {showServiceSelect && (
@@ -130,6 +174,7 @@ export default function FormOne({
               value={formData.service}
               onChange={(event) => setFormData({ ...formData, service: event.target.value })}
               required
+              disabled={isDisabled}
               style={{
                 backgroundImage:
                   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>\")",
@@ -159,13 +204,31 @@ export default function FormOne({
           value={formData.message}
           onChange={(event) => setFormData({ ...formData, message: event.target.value })}
           required
+          disabled={isDisabled}
         />
 
-        <Button type="submit" className="flex items-center justify-center gap-2 mt-5 w-full rounded-full text-sm">
-          {submitLabel}
+        <Button
+          type="submit"
+          className="flex items-center justify-center gap-2 mt-5 w-full rounded-full text-sm"
+          disabled={isDisabled}
+        >
+          {isSubmitting ? "Enviando..." : submitLabel}
           <Send className="h-4 w-4" />
         </Button>
+
+        {errorMessage ? (
+          <p className="mt-3 text-xs text-center text-destructive">{errorMessage}</p>
+        ) : null}
       </div>
     </form>
   )
+}
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
+    }
+  }
 }

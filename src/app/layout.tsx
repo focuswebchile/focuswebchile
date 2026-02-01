@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import HashRedirect from "@/components/auth/hash-redirect"
 import { ThemeSync } from "@/components/theme-sync"
+import { RecaptchaScript } from "@/components/recaptcha-script"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -161,6 +162,7 @@ export default function RootLayout({
               gtag('config', 'G-33SDJFM25D');
             `}
           </Script>
+          <RecaptchaScript />
           <HashRedirect />
           <ThemeSync />
           {children}
