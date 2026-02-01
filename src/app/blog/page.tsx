@@ -70,6 +70,17 @@ const posts = [
       alt: "Crear una página web desde cero",
     },
   },
+  {
+    category: "Ecommerce",
+    title: "De Instagram a tu Propia Tienda Online: lo que nadie te cuenta antes de empezar",
+    excerpt:
+      "Guía completa para pasar de vender por DMs a una tienda online real en Chile, sin letra chica.",
+    href: "/blog/instagram-a-tienda-online/",
+    image: {
+      src: "/instagram-a-tienda-online.webp",
+      alt: "De Instagram a tienda online",
+    },
+  },
 ]
 
 export default function BlogPage() {
@@ -80,12 +91,12 @@ export default function BlogPage() {
         <section className="pt-16 pb-6 sm:pt-20 sm:pb-8 lg:pt-24 lg:pb-10 px-4 sm:px-6">
           <div className="container mx-auto max-w-6xl">
             <div className="mt-4">
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10">
+              <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10 transition-transform duration-300">
                 <Image
                   src={posts[0].image.src}
                   alt={posts[0].image.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 960px, (min-width: 640px) 90vw, 100vw"
                   priority
                 />
@@ -121,14 +132,18 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {posts.slice(1).map((post) => (
                 <article key={post.title} className="flex flex-col gap-4 hover:opacity-90 transition-opacity">
-                  <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70">
-                    <Image
-                      src={post.image.src}
-                      alt={post.image.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
-                    />
+                  <div className="group relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70 transition-transform duration-300">
+                    {post.image ? (
+                      <Image
+                        src={post.image.src}
+                        alt={post.image.alt}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-sky-50" />
+                    )}
                   </div>
                   <div className="flex flex-row gap-4 items-center">
                     <Badge>{post.category}</Badge>

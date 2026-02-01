@@ -102,7 +102,7 @@ export default function SobreMiPage() {
                 <div className="relative h-full min-h-[320px] w-full overflow-hidden rounded-2xl">
                   <Image
                     src="/lo-que-me-mueve.webp"
-                    alt=""
+                    alt="Felipe Ibar | Focus Web"
                     fill
                     className="h-full w-full object-cover opacity-95 saturate-[1.08] contrast-[1.08] brightness-[0.98]"
                     sizes="(max-width: 768px) 100vw, 50vw"
