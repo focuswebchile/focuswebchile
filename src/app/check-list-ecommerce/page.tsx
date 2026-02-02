@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ScrollButton } from "@/components/ui/scroll-button"
+import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import {
   AlertTriangle,
   BadgeCheck,
@@ -138,7 +139,7 @@ export default function CheckListEcommercePage() {
               </aside>
 
               <div className="space-y-6">
-                <div className="flex items-center justify-between rounded-2xl border border-border/60 bg-white/70 px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground lg:hidden">
+                <div className="flex items-center justify-between rounded-2xl border border-border/60 bg-white/70 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:px-6 lg:hidden">
                   <span>Guía ecommerce</span>
                   <span>01/13</span>
                 </div>
@@ -2181,6 +2182,7 @@ export default function CheckListEcommercePage() {
         </section>
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   )
 }

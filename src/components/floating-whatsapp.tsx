@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { MessageCircle, X } from "lucide-react";
 
 const whatsappNumber = "420733796959";
@@ -8,9 +9,28 @@ const whatsappBase = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text
 
 export function FloatingWhatsApp() {
   const [open, setOpen] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
-  return (
-    <div className="whatsapp-widget" data-open={open ? "true" : "false"}>
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return createPortal(
+    <div
+      className="whatsapp-widget"
+      data-open={open ? "true" : "false"}
+      style={{
+        position: "fixed",
+        right: "24px",
+        bottom: "24px",
+        zIndex: 100000,
+        transform: "none",
+      }}
+    >
       <div className="whatsapp-panel" aria-live="polite">
         <button
           className="whatsapp-close"
@@ -58,6 +78,7 @@ export function FloatingWhatsApp() {
         <MessageCircle className="whatsapp-icon" size={18} />
         <span className="label">WhatsApp</span>
       </button>
-    </div>
+    </div>,
+    document.body
   );
 }

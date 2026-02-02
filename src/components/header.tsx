@@ -61,7 +61,7 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <nav className="container mx-auto py-3 sm:py-4 pl-[max(1.75rem,env(safe-area-inset-left))] pr-[max(1.75rem,env(safe-area-inset-right))] md:pl-[max(2rem,env(safe-area-inset-left))] md:pr-[max(2rem,env(safe-area-inset-right))]">
           <div className="flex items-center justify-between">
             <a
               href={isHome ? "#hero" : "https://focusweb.cl/"}

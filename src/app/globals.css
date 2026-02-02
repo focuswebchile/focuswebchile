@@ -269,10 +269,13 @@ body[data-font="nunito"] {
 }
 
 .whatsapp-widget {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
+  position: fixed !important;
+  bottom: max(24px, env(safe-area-inset-bottom)) !important;
+  right: max(24px, env(safe-area-inset-right)) !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 100000;
+  transform: none !important;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -406,8 +409,8 @@ body[data-font="nunito"] {
 
 @media (max-width: 640px) {
   .whatsapp-widget {
-    bottom: 20px;
-    right: 16px;
+    bottom: max(20px, env(safe-area-inset-bottom)) !important;
+    right: max(20px, env(safe-area-inset-right)) !important;
   }
 
   .whatsapp-panel {
