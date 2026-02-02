@@ -217,6 +217,9 @@ export default function FormOne({
           {isSubmitting ? "Enviando..." : submitLabel}
           <Send className="h-4 w-4" />
         </Button>
+        <p className="mt-2 text-xs text-center text-muted-foreground sm:hidden">
+          Protegido por reCAPTCHA
+        </p>
 
         {errorMessage ? (
           <p className="mt-3 text-xs text-center text-destructive">{errorMessage}</p>

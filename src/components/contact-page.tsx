@@ -139,6 +139,9 @@ export function ContactPage() {
               >
                 {isSubmitting ? "Enviando..." : "Enviar mensaje"}
               </Button>
+              <p className="mt-2 text-xs text-center text-muted-foreground sm:hidden">
+                Protegido por reCAPTCHA
+              </p>
 
               {errorMessage ? <p className="text-xs text-center text-destructive">{errorMessage}</p> : null}
 
