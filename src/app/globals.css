@@ -419,3 +419,10 @@ body[data-font="nunito"] {
     padding: 9px 14px;
   }
 }
+
+/* Move reCAPTCHA badge away from WhatsApp floating button */
+.grecaptcha-badge {
+  right: auto !important;
+  left: 16px !important;
+  bottom: 16px !important;
+}
