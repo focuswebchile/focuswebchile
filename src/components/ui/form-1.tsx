@@ -50,6 +50,7 @@ export default function FormOne({
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
   const titleParts = title.trim().split(/\s+/)
   const titleTail = titleParts.length > 0 ? titleParts.pop() : ""
@@ -71,19 +72,21 @@ export default function FormOne({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
     setErrorMessage(null)
+    setSuccessMessage(null)
     setIsSubmitting(true)
 
     try {
-      const token = await executeRecaptcha("contact_main")
-      const verifyResponse = await fetch("/api/recaptcha/verify", {
+      const action = "contact_main"
+      const token = await executeRecaptcha(action)
+      const submitResponse = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, action: "contact_main" }),
+        body: JSON.stringify({ ...formData, token, action }),
       })
-      const verifyData = await verifyResponse.json()
+      const submitData = await submitResponse.json()
 
-      if (!verifyData.success) {
-        throw new Error("reCAPTCHA inválido")
+      if (!submitResponse.ok || !submitData.success) {
+        throw new Error(submitData?.error || "No pudimos enviar el mensaje")
       }
 
       if (onSubmit) {
@@ -91,14 +94,10 @@ export default function FormOne({
         return
       }
 
-      const subject = `Contacto FocusWeb - ${formData.name}`
-      const serviceLine = formData.service ? `%0AServicio: ${formData.service}` : ""
-      const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}${serviceLine}%0A%0AMensaje:%0A${encodeURIComponent(
-        formData.message,
-      )}`
-      window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+      setFormData({ name: "", email: "", message: "", service: "" })
+      setSuccessMessage("Mensaje enviado. Te responderemos pronto.")
     } catch (error) {
-      setErrorMessage("No pudimos validar el envío. Intenta nuevamente.")
+      setErrorMessage("No pudimos enviar el mensaje. Intenta nuevamente.")
     } finally {
       setIsSubmitting(false)
     }
@@ -109,6 +108,11 @@ export default function FormOne({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-foreground">
+      {successMessage && (
+        <div className="mb-4 w-full max-w-xl rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm text-emerald-700">
+          {successMessage}
+        </div>
+      )}
       <p className="text-xs bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">{badge}</p>
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold py-4 text-center text-balance">
         {titleHead && <span className="text-foreground">{titleHead} </span>}

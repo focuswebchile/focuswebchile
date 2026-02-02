@@ -16,6 +16,7 @@ export function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
   const executeRecaptcha = (action: string) =>
@@ -34,28 +35,27 @@ export function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setErrorMessage(null)
+    setSuccessMessage(null)
     setIsSubmitting(true)
 
     try {
-      const token = await executeRecaptcha("contact_page")
-      const verifyResponse = await fetch("/api/recaptcha/verify", {
+      const action = "contact_page"
+      const token = await executeRecaptcha(action)
+      const submitResponse = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, action: "contact_page" }),
+        body: JSON.stringify({ ...formData, token, action }),
       })
-      const verifyData = await verifyResponse.json()
+      const submitData = await submitResponse.json()
 
-      if (!verifyData.success) {
-        throw new Error("reCAPTCHA inválido")
+      if (!submitResponse.ok || !submitData.success) {
+        throw new Error(submitData?.error || "No pudimos enviar el mensaje")
       }
 
-      const subject = `Contacto FocusWeb - ${formData.name}`
-      const body = `Nombre: ${formData.name}%0AEmail: ${formData.email}%0A%0AMensaje:%0A${encodeURIComponent(
-        formData.message,
-      )}`
-      window.location.href = `mailto:focuswebchile@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+      setFormData({ name: "", email: "", message: "" })
+      setSuccessMessage("Mensaje enviado. Te responderemos pronto.")
     } catch (error) {
-      setErrorMessage("No pudimos validar el envío. Intenta nuevamente.")
+      setErrorMessage("No pudimos enviar el mensaje. Intenta nuevamente.")
     } finally {
       setIsSubmitting(false)
     }
@@ -77,6 +77,11 @@ export function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <Card className="p-6 sm:p-8 lg:p-10 glass border-border/50 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+              {successMessage && (
+                <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+                  {successMessage}
+                </div>
+              )}
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-sm sm:text-base">
                   Nombre
