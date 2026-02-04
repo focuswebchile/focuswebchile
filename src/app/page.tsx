@@ -2,12 +2,7 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
-import dynamic from "next/dynamic"
-
-const HomeSections = dynamic(() => import("@/components/home-sections"), {
-  ssr: false,
-  loading: () => <div className="min-h-[40vh]" aria-hidden="true" />,
-})
+import HomeSectionsLazy from "@/components/home-sections-lazy"
 
 export default function Home() {
   return (
@@ -15,7 +10,7 @@ export default function Home() {
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <HeroSection />
-        <HomeSections />
+        <HomeSectionsLazy />
         <Footer />
       </main>
       <FloatingWhatsApp />
