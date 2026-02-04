@@ -23,6 +23,7 @@ export function HeroSection() {
   const [heroContent, setHeroContent] = useState(defaultHero)
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
   const [mounted, setMounted] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(true)
 
   useEffect(() => {
     setMounted(true)
@@ -34,6 +35,19 @@ export function HeroSection() {
     update()
     window.addEventListener("resize", update)
     return () => window.removeEventListener("resize", update)
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const media = window.matchMedia("(min-width: 1024px)")
+    const update = () => setIsDesktop(media.matches)
+    update()
+    if (media.addEventListener) {
+      media.addEventListener("change", update)
+      return () => media.removeEventListener("change", update)
+    }
+    media.addListener(update)
+    return () => media.removeListener(update)
   }, [])
 
   useEffect(() => {
@@ -93,7 +107,7 @@ export function HeroSection() {
       className="relative min-h-screen overflow-hidden bg-background flex items-center justify-center"
     >
       <div className="absolute inset-0">
-        {mounted && (
+        {mounted && isDesktop ? (
           <>
             <MeshGradient
               width={dimensions.width}
@@ -108,6 +122,8 @@ export function HeroSection() {
             />
             <div className="absolute inset-0 pointer-events-none bg-white/20" />
           </>
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-[#22c55e] via-[#52a9ff] to-[#bff1d0]" />
         )}
       </div>
 
