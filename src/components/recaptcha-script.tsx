@@ -1,14 +1,41 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 let recaptchaLoaded = false
 
-export function RecaptchaScript() {
+type RecaptchaScriptProps = {
+  lazy?: boolean
+  rootMargin?: string
+}
+
+export function RecaptchaScript({ lazy = false, rootMargin = "200px" }: RecaptchaScriptProps) {
   const [siteKey, setSiteKey] = useState<string | null>(null)
+  const [isInView, setIsInView] = useState(!lazy)
+  const triggerRef = useRef<HTMLSpanElement | null>(null)
 
   useEffect(() => {
-    if (siteKey || recaptchaLoaded) return
+    if (!lazy || isInView) return
+
+    const node = triggerRef.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin }
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [lazy, isInView, rootMargin])
+
+  useEffect(() => {
+    if (!isInView || siteKey || recaptchaLoaded) return
 
     const fetchKey = async () => {
       try {
@@ -23,7 +50,7 @@ export function RecaptchaScript() {
     }
 
     fetchKey()
-  }, [siteKey])
+  }, [isInView, siteKey])
 
   useEffect(() => {
     if (!siteKey || recaptchaLoaded) return
@@ -38,5 +65,7 @@ export function RecaptchaScript() {
     document.head.appendChild(script)
   }, [siteKey])
 
-  return null
+  if (!lazy) return null
+
+  return <span ref={triggerRef} className="sr-only" aria-hidden="true" />
 }

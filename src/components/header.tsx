@@ -12,8 +12,8 @@ const navItems = [
   { name: "Nuestro Proceso", href: "/nuestro-proceso" },
   { name: "Precios", href: "/precios/" },
   { name: "Testimonios", href: "/#testimonios" },
-  { name: "Noticias", href: "/blog/" },
   { name: "Mi historia", href: "/mi-historia/" },
+  { name: "Noticias", href: "/blog/" },
   { name: "FAQ", href: "/faq/" },
   { name: "Contacto", href: "/contacto/" },
 ]

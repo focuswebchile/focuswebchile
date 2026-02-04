@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Send, User } from "lucide-react"
+import { RecaptchaScript } from "@/components/recaptcha-script"
 
 type FormOneProps = {
   badge?: string
@@ -108,6 +109,7 @@ export default function FormOne({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-foreground">
+      <RecaptchaScript lazy />
       {successMessage && (
         <div className="mb-4 w-full max-w-xl rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm text-emerald-700">
           {successMessage}

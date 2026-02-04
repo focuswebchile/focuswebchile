@@ -2,6 +2,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import FormOne from "@/components/ui/form-1"
 
 const BACKEND_URL =
@@ -59,9 +60,11 @@ export function ContactSection() {
             <div className="absolute -top-10 left-6 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute bottom-10 right-6 h-40 w-40 rounded-full bg-info/10 blur-3xl" />
             <div className="relative w-full max-w-xl p-2 sm:p-4">
-              <img
+              <Image
                 src="/email2.svg"
                 alt="Ilustración de contacto FocusWeb"
+                width={640}
+                height={480}
                 className="h-auto w-full"
                 loading="lazy"
               />

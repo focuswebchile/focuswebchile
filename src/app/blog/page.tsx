@@ -43,6 +43,7 @@ const posts = [
     excerpt:
       "Te explicamos cuándo conviene cada una, con ejemplos reales y diseño web pensado para pymes en Chile.",
     href: "/blog/landing-page-vs-pagina-web/",
+    date: "05-01-2026",
     image: {
       src: "/landingpagevswebsite.webp",
       alt: "Landing Page vs Página Web",
@@ -54,6 +55,7 @@ const posts = [
     excerpt:
       "Todo lo que necesitas saber para elegir bien entre landing, web completa o tienda online, sin tecnicismos.",
     href: "/blog/como-crear-una-pagina-web-en-chile/",
+    date: "12-01-2026",
     image: {
       src: "/guiaclaraparanegociosypymes.webp",
       alt: "Guía clara para negocios y pymes en Chile",
@@ -65,6 +67,7 @@ const posts = [
     excerpt:
       "Guía paso a paso para emprendedores y pymes que quieren crear su web desde cero, sin enredos.",
     href: "/crear-pagina-web-desde-cero/",
+    date: "19-01-2026",
     image: {
       src: "/sintecnisimo.webp",
       alt: "Crear una página web desde cero",
@@ -76,9 +79,22 @@ const posts = [
     excerpt:
       "Guía completa para pasar de vender por DMs a una tienda online real en Chile, sin letra chica.",
     href: "/blog/instagram-a-tienda-online/",
+    date: "26-01-2026",
     image: {
       src: "/instagram-a-tienda-online.webp",
       alt: "De Instagram a tienda online",
+    },
+  },
+  {
+    category: "Errores",
+    title: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
+    excerpt:
+      "Los errores más comunes que están costando dinero a las PyMEs y cómo corregirlos con soluciones reales.",
+    href: "/blog/errores-paginas-web-pymes-chile/",
+    date: "02-02-2026",
+    image: {
+      src: "/10-errores-criticos.webp",
+      alt: "10 errores críticos en páginas web de PyMEs chilenas",
     },
   },
 ]
@@ -103,7 +119,7 @@ export default function BlogPage() {
               </div>
             </div>
             <article className="mt-6 flex flex-col gap-4 hover:opacity-90 transition-opacity">
-              <div className="flex flex-row gap-4 items-center">
+              <div className="flex flex-row flex-wrap gap-4 items-center">
                 <Badge>{posts[0].category}</Badge>
                 <div className="flex flex-row gap-2 text-sm items-center text-muted-foreground">
                   <span>Autor</span>
@@ -113,6 +129,7 @@ export default function BlogPage() {
                   </Avatar>
                   <span className="text-foreground">FocusWeb</span>
                 </div>
+                <span className="text-sm text-muted-foreground">• {posts[0].date}</span>
               </div>
               <div className="flex flex-col gap-2">
                 <a
@@ -145,7 +162,7 @@ export default function BlogPage() {
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-sky-50" />
                     )}
                   </div>
-                  <div className="flex flex-row gap-4 items-center">
+                  <div className="flex flex-row flex-wrap gap-4 items-center">
                     <Badge>{post.category}</Badge>
                     <div className="flex flex-row gap-2 text-sm items-center text-muted-foreground">
                       <span>Autor</span>
@@ -155,6 +172,7 @@ export default function BlogPage() {
                       </Avatar>
                       <span className="text-foreground">FocusWeb</span>
                     </div>
+                    <span className="text-sm text-muted-foreground">• {post.date}</span>
                   </div>
                   <div className="flex flex-col gap-2">
                     <a
