@@ -11,26 +11,11 @@ import { ContactSection } from "@/components/contact-section"
 import { FAQSection } from "@/components/faq-section"
 import { useSiteToggles } from "@/components/toggle-sections"
 
-function LazyOnMobile({ children }: { children: ReactNode }) {
-  const [isDesktop, setIsDesktop] = useState(true)
+function LazyOnViewport({ children }: { children: ReactNode }) {
   const [hasIntersected, setHasIntersected] = useState(false)
   const placeholderRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (typeof window === "undefined") return
-    const media = window.matchMedia("(min-width: 1024px)")
-    const update = () => setIsDesktop(media.matches)
-    update()
-    if (media.addEventListener) {
-      media.addEventListener("change", update)
-      return () => media.removeEventListener("change", update)
-    }
-    media.addListener(update)
-    return () => media.removeListener(update)
-  }, [])
-
-  useEffect(() => {
-    if (isDesktop) return
     const target = placeholderRef.current
     if (!target) return
     const observer = new IntersectionObserver(
@@ -40,13 +25,13 @@ function LazyOnMobile({ children }: { children: ReactNode }) {
           observer.disconnect()
         }
       },
-      { rootMargin: "200px 0px" },
+      { rootMargin: "300px 0px" },
     )
     observer.observe(target)
     return () => observer.disconnect()
-  }, [isDesktop])
+  }, [])
 
-  if (isDesktop || hasIntersected) {
+  if (hasIntersected) {
     return <>{children}</>
   }
 
@@ -60,32 +45,32 @@ export function HomeSections() {
     <>
       <BridgeTyping />
       {toggles.showServices && (
-        <LazyOnMobile>
+        <LazyOnViewport>
           <ServicesSection />
-        </LazyOnMobile>
+        </LazyOnViewport>
       )}
-      <LazyOnMobile>
+      <LazyOnViewport>
         <FeatureStepsSection />
-      </LazyOnMobile>
+      </LazyOnViewport>
       {toggles.showTestimonials && (
-        <LazyOnMobile>
+        <LazyOnViewport>
           <TestimonialsSection />
-        </LazyOnMobile>
+        </LazyOnViewport>
       )}
       {toggles.showProcess && (
-        <LazyOnMobile>
+        <LazyOnViewport>
           <ProcessSection />
-        </LazyOnMobile>
+        </LazyOnViewport>
       )}
       {toggles.showContact && (
-        <LazyOnMobile>
+        <LazyOnViewport>
           <ContactSection />
-        </LazyOnMobile>
+        </LazyOnViewport>
       )}
       {toggles.showFAQ && (
-        <LazyOnMobile>
+        <LazyOnViewport>
           <FAQSection />
-        </LazyOnMobile>
+        </LazyOnViewport>
       )}
     </>
   )
