@@ -36,7 +36,17 @@ export function FeatureSteps({
   const titleTail = titleParts.length > 0 ? titleParts.pop() : ""
   const titleHead = titleParts.join(" ")
 
+  const isReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  const isSmallScreen = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches
+  const shouldAutoPlay = !isReducedMotion && !isSmallScreen
+
   useEffect(() => {
+    if (!shouldAutoPlay) {
+      return
+    }
+
     const timer = setInterval(() => {
       if (progress < 100) {
         setProgress((prev) => prev + 100 / (autoPlayInterval / 100))
@@ -47,7 +57,7 @@ export function FeatureSteps({
     }, 100)
 
     return () => clearInterval(timer)
-  }, [progress, features.length, autoPlayInterval])
+  }, [progress, features.length, autoPlayInterval, shouldAutoPlay])
 
   return (
     <section className={cn("py-12 sm:py-16 lg:py-20 px-4 sm:px-6", className)}>

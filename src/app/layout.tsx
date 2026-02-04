@@ -141,7 +141,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
           <Script
             id="structured-data"
@@ -149,7 +149,7 @@ export default function RootLayout({
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
-          <Script id="ga4" strategy="afterInteractive">
+          <Script id="ga4" strategy="lazyOnload">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

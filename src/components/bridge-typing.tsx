@@ -8,6 +8,7 @@ const bridgeLines = ["Tienes una idea en mente", "Esta es tu señal", "Bienvenid
 
 export function BridgeTyping() {
   const [reducedMotion, setReducedMotion] = useState(false)
+  const [isCompact, setIsCompact] = useState(false)
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -22,12 +23,27 @@ export function BridgeTyping() {
     return () => media.removeListener(update)
   }, [])
 
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const media = window.matchMedia("(max-width: 768px)")
+    const update = () => setIsCompact(media.matches)
+    update()
+    if (media.addEventListener) {
+      media.addEventListener("change", update)
+      return () => media.removeEventListener("change", update)
+    }
+    media.addListener(update)
+    return () => media.removeListener(update)
+  }, [])
+
+  const shouldAnimate = !reducedMotion && !isCompact
+
 
   return (
     <section className="py-24 md:py-32 px-4 sm:px-6">
       <div className="mx-auto max-w-5xl text-center">
         <div className="block text-center font-semibold tracking-tight leading-[1.15] text-2xl sm:text-5xl md:text-6xl lg:text-[64px] max-w-none sm:max-w-[46ch] mx-auto min-h-[1.4em] text-foreground">
-          {reducedMotion ? (
+          {!shouldAnimate ? (
             <>
               <span className="text-foreground">Estás pensando en una </span>
               <span className="bg-gradient-to-r from-primary to-info bg-clip-text text-transparent">web</span>
