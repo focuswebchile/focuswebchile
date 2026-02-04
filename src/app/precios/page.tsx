@@ -46,9 +46,10 @@ export default function PreciosPage() {
     <>
       <Header />
       <main className="precios-page bg-background gradient-mesh">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
         <div id="hero" />
-        <div dangerouslySetInnerHTML={{ __html: preciosHtml }} />
+        <article className="precios-content" aria-label="Planes y precios">
+          <div dangerouslySetInnerHTML={{ __html: preciosHtml }} />
+        </article>
         <section className="pb-16 px-6 md:px-10">
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
             Si necesitas una página que convierta, mira nuestras{" "}

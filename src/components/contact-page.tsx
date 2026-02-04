@@ -139,8 +139,25 @@ export function ContactPage() {
               >
                 {isSubmitting ? "Enviando..." : "Enviar mensaje"}
               </Button>
-              <p className="mt-2 text-xs text-center text-muted-foreground sm:hidden">
-                Protegido por reCAPTCHA
+              <p className="mt-2 text-xs text-center text-muted-foreground">
+                Protegido por reCAPTCHA ·{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 hover:text-foreground"
+                >
+                  Privacidad
+                </a>{" "}
+                ·{" "}
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 hover:text-foreground"
+                >
+                  Términos
+                </a>
               </p>
 
               {errorMessage ? <p className="text-xs text-center text-destructive">{errorMessage}</p> : null}
@@ -159,7 +176,7 @@ export function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm uppercase tracking-wide text-muted-foreground">Email</p>
-                  <p className="text-base font-semibold">focuswebchile@gmail.com</p>
+                  <p className="text-base font-semibold">Formulario de contacto directo</p>
                 </div>
               </div>
             </Card>

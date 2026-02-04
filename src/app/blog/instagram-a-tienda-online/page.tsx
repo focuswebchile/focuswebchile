@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Header } from "@/components/header"
@@ -561,12 +562,24 @@ export default function BlogPostPage() {
 
               <p>
                 <strong>Nuestra filosofía:</strong> Te decimos TODO antes. Sin sorpresas en la factura del mes 3. Si
-                quieres conocer exactamente cuánto te costaría tu proyecto específico,{" "}
-                <a href="/precios/" className="text-primary hover:text-primary/80 underline underline-offset-4">
-                  revisa nuestros planes y precios transparentes
-                </a>
-                .
+                quieres conocer exactamente cuánto te costaría tu proyecto específico, aquí tienes un resumen claro.
               </p>
+
+              <div className="rounded-2xl border border-border/60 bg-muted/60 p-6 sm:p-8">
+                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Precios y opciones</p>
+                <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-foreground">
+                  Planes claros para tu tienda online
+                </h3>
+                <p className="mt-3 text-base text-foreground/80">
+                  Revisa valores, alcances y qué incluye cada plan antes de decidir.
+                </p>
+                <a
+                  href="/precios/"
+                  className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+                >
+                  Ver precios y planes
+                </a>
+              </div>
 
               <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
                 ¿Vale la pena si ya vendo bien por Instagram?

@@ -122,9 +122,9 @@ export default function FormOne({
         {subtitle}{" "}
         {showEmailLine && (
           <>
-            También puedes escribir a{" "}
-            <a href="mailto:focuswebchile@gmail.com" className="text-primary hover:underline">
-              focuswebchile@gmail.com
+            También puedes escribirnos desde nuestro{" "}
+            <a href="/contacto/" className="text-primary hover:underline">
+              formulario de contacto
             </a>
             .
           </>
@@ -217,8 +217,25 @@ export default function FormOne({
           {isSubmitting ? "Enviando..." : submitLabel}
           <Send className="h-4 w-4" />
         </Button>
-        <p className="mt-2 text-xs text-center text-muted-foreground sm:hidden">
-          Protegido por reCAPTCHA
+        <p className="mt-2 text-xs text-center text-muted-foreground">
+          Protegido por reCAPTCHA ·{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-4 hover:text-foreground"
+          >
+            Privacidad
+          </a>{" "}
+          ·{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-4 hover:text-foreground"
+          >
+            Términos
+          </a>
         </p>
 
         {errorMessage ? (

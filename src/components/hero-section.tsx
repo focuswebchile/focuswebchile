@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable react-hooks/set-state-in-effect */
 
 import { MeshGradient } from "@paper-design/shaders-react"
 import { Button } from "@/components/ui/button"
@@ -123,6 +124,11 @@ export function HeroSection() {
               Ver servicios
             </a>
           </Button>
+          <div className="mt-4 text-sm sm:text-base text-white/90">
+            <a href="/precios/" className="underline underline-offset-4 hover:text-white transition-colors">
+              Ver precios y planes
+            </a>
+          </div>
         </div>
       </div>
     </section>

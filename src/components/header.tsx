@@ -12,10 +12,10 @@ const navItems = [
   { name: "Nuestro Proceso", href: "/nuestro-proceso" },
   { name: "Precios", href: "/precios/" },
   { name: "Testimonios", href: "/#testimonios" },
-  { name: "Contacto", href: "/contacto/" },
   { name: "Noticias", href: "/blog/" },
   { name: "Mi historia", href: "/mi-historia/" },
   { name: "FAQ", href: "/faq/" },
+  { name: "Contacto", href: "/contacto/" },
 ]
 
 export function Header() {

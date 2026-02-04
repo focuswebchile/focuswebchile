@@ -427,20 +427,7 @@ body[data-font="nunito"] {
   }
 }
 
-/* Move reCAPTCHA badge away from WhatsApp floating button */
+/* Hide reCAPTCHA badge (use inline attribution text instead) */
 .grecaptcha-badge {
-  right: auto !important;
-  left: 16px !important;
-  bottom: 16px !important;
-  transform: scale(0.78);
-  transform-origin: left bottom;
-  z-index: 99999;
-}
-
-@media (max-width: 640px) {
-  .grecaptcha-badge {
-    left: 12px !important;
-    bottom: 12px !important;
-    transform: scale(0.60);
-  }
+  display: none !important;
 }

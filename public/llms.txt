@@ -1,0 +1,10 @@
+# FocusWeb – llms.txt
+User-agent: *
+Disallow: /admin/
+
+Sitemap: https://focusweb.cl/sitemap.xml
+
+## About
+Site: https://focusweb.cl
+Purpose: Desarrollo y diseño web para pymes y emprendedores en Chile.
+Language: es-CL

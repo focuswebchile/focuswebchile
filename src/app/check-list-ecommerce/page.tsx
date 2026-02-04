@@ -2153,7 +2153,7 @@ export default function CheckListEcommercePage() {
                               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                                 Email
                               </p>
-                              <p className="text-sm font-semibold text-foreground">focuswebchile@gmail.com</p>
+                              <p className="text-sm font-semibold text-foreground">Formulario de contacto directo</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-white px-4 py-3">

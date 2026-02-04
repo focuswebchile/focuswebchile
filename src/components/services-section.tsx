@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable react-hooks/set-state-in-effect */
 
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"

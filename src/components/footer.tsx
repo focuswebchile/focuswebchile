@@ -65,7 +65,7 @@ export function Footer() {
                 <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </a>
               <a
-                href="mailto:focuswebchile@gmail.com"
+                href="/contacto/"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />

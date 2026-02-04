@@ -120,17 +120,13 @@ export default function RootLayout({
       logo: "https://focusweb.cl/logo-512.png",
       description:
         "Estudio de desarrollo y diseño web en Chile enfocado en pymes y emprendedores.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      name: "Focus Web",
-      url: "https://focusweb.cl",
-      serviceType: "Desarrollo web",
-      areaServed: "Chile",
+      areaServed: [
+        {
+          "@type": "Country",
+          name: "Chile",
+        },
+      ],
       availableLanguage: "es-CL",
-      description:
-        "Servicios de desarrollo web, landing pages y diseño web profesional para pymes y emprendedores en Chile.",
     },
     {
       "@context": "https://schema.org",
