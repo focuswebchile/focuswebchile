@@ -70,12 +70,12 @@ export const metadata: Metadata = {
   description:
     "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",
   alternates: {
-    canonical: "/check-list-ecommerce/",
+    canonical: "/check-list-ecommerce",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/check-list-ecommerce/",
+    url: "https://focusweb.cl/check-list-ecommerce",
     title: "Checklist ecommerce | Focus Web",
     description:
       "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",

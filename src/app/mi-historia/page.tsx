@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   description:
     "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a crear páginas web claras, funcionales y confiables.",
   alternates: {
-    canonical: "/mi-historia/",
+    canonical: "/mi-historia",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/mi-historia/",
+    url: "https://focusweb.cl/mi-historia",
     title: "Mi historia | Focus Web – Desarrollo web para pymes chilenas",
     description:
       "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a crear páginas web claras, funcionales y confiables.",

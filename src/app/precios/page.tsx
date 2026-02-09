@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   description:
     "Planes y precios para diseño web en Chile. Landing pages, sitios web y tiendas online con foco en resultados.",
   alternates: {
-    canonical: "/precios/",
+    canonical: "/precios",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/precios/",
+    url: "https://focusweb.cl/precios",
     title: "Precios diseño web en Chile | Landing pages y sitios web – Focus Web",
     description:
       "Planes y precios para diseño web en Chile. Landing pages, sitios web y tiendas online con foco en resultados.",
@@ -54,7 +54,7 @@ export default function PreciosPage() {
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
             Si necesitas una página que convierta, mira nuestras{" "}
             <a
-              href="/landing-page/"
+              href="/landing-page"
               className="text-primary hover:text-primary/80 underline underline-offset-4"
             >
               landing pages enfocadas en conversión

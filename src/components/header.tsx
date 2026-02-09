@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from "framer-motion"
 const navItems = [
   { name: "Inicio", href: "/" },
   { name: "Nuestro Proceso", href: "/nuestro-proceso" },
-  { name: "Precios", href: "/precios/" },
+  { name: "Precios", href: "/precios" },
   { name: "Testimonios", href: "/#testimonios" },
-  { name: "Mi historia", href: "/mi-historia/" },
-  { name: "Noticias", href: "/blog/" },
-  { name: "FAQ", href: "/faq/" },
-  { name: "Contacto", href: "/contacto/" },
+  { name: "Mi historia", href: "/mi-historia" },
+  { name: "Noticias", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contacto", href: "/contacto" },
 ]
 
 export function Header() {
@@ -64,7 +64,7 @@ export function Header() {
         <nav className="container mx-auto py-3 sm:py-4 pl-[max(1.75rem,env(safe-area-inset-left))] pr-[max(1.75rem,env(safe-area-inset-right))] md:pl-[max(2rem,env(safe-area-inset-left))] md:pr-[max(2rem,env(safe-area-inset-right))]">
           <div className="flex items-center justify-between">
             <a
-              href={isHome ? "#hero" : "https://focusweb.cl/"}
+              href={isHome ? "#hero" : "https://focusweb.cl"}
               onClick={(e) => {
                 if (isHome) {
                   e.preventDefault()

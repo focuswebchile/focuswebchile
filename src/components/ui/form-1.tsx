@@ -125,7 +125,7 @@ export default function FormOne({
         {showEmailLine && (
           <>
             También puedes escribirnos desde nuestro{" "}
-            <a href="/contacto/" className="text-primary hover:underline">
+            <a href="/contacto" className="text-primary hover:underline">
               formulario de contacto
             </a>
             .

@@ -27,7 +27,7 @@ const steps = [
     description:
       "Construimos tu sitio con tecnología moderna y te mantenemos informado del progreso. Podrás ver avances en tiempo real.",
     bullets: ["Diseño con foco en conversión", "Iteraciones claras y rápidas", "SEO y performance incluidos"],
-    cta: { label: "Cotizar desarrollo", href: "/precios/" },
+    cta: { label: "Cotizar desarrollo", href: "/precios" },
   },
   {
     number: "03",
@@ -93,7 +93,7 @@ export default function ProcessContent() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="bg-background/60" asChild>
-                <a href="/precios/">Ver precios</a>
+                <a href="/precios">Ver precios</a>
               </Button>
             </div>
           </motion.div>

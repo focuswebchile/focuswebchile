@@ -20,7 +20,7 @@ export default function FAQsComponent() {
             </p>
             <p className="text-muted-foreground mt-6 hidden md:block text-sm sm:text-base">
               ¿Tienes otra duda?{" "}
-              <Link href="/contacto/" className="text-primary font-medium hover:underline">
+              <Link href="/contacto" className="text-primary font-medium hover:underline">
                 Contáctanos
               </Link>
               .
@@ -48,7 +48,7 @@ export default function FAQsComponent() {
 
           <p className="text-muted-foreground mt-6 md:hidden text-sm sm:text-base">
             ¿Tienes otra duda?{" "}
-            <Link href="/contacto/" className="text-primary font-medium hover:underline">
+            <Link href="/contacto" className="text-primary font-medium hover:underline">
               Contáctanos
             </Link>
             .

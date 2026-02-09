@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description:
     "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
   alternates: {
-    canonical: "/blog/landing-page-vs-pagina-web/",
+    canonical: "/blog/landing-page-vs-pagina-web",
   },
   openGraph: {
     type: "article",
     locale: "es_CL",
-    url: "https://focusweb.cl/blog/landing-page-vs-pagina-web/",
+    url: "https://focusweb.cl/blog/landing-page-vs-pagina-web",
     title: "Landing Page vs Página Web: diferencias clave en diseño web | Focus Web",
     description:
       "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
@@ -112,7 +112,7 @@ export default function BlogPostPage() {
                 Por ejemplo, si ofreces un servicio específico o estás lanzando una promoción, una landing page te
                 permite ir directo al punto, sin distracciones. Si quieres ver cómo funciona una en la práctica, puedes
                 revisar nuestra sección de{" "}
-                <a href="/landing-page/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/landing-page" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   landing page
                 </a>
                 .
@@ -262,7 +262,7 @@ export default function BlogPostPage() {
 
               <p>
                 Si te interesa saber cómo lo hacemos paso a paso, puedes revisar{" "}
-                <a href="/nuestro-proceso/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/nuestro-proceso" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   nuestro proceso de trabajo
                 </a>
                 .
@@ -283,7 +283,7 @@ export default function BlogPostPage() {
               <p>
                 Y si todavía no lo tienes claro, no pasa nada. Lo importante es tomar una decisión informada y alineada
                 con tu realidad. Si quieres ver opciones y valores, puedes revisar nuestros{" "}
-                <a href="/precios/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/precios" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   planes y precios
                 </a>
                 .

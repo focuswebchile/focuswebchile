@@ -18,7 +18,7 @@ export default function FaqContent() {
           <p className="text-muted-foreground mt-3">
             Si necesitas ayuda o información adicional, contáctanos y te responderemos a la brevedad.
           </p>
-          <Link href="/contacto/" className="inline-flex mt-6 text-primary font-medium hover:underline">
+          <Link href="/contacto" className="inline-flex mt-6 text-primary font-medium hover:underline">
             Ir a contacto
           </Link>
         </div>

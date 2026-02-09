@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description:
     "Así trabajamos: diagnóstico, diseño, desarrollo y lanzamiento de páginas web para pymes en Chile.",
   alternates: {
-    canonical: "/nuestro-proceso/",
+    canonical: "/nuestro-proceso",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/nuestro-proceso/",
+    url: "https://focusweb.cl/nuestro-proceso",
     title: "Proceso de diseño web en Chile | Focus Web",
     description:
       "Así trabajamos: diagnóstico, diseño, desarrollo y lanzamiento de páginas web para pymes en Chile.",
@@ -47,7 +47,7 @@ export default function NuestroProcesoPage() {
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
             ¿Buscas una página enfocada en convertir? Revisa nuestras{" "}
             <a
-              href="/landing-page/"
+              href="/landing-page"
               className="text-primary hover:text-primary/80 underline underline-offset-4"
             >
               landing pages enfocadas en conversión

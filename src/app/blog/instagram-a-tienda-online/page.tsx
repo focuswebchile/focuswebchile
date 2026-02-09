@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description:
     "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
   alternates: {
-    canonical: "/blog/instagram-a-tienda-online/",
+    canonical: "/blog/instagram-a-tienda-online",
   },
   openGraph: {
     type: "article",
     locale: "es_CL",
-    url: "https://focusweb.cl/blog/instagram-a-tienda-online/",
+    url: "https://focusweb.cl/blog/instagram-a-tienda-online",
     title: "De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar | Focus Web",
     description:
       "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
@@ -254,7 +254,7 @@ export default function BlogPostPage() {
                 <strong>Lo que hacemos en Focus Web:</strong> Te ayudamos a elegir la mejor combinación de pasarela de
                 pago + facturación según tu situación legal y tu público. Y lo dejamos TODO configurado — tú solo te
                 preocupas de vender. Si quieres saber más sobre cómo trabajamos,{" "}
-                <a href="/nuestro-proceso/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/nuestro-proceso" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   conoce nuestro proceso aquí
                 </a>
                 .
@@ -406,11 +406,11 @@ export default function BlogPostPage() {
               <p>
                 <strong>Lo importante:</strong> Que elijas lo que elijas con información clara, no por marketing bonito.
                 Si tienes dudas sobre cuál plataforma es mejor para tu caso específico,{" "}
-                <a href="/faq/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/faq" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   revisa nuestras preguntas frecuentes
                 </a>{" "}
                 o{" "}
-                <a href="/contacto/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/contacto" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   conversemos directamente
                 </a>
                 .
@@ -574,7 +574,7 @@ export default function BlogPostPage() {
                   Revisa valores, alcances y qué incluye cada plan antes de decidir.
                 </p>
                 <a
-                  href="/precios/"
+                  href="/precios"
                   className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                 >
                   Ver precios y planes
@@ -625,7 +625,7 @@ export default function BlogPostPage() {
               <p>
                 Si te interesa combinar tu presencia en redes sociales con una web profesional, también podemos
                 ayudarte a crear{" "}
-                <a href="/landing-page/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/landing-page" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   landing pages optimizadas
                 </a>{" "}
                 que convierten ese tráfico de Instagram en ventas reales.
@@ -717,7 +717,7 @@ export default function BlogPostPage() {
 
               <p>
                 Si quieres conocer más sobre quiénes somos y por qué hacemos esto,{" "}
-                <a href="/mi-historia/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                <a href="/mi-historia" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   lee nuestra historia aquí
                 </a>
                 .
@@ -753,7 +753,7 @@ export default function BlogPostPage() {
                 👉{" "}
                 <strong>
                   <a
-                    href="/contacto/"
+                    href="/contacto"
                     className="text-primary hover:text-primary/80 underline underline-offset-4"
                   >
                     Agenda tu Consultoría Gratuita aquí

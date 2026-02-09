@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description:
     "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
   alternates: {
-    canonical: "/crear-pagina-web-desde-cero/",
+    canonical: "/crear-pagina-web-desde-cero",
   },
   openGraph: {
     type: "article",
     locale: "es_CL",
-    url: "https://focusweb.cl/crear-pagina-web-desde-cero/",
+    url: "https://focusweb.cl/crear-pagina-web-desde-cero",
     title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     description:
       "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
@@ -110,7 +110,7 @@ export default function BlogPostPage() {
               <div className="rounded-2xl border border-border/60 bg-muted/40 px-5 py-4 text-sm text-foreground/80 sm:text-base">
                 Si buscas una página simple y enfocada en convertir, mira{" "}
                 <a
-                  href="/landing-page/"
+                  href="/landing-page"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   nuestras landing pages enfocadas en conversión
@@ -129,7 +129,7 @@ export default function BlogPostPage() {
                 pones y los botones que necesitas. Si quieres ver ejemplos de <strong>páginas profesionales en Chile</strong>,
                 puedes revisar cómo lo hacemos en{" "}
                 <a
-                  href="/nuestro-proceso/"
+                  href="/nuestro-proceso"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   Focus Web
@@ -330,7 +330,7 @@ export default function BlogPostPage() {
                 Si quieres que alguien te acompañe desde el inicio y asegure que tu web quede profesional y lista para
                 tus clientes, en{" "}
                 <a
-                  href="/landing-page/"
+                  href="/landing-page"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   nuestras landing pages enfocadas en conversión

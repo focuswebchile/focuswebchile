@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Contacto | FocusWeb",
   description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
   alternates: {
-    canonical: "/contacto/",
+    canonical: "/contacto",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/contacto/",
+    url: "https://focusweb.cl/contacto",
     title: "Contacto | FocusWeb",
     description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
     siteName: "FocusWeb Chile",
@@ -48,7 +48,7 @@ export default function ContactoPage() {
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
             Si buscas una página clara y enfocada en resultados, revisa nuestras{" "}
             <a
-              href="/landing-page/"
+              href="/landing-page"
               className="text-primary hover:text-primary/80 underline underline-offset-4"
             >
               landing pages enfocadas en conversión

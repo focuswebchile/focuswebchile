@@ -22,22 +22,22 @@ export function Footer() {
             <h4 className="font-semibold text-sm sm:text-base">Enlaces rápidos</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li>
-                <a href="/precios/" className="hover:text-primary transition-colors">
+                <a href="/precios" className="hover:text-primary transition-colors">
                   Precios
                 </a>
               </li>
               <li>
-                <a href="/nuestro-proceso/" className="hover:text-primary transition-colors">
+                <a href="/nuestro-proceso" className="hover:text-primary transition-colors">
                   Nuestro proceso
                 </a>
               </li>
               <li>
-                <a href="/blog/" className="hover:text-primary transition-colors">
+                <a href="/blog" className="hover:text-primary transition-colors">
                   Noticias
                 </a>
               </li>
               <li>
-                <a href="/contacto/" className="hover:text-primary transition-colors">
+                <a href="/contacto" className="hover:text-primary transition-colors">
                   Contacto
                 </a>
               </li>
@@ -65,7 +65,7 @@ export function Footer() {
                 <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </a>
               <a
-                href="/contacto/"
+                href="/contacto"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />

@@ -43,7 +43,7 @@ const serviceConfigs = [
     delay: 0.1,
     cta: {
       label: "Ver landing page",
-      href: "/landing-page/",
+      href: "/landing-page",
       external: false,
     },
   },

@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   description:
     "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs. Guía práctica con soluciones reales de desarrollo web.",
   alternates: {
-    canonical: "/blog/errores-paginas-web-pymes-chile/",
+    canonical: "/blog/errores-paginas-web-pymes-chile",
   },
   openGraph: {
     type: "article",
     locale: "es_CL",
-    url: "https://focusweb.cl/blog/errores-paginas-web-pymes-chile/",
+    url: "https://focusweb.cl/blog/errores-paginas-web-pymes-chile",
     title: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
     description:
       "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs. Guía práctica con soluciones reales de desarrollo web.",
@@ -134,7 +134,7 @@ export default function BlogPostPage() {
                 </p>
                 <p>
                   Si tu sitio tiene un contador de visitas o usa Comic Sans, es momento de un rediseño. En{" "}
-                  <a href="/nuestro-proceso/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/nuestro-proceso" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     nuestro proceso
                   </a>{" "}
                   conocerás nuestro paso a paso para que entiendas cómo trabajamos y que la idea es convertir visitas en
@@ -150,7 +150,7 @@ export default function BlogPostPage() {
                 </p>
                 <p>
                   <strong>La solución:</strong> Haz una auditoría completa de tu contenido. Si no puedes mantener un{" "}
-                  <a href="/blog/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/blog" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     blog
                   </a>
                   , mejor elimínalo y enfócate en una FAQ sólida.
@@ -166,7 +166,7 @@ export default function BlogPostPage() {
                 <p>
                   <strong>Lo bueno:</strong> la mayoría de los hostings en Chile incluyen SSL gratis. Solo hay que
                   activarlo. Si no sabes cómo hacerlo, en nuestra sección de{" "}
-                  <a href="/precios/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/precios" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     precios
                   </a>{" "}
                   incluimos la configuración SSL en todos nuestros planes.
@@ -276,7 +276,7 @@ export default function BlogPostPage() {
                 <h2 className="text-2xl sm:text-3xl font-semibold">¿Qué hacer ahora?</h2>
                 <p>
                   Cuando fundé FocusWeb después de{" "}
-                  <a href="/mi-historia/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/mi-historia" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     mi experiencia
                   </a>{" "}
                   trabajando con PyMEs, me di cuenta de que la mayoría de estos problemas vienen de no tener un plan
@@ -284,11 +284,11 @@ export default function BlogPostPage() {
                 </p>
                 <p>
                   Por eso desarrollamos un proceso específico para PyMEs chilenas. Puedes conocer más sobre{" "}
-                  <a href="/nuestro-proceso/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/nuestro-proceso" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     cómo trabajamos
                   </a>{" "}
                   o revisar las{" "}
-                  <a href="/faq/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/faq" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     preguntas frecuentes
                   </a>{" "}
                   que nos hacen otros dueños de negocio.
@@ -300,7 +300,7 @@ export default function BlogPostPage() {
                 <p>
                   En FocusWeb revisamos tu página sin costo y te decimos exactamente qué errores tiene y cómo
                   solucionarlos.{" "}
-                  <a href="/contacto/" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/contacto" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     Conversemos
                   </a>{" "}
                   y veamos cómo podemos ayudarte.

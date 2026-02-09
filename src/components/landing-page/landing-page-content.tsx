@@ -406,10 +406,10 @@ export default function LandingPageContent() {
             title="Landing pages en Chile que convierten"
             subtitle="Diseño web en Chile para pymes: landing pages claras, rápidas y enfocadas en contacto real, con desarrollo profesional."
             links={[
-              { label: "Mira nuestro proceso de trabajo", href: "/nuestro-proceso/" },
-              { label: "Cómo crear una página web en Chile", href: "/blog/como-crear-una-pagina-web-en-chile/" },
-              { label: "Crear una página web desde cero", href: "/crear-pagina-web-desde-cero/" },
-              { label: "Ver precios y opciones", href: "/precios/" },
+              { label: "Mira nuestro proceso de trabajo", href: "/nuestro-proceso" },
+              { label: "Cómo crear una página web en Chile", href: "/blog/como-crear-una-pagina-web-en-chile" },
+              { label: "Crear una página web desde cero", href: "/crear-pagina-web-desde-cero" },
+              { label: "Ver precios y opciones", href: "/precios" },
             ]}
           />
         </div>

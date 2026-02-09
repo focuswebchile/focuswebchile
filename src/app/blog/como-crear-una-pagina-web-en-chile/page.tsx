@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description:
     "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
   alternates: {
-    canonical: "/blog/como-crear-una-pagina-web-en-chile/",
+    canonical: "/blog/como-crear-una-pagina-web-en-chile",
   },
   openGraph: {
     type: "article",
     locale: "es_CL",
-    url: "https://focusweb.cl/blog/como-crear-una-pagina-web-en-chile/",
+    url: "https://focusweb.cl/blog/como-crear-una-pagina-web-en-chile",
     title: "Cómo crear una página web en Chile: guía clara para pymes | Focus Web",
     description:
       "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
@@ -165,7 +165,7 @@ export default function BlogPostPage() {
               <p>
                 Si este es tu caso, puedes revisar cómo trabajamos este tipo de proyectos en nuestras{" "}
                 <a
-                  href="/landing-page/"
+                  href="/landing-page"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   landing pages enfocadas en conversión
@@ -306,7 +306,7 @@ export default function BlogPostPage() {
               <p>
                 Si quieres ver cómo trabajamos con negocios y pymes en Chile, puedes revisar nuestras{" "}
                 <a
-                  href="/nuestro-proceso/"
+                  href="/nuestro-proceso"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   soluciones de desarrollo web en Focus Web

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description:
     "¿Cuánto cuesta una página web en Chile? ¿Cuánto demora? Resuelve todas tus dudas sobre diseño web, hosting, SEO, Webpay y más. Respuestas de expertos FocusWeb 2026.",
   alternates: {
-    canonical: "/faq/",
+    canonical: "/faq",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/faq/",
+    url: "https://focusweb.cl/faq",
     title: "Preguntas Frecuentes - Diseño Web Chile 2026 | FocusWeb",
     description:
       "¿Cuánto cuesta una página web en Chile? ¿Cuánto demora? Resuelve todas tus dudas sobre diseño web, hosting, SEO, Webpay y más. Respuestas de expertos FocusWeb 2026.",

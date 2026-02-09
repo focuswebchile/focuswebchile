@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Blog | FocusWeb",
   description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
   alternates: {
-    canonical: "/blog/",
+    canonical: "/blog",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/blog/",
+    url: "https://focusweb.cl/blog",
     title: "Blog | FocusWeb",
     description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
     siteName: "FocusWeb Chile",
@@ -42,7 +42,7 @@ const posts = [
     title: "Landing Page vs Página Web: diferencias clave en diseño web",
     excerpt:
       "Te explicamos cuándo conviene cada una, con ejemplos reales y diseño web pensado para pymes en Chile.",
-    href: "/blog/landing-page-vs-pagina-web/",
+    href: "/blog/landing-page-vs-pagina-web",
     date: "05-01-2026",
     image: {
       src: "/landingpagevswebsite.webp",
@@ -54,7 +54,7 @@ const posts = [
     title: "Cómo crear una página web en Chile: guía clara para negocios y pymes",
     excerpt:
       "Todo lo que necesitas saber para elegir bien entre landing, web completa o tienda online, sin tecnicismos.",
-    href: "/blog/como-crear-una-pagina-web-en-chile/",
+    href: "/blog/como-crear-una-pagina-web-en-chile",
     date: "12-01-2026",
     image: {
       src: "/guiaclaraparanegociosypymes.webp",
@@ -66,7 +66,7 @@ const posts = [
     title: "Crear una página web desde cero: pasos reales (sin tecnicismos)",
     excerpt:
       "Guía paso a paso para emprendedores y pymes que quieren crear su web desde cero, sin enredos.",
-    href: "/crear-pagina-web-desde-cero/",
+    href: "/crear-pagina-web-desde-cero",
     date: "19-01-2026",
     image: {
       src: "/sintecnisimo.webp",
@@ -78,7 +78,7 @@ const posts = [
     title: "De Instagram a tu Propia Tienda Online: lo que nadie te cuenta antes de empezar",
     excerpt:
       "Guía completa para pasar de vender por DMs a una tienda online real en Chile, sin letra chica.",
-    href: "/blog/instagram-a-tienda-online/",
+    href: "/blog/instagram-a-tienda-online",
     date: "26-01-2026",
     image: {
       src: "/instagram-a-tienda-online.webp",
@@ -90,7 +90,7 @@ const posts = [
     title: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
     excerpt:
       "Los errores más comunes que están costando dinero a las PyMEs y cómo corregirlos con soluciones reales.",
-    href: "/blog/errores-paginas-web-pymes-chile/",
+    href: "/blog/errores-paginas-web-pymes-chile",
     date: "02-02-2026",
     image: {
       src: "/10-errores-criticos.webp",

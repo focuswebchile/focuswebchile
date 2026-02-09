@@ -1,152 +1,169 @@
 "use client"
-/* eslint-disable react-hooks/set-state-in-effect */
 
-import { MeshGradient } from "@paper-design/shaders-react"
+import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import type { MouseEvent } from "react"
-import { useEffect, useState } from "react"
-
-const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://focusweb-backend-production.up.railway.app"
-const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG ?? "site-001"
-
-const defaultHero = {
-  title: "Presencia digital clara para emprendedores en Chile",
-  subtitle:
-    "Desarrollo web funcional, rápido y sin costos ocultos. Convertimos tu idea en una presencia online lista para crecer.",
-}
-const HERO_CACHE_KEY = `focusweb_hero_content:${SITE_SLUG}`
-
-const meshColors = ["#22c55e", "#3b82f6", "#52a9ff", "#bff1d0", "#e6f6ff", "#c7f9d4"]
+import { RecaptchaScript } from "@/components/recaptcha-script"
 
 export function HeroSection() {
-  const [heroContent, setHeroContent] = useState(defaultHero)
-  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
-  const [mounted, setMounted] = useState(false)
-  const [isDesktop, setIsDesktop] = useState(true)
+  const [websiteUrl, setWebsiteUrl] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
-  useEffect(() => {
-    setMounted(true)
-    const update = () =>
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
+  const executeRecaptcha = (action: string) =>
+    new Promise<string>((resolve, reject) => {
+      const grecaptcha = window.grecaptcha
+      if (!recaptchaSiteKey || !grecaptcha?.execute) {
+        reject(new Error("reCAPTCHA no disponible"))
+        return
+      }
+
+      grecaptcha.ready(() => {
+        grecaptcha.execute(recaptchaSiteKey, { action }).then(resolve).catch(reject)
       })
-    update()
-    window.addEventListener("resize", update)
-    return () => window.removeEventListener("resize", update)
-  }, [])
+    })
 
-  useEffect(() => {
-    if (typeof window === "undefined") return
-    const media = window.matchMedia("(min-width: 1024px)")
-    const update = () => setIsDesktop(media.matches)
-    update()
-    if (media.addEventListener) {
-      media.addEventListener("change", update)
-      return () => media.removeEventListener("change", update)
+  const handleReviewSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
+    setErrorMessage(null)
+    setSuccessMessage(null)
+
+    const trimmedUrl = websiteUrl.trim()
+    if (!trimmedUrl) {
+      setErrorMessage("Ingresa una URL para revisar.")
+      return
     }
-    media.addListener(update)
-    return () => media.removeListener(update)
-  }, [])
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const cached = window.localStorage.getItem(HERO_CACHE_KEY)
-      if (cached) {
-        try {
-          const parsed = JSON.parse(cached) as typeof defaultHero
-          setHeroContent((prev) => ({ ...prev, ...parsed }))
-        } catch (error) {
-          // Ignore cache parsing errors.
-        }
+    try {
+      new URL(trimmedUrl)
+    } catch {
+      setErrorMessage("La URL no es valida. Usa formato https://tusitio.cl")
+      return
+    }
+
+    setIsSubmitting(true)
+    try {
+      const action = "hero_review"
+      const token = await executeRecaptcha(action)
+      const submitResponse = await fetch("/api/review-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ websiteUrl: trimmedUrl, token, action }),
+      })
+      const submitData = await submitResponse.json()
+
+      if (!submitResponse.ok || !submitData.success) {
+        throw new Error(submitData?.error || "No pudimos enviar la revision")
       }
-    }
 
-    const load = async () => {
-      try {
-        const response = await fetch(`${BACKEND_URL}/api/sites/${SITE_SLUG}/settings`, {
-          cache: "no-store",
-        })
-        if (!response.ok) return
-        const payload = await response.json()
-        const content = payload?.settings?.content
-        if (!content) return
-        const hero = content.hero ?? {
-          title: content.hero_title,
-          subtitle: content.hero_subtitle,
-        }
-        const nextHero = {
-          title: hero?.title ?? defaultHero.title,
-          subtitle: hero?.subtitle ?? defaultHero.subtitle,
-        }
-        setHeroContent(nextHero)
-        if (typeof window !== "undefined") {
-          window.localStorage.setItem(HERO_CACHE_KEY, JSON.stringify(nextHero))
-        }
-      } catch (error) {
-        // Keep default content on failure.
-      }
-    }
-    load()
-  }, [])
-
-  const handleScrollToServices = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const section = document.querySelector("#servicios")
-    if (section) {
-      const offset = 80
-      const top = section.getBoundingClientRect().top + window.pageYOffset - offset
-      window.scrollTo({ top, behavior: "smooth" })
+      setSuccessMessage("Solicitud enviada. Te contactaremos con un diagnostico.")
+      setWebsiteUrl("")
+    } catch {
+      setErrorMessage("No pudimos enviar la solicitud. Intenta nuevamente.")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen overflow-hidden bg-background flex items-center justify-center"
+      className="relative w-full bg-[#F9FAFB] pb-10 overflow-visible md:min-h-[calc(100vh-80px)] md:pb-0"
     >
-      <div className="absolute inset-0">
-        {mounted && isDesktop ? (
-          <>
-            <MeshGradient
-              width={dimensions.width}
-              height={dimensions.height}
-              colors={meshColors}
-              distortion={0.8}
-              swirl={0.6}
-              grainMixer={0}
-              grainOverlay={0}
-              speed={0.42}
-              offsetX={0.08}
-            />
-            <div className="absolute inset-0 pointer-events-none bg-white/20" />
-          </>
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-[#22c55e] via-[#52a9ff] to-[#bff1d0]" />
-        )}
-      </div>
+      <RecaptchaScript lazy />
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
+        <div className="grid grid-cols-1 gap-12 md:items-stretch md:min-h-[calc(100vh-80px)] xl:grid-cols-2 xl:gap-24">
+          <div className="relative z-20 space-y-6 pt-24 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] xl:pr-24 xl:max-w-[640px] lg:pr-32">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280]">
+              <p>Optimización web con criterio e impacto real.</p>
+              <p>Priorizamos lo que importa.</p>
+            </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
-        <div className="text-center">
-          <h1 className="font-bold text-white text-balance text-4xl sm:text-5xl md:text-6xl xl:text-[80px] leading-tight lg:text-7xl mb-6">
-            {heroContent.title}
-          </h1>
-          <p className="text-lg sm:text-xl text-white text-pretty max-w-2xl mx-auto leading-relaxed mb-10 px-4">
-            {heroContent.subtitle}
-          </p>
-          <Button size="lg" className="text-base sm:text-lg font-medium" asChild>
-            <a href="#servicios" onClick={handleScrollToServices}>
-              Ver servicios
-            </a>
-          </Button>
-          <div className="mt-4 text-sm sm:text-base text-white/90">
-            <a href="/precios/" className="underline underline-offset-4 hover:text-white transition-colors">
-              Ver precios y planes
-            </a>
+            <h1 className="max-w-[720px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="whitespace-nowrap">Optimización y</span>
+              <br />
+              rendimiento
+            </h1>
+
+            <p className="max-w-xl text-base leading-relaxed text-[#6B7280] sm:text-lg">
+              Mejoramos rendimiento y SEO técnico para que tu sitio cargue rápido, se entienda mejor
+              en Google y convierta. Analizamos, priorizamos y ejecutamos con criterio.
+            </p>
+
+            <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.16em] text-[#9CA3AF] sm:text-xs sm:tracking-[0.18em]">
+              Rendimiento · SEO técnico · Core Web Vitals · Velocidad
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Button className="rounded-lg bg-[#22C55E] px-8 py-4 text-white hover:bg-[#1ea34d]" asChild>
+                <a href="https://wa.me/420733796959" target="_blank" rel="noopener noreferrer">
+                  Conversar por WhatsApp
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                className="rounded-lg border-2 border-[#3B82F6] px-8 py-4 text-[#3B82F6] hover:bg-[#EFF6FF]"
+                asChild
+              >
+                <a href="/metodologia">Ver metodología</a>
+              </Button>
+            </div>
+
+            <form className="space-y-3 pt-4" onSubmit={handleReviewSubmit}>
+              <p className="text-sm text-[#6B7280]">
+                Pega tu URL y recibe un diagnóstico claro con prioridades reales.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <input
+                  type="url"
+                  placeholder="https://tusitio.cl"
+                  value={websiteUrl}
+                  onChange={(event) => setWebsiteUrl(event.target.value)}
+                  disabled={isSubmitting}
+                  className="flex-1 rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
+                />
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb]"
+                >
+                  {isSubmitting ? "Revisando..." : "Revisar"}
+                </Button>
+              </div>
+              <p className="text-xs font-medium text-[#3B82F6]">
+                Recuerda: pega tu URL con https://
+              </p>
+              {errorMessage && <p className="text-xs text-red-600">{errorMessage}</p>}
+              {successMessage && <p className="text-xs text-emerald-700">{successMessage}</p>}
+            </form>
+          </div>
+
+          <div className="relative hidden h-[360px] w-full items-end justify-end overflow-visible sm:h-[420px] md:h-full xl:flex">
+            <div className="relative z-10 h-full w-full max-w-none md:absolute md:bottom-0 md:right-0 md:h-[760px] md:w-[860px] md:translate-x-[clamp(120px,10vw,260px)] lg:h-[820px] lg:w-[980px] xl:h-[880px] xl:w-[1040px]">
+              <Image
+                src="/svghero.svg"
+                alt="Ilustración de optimización web"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-48 bg-gradient-to-t from-[#22C55E]/20 via-[#3B82F6]/12 to-transparent" />
     </section>
   )
+}
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
+    }
+  }
 }

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description:
     "Creamos landing pages para pymes en Chile: diseño web claro, rápido y enfocado en convertir visitas en contactos reales.",
   alternates: {
-    canonical: "/landing-page/",
+    canonical: "/landing-page",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/landing-page/",
+    url: "https://focusweb.cl/landing-page",
     title: "Landing pages en Chile que convierten | Diseño web profesional – Focus Web",
     description:
       "Creamos landing pages para pymes en Chile: diseño web claro, rápido y enfocado en convertir visitas en contactos reales.",
