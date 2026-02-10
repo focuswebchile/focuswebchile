@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { blogPosts } from "@/lib/blog-posts"
 
 export const metadata: Metadata = {
   title: "Blog | FocusWeb",
@@ -36,68 +37,7 @@ export const metadata: Metadata = {
   },
 }
 
-const posts = [
-  {
-    category: "Comparativa",
-    title: "Landing Page vs Página Web: diferencias clave en diseño web",
-    excerpt:
-      "Te explicamos cuándo conviene cada una, con ejemplos reales y diseño web pensado para pymes en Chile.",
-    href: "/blog/landing-page-vs-pagina-web",
-    date: "05-01-2026",
-    image: {
-      src: "/landingpagevswebsite.webp",
-      alt: "Landing Page vs Página Web",
-    },
-  },
-  {
-    category: "Guía",
-    title: "Cómo crear una página web en Chile: guía clara para negocios y pymes",
-    excerpt:
-      "Todo lo que necesitas saber para elegir bien entre landing, web completa o tienda online, sin tecnicismos.",
-    href: "/blog/como-crear-una-pagina-web-en-chile",
-    date: "12-01-2026",
-    image: {
-      src: "/guiaclaraparanegociosypymes.webp",
-      alt: "Guía clara para negocios y pymes en Chile",
-    },
-  },
-  {
-    category: "Consejos",
-    title: "Crear una página web desde cero: pasos reales (sin tecnicismos)",
-    excerpt:
-      "Guía paso a paso para emprendedores y pymes que quieren crear su web desde cero, sin enredos.",
-    href: "/crear-pagina-web-desde-cero",
-    date: "19-01-2026",
-    image: {
-      src: "/sintecnisimo.webp",
-      alt: "Crear una página web desde cero",
-    },
-  },
-  {
-    category: "Ecommerce",
-    title: "De Instagram a tu Propia Tienda Online: lo que nadie te cuenta antes de empezar",
-    excerpt:
-      "Guía completa para pasar de vender por DMs a una tienda online real en Chile, sin letra chica.",
-    href: "/blog/instagram-a-tienda-online",
-    date: "26-01-2026",
-    image: {
-      src: "/instagram-a-tienda-online.webp",
-      alt: "De Instagram a tienda online",
-    },
-  },
-  {
-    category: "Errores",
-    title: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
-    excerpt:
-      "Los errores más comunes que están costando dinero a las PyMEs y cómo corregirlos con soluciones reales.",
-    href: "/blog/errores-paginas-web-pymes-chile",
-    date: "02-02-2026",
-    image: {
-      src: "/10-errores-criticos.webp",
-      alt: "10 errores críticos en páginas web de PyMEs chilenas",
-    },
-  },
-]
+const posts = blogPosts
 
 export default function BlogPage() {
   return (
@@ -106,6 +46,9 @@ export default function BlogPage() {
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-6 sm:pt-20 sm:pb-8 lg:pt-24 lg:pb-10 px-4 sm:px-6">
           <div className="container mx-auto max-w-6xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
+              Blog de Optimización Web
+            </h1>
             <div className="mt-4">
               <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10 transition-transform duration-300">
                 <Image
@@ -132,12 +75,11 @@ export default function BlogPage() {
                 <span className="text-sm text-muted-foreground">• {posts[0].date}</span>
               </div>
               <div className="flex flex-col gap-2">
-                <a
-                  href={posts[0].href}
-                  className="block max-w-3xl text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
-                >
-                  {posts[0].title}
-                </a>
+                <h2 className="max-w-3xl text-2xl tracking-tight text-foreground">
+                  <a href={posts[0].href} className="hover:text-primary transition-colors">
+                    {posts[0].title}
+                  </a>
+                </h2>
                 <p className="max-w-3xl text-muted-foreground text-base">{posts[0].excerpt}</p>
               </div>
             </article>
@@ -175,12 +117,11 @@ export default function BlogPage() {
                     <span className="text-sm text-muted-foreground">• {post.date}</span>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <a
-                      href={post.href}
-                      className="max-w-3xl text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
-                    >
-                      {post.title}
-                    </a>
+                    <h3 className="max-w-3xl text-xl sm:text-2xl tracking-tight text-foreground">
+                      <a href={post.href} className="hover:text-primary transition-colors">
+                        {post.title}
+                      </a>
+                    </h3>
                     <p className="max-w-3xl text-muted-foreground text-base">
                       {post.excerpt}
                     </p>

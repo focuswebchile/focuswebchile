@@ -78,7 +78,7 @@ export default function BlogPostPage() {
                 tecnicismos. Y si quieres ver la guía completa sobre{" "}
                 <strong>cómo crear una página web en Chile</strong>, la tenemos{" "}
                 <a
-                  href="/blog/como-crear-una-pagina-web-en-chile/"
+                  href="/blog/como-crear-una-pagina-web-en-chile"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   acá
@@ -218,7 +218,7 @@ export default function BlogPostPage() {
                 Si quieres profundizar en los tipos de webs y cómo se diferencian, te recomiendo revisar nuestro artículo
                 pilar{" "}
                 <a
-                  href="/blog/como-crear-una-pagina-web-en-chile/"
+                  href="/blog/como-crear-una-pagina-web-en-chile"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   Cómo crear una página web en Chile

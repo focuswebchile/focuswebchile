@@ -82,9 +82,9 @@ export function HeroSection() {
             </div>
 
             <h1 className="max-w-[720px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="whitespace-nowrap">Optimización y</span>
+              <span className="whitespace-nowrap">Optimización</span>
               <br />
-              rendimiento
+              Web en Chile
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-[#6B7280] sm:text-lg">

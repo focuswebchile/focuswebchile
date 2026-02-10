@@ -55,7 +55,7 @@ export function ProcessSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   return (
-    <section ref={ref} id="proceso" className="py-16 sm:py-20 lg:py-24 px-8 sm:px-6 relative overflow-hidden">
+    <section ref={ref} id="proceso" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 relative overflow-hidden">
       <motion.div
         style={{ y, opacity }}
         className="hidden sm:block absolute top-10 left-20 w-56 h-56 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-3xl pointer-events-none"
@@ -69,7 +69,7 @@ export function ProcessSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-balance px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
             Un proceso{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               simple y claro

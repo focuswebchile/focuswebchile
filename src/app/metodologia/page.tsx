@@ -3,11 +3,12 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { ReviewRequestBar } from "@/components/review-request-bar"
 
 export const metadata: Metadata = {
-  title: "Metodología de auditoría web | Focus Web",
+  title: "Diagnóstico inicial web | Focus Web",
   description:
-    "Conoce la metodología con la que auditamos sitios web: un proceso claro, basado en datos y criterio, para priorizar mejoras con impacto real.",
+    "Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero.",
   alternates: {
     canonical: "https://focusweb.cl/metodologia",
   },
@@ -68,18 +69,18 @@ const steps = [
 ]
 
 const includes = [
-  "Diagnóstico claro",
+  "Diagnóstico inicial claro",
+  "Hallazgos técnicos prioritarios",
   "Interpretación con contexto",
-  "Prioridades por impacto",
-  "Recomendaciones accionables",
+  "Siguiente paso recomendado",
   "Lenguaje comprensible",
 ]
 
 const excludes = [
+  "Auditoría técnica completa",
+  "Implementación de mejoras",
+  "Acompañamiento mensual",
   "Promesas garantizadas",
-  "Cambios sin criterio",
-  "Checklists por cumplir",
-  "Implementación automática",
 ]
 
 const forWho = [
@@ -99,20 +100,41 @@ export default function MetodologiaPage() {
     <>
       <Header />
       <main className="min-h-screen bg-[#f9fafb] text-[#1f2937] font-sans">
-        <section className="mx-auto max-w-5xl px-6 pb-14 pt-24 sm:pb-16 sm:pt-28">
+      <section id="diagnostico-inicial" className="mx-auto max-w-5xl px-6 pb-14 pt-24 sm:pb-16 sm:pt-28">
           <div className="mb-6">
             <span className="inline-flex items-center rounded-full border border-[#e5e7eb] bg-white px-3 py-1 text-xs font-medium text-[#3B82F6]">
               Audit Studio · Framework
             </span>
           </div>
-        <h1 className="text-3xl font-bold leading-tight sm:text-4xl">Metodología de auditoría web</h1>
+        <h1 className="text-3xl font-bold leading-tight sm:text-4xl">Diagnóstico inicial de tu sitio web</h1>
         <p className="mt-4 max-w-3xl text-base text-[#4B5563] sm:text-lg">
-          Un proceso claro para entender qué está funcionando, qué no, y qué realmente vale la pena
-          mejorar.
+          Una revisión inicial para entender qué está funcionando, qué no y qué conviene priorizar
+          primero.
         </p>
         <p className="mt-4 text-sm text-[#6B7280]">
-          Metodología desarrollada por Focus Web · Framework Audit Studio
+          Si luego necesitas una auditoría completa, también te guiamos en ese siguiente nivel.
         </p>
+        <div className="mt-6 rounded-2xl border border-[#dbeafe] bg-[#eff6ff] p-4 sm:p-5">
+          <p className="text-sm text-[#1e40af] sm:text-base">
+            <strong>Importante:</strong> esta página y su formulario corresponden al{" "}
+            <strong>diagnóstico inicial</strong>. Es una primera capa de claridad para decidir bien.
+            No reemplaza una auditoría técnica completa.
+          </p>
+        </div>
+        <div className="mt-8">
+          <ReviewRequestBar leadText="edita tu website aqui" />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 pb-12">
+        <h2 className="text-2xl font-semibold">Mi página web tarda mucho en cargar: cómo lo diagnosticamos</h2>
+        <div className="mt-4 rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+          <p className="text-sm leading-relaxed text-[#4B5563] sm:text-base">
+            Cuando un sitio carga lento, no asumimos: medimos. Revisamos recursos pesados, imágenes sin optimizar,
+            scripts que bloquean render, caché y estado general de Core Web Vitals. Con eso definimos un orden claro
+            de mejoras para priorizar impacto real en experiencia y conversión.
+          </p>
+        </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-6 pb-12">
@@ -148,7 +170,7 @@ export default function MetodologiaPage() {
       </section>
 
       <section className="mx-auto max-w-5xl px-6 pb-12">
-        <h2 className="text-2xl font-semibold">Qué incluye / Qué no incluye</h2>
+        <h2 className="text-2xl font-semibold">Qué incluye / Qué no incluye el diagnóstico inicial</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <article className="rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-[#22c55e]">Incluye</h3>
@@ -162,7 +184,7 @@ export default function MetodologiaPage() {
             </ul>
           </article>
           <article className="rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-[#6B7280]">No incluye</h3>
+            <h3 className="text-lg font-semibold text-[#6B7280]">No incluye (en esta etapa)</h3>
             <ul className="mt-4 space-y-2 text-sm text-[#4B5563]">
               {excludes.map((item) => (
                 <li key={item} className="flex gap-2">
@@ -207,23 +229,23 @@ export default function MetodologiaPage() {
         <article className="rounded-2xl border border-[#e5e7eb] bg-white p-6 shadow-sm sm:p-8">
           <h2 className="text-2xl font-semibold">Próximo paso</h2>
           <p className="mt-3 text-sm text-[#4B5563] sm:text-base">
-            Si este enfoque te hace sentido, podemos revisar tu caso y ver si esta auditoría es el
-            paso correcto.
+            Si este diagnóstico inicial te hace sentido, podemos revisar tu caso y definir si
+            conviene avanzar a una auditoría técnica completa.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="#diagnostico-inicial"
+              className="inline-flex items-center justify-center rounded-xl border border-[#3B82F6] px-5 py-3 text-sm font-semibold text-[#3B82F6] hover:bg-[#3B82F6]/5"
+            >
+              Ir al diagnóstico inicial
+            </Link>
             <Link
               href="https://wa.me/420733796959"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-[#3B82F6] px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
             >
-              Conversar por WhatsApp
-            </Link>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center rounded-xl border border-[#3B82F6] px-5 py-3 text-sm font-semibold text-[#3B82F6] hover:bg-[#3B82F6]/5"
-            >
-              Ir a contacto
+              Quiero auditoría completa
             </Link>
           </div>
           <p className="mt-4 text-xs text-[#6B7280]">Sin presión. Te ayudamos a priorizar.</p>

@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/landing-page-vs-pagina-web`, lastModified: now },
     { url: `${baseUrl}/blog/instagram-a-tienda-online`, lastModified: now },
     { url: `${baseUrl}/blog/errores-paginas-web-pymes-chile`, lastModified: now },
+    { url: `${baseUrl}/blog/mi-pagina-web-tarda-mucho-en-cargar`, lastModified: now },
     { url: `${baseUrl}/crear-pagina-web-desde-cero`, lastModified: now },
     { url: `${baseUrl}/mi-historia`, lastModified: now },
     { url: `${baseUrl}/metodologia`, lastModified: now },

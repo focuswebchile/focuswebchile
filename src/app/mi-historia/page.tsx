@@ -46,6 +46,7 @@ export default function SobreMiPage() {
     <>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
+        <h1 className="sr-only">Mi historia en Focus Web</h1>
         <SobreMiHero />
         <section className="w-full py-5 md:py-5">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">

@@ -13,9 +13,9 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://focusweb.cl/metodologia",
       url: "https://focusweb.cl/metodologia",
-      name: "Metodología de auditoría web",
+      name: "Diagnóstico inicial web",
       description:
-        "Conoce la metodología con la que auditamos sitios web: un proceso claro, basado en datos y criterio, para priorizar mejoras con impacto real.",
+        "Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero.",
       isPartOf: {
         "@type": "WebSite",
         url: "https://focusweb.cl",
@@ -48,19 +48,19 @@ const jsonLd = {
 export default function Head() {
   return (
     <>
-      <title>Metodología de auditoría web | Focus Web</title>
+      <title>Diagnóstico inicial web | Focus Web</title>
       <meta
         name="description"
-        content="Conoce la metodología con la que auditamos sitios web: un proceso claro, basado en datos y criterio, para priorizar mejoras con impacto real."
+        content="Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero."
       />
       <link rel="canonical" href="https://focusweb.cl/metodologia" />
       <meta property="og:type" content="article" />
       <meta property="og:site_name" content="Focus Web" />
       <meta property="og:locale" content="es_CL" />
-      <meta property="og:title" content="Metodología de auditoría web | Focus Web" />
+      <meta property="og:title" content="Diagnóstico inicial web | Focus Web" />
       <meta
         property="og:description"
-        content="Conoce la metodología con la que auditamos sitios web: un proceso claro, basado en datos y criterio, para priorizar mejoras con impacto real."
+        content="Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero."
       />
       <meta property="og:url" content="https://focusweb.cl/metodologia" />
       <meta property="og:image" content="https://focusweb.cl/open-graph-metodologia.webp" />
@@ -68,18 +68,18 @@ export default function Head() {
       <meta property="og:image:height" content="630" />
       <meta
         property="og:image:alt"
-        content="Metodología de auditoría web de Focus Web con enfoque en impacto real"
+        content="Diagnóstico inicial web de Focus Web con enfoque en impacto real"
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Metodología de auditoría web | Focus Web" />
+      <meta name="twitter:title" content="Diagnóstico inicial web | Focus Web" />
       <meta
         name="twitter:description"
-        content="Conoce la metodología con la que auditamos sitios web: un proceso claro, basado en datos y criterio, para priorizar mejoras con impacto real."
+        content="Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero."
       />
       <meta name="twitter:image" content="https://focusweb.cl/open-graph-metodologia.webp" />
       <meta
         name="twitter:image:alt"
-        content="Metodología de auditoría web de Focus Web con enfoque en impacto real"
+        content="Diagnóstico inicial web de Focus Web con enfoque en impacto real"
       />
       <script
         type="application/ld+json"

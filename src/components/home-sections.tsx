@@ -2,13 +2,15 @@
 
 import type { ReactNode } from "react"
 import { useEffect, useRef, useState } from "react"
-import { ServicesSection } from "@/components/services-section"
-import { BridgeTyping } from "@/components/bridge-typing"
-import { FeatureStepsSection } from "@/components/feature-steps-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ProcessSection } from "@/components/process-section"
 import { ContactSection } from "@/components/contact-section"
 import { FAQSection } from "@/components/faq-section"
+import { HomeBlogSection } from "@/components/home-blog-section"
+import { MainServicesSection } from "@/components/main-services-section"
+import { DelayImpactSection } from "@/components/delay-impact-section"
+import { NeedsSection } from "@/components/needs-section"
+import { ProcessAuditCta } from "@/components/process-audit-cta"
 import { useSiteToggles } from "@/components/toggle-sections"
 
 function LazyOnViewport({ children }: { children: ReactNode }) {
@@ -43,28 +45,18 @@ export function HomeSections() {
 
   return (
     <>
-      <BridgeTyping />
-      {toggles.showServices && (
-        <LazyOnViewport>
-          <ServicesSection />
-        </LazyOnViewport>
-      )}
+      <MainServicesSection />
+      <DelayImpactSection />
+      <NeedsSection />
       <LazyOnViewport>
-        <FeatureStepsSection />
+        <ProcessSection />
+      </LazyOnViewport>
+      <LazyOnViewport>
+        <ProcessAuditCta />
       </LazyOnViewport>
       {toggles.showTestimonials && (
         <LazyOnViewport>
           <TestimonialsSection />
-        </LazyOnViewport>
-      )}
-      {toggles.showProcess && (
-        <LazyOnViewport>
-          <ProcessSection />
-        </LazyOnViewport>
-      )}
-      {toggles.showContact && (
-        <LazyOnViewport>
-          <ContactSection />
         </LazyOnViewport>
       )}
       {toggles.showFAQ && (
@@ -72,6 +64,14 @@ export function HomeSections() {
           <FAQSection />
         </LazyOnViewport>
       )}
+      {toggles.showContact && (
+        <LazyOnViewport>
+          <ContactSection />
+        </LazyOnViewport>
+      )}
+      <LazyOnViewport>
+        <HomeBlogSection />
+      </LazyOnViewport>
     </>
   )
 }
