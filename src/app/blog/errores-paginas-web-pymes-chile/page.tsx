@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import Image from "next/image"
+import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
@@ -36,9 +38,50 @@ export const metadata: Metadata = {
   },
 }
 
+const articleAndBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
+      description:
+        "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs.",
+      image: ["https://focusweb.cl/og-10%20errores.webp"],
+      author: { "@type": "Organization", name: "Focus Web" },
+      publisher: {
+        "@type": "Organization",
+        name: "Focus Web",
+        logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
+      },
+      datePublished: "2026-02-02",
+      dateModified: "2026-02-02",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://focusweb.cl/blog/errores-paginas-web-pymes-chile",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://focusweb.cl" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://focusweb.cl/blog" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Errores en páginas web de PyMEs",
+          item: "https://focusweb.cl/blog/errores-paginas-web-pymes-chile",
+        },
+      ],
+    },
+  ],
+}
+
 export default function BlogPostPage() {
   return (
     <>
+      <Script id="blog-errores-pymes-schema" type="application/ld+json">
+        {JSON.stringify(articleAndBreadcrumbSchema)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">
@@ -67,13 +110,12 @@ export default function BlogPostPage() {
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
-                  <img
+                  <Image
                     src="/identificamos-10-errores.webp"
                     alt="Identificamos 10 errores críticos en sitios de PyMEs"
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -115,13 +157,12 @@ export default function BlogPostPage() {
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
-                  <img
+                  <Image
                     src="/diseñosdel-2010.webp"
                     alt="Diseños web que parecen de 2010"
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -175,13 +216,12 @@ export default function BlogPostPage() {
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
-                  <img
+                  <Image
                     src="/velocidad.webp"
                     alt="Velocidad de carga web"
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -225,13 +265,12 @@ export default function BlogPostPage() {
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
-                  <img
+                  <Image
                     src="/formulario-listo.webp"
                     alt="Formularios listos y funcionando"
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -261,13 +300,12 @@ export default function BlogPostPage() {
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
-                  <img
+                  <Image
                     src="/que-hacer-ahora.webp"
                     alt="Qué hacer ahora con tu sitio web"
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover"
                   />
                 </div>
               </div>

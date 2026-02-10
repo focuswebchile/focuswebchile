@@ -28,7 +28,6 @@ import {
   Lock,
   Lightbulb,
   LayoutGrid,
-  ListChecks,
   Mail,
   Megaphone,
   Instagram,

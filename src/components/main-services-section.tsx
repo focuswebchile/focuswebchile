@@ -101,18 +101,12 @@ const cards = [
 
 export function MainServicesSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6"
-    >
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
         >
@@ -130,7 +124,7 @@ export function MainServicesSection() {
               key={card.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.12 }}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
               <Card className="group h-full border-border/60 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
@@ -199,6 +193,6 @@ export function MainServicesSection() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

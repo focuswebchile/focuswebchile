@@ -8,36 +8,44 @@ import { useRef } from "react"
 const steps = [
   {
     icon: Search,
-    title: "Diagnóstico",
+    title: "Diagnóstico estratégico",
     description:
-      "Conversamos para entender tu negocio, objetivos y necesidades específicas. Sin tecnicismos, directo al punto.",
+      "Auditamos tu situación actual, definimos prioridades y ordenamos el plan antes de ejecutar.",
+    focus: "Qué revisamos",
+    focusText: "Objetivos, estado técnico y oportunidades reales",
     color: "from-primary to-accent",
     iconColor: "text-primary",
     step: "01",
   },
   {
     icon: Code2,
-    title: "Desarrollo",
+    title: "Implementación técnica",
     description:
-      "Construimos tu sitio con tecnología moderna y te mantenemos informado del progreso. Podrás ver avances en tiempo real.",
+      "Aplicamos lo definido según tu caso: desarrollo desde cero u optimización de un sitio existente.",
+    focus: "Qué hacemos",
+    focusText: "Cambios técnicos priorizados y medibles",
     color: "from-accent to-primary",
     iconColor: "text-accent",
     step: "02",
   },
   {
     icon: Rocket,
-    title: "Lanzamiento",
+    title: "Publicación y validación",
     description:
-      "Publicamos tu sitio y te enseñamos a gestionarlo para que quede operativo desde el primer día.",
+      "Publicamos los cambios y validamos funcionamiento, rendimiento y trazabilidad para salir con control.",
+    focus: "Qué validamos",
+    focusText: "Carga, formularios, indexación y medición",
     color: "from-primary via-accent to-primary",
     iconColor: "text-primary",
     step: "03",
   },
   {
     icon: LifeBuoy,
-    title: "Soporte",
+    title: "Soporte y mejora continua",
     description:
-      "Seguimos disponibles para resolver dudas, ajustes o mejoras puntuales cuando lo necesites.",
+      "Acompañamos post-lanzamiento con ajustes, mejoras y soporte cercano para mantener resultados.",
+    focus: "Qué sigue",
+    focusText: "Correcciones, iteración y evolución del sitio",
     color: "from-accent to-primary",
     iconColor: "text-accent",
     step: "04",
@@ -75,8 +83,8 @@ export function ProcessSection() {
               simple y claro
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-[1.05rem] lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Cuatro pasos para llevar tu negocio al mundo digital
+          <p className="text-base sm:text-lg md:text-[1.05rem] lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+            Diagnóstico, implementación, validación y soporte en una ruta clara para crear o mejorar tu sitio
           </p>
         </motion.div>
 
@@ -93,7 +101,7 @@ export function ProcessSection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative w-full max-w-[420px] mx-auto md:max-w-none"
             >
-              <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl transition-all duration-500 border-border/60 overflow-hidden group border-2 border-emerald-300 sm:border sm:border-border/50 text-left">
+              <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border-border/60 overflow-hidden group border-2 border-emerald-300 sm:border sm:border-border/50 text-left">
                 {/* Step number background */}
                 <div className="absolute -top-4 -right-4 text-7xl sm:text-8xl font-bold text-primary/5 group-hover:text-primary/10 transition-colors">
                   {step.step}
@@ -114,13 +122,21 @@ export function ProcessSection() {
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-2.5 sm:space-y-3">
+                  <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center gap-2.5 sm:gap-3">
                       <span className="text-xs sm:text-sm font-mono text-muted-foreground">{step.step}</span>
-                      <h3 className="text-xl sm:text-2xl md:text-[1.35rem] lg:text-2xl font-bold">{step.title}</h3>
+                      <h3 className="text-xl sm:text-2xl md:text-[1.25rem] lg:text-[1.45rem] font-bold leading-tight">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+                      {step.focus}
                     </div>
                     <p className="text-sm sm:text-base md:text-[0.95rem] lg:text-base text-muted-foreground leading-relaxed">
                       {step.description}
+                    </p>
+                    <p className="border-t border-border/50 pt-3 text-xs sm:text-sm text-foreground/80">
+                      {step.focusText}
                     </p>
                   </div>
                 </div>

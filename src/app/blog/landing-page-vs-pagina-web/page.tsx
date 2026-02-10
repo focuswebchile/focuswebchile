@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -37,9 +38,50 @@ export const metadata: Metadata = {
   },
 }
 
+const articleAndBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Landing Page vs Página Web: diferencias clave en diseño web",
+      description:
+        "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
+      image: ["https://focusweb.cl/landingvswebsite.webp"],
+      author: { "@type": "Organization", name: "Focus Web" },
+      publisher: {
+        "@type": "Organization",
+        name: "Focus Web",
+        logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
+      },
+      datePublished: "2026-01-05",
+      dateModified: "2026-01-05",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://focusweb.cl/blog/landing-page-vs-pagina-web",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://focusweb.cl" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://focusweb.cl/blog" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Landing Page vs Página Web",
+          item: "https://focusweb.cl/blog/landing-page-vs-pagina-web",
+        },
+      ],
+    },
+  ],
+}
+
 export default function BlogPostPage() {
   return (
     <>
+      <Script id="blog-landing-vs-web-schema" type="application/ld+json">
+        {JSON.stringify(articleAndBreadcrumbSchema)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">

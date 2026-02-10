@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable react-hooks/set-state-in-effect */
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -13,7 +12,27 @@ export function FloatingWhatsApp() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    let timeoutId: number | undefined;
+
+    const scheduleMount = () => {
+      timeoutId = window.setTimeout(() => {
+        setMounted(true);
+      }, 1200);
+    };
+
+    if ("requestIdleCallback" in window) {
+      (window as Window & { requestIdleCallback: (callback: () => void) => number }).requestIdleCallback(
+        scheduleMount
+      );
+    } else {
+      scheduleMount();
+    }
+
+    return () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   useEffect(() => {

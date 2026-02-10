@@ -3,27 +3,64 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { RecaptchaScript } from "@/components/recaptcha-script"
 
 export function HeroSection() {
   const [websiteUrl, setWebsiteUrl] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  const [recaptchaSiteKey, setRecaptchaSiteKey] = useState<string | null>(null)
 
-  const executeRecaptcha = (action: string) =>
-    new Promise<string>((resolve, reject) => {
+  const ensureRecaptchaReady = async () => {
+    let siteKey = recaptchaSiteKey
+    if (!siteKey) {
+      const response = await fetch("/api/recaptcha/site-key")
+      const data = await response.json()
+      siteKey = data?.siteKey ?? null
+      if (!siteKey) {
+        throw new Error("reCAPTCHA no disponible")
+      }
+      setRecaptchaSiteKey(siteKey)
+    }
+
+    if (!window.grecaptcha?.execute) {
+      await new Promise<void>((resolve, reject) => {
+        const existingScript = document.getElementById("recaptcha-script")
+        if (existingScript) {
+          existingScript.addEventListener("load", () => resolve(), { once: true })
+          existingScript.addEventListener("error", () => reject(new Error("reCAPTCHA no disponible")), { once: true })
+          return
+        }
+
+        const script = document.createElement("script")
+        script.id = "recaptcha-script"
+        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+        script.async = true
+        script.defer = true
+        script.onload = () => resolve()
+        script.onerror = () => reject(new Error("reCAPTCHA no disponible"))
+        document.head.appendChild(script)
+      })
+    }
+
+    return siteKey
+  }
+
+  const executeRecaptcha = async (action: string) => {
+    const siteKey = await ensureRecaptchaReady()
+
+    return new Promise<string>((resolve, reject) => {
       const grecaptcha = window.grecaptcha
-      if (!recaptchaSiteKey || !grecaptcha?.execute) {
+      if (!grecaptcha?.execute) {
         reject(new Error("reCAPTCHA no disponible"))
         return
       }
 
       grecaptcha.ready(() => {
-        grecaptcha.execute(recaptchaSiteKey, { action }).then(resolve).catch(reject)
+        grecaptcha.execute(siteKey, { action }).then(resolve).catch(reject)
       })
     })
+  }
 
   const handleReviewSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
@@ -72,7 +109,6 @@ export function HeroSection() {
       id="hero"
       className="relative w-full bg-[#F9FAFB] pb-10 overflow-visible md:min-h-[calc(100vh-80px)] md:pb-0"
     >
-      <RecaptchaScript lazy />
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:items-stretch md:min-h-[calc(100vh-80px)] xl:grid-cols-2 xl:gap-24">
           <div className="relative z-20 space-y-6 pt-24 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] xl:pr-24 xl:max-w-[640px] lg:pr-32">

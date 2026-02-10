@@ -277,7 +277,7 @@ const updateLocalCaches = (settings: SiteSettings, siteSlug: string) => {
       buildCacheKey(TOGGLES_CACHE_KEY, siteSlug),
       JSON.stringify(settings.toggles),
     )
-  } catch (error) {
+  } catch {
     // Ignore cache errors.
   }
 }
@@ -335,7 +335,7 @@ export default function AdminPage() {
           : undefined
         setSite(preferred ?? availableSites[0])
         setStatus("Datos cargados correctamente.")
-      } catch (error) {
+      } catch {
         setStatus("No fue posible validar la sesión. Inicia sesión nuevamente.")
         localStorage.removeItem(TOKEN_KEY)
         setToken(null)
@@ -359,7 +359,7 @@ export default function AdminPage() {
         }
         const settingsPayload = await settingsResponse.json()
         setSettings(normalizeSettings(settingsPayload.settings))
-      } catch (error) {
+      } catch {
         setStatus("No se pudieron cargar los settings del sitio seleccionado.")
       } finally {
         setLoading(false)
@@ -381,7 +381,7 @@ export default function AdminPage() {
         throw new Error("No se pudo enviar el correo")
       }
       setStatus("Revisa tu correo y abre el link para iniciar sesión.")
-    } catch (error) {
+    } catch {
       setStatus("No se pudo enviar el magic link. Intenta nuevamente.")
     } finally {
       setLoading(false)

@@ -69,9 +69,50 @@ const faqSchema = {
   ],
 }
 
+const articleAndBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Mi página web tarda mucho en cargar: causas reales y soluciones efectivas en Chile",
+      description:
+        "Descubre por qué tu página web tarda mucho en cargar, cómo impacta en SEO y ventas, y qué acciones priorizar para optimizar WordPress en Chile.",
+      image: ["https://focusweb.cl/og-mi-sitio-carga-lento.webp"],
+      author: { "@type": "Organization", name: "Focus Web" },
+      publisher: {
+        "@type": "Organization",
+        name: "Focus Web",
+        logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
+      },
+      datePublished: "2026-02-10",
+      dateModified: "2026-02-10",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://focusweb.cl/blog/mi-pagina-web-tarda-mucho-en-cargar",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://focusweb.cl" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://focusweb.cl/blog" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Mi página web tarda mucho en cargar",
+          item: "https://focusweb.cl/blog/mi-pagina-web-tarda-mucho-en-cargar",
+        },
+      ],
+    },
+  ],
+}
+
 export default function BlogPostPage() {
   return (
     <>
+      <Script id="blog-velocidad-article-schema" type="application/ld+json">
+        {JSON.stringify(articleAndBreadcrumbSchema)}
+      </Script>
       <Script id="blog-velocidad-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </Script>

@@ -355,7 +355,7 @@ export function FAQPageContent() {
 
       setFormData({ name: "", email: "", message: "" })
       setSuccessMessage("Gracias. Te responderemos en menos de 24 horas.")
-    } catch (error) {
+    } catch {
       setErrorMessage("No pudimos enviar tu mensaje. Intenta nuevamente.")
     } finally {
       setIsSubmitting(false)

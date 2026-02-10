@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
@@ -38,9 +39,56 @@ export const metadata: Metadata = {
   },
 }
 
+const articleAndBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Cómo crear una página web en Chile: guía clara para negocios y pymes",
+      description:
+        "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
+      image: ["https://focusweb.cl/og-como-crea-una-pagina.webp"],
+      author: {
+        "@type": "Organization",
+        name: "Focus Web",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Focus Web",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://focusweb.cl/logo-512.png",
+        },
+      },
+      datePublished: "2026-01-12",
+      dateModified: "2026-01-12",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://focusweb.cl/blog/como-crear-una-pagina-web-en-chile",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://focusweb.cl" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://focusweb.cl/blog" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Cómo crear una página web en Chile",
+          item: "https://focusweb.cl/blog/como-crear-una-pagina-web-en-chile",
+        },
+      ],
+    },
+  ],
+}
+
 export default function BlogPostPage() {
   return (
     <>
+      <Script id="blog-como-crear-schema" type="application/ld+json">
+        {JSON.stringify(articleAndBreadcrumbSchema)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">

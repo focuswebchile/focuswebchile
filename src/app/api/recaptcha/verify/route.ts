@@ -49,7 +49,7 @@ export async function POST(req: Request) {
       action: data.action,
       errors: data["error-codes"] ?? [],
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ success: false, error: "invalid_request" }, { status: 400 })
   }
 }

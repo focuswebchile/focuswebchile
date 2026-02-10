@@ -69,10 +69,12 @@ export function DelayImpactSection() {
             Datos de Google revelan que la velocidad de carga tiene impacto directo en tus ventas. No es opinión, es
             matemática.
           </p>
-          <p className="mt-3 text-sm text-foreground/80 sm:text-base">
-            Si hoy piensas <strong>&quot;mi página web tarda mucho en cargar&quot;</strong>, aquí puedes ver qué impacto tiene y
-            qué conviene priorizar primero.
-          </p>
+          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-info/25 bg-info/10 px-4 py-3 sm:px-5 sm:py-4">
+            <p className="text-sm text-foreground/85 sm:text-base">
+              Si hoy piensas <strong>&quot;mi página web tarda mucho en cargar&quot;</strong>, aquí puedes ver qué impacto
+              tiene y qué conviene priorizar primero.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
