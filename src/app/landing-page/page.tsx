@@ -39,6 +39,38 @@ export const metadata: Metadata = {
 }
 
 export default function LandingPage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
+    url: "https://focusweb.cl/landing-page",
+    description:
+      "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Landing page",
+        item: "https://focusweb.cl/landing-page",
+      },
+    ],
+  }
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -114,6 +146,12 @@ export default function LandingPage() {
     <>
       <Script id="landing-faq-schema" type="application/ld+json">
         {JSON.stringify(faqSchema)}
+      </Script>
+      <Script id="landing-webpage-schema" type="application/ld+json">
+        {JSON.stringify(webPageSchema)}
+      </Script>
+      <Script id="landing-breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
       </Script>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">

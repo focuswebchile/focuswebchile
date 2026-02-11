@@ -56,6 +56,24 @@ export default function SobreMiPage() {
       name: "FocusWeb Chile",
     },
   }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Mi historia",
+        item: "https://focusweb.cl/mi-historia",
+      },
+    ],
+  }
 
   return (
     <>
@@ -224,6 +242,7 @@ export default function SobreMiPage() {
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

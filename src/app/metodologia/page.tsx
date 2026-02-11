@@ -97,6 +97,39 @@ const notForWho = [
 ]
 
 export default function MetodologiaPage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Diagnóstico inicial web | Focus Web",
+    url: "https://focusweb.cl/metodologia",
+    description:
+      "Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Metodología",
+        item: "https://focusweb.cl/metodologia",
+      },
+    ],
+  }
+
   return (
     <>
       <Header />
@@ -261,6 +294,8 @@ export default function MetodologiaPage() {
       </section>
       </main>
       <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

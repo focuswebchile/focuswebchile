@@ -53,6 +53,24 @@ export default function NuestroProcesoPage() {
       name: "FocusWeb Chile",
     },
   }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Nuestro proceso",
+        item: "https://focusweb.cl/nuestro-proceso",
+      },
+    ],
+  }
 
   return (
     <>
@@ -85,6 +103,7 @@ export default function NuestroProcesoPage() {
         <Footer />
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

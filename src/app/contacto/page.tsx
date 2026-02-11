@@ -51,6 +51,24 @@ export default function ContactoPage() {
       name: "FocusWeb Chile",
     },
   }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contacto",
+        item: "https://focusweb.cl/contacto",
+      },
+    ],
+  }
 
   return (
     <>
@@ -119,6 +137,7 @@ export default function ContactoPage() {
         <Footer />
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

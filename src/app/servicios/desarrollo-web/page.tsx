@@ -43,6 +43,45 @@ export const metadata: Metadata = {
 const preciosHtml = readFileSync(join(process.cwd(), "src/app/servicios/desarrollo-web/precios-content.html"), "utf8")
 
 export default function DesarrolloWebPage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
+    url: "https://focusweb.cl/servicios/desarrollo-web",
+    description:
+      "Servicio de desarrollo web en Chile. Landing pages, sitios web y tiendas online con foco en rendimiento, SEO técnico y resultados.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Servicios",
+        item: "https://focusweb.cl/servicios",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Desarrollo web",
+        item: "https://focusweb.cl/servicios/desarrollo-web",
+      },
+    ],
+  }
+
   return (
     <>
       <Header />
@@ -77,6 +116,8 @@ export default function DesarrolloWebPage() {
         </section>
         <Footer />
       </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

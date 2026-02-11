@@ -41,6 +41,38 @@ export const metadata: Metadata = {
 const posts = blogPosts
 
 export default function BlogPage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Blog | FocusWeb",
+    url: "https://focusweb.cl/blog",
+    description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://focusweb.cl/blog",
+      },
+    ],
+  }
+
   return (
     <>
       <Header />
@@ -141,6 +173,8 @@ export default function BlogPage() {
         </section>
         <Footer />
       </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

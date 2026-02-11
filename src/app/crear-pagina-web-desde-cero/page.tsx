@@ -38,6 +38,39 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPostPage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
+    url: "https://focusweb.cl/crear-pagina-web-desde-cero",
+    description:
+      "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Crear página web desde cero",
+        item: "https://focusweb.cl/crear-pagina-web-desde-cero",
+      },
+    ],
+  }
+
   return (
     <>
       <Header />
@@ -374,6 +407,8 @@ export default function BlogPostPage() {
 
         <Footer />
       </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FloatingWhatsApp />
     </>
   )

@@ -98,6 +98,39 @@ export const metadata: Metadata = {
 }
 
 export default function CheckListEcommercePage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Checklist ecommerce | Focus Web",
+    url: "https://focusweb.cl/check-list-ecommerce",
+    description:
+      "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: "https://focusweb.cl",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Checklist ecommerce",
+        item: "https://focusweb.cl/check-list-ecommerce",
+      },
+    ],
+  }
+
   return (
     <>
       <Header />
@@ -2180,6 +2213,8 @@ export default function CheckListEcommercePage() {
           </div>
         </section>
       </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Footer />
       <FloatingWhatsApp />
     </>
