@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { AuditoriaSeoCtaForm } from "@/components/auditoria-seo-cta-form"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Auditoría SEO Técnica Chile | Diagnóstico Completo Gratis | FocusWeb",
@@ -270,23 +271,14 @@ export default function AuditoriaSeoTecnicoPage() {
         <section className="px-4 pb-12 pt-24 sm:px-6 sm:pb-16 sm:pt-28">
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-xl shadow-primary/5 sm:p-10">
-              <nav aria-label="Breadcrumb" className="mb-5">
-                <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                  <li>
-                    <Link className="transition-colors hover:text-primary" href="/">
-                      Inicio
-                    </Link>
-                  </li>
-                  <li aria-hidden="true">/</li>
-                  <li>
-                    <Link className="transition-colors hover:text-primary" href="/servicios">
-                      Servicios
-                    </Link>
-                  </li>
-                  <li aria-hidden="true">/</li>
-                  <li className="font-medium text-foreground">Auditoría SEO técnica</li>
-                </ol>
-              </nav>
+              <SiteBreadcrumb
+                className="mb-5"
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Servicios", href: "/servicios" },
+                  { label: "Auditoría SEO técnica" },
+                ]}
+              />
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
                 Auditoría SEO Técnica: Identifica Qué Está Frenando Tu Sitio
               </h1>
@@ -325,7 +317,7 @@ export default function AuditoriaSeoTecnicoPage() {
                   href="/metodologia"
                   className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                 >
-                  Solicitar Auditoría Gratis
+                  Ir auditoría gratis
                 </Link>
               </div>
             </div>

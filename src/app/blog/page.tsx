@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { blogPosts } from "@/lib/blog-posts"
 
 export const metadata: Metadata = {
@@ -46,6 +47,13 @@ export default function BlogPage() {
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-6 sm:pt-20 sm:pb-8 lg:pt-24 lg:pb-10 px-4 sm:px-6">
           <div className="container mx-auto max-w-6xl">
+            <SiteBreadcrumb
+              className="mb-5"
+              items={[
+                { label: "Inicio", href: "/" },
+                { label: "Blog" },
+              ]}
+            />
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
               Blog de Optimización Web
             </h1>

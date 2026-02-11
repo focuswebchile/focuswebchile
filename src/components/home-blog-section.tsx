@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { blogPosts } from "@/lib/blog-posts"
@@ -49,6 +50,22 @@ export function HomeBlogSection() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 sm:mt-12 rounded-2xl border border-border/60 bg-card/80 p-6 sm:p-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-semibold text-foreground">
+            ¿Quieres ver más ideas para mejorar tu web?
+          </h3>
+          <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+            Revisa guías prácticas sobre SEO técnico, velocidad y decisiones clave para que tu sitio se entienda mejor
+            en Google y convierta más.
+          </p>
+          <Link
+            href="/blog"
+            className="mt-5 inline-flex items-center justify-center rounded-full border border-primary/35 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/15"
+          >
+            Ver todos los artículos
+          </Link>
         </div>
       </div>
     </section>

@@ -59,7 +59,7 @@ const needsCards = [
     ],
     price: "Desde $180.000 CLP",
     ctaLabel: "Ver precios",
-    ctaHref: "/precios",
+    ctaHref: "/servicios/desarrollo-web",
     secondaryCtaLabel: "Ver landing page",
     secondaryCtaHref: "/landing-page",
     chips: ["Sitio nuevo", "E-commerce", "Landing page", "Venta por WhatsApp", "Negocio en crecimiento"],
@@ -72,7 +72,7 @@ const needsCards = [
       "Si estás comenzando, una base técnica correcta desde el inicio evita retrabajos, mejora la velocidad de lanzamiento y facilita escalar SEO, contenidos y campañas.",
     seoLinks: [
       { label: "Ver landing pages", href: "/landing-page" },
-      { label: "Conocer precios", href: "/precios" },
+      { label: "Conocer precios", href: "/servicios/desarrollo-web" },
     ],
   },
 ]

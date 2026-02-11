@@ -53,7 +53,6 @@ export default function Head() {
         name="description"
         content="Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero."
       />
-      <link rel="canonical" href="https://focusweb.cl/metodologia" />
       <meta property="og:type" content="article" />
       <meta property="og:site_name" content="Focus Web" />
       <meta property="og:locale" content="es_CL" />

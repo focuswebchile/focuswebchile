@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { ServicesQuickNav } from "@/components/services-quick-nav"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Activity, ArrowRight, Gauge, Hammer, ListChecks } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -156,7 +157,7 @@ const serviciosSchema = {
         lowPrice: "180000",
         offerCount: "1",
         availability: "https://schema.org/InStock",
-        url: "https://focusweb.cl/precios",
+        url: "https://focusweb.cl/servicios/desarrollo-web",
       },
     },
   ],
@@ -203,6 +204,13 @@ export default function ServiciosPage() {
         <section className="px-4 pb-10 pt-24 sm:px-6 sm:pb-14 sm:pt-28">
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-xl shadow-primary/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-primary/10 sm:p-10">
+              <SiteBreadcrumb
+                className="mb-5"
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Servicios" },
+                ]}
+              />
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 FocusWeb Chile
               </p>
@@ -227,13 +235,6 @@ export default function ServiciosPage() {
                   className="group inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                 >
                   Ir al diagnóstico
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                </Link>
-                <Link
-                  href="/precios"
-                  className="group inline-flex items-center justify-center rounded-full border border-primary/35 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/15"
-                >
-                  Ver precios
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Link>
               </div>
@@ -496,10 +497,10 @@ export default function ServiciosPage() {
                     <li><strong>Desde:</strong> $110.000 CLP</li>
                   </ul>
                   <Link
-                    href="/metodologia"
+                    href="/servicios/optimizacion-velocidad-web"
                     className="group mt-4 inline-flex w-full items-center justify-center rounded-full border border-info/35 bg-info/10 px-4 py-2.5 text-sm font-semibold text-info transition-colors hover:bg-info/15"
                   >
-                    Solicitar revisión
+                    Ver servicio completo
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </Link>
                 </div>
@@ -563,9 +564,9 @@ export default function ServiciosPage() {
               </li>
                 </ol>
 
-                <p className="mt-5 text-base leading-relaxed text-foreground/85">
-              <strong>Tiempo:</strong> 3-6 semanas según alcance
-                </p>
+            <p className="mt-5 text-base leading-relaxed text-foreground/85">
+              <strong>Tiempo:</strong> Según alcance (landing hasta 7 días, e-commerce 30+ días)
+            </p>
                 <p className="mt-2 text-base leading-relaxed text-foreground/85">
               <strong>Importante:</strong> Si ya tienes un sitio funcionando, probablemente NO necesites desarrollo.
               Solicita{" "}
@@ -581,11 +582,11 @@ export default function ServiciosPage() {
                   <ul className="mt-3 space-y-2 text-sm text-foreground/80">
                     <li><strong>Ideal para:</strong> Sitio nuevo o rediseño total</li>
                     <li><strong>Incluye:</strong> SEO + rendimiento integrado</li>
-                    <li><strong>Tiempo:</strong> 3-6 semanas</li>
+                    <li><strong>Tiempo:</strong> Según alcance (landing 7 días, e-commerce 30+ días)</li>
                     <li><strong>Desde:</strong> $180.000 CLP</li>
                   </ul>
                   <Link
-                    href="/precios"
+                    href="/servicios/desarrollo-web"
                     className="group mt-4 inline-flex w-full items-center justify-center rounded-full border border-amber-500/60 bg-amber-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-600"
                   >
                     Ver planes y precios
@@ -631,7 +632,7 @@ export default function ServiciosPage() {
                     <td className="px-4 py-3 font-semibold text-foreground/90">Tiempo</td>
                     <td className="px-4 py-3 text-foreground/80">Hasta 48 horas</td>
                     <td className="px-4 py-3 text-foreground/80">1-2 semanas</td>
-                    <td className="px-4 py-3 text-foreground/80">3-6 semanas</td>
+                    <td className="px-4 py-3 text-foreground/80">Según alcance (7 a 30+ días)</td>
                   </tr>
                   <tr className="border-t border-border/50">
                     <td className="px-4 py-3 font-semibold text-foreground/90">Precio</td>
@@ -651,15 +652,15 @@ export default function ServiciosPage() {
                     </td>
                     <td className="px-4 py-3">
                       <Link
-                        href="/metodologia"
+                        href="/servicios/optimizacion-velocidad-web"
                         className="inline-flex items-center justify-center rounded-full border border-info/45 bg-info/10 px-3 py-1.5 text-sm font-semibold text-info transition-colors hover:bg-info/15"
                       >
-                        Ver proceso
+                        Ver servicio completo
                       </Link>
                     </td>
                     <td className="px-4 py-3">
                       <Link
-                        href="/precios"
+                        href="/servicios/desarrollo-web"
                         className="inline-flex items-center justify-center rounded-full border border-amber-500/50 bg-amber-100 px-3 py-1.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-200"
                       >
                         Ver precios
@@ -696,10 +697,10 @@ export default function ServiciosPage() {
                   <li><strong>Precio:</strong> Desde $110.000 CLP</li>
                 </ul>
                 <Link
-                  href="/metodologia"
+                  href="/servicios/optimizacion-velocidad-web"
                   className="mt-4 inline-flex items-center justify-center rounded-full border border-info/45 bg-info/10 px-3 py-1.5 text-sm font-semibold text-info transition-colors hover:bg-info/15"
                 >
-                  Ver proceso
+                  Ver servicio completo
                 </Link>
               </article>
 
@@ -708,11 +709,11 @@ export default function ServiciosPage() {
                 <ul className="mt-3 space-y-1.5 text-sm text-foreground/80">
                   <li><strong>Ideal para:</strong> Sitios nuevos o rediseño total</li>
                   <li><strong>Entregable:</strong> Sitio web completo optimizado</li>
-                  <li><strong>Tiempo:</strong> 3-6 semanas</li>
+                  <li><strong>Tiempo:</strong> Según alcance (7 a 30+ días)</li>
                   <li><strong>Precio:</strong> Desde $180.000 CLP</li>
                 </ul>
                 <Link
-                  href="/precios"
+                  href="/servicios/desarrollo-web"
                   className="mt-4 inline-flex items-center justify-center rounded-full border border-amber-500/50 bg-amber-100 px-3 py-1.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-200"
                 >
                   Ver precios

@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { FAQPageContent } from "./faq-page-content"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes - Diseño Web Chile 2026 | FocusWeb",
@@ -38,13 +39,40 @@ export const metadata: Metadata = {
 }
 
 export default function FAQRoute() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Preguntas Frecuentes - Diseño Web Chile 2026 | FocusWeb",
+    url: "https://focusweb.cl/faq",
+    description:
+      "¿Cuánto cuesta una página web en Chile? ¿Cuánto demora? Resuelve todas tus dudas sobre diseño web, hosting, SEO, Webpay y más.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
+        <section className="px-4 pt-24 sm:px-6 sm:pt-28">
+          <div className="container mx-auto max-w-6xl">
+            <SiteBreadcrumb
+              className="mb-2"
+              items={[
+                { label: "Inicio", href: "/" },
+                { label: "FAQ" },
+              ]}
+            />
+          </div>
+        </section>
         <FAQPageContent />
       </main>
       <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <FloatingWhatsApp />
     </>
   )

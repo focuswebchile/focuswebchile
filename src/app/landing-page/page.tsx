@@ -6,9 +6,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import LandingPageContent from "@/components/landing-page/landing-page-content"
 
 export const metadata: Metadata = {
-  title: "Landing pages en Chile que convierten | Diseño web profesional – Focus Web",
+  title: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
   description:
-    "Creamos landing pages para pymes en Chile: diseño web claro, rápido y enfocado en convertir visitas en contactos reales.",
+    "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
   alternates: {
     canonical: "/landing-page",
   },
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/landing-page",
-    title: "Landing pages en Chile que convierten | Diseño web profesional – Focus Web",
+    title: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
     description:
-      "Creamos landing pages para pymes en Chile: diseño web claro, rápido y enfocado en convertir visitas en contactos reales.",
+      "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Landing pages en Chile que convierten | Diseño web profesional – Focus Web",
+    title: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
     description:
-      "Creamos landing pages para pymes en Chile: diseño web claro, rápido y enfocado en convertir visitas en contactos reales.",
+      "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
 }
@@ -80,15 +80,23 @@ export default function LandingPage() {
         name: "¿Incluye diseño y texto?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sí. El servicio contempla diseño de página web y apoyo en la estructura del contenido para que tu mensaje quede claro y efectivo.",
+          text: "Si. El servicio contempla diseno de pagina, apoyo en estructura del contenido y buenas practicas tecnicas para que tu mensaje sea claro y medible.",
         },
       },
       {
         "@type": "Question",
-        name: "¿Cuál es el precio de una página web o landing page?",
+        name: "¿Incluye SEO tecnico y optimizacion de velocidad?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Depende del alcance y del contenido. En general, una landing page es la opción más directa y accesible para empezar.",
+          text: "Si. La landing se entrega con base tecnica: estructura limpia, meta tags esenciales, imagenes optimizadas y rendimiento pensado para mobile.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Cual es el precio de una pagina web o landing page?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Depende del alcance y del contenido. En general, una landing page es la opcion mas directa para empezar y validar conversion.",
         },
       },
       {

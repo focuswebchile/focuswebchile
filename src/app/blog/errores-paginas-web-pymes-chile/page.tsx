@@ -4,6 +4,7 @@ import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
@@ -87,6 +88,13 @@ export default function BlogPostPage() {
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <article className="space-y-6 text-foreground">
+              <SiteBreadcrumb
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Errores en páginas web de PyMEs" },
+                ]}
+              />
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 10 min
               </p>
@@ -207,7 +215,7 @@ export default function BlogPostPage() {
                 <p>
                   <strong>Lo bueno:</strong> la mayoría de los hostings en Chile incluyen SSL gratis. Solo hay que
                   activarlo. Si no sabes cómo hacerlo, en nuestra sección de{" "}
-                  <a href="/precios" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  <a href="/servicios/desarrollo-web" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     precios
                   </a>{" "}
                   incluimos la configuración SSL en todos nuestros planes.

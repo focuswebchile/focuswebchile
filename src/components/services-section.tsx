@@ -97,7 +97,7 @@ export function ServicesSection() {
     if (cached) {
       try {
         setContent((prev) => ({ ...prev, ...(JSON.parse(cached) as typeof defaultServicesContent) }))
-      } catch (error) {
+      } catch {
         // ignore cache errors
       }
     }
@@ -127,7 +127,7 @@ export function ServicesSection() {
         }
         setContent(nextContent)
         window.localStorage.setItem(SERVICES_CACHE_KEY, JSON.stringify(nextContent))
-      } catch (error) {
+      } catch {
         // keep cached content on failure
       }
     }

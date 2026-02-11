@@ -24,7 +24,7 @@ export function ContactSection() {
     if (cached) {
       try {
         setContent((prev) => ({ ...prev, ...(JSON.parse(cached) as typeof defaultContactContent) }))
-      } catch (error) {
+      } catch {
         // ignore cache errors
       }
     }
@@ -45,7 +45,7 @@ export function ContactSection() {
         }
         setContent(nextContent)
         window.localStorage.setItem(CONTACT_CACHE_KEY, JSON.stringify(nextContent))
-      } catch (error) {
+      } catch {
         // keep cached content on failure
       }
     }

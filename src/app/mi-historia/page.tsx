@@ -9,9 +9,9 @@ import { Layout, MessageCircle, Target } from "lucide-react"
 import { DiferenteTimeline } from "./diferente-timeline"
 
 export const metadata: Metadata = {
-  title: "Mi historia | Focus Web – Desarrollo web para pymes chilenas",
+  title: "Mi historia | Focus Web – SEO técnico, diagnóstico y desarrollo web",
   description:
-    "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a crear páginas web claras, funcionales y confiables.",
+    "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a ordenar su web con diagnóstico técnico, SEO, velocidad y desarrollo claro.",
   alternates: {
     canonical: "/mi-historia",
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/mi-historia",
-    title: "Mi historia | Focus Web – Desarrollo web para pymes chilenas",
+    title: "Mi historia | Focus Web – SEO técnico, diagnóstico y desarrollo web",
     description:
-      "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a crear páginas web claras, funcionales y confiables.",
+      "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a ordenar su web con diagnóstico técnico, SEO, velocidad y desarrollo claro.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,14 +34,29 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mi historia | Focus Web – Desarrollo web para pymes chilenas",
+    title: "Mi historia | Focus Web – SEO técnico, diagnóstico y desarrollo web",
     description:
-      "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a crear páginas web claras, funcionales y confiables.",
+      "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a ordenar su web con diagnóstico técnico, SEO, velocidad y desarrollo claro.",
     images: ["https://focusweb.cl/opengraph-mi-historia.webp"],
   },
 }
 
 export default function SobreMiPage() {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Mi historia | Focus Web – SEO técnico, diagnóstico y desarrollo web",
+    url: "https://focusweb.cl/mi-historia",
+    description:
+      "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a ordenar su web con diagnóstico técnico, SEO, velocidad y desarrollo claro.",
+    inLanguage: "es-CL",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://focusweb.cl",
+      name: "FocusWeb Chile",
+    },
+  }
+
   return (
     <>
       <Header />
@@ -65,18 +80,18 @@ export default function SobreMiPage() {
             <div className="min-h-[45vh] flex w-full items-center justify-center">
               <div className="w-full">
                 <div className="mx-auto w-full max-w-[38ch] text-center text-base leading-relaxed text-foreground/70 sm:hidden fade-in-up">
-                  <p>Soy Felipe, chileno apasionado por el marketing digital y los viajes.</p>
+                  <p>Soy Felipe, chileno apasionado por el marketing digital y la optimización web.</p>
                   <p className="mt-4">
                     Vivo en Praga, República Checa, desde donde mantengo un lazo fuerte con mi gente en Chile.
                   </p>
                   <p className="mt-4">
-                    Mi misión es ayudar a pymes chilenas a tener webs claras, confiables y realmente efectivas:
-                    sitios que funcionan sin complicaciones y transmiten confianza desde el primer clic.
+                    Mi misión es ayudar a pymes chilenas a entender qué está frenando su sitio y qué conviene priorizar:
+                    SEO técnico, velocidad, estructura o desarrollo, según cada caso.
                   </p>
                   <p className="mt-4">Eso es lo que hago y por qué lo hago.</p>
                 </div>
                 <TextRevealByWord
-                  text="Soy Felipe, un chileno apasionado por el marketing y los viajes. Aunque hoy vivo en Praga, trabajo codo a codo con emprendedores en Chile. Lo que busco es que te olvides de los problemas técnicos y tengas por fin una web clara y confiable. Me dedico a armar sitios que funcionen sin dramas y que tus clientes amen desde el primer clic. Eso es lo que hago y la razón por la que estoy aquí: para que tu proyecto se vea tan profesional como lo imaginas."
+                  text="Soy Felipe, un chileno apasionado por el marketing y la optimización web. Aunque hoy vivo en Praga, trabajo codo a codo con emprendedores en Chile. No solo desarrollo sitios: también diagnostico qué no está funcionando, priorizo mejoras SEO técnicas y optimizo velocidad para que tu web se entienda mejor en Google y convierta más. La idea es simple: menos ruido, más claridad y un plan realista para que tu proyecto avance."
                   className="hidden w-full sm:block"
                   textClassName="mx-auto w-full max-w-[52ch] px-6 sm:px-8 text-center text-2xl md:text-3xl lg:text-4xl leading-snug font-normal text-foreground/70"
                 />
@@ -94,7 +109,7 @@ export default function SobreMiPage() {
                 </span>
               </h2>
               <p className="text-base text-foreground/70 sm:text-lg">
-                Transformamos ideas en webs que funcionan
+                Diagnóstico, SEO técnico y desarrollo con foco en resultados
               </p>
             </div>
 
@@ -120,10 +135,10 @@ export default function SobreMiPage() {
                     Claridad
                   </div>
                   <h3 className="mt-4 text-xl font-semibold text-foreground md:text-2xl">
-                    Diseño con sentido para tu negocio
+                    Diagnóstico claro antes de ejecutar
                   </h3>
                   <p className="mt-3 text-base text-foreground/70 sm:text-lg">
-                    Mi objetivo es que tu web se vea increíble y, sobre todo, que sea fácil de navegar. Me enfoco en que tus clientes encuentren lo que buscan rápido y sin fricciones, para que tu sitio sea una herramienta que realmente trabaje a tu favor.
+                    Antes de mover piezas, reviso qué está fallando de verdad: estructura, SEO on-page, indexación, rendimiento o experiencia móvil. Así evitamos cambios al azar y priorizamos lo que más impacto tiene.
                   </p>
                 </div>
 
@@ -133,10 +148,10 @@ export default function SobreMiPage() {
                     Acompañamiento
                   </div>
                   <h3 className="mt-4 text-xl font-semibold text-foreground md:text-2xl">
-                    Transparencia total
+                    Transparencia técnica sin humo
                   </h3>
                   <p className="mt-3 text-base text-foreground/70 sm:text-lg">
-                   Dejemos de lado los tecnicismos. Me gusta explicarte todo de forma simple para que tomemos decisiones juntos. Quiero que entiendas cada paso y sientas que tienes el control total de tu proyecto profesional.
+                   Dejamos de lado promesas vacías. Te explico en simple qué está bien, qué está mal y qué conviene hacer primero. Decidimos juntos con criterio y contexto de negocio.
                   </p>
                 </div>
                 <div className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/30 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
@@ -145,10 +160,10 @@ export default function SobreMiPage() {
                     Estrategia
                   </div>
                   <h3 className="mt-4 text-xl font-semibold text-foreground md:text-2xl">
-                    Una web que crece contigo
+                    Base técnica para crecer sin rehacer
                   </h3>
                   <p className="mt-3 text-base text-foreground/70 sm:text-lg">
-                    Construyo tu sitio pensando en el futuro. Será sólido, fácil de mantener y capaz de adaptarse cuando tu negocio crezca. Así, tienes la tranquilidad de que tu inversión está protegida desde el primer día.
+                    Si hay que desarrollar, lo hacemos con SEO técnico y rendimiento desde el inicio. Si no, optimizamos lo existente. El objetivo es el mismo: una web sólida que crezca contigo.
                   </p>
                 </div>
               </div>
@@ -167,8 +182,8 @@ export default function SobreMiPage() {
                 <span className="text-primary underline decoration-primary/40 underline-offset-4">
                   hablemos
                 </span>
-                . Cuéntame qué tienes en mente y veamos juntos si una web bien armada es el empujón que tu negocio
-                necesita hoy.
+                . Cuéntame qué te preocupa hoy: si no apareces en Google, si tu sitio carga lento o si necesitas
+                construir una base técnica mejor. Lo revisamos juntos y definimos el siguiente paso.
               </p>
               <span className="pointer-events-none absolute -bottom-10 right-6 text-6xl text-primary/20 md:-bottom-12 md:text-7xl">
                 ”
@@ -191,7 +206,7 @@ export default function SobreMiPage() {
                     Hablemos de tu proyecto
                   </h3>
                   <p className="text-base text-foreground/70 md:text-lg">
-                    Para entender tu idea y ver si una web bien hecha puede ayudarte
+                    Para revisar qué no está funcionando y qué conviene priorizar primero
                   </p>
                 </div>
                 <a
@@ -208,6 +223,7 @@ export default function SobreMiPage() {
         </section>
       </main>
       <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <FloatingWhatsApp />
     </>
   )

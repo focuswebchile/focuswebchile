@@ -56,7 +56,7 @@ export function ThemeSync() {
     if (cached) {
       try {
         applyTheme(JSON.parse(cached))
-      } catch (error) {
+      } catch {
         // ignore cache errors
       }
     }
@@ -74,7 +74,7 @@ export function ThemeSync() {
         }
         applyTheme(themeSettings)
         window.localStorage.setItem(THEME_CACHE_KEY, JSON.stringify(themeSettings))
-      } catch (error) {
+      } catch {
         // keep cached theme on failure
       }
     }

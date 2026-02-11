@@ -19,7 +19,7 @@ export function ServicesQuickNav() {
           Ir a auditar gratis
         </Link>
         <Link
-          href="/precios"
+          href="/servicios/desarrollo-web"
           className="inline-flex rounded-full border border-info/35 bg-info/10 px-4 py-2 text-sm font-semibold text-info transition-colors hover:bg-info/15"
         >
           Ver precios de desarrollo web

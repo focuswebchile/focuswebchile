@@ -11,8 +11,6 @@ const navItems = [
   { name: "Inicio", href: "/" },
   { name: "Servicios", href: "/servicios" },
   { name: "Nuestro Proceso", href: "/nuestro-proceso" },
-  { name: "Precios", href: "/precios" },
-  { name: "Testimonios", href: "/#testimonios" },
   { name: "Mi historia", href: "/mi-historia" },
   { name: "Noticias", href: "/blog" },
   { name: "FAQ", href: "/faq" },
@@ -88,7 +86,7 @@ export function Header() {
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
+            <div className="hidden md:ml-auto md:flex md:translate-x-8 lg:translate-x-12 xl:translate-x-16 items-center gap-4 lg:gap-6 xl:gap-8">
                 {navItems.map((item) => (
                   <a
                     key={item.name}

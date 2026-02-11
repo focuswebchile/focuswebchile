@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Cómo crear una página web en Chile: guía clara para pymes | Focus Web",
@@ -109,6 +110,13 @@ export default function BlogPostPage() {
         <section className="pb-20 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <article className="space-y-6 text-foreground">
+              <SiteBreadcrumb
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Cómo crear una página web en Chile" },
+                ]}
+              />
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 5 min
               </p>

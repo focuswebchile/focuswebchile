@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { GlowCard } from "@/components/ui/glow-card"
-import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Users, Target, Sparkles, ShieldCheck } from "lucide-react"
 
 const steps = [
@@ -13,36 +12,36 @@ const steps = [
     number: "01",
     title: "Diagnóstico",
     description:
-      "Conversamos para entender tu negocio, objetivos y necesidades específicas. Sin tecnicismos, directo al punto.",
+      "Leemos tu situación real: SEO técnico, velocidad, estructura y objetivo de negocio. Sin supuestos ni recetas genéricas.",
     bullets: [
-      "Entendemos tu contexto real",
-      "Definimos alcance y prioridades",
-      "Propuesta clara de trabajo",
+      "Revisión técnica inicial del sitio",
+      "Contexto comercial y objetivo principal",
+      "Lista de fricciones detectadas",
     ],
-    cta: { label: "Evaluar mi idea", href: "https://wa.me/420733796959" },
+    cta: { label: "Partir con diagnóstico", href: "/metodologia" },
   },
   {
     number: "02",
-    title: "Desarrollo",
+    title: "Priorización",
     description:
-      "Construimos tu sitio con tecnología moderna y te mantenemos informado del progreso. Podrás ver avances en tiempo real.",
-    bullets: ["Diseño con foco en conversión", "Iteraciones claras y rápidas", "SEO y performance incluidos"],
-    cta: { label: "Cotizar desarrollo", href: "/precios" },
+      "Ordenamos acciones por impacto real: qué corrige más rápido el SEO, la velocidad y la conversión.",
+    bullets: ["Backlog por impacto/esfuerzo", "Quick wins técnicos", "Plan claro por etapas"],
+    cta: { label: "Ver servicios", href: "/servicios" },
   },
   {
     number: "03",
-    title: "Lanzamiento",
+    title: "Ejecución",
     description:
-      "Publicamos tu sitio y dejamos todo listo para que puedas empezar a compartirlo.",
-    bullets: ["Publicación y configuración final", "Checklist antes de salir", "Sitio listo para compartir"],
-    cta: { label: "Partir ahora", href: "https://wa.me/420733796959" },
+      "Implementamos lo acordado: optimización sobre sitio existente o desarrollo desde cero cuando realmente conviene.",
+    bullets: ["SEO técnico y estructura", "Mejoras de rendimiento", "Desarrollo web si aplica"],
+    cta: { label: "Conocer desarrollo", href: "/servicios/desarrollo-web" },
   },
   {
     number: "04",
-    title: "Soporte",
-    description: "Te acompañamos en el inicio y resolvemos dudas para que avances con confianza.",
-    bullets: ["Ajustes iniciales y dudas", "Guía para administrar el sitio", "Soporte cercano cuando lo necesitas"],
-    cta: { label: "Hablar con soporte", href: "https://wa.me/420733796959" },
+    title: "Medición",
+    description: "Validamos resultados y ajustamos lo necesario para mantener mejoras sostenibles en tiempo.",
+    bullets: ["Antes vs después", "Siguiente iteración sugerida", "Acompañamiento en decisiones"],
+    cta: { label: "Hablar por WhatsApp", href: "https://wa.me/420733796959" },
   },
 ]
 
@@ -79,12 +78,12 @@ export default function ProcessContent() {
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight text-balance">
               <span className="bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent">
-                El camino claro hacia un sitio que convierte
+                Proceso claro para mejorar SEO, velocidad y resultados
               </span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Cada etapa reduce fricción, ordena decisiones y asegura resultados reales. Sin pasos ocultos ni
-              sorpresas.
+              No se trata solo de desarrollo web. Partimos por diagnóstico, priorizamos con criterio técnico y
+              ejecutamos lo que realmente mueve la aguja.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="shadow-lg shadow-primary/25" asChild>
@@ -93,7 +92,7 @@ export default function ProcessContent() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="bg-background/60" asChild>
-                <a href="/precios">Ver precios</a>
+                <a href="/servicios/desarrollo-web">Ver precios</a>
               </Button>
             </div>
           </motion.div>
@@ -113,8 +112,8 @@ export default function ProcessContent() {
                 accent: "from-primary/15 via-transparent to-info/15",
               },
               {
-                title: "Enfoque en resultados",
-                description: "Cada decisión busca mejorar conversión, confianza y velocidad.",
+                title: "Enfoque técnico y de negocio",
+                description: "Cada decisión busca mejorar visibilidad en Google, experiencia y conversión.",
                 icon: Sparkles,
                 label: "Foco",
                 accent: "from-accent/15 via-transparent to-primary/10",
@@ -128,12 +127,12 @@ export default function ProcessContent() {
               },
               {
                 title: "Calidad y detalle",
-                description: "Diseño cuidado, SEO base y experiencia móvil impecable.",
+                description: "SEO técnico, rendimiento y experiencia móvil alineados en una sola ejecución.",
                 icon: ShieldCheck,
                 label: "Precisión",
                 accent: "from-primary/10 via-transparent to-accent/15",
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 24 }}

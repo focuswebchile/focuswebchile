@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Optimización de Velocidad Web y SEO Técnico | FocusWeb",
@@ -159,23 +160,14 @@ export default function OptimizacionVelocidadWebPage() {
         <section className="px-4 pb-12 pt-24 sm:px-6 sm:pb-16 sm:pt-28">
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-xl shadow-primary/5 sm:p-10">
-              <nav aria-label="Breadcrumb" className="mb-5">
-                <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                  <li>
-                    <Link className="transition-colors hover:text-primary" href="/">
-                      Inicio
-                    </Link>
-                  </li>
-                  <li aria-hidden="true">/</li>
-                  <li>
-                    <Link className="transition-colors hover:text-primary" href="/servicios">
-                      Servicios
-                    </Link>
-                  </li>
-                  <li aria-hidden="true">/</li>
-                  <li className="font-medium text-foreground">Optimización de velocidad web</li>
-                </ol>
-              </nav>
+              <SiteBreadcrumb
+                className="mb-5"
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Servicios", href: "/servicios" },
+                  { label: "Optimización de velocidad web" },
+                ]}
+              />
 
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
                 Velocidad Web y SEO Técnico para tu Página
@@ -473,7 +465,7 @@ export default function OptimizacionVelocidadWebPage() {
                       Ver auditoría SEO técnica
                     </Link>
                     <Link
-                      href="/precios"
+                      href="/servicios/desarrollo-web"
                       className="inline-flex rounded-full border border-amber-500/50 bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-200"
                     >
                       Ver precios de desarrollo

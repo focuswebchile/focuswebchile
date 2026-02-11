@@ -97,7 +97,7 @@ export default function FormOne({
 
       setFormData({ name: "", email: "", message: "", service: "" })
       setSuccessMessage("Mensaje enviado. Te responderemos pronto.")
-    } catch (error) {
+    } catch {
       setErrorMessage("No pudimos enviar el mensaje. Intenta nuevamente.")
     } finally {
       setIsSubmitting(false)

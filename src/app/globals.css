@@ -6,7 +6,7 @@
 html {
   scrollbar-gutter: stable;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 html[data-scroll-locked],

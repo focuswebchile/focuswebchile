@@ -13,7 +13,7 @@ export function Footer() {
               FocusWeb
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Desarrollo web funcional y rápido para emprendedores chilenos. Sin costos ocultos, con resultados claros.
+              SEO y posicionamiento web en Chile con enfoque técnico: optimización de velocidad, diagnóstico y desarrollo web para convertir más visitas en clientes.
             </p>
           </div>
 
@@ -24,11 +24,6 @@ export function Footer() {
               <li>
                 <a href="/servicios" className="hover:text-primary transition-colors">
                   Servicios
-                </a>
-              </li>
-              <li>
-                <a href="/precios" className="hover:text-primary transition-colors">
-                  Precios
                 </a>
               </li>
               <li>

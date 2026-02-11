@@ -90,12 +90,12 @@ const cards = [
     },
     cta: {
       label: "Conocer desarrollo web",
-      href: "/precios",
+      href: "/servicios/desarrollo-web",
       external: false,
     },
     relatedLinks: [
       { label: "Explorar landing pages", href: "/landing-page" },
-      { label: "Ver paquetes y precios", href: "/precios" },
+      { label: "Ver paquetes y precios", href: "/servicios/desarrollo-web" },
     ],
   },
 ]

@@ -32,7 +32,7 @@ export function useSiteToggles() {
     if (cached) {
       try {
         setToggles((prev) => ({ ...prev, ...(JSON.parse(cached) as SectionToggles) }))
-      } catch (error) {
+      } catch {
         // ignore cache errors
       }
     }
@@ -50,7 +50,7 @@ export function useSiteToggles() {
         }
         setToggles(nextToggles)
         window.localStorage.setItem(TOGGLES_CACHE_KEY, JSON.stringify(nextToggles))
-      } catch (error) {
+      } catch {
         // keep cached toggles
       }
     }

@@ -4,13 +4,14 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { ReviewRequestBar } from "@/components/review-request-bar"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Diagnóstico inicial web | Focus Web",
   description:
     "Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero.",
   alternates: {
-    canonical: "https://focusweb.cl/metodologia",
+    canonical: "/metodologia",
   },
 }
 
@@ -101,6 +102,13 @@ export default function MetodologiaPage() {
       <Header />
       <main className="min-h-screen bg-[#f9fafb] text-[#1f2937] font-sans">
       <section id="diagnostico-inicial" className="mx-auto max-w-5xl px-6 pb-14 pt-24 sm:pb-16 sm:pt-28">
+          <SiteBreadcrumb
+            className="mb-4"
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Metodología" },
+            ]}
+          />
           <div className="mb-6">
             <span className="inline-flex items-center rounded-full border border-[#e5e7eb] bg-white px-3 py-1 text-xs font-medium text-[#3B82F6]">
               Audit Studio · Framework

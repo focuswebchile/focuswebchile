@@ -60,7 +60,7 @@ export function DiferenteTimeline() {
                 }}
               >
                 <h3 className="text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Trabajamos con una misma meta
+                  Partimos por entender el problema real
                 </h3>
               </TimelineContent>
 
@@ -79,7 +79,7 @@ export function DiferenteTimeline() {
                 className="mt-6 text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl text-left"
               >
                 <p>
-                  Nos{" "}
+                  Primero{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -87,10 +87,10 @@ export function DiferenteTimeline() {
                     customVariants={textVariants}
                     className="inline-flex items-center rounded-md border-2 border-dotted border-accent/50 px-2 text-accent"
                   >
-                    enfocamos
+                    diagnosticamos
                   </TimelineContent>{" "}
-                  en lo que tú sabes que tu negocio necesita hoy. Mi trabajo es darle forma y mostrar
-                  esa información de manera{" "}
+                  qué está frenando tu sitio: SEO técnico, velocidad, estructura o experiencia de uso. Mi trabajo es
+                  convertir esa información en un plan{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -98,19 +98,9 @@ export function DiferenteTimeline() {
                     customVariants={textVariants}
                     className="inline-flex items-center rounded-md border-2 border-dotted border-primary/50 px-2 text-primary"
                   >
-                    clara
+                    claro
                   </TimelineContent>
-                  , para que tus clientes entiendan tu propuesta de{" "}
-                  <TimelineContent
-                    as="span"
-                    timelineRef={sectionRef}
-                    animationNum={5}
-                    customVariants={textVariants}
-                    className="inline-flex items-center rounded-md border-2 border-dotted border-primary/50 px-2 text-primary"
-                  >
-                    inmediato
-                  </TimelineContent>{" "}
-                  y sin vueltas.
+                  y accionable para que avances con foco, no con suposiciones.
                 </p>
               </TimelineContent>
             </div>
@@ -121,7 +111,7 @@ export function DiferenteTimeline() {
             </span>
               <div className="space-y-4 text-left">
                 <h3 className="text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Te ahorro el camino largo
+                  Te ahorro prueba y error
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
                   Uso mi{" "}
@@ -134,7 +124,8 @@ export function DiferenteTimeline() {
                   >
                     experiencia
                   </TimelineContent>{" "}
-                  para que evites{" "}
+                  para priorizar lo que sí mueve la aguja: rendimiento, indexación, arquitectura y mensajes clave.
+                  Evitamos{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -142,9 +133,9 @@ export function DiferenteTimeline() {
                     customVariants={textVariants}
                     className="inline-flex items-center rounded-md border-2 border-dotted border-accent/50 px-2 text-accent"
                   >
-                    errores
+                    cambios cosméticos
                   </TimelineContent>{" "}
-                  comunes. No te hablo desde la teoría, sino desde lo que realmente{" "}
+                  y ejecutamos lo que realmente{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -154,7 +145,7 @@ export function DiferenteTimeline() {
                   >
                     funciona
                   </TimelineContent>
-                  , asegurando que tu web sea efectiva y profesional desde el primer minuto que esté online.
+                  .
                 </p>
               </div>
             </div>
@@ -165,10 +156,12 @@ export function DiferenteTimeline() {
             </span>
               <div className="space-y-4 text-left">
                 <h3 className="text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Sin amarras ni enredos
+                  Estrategia y ejecución en una misma línea
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
-                  Te entrego una web con lo que{" "}
+                  Si el camino es optimizar, optimizamos. Si el camino es rehacer, desarrollamos desde cero.
+                  Siempre con base técnica sólida para que tu web se entienda mejor en Google y convierta mejor.
+                  Te entrego una solución con lo{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -178,7 +171,7 @@ export function DiferenteTimeline() {
                   >
                     realmente
                   </TimelineContent>
-                  {" "}necesitas. Tendrás el control total para gestionarla a tu manera, con{" "}
+                  {" "}necesario. Tendrás control total para gestionarla a tu manera, con{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -196,7 +189,7 @@ export function DiferenteTimeline() {
                     customVariants={textVariants}
                     className="inline-flex items-center rounded-md border-2 border-dotted border-accent/50 px-2 text-accent"
                   >
-                    Adaptan
+                    adaptan
                   </TimelineContent>{" "}
                   y crecen a tu ritmo, sin depender de terceros ni quedar amarrado a nadie.
                 </p>

@@ -54,7 +54,7 @@ export function ContactPage() {
 
       setFormData({ name: "", email: "", message: "" })
       setSuccessMessage("Mensaje enviado. Te responderemos pronto.")
-    } catch (error) {
+    } catch {
       setErrorMessage("No pudimos enviar el mensaje. Intenta nuevamente.")
     } finally {
       setIsSubmitting(false)

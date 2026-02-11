@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Mi página web tarda mucho en cargar: causas y soluciones en Chile | Focus Web",
@@ -121,6 +122,13 @@ export default function BlogPostPage() {
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <article className="space-y-6 text-foreground">
+              <SiteBreadcrumb
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Mi página web tarda mucho en cargar" },
+                ]}
+              />
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Tiempo de lectura: 8 min</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Mi página web tarda mucho en cargar: causas reales y soluciones efectivas en Chile
@@ -390,7 +398,7 @@ export default function BlogPostPage() {
                     Ir al diagnóstico inicial
                   </a>
                   <a
-                    href="/precios"
+                    href="/servicios/desarrollo-web"
                     className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-primary px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/5"
                   >
                     Ver precios

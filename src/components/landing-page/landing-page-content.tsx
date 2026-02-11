@@ -146,6 +146,13 @@ interface ScrollGlobeProps {
 function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
   const [activeSection, setActiveSection] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const clearNavLabelTimeout = () => {
+    if (navLabelTimeoutRef.current) {
+      clearTimeout(navLabelTimeoutRef.current);
+      navLabelTimeoutRef.current = null;
+    }
+  };
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const animationFrameId = useRef<number | null>(null);
@@ -199,9 +206,7 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
-      if (navLabelTimeoutRef.current) {
-        clearTimeout(navLabelTimeoutRef.current);
-      }
+      clearNavLabelTimeout();
     };
   }, [updateScrollPosition]);
 
@@ -404,12 +409,13 @@ export default function LandingPageContent() {
         <div className="relative left-1/2 w-screen -translate-x-1/2">
           <LandingHero
             title="Landing pages en Chile que convierten"
-            subtitle="Diseño web en Chile para pymes: landing pages claras, rápidas y enfocadas en contacto real, con desarrollo profesional."
+            subtitle="Landing pages para pymes en Chile con foco en conversion, SEO tecnico y velocidad web. Estructura clara para usuarios y base solida para que Google entienda mejor tu pagina."
             links={[
               { label: "Mira nuestro proceso de trabajo", href: "/nuestro-proceso" },
+              { label: "Ver servicio de optimizacion", href: "/servicios/optimizacion-velocidad-web" },
               { label: "Cómo crear una página web en Chile", href: "/blog/como-crear-una-pagina-web-en-chile" },
               { label: "Crear una página web desde cero", href: "/crear-pagina-web-desde-cero" },
-              { label: "Ver precios y opciones", href: "/precios" },
+              { label: "Ver precios y opciones", href: "/servicios/desarrollo-web" },
             ]}
           />
         </div>
@@ -426,10 +432,10 @@ export default function LandingPageContent() {
           <div className="min-h-[40vh] flex w-full items-center justify-center">
             <div className="w-full">
               <p className="mx-auto w-full max-w-[22ch] px-6 text-center text-3xl leading-relaxed font-normal text-foreground text-balance sm:hidden fade-in-up">
-                Una landing page tiene un solo objetivo
+                Una landing page muestra tu oferta de forma clara y guía a tus visitantes a actuar
               </p>
               <TextRevealByWord
-                text="Una landing page tiene un solo objetivo"
+                text="Una landing page muestra tu oferta de forma clara y guía a tus visitantes a actuar"
                 className="w-full hidden sm:block"
                 textClassName="mx-auto w-full max-w-[34ch] lg:max-w-[42ch] px-0 text-center text-5xl md:text-6xl lg:text-7xl leading-relaxed font-normal text-balance"
               />
@@ -438,14 +444,15 @@ export default function LandingPageContent() {
           <div className="min-h-[60vh] flex w-full items-center justify-center">
             <div className="w-full">
               <div className="mx-auto w-full max-w-[28ch] px-6 text-center text-xl leading-relaxed font-normal text-foreground sm:hidden fade-in-up">
-                <p>Que la persona que entra haga una acción específica.</p>
-                <p>Está pensada para convertir visitas en contactos,</p>
-                <p>clientes o acciones concretas,</p>
-                <p>concentrando toda la atención en un solo propósito.</p>
+                <p>No se trata de llenar una pagina de bloques.</p>
+                <p>Se trata de explicar bien tu oferta,</p>
+                <p>quitar friccion y llevar al usuario</p>
+                <p>a un siguiente paso claro:</p>
+                <p>contactar, agendar o comprar.</p>
               </div>
               <TextRevealByWord
                 text={
-                  "Que la persona que entra haga una acción específica.\n\nEstá pensada para convertir visitas en contactos,\n\nclientes o acciones concretas,\n\nconcentrando toda la atención en un solo propósito."
+                  "No se trata de llenar una pagina de bloques.\n\nSe trata de explicar bien tu oferta,\n\nquitar friccion y llevar al usuario\n\na un siguiente paso claro:\n\ncontactar, agendar o comprar."
                 }
                 className="w-full hidden sm:block"
                 textClassName="mx-auto w-full max-w-[48ch] lg:max-w-[82rem] px-0 text-center text-3xl md:text-4xl lg:text-5xl leading-relaxed font-normal"
@@ -473,7 +480,7 @@ export default function LandingPageContent() {
               <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
                 Depende de lo que busques lograr. Algunas funcionan como tu carta de presentacion online, otras estan
                 pensadas para una accion muy concreta, como vender un producto o promocionar una oferta. Es una forma
-                de creacion web pensada para conversion.
+                de creacion web pensada para conversion, rendimiento y lectura tecnica clara para Google.
               </p>
             </div>
 
@@ -497,8 +504,8 @@ export default function LandingPageContent() {
                       quien eres, que ofreces y como contactarte, todo en un vistazo.
                     </p>
                     <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                      Perfecta para quienes quieren tener presencia online sin complicaciones, pero con claridad y
-                      estilo.
+                      Perfecta para presencia online sin complicaciones, con estructura tecnica limpia para crecer
+                      luego con SEO de contenidos si lo necesitas.
                     </p>
                   </div>
                 </div>
@@ -524,7 +531,8 @@ export default function LandingPageContent() {
                       registrarse o participar.
                     </p>
                     <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                      Funciona como un escenario donde tu producto es el protagonista y la conversion es el objetivo.
+                      Funciona como un escenario donde tu producto es el protagonista y la conversion es el objetivo,
+                      manteniendo buenas practicas de velocidad y SEO tecnico base.
                     </p>
                   </div>
                 </div>
@@ -552,7 +560,8 @@ export default function LandingPageContent() {
               </h2>
               <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
                 Cuando buscas una acción concreta: que te escriban, compren o respondan a una campaña puntual. Todo en
-                la página está pensado para guiar a la persona hacia ese único objetivo, sin distracciones.
+                la pagina esta pensado para guiar a la persona hacia ese unico objetivo, sin distracciones y con base
+                tecnica saludable.
               </p>
             </div>
 
@@ -562,16 +571,15 @@ export default function LandingPageContent() {
                 <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                   Si tu objetivo es lograr una acción concreta, como que alguien se contacte, compre un producto o
                   participe en una promoción puntual, una landing page es perfecta. Toda la página está pensada para
-                  guiar al usuario hacia ese único objetivo.
+                  guiar al usuario hacia ese unico objetivo con buena velocidad y SEO tecnico desde el inicio.
                 </p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl sm:text-3xl font-semibold text-foreground">Cuándo no aplica</h3>
                 <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                  Si tu objetivo es presentar tu marca, contar tu historia o mejorar tu SEO, una landing page no es la
-                  mejor opción. Si buscas creacion web completa o paginas web chilenas para presentar tu marca, revisa
-                  nuestra sección de Sitio Web Corporativo, donde te mostramos cómo crear una presencia online efectiva
-                  con un sitio web profesional.
+                  Si necesitas posicionar multiples servicios, trabajar contenidos constantes o crecer con una
+                  arquitectura mas amplia, conviene un sitio web completo. Una landing puede incluir SEO tecnico base,
+                  pero no reemplaza una estrategia de contenidos o estructura de muchas paginas.
                 </p>
               </div>
             </div>
@@ -582,7 +590,7 @@ export default function LandingPageContent() {
     {
       id: "proceso",
       badge: "Proceso",
-      title: "Proceso de diseño y desarrollo de páginas web",
+      title: "Proceso de diagnostico, diseno y optimizacion",
       description: "Seccion de proceso.",
       align: "center" as const,
       custom: (
@@ -603,11 +611,11 @@ export default function LandingPageContent() {
             <div className="space-y-4 text-center">
               <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-muted-foreground">Casos reales</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground">
-                Asi se ve el diseño web en la práctica
+                Asi se ve el diseno web y SEO tecnico en la practica
               </h2>
               <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
-                Dos ejemplos de diseños web reales que cumplen un objetivo concreto: captar clientes o promover un
-                producto de manera clara y directa.
+                Dos ejemplos de paginas reales donde se cuida conversion, claridad del mensaje, lectura SEO y
+                rendimiento para mobile y desktop.
               </p>
             </div>
 
@@ -723,12 +731,17 @@ export default function LandingPageContent() {
                 {
                   question: "¿Incluye diseño y texto?",
                   answer:
-                    "Sí. El servicio contempla diseño de página web y apoyo en la estructura del contenido para que tu mensaje quede claro y efectivo.",
+                    "Si. El servicio contempla diseno de pagina, apoyo en estructura del contenido y buenas practicas tecnicas para que el mensaje sea claro y medible.",
                 },
                 {
-                  question: "¿Cuál es el precio de una página web o landing page?",
+                  question: "¿Incluye SEO tecnico y optimizacion de velocidad?",
                   answer:
-                    "Depende del alcance y del contenido. En general, una landing page es la opción más directa y accesible para empezar.",
+                    "Si. Cada landing se entrega con base tecnica: estructura limpia, meta tags esenciales, imagenes optimizadas y rendimiento pensado para mobile.",
+                },
+                {
+                  question: "¿Cual es el precio de una pagina web o landing page?",
+                  answer:
+                    "Depende del alcance y del contenido. En general, una landing page es la opcion mas directa para partir y validar conversion.",
                 },
                 {
                   question: "¿También hacen página web e-commerce?",
@@ -759,7 +772,7 @@ export default function LandingPageContent() {
               Entonces... ¿avanzamos?
             </h2>
             <p className="mt-4 text-base sm:text-lg md:text-xl text-muted-foreground">
-              Hablemos por WhatsApp y veamos como hacer tu landing page realidad.
+              Hablemos por WhatsApp y definimos si necesitas landing, optimizacion o una ruta SEO mas completa.
             </p>
             <div className="mt-8">
               <a
