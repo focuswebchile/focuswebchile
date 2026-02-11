@@ -229,15 +229,6 @@ export default function ServiciosPage() {
                 No vendemos paquetes genéricos. Identificamos tu situación, priorizamos lo que más impacto tiene y
                 ejecutamos con criterio.
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="/metodologia"
-                  className="group inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
-                >
-                  Ir al diagnóstico
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

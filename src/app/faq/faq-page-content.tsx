@@ -364,18 +364,6 @@ export function FAQPageContent() {
 
   return (
     <div className="w-full" id="faq-top">
-      <nav className="mx-auto w-full max-w-6xl px-6 pt-6 text-sm text-muted-foreground">
-        <ol className="flex items-center gap-2">
-          <li>
-            <Link className="text-primary hover:text-primary/80" href="/">
-              Inicio
-            </Link>
-          </li>
-          <li aria-hidden="true">›</li>
-          <li className="text-foreground/70">Preguntas Frecuentes</li>
-        </ol>
-      </nav>
-
       <section className="w-full px-6 pb-12 pt-8 md:pt-12">
         <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-r from-[#4F9CF9] via-[#34D399] to-[#2FBF7C] px-6 py-12 text-center text-white shadow-lg md:px-12 md:py-16">
           <h1 className="text-4xl font-bold md:text-6xl">
