@@ -21,9 +21,9 @@ const needsCards = [
       "Optimización de conversión",
       "SEO on-page y contenido",
     ],
-    price: "Desde $390.000 CLP",
-    ctaLabel: "Ir al diagnóstico",
-    ctaHref: "/metodologia",
+    price: "Desde $111.000 CLP",
+    ctaLabel: "Conocer auditoría SEO",
+    ctaHref: "/servicios/auditoria-seo-tecnico",
     chips: [
       "WordPress lento",
       "E-commerce que no vende",

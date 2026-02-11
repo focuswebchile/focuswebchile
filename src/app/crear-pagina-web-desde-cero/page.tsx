@@ -156,7 +156,7 @@ export default function BlogPostPage() {
               <p>
                 El dominio es como tu dirección en la web, por ejemplo <em>micliente.cl</em> (puedes registrarlo en{" "}
                 <a
-                  href="https://www.nic.cl/"
+                  href="https://www.nic.cl"
                   target="_blank"
                   rel="noopener"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
@@ -166,7 +166,7 @@ export default function BlogPostPage() {
                 para dominios.cl). El hosting es el lugar donde va a “vivir” tu página, y hoy existen opciones confiables
                 como{" "}
                 <a
-                  href="https://www.cloudflare.com/"
+                  href="https://www.cloudflare.com"
                   target="_blank"
                   rel="noopener"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"

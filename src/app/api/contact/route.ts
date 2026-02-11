@@ -2,10 +2,50 @@ import { NextResponse } from "next/server"
 import { Resend } from "resend"
 
 const RECAPTCHA_THRESHOLD = 0.5
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000 // 10 min
+const RATE_LIMIT_MAX_REQUESTS = 5
+const ipRequestLog = new Map<string, number[]>()
+
+function getClientIp(request: Request): string {
+  const forwardedFor = request.headers.get("x-forwarded-for")
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0]?.trim() || "unknown"
+  }
+
+  const realIp = request.headers.get("x-real-ip")
+  if (realIp) return realIp
+
+  return "unknown"
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const existing = ipRequestLog.get(ip) ?? []
+  const recent = existing.filter((timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS)
+
+  if (recent.length >= RATE_LIMIT_MAX_REQUESTS) {
+    ipRequestLog.set(ip, recent)
+    return true
+  }
+
+  recent.push(now)
+  ipRequestLog.set(ip, recent)
+  return false
+}
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message, token, action } = await request.json()
+    const { name, email, message, token, action, website } = await request.json()
+
+    const clientIp = getClientIp(request)
+    if (isRateLimited(clientIp)) {
+      return NextResponse.json({ success: false, error: "Demasiados intentos, prueba en unos minutos" }, { status: 429 })
+    }
+
+    // Honeypot: bots suelen completar campos ocultos.
+    if (typeof website === "string" && website.trim().length > 0) {
+      return NextResponse.json({ success: true })
+    }
 
     if (!name || !email || !message || !token || !action) {
       return NextResponse.json({ success: false, error: "Datos incompletos" }, { status: 400 })

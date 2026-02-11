@@ -111,21 +111,22 @@ export function HeroSection() {
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:items-stretch md:min-h-[calc(100vh-80px)] xl:grid-cols-2 xl:gap-24">
-          <div className="relative z-20 space-y-6 pt-24 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] xl:pr-24 xl:max-w-[640px] lg:pr-32">
+          <div className="relative z-20 space-y-6 pt-24 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] xl:pr-20 xl:max-w-[760px] lg:pr-24">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280]">
               <p>Optimización web con criterio e impacto real.</p>
               <p>Priorizamos lo que importa.</p>
             </div>
 
-            <h1 className="max-w-[720px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="whitespace-nowrap">Optimización</span>
-              <br />
-              Web en Chile
+            <h1 className="max-w-[820px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="block lg:whitespace-nowrap">Posicionamiento</span>
+              <span className="block lg:whitespace-nowrap">Web y técnico</span>
+              <span className="block lg:whitespace-nowrap">en Chile</span>
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-[#6B7280] sm:text-lg">
-              Mejoramos rendimiento y SEO técnico para que tu sitio cargue rápido, se entienda mejor
-              en Google y convierta. Analizamos, priorizamos y ejecutamos con criterio.
+              Servicios de posicionamiento web y SEO técnico para que tu sitio aparezca en Google,
+              cargue rápido y genere ventas. No vendemos paquetes genéricos: auditamos,
+              priorizamos por impacto real y ejecutamos con criterio técnico.
             </p>
 
             <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.16em] text-[#9CA3AF] sm:text-xs sm:tracking-[0.18em]">

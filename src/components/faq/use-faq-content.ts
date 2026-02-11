@@ -43,7 +43,7 @@ export function useFaqContent() {
         if (Array.isArray(parsed)) {
           setContent(parsed)
         }
-      } catch (error) {
+      } catch {
         // ignore cache errors
       }
     }
@@ -79,7 +79,7 @@ export function useFaqContent() {
         ]
         setContent(nextContent)
         window.localStorage.setItem(FAQ_CACHE_KEY, JSON.stringify(nextContent))
-      } catch (error) {
+      } catch {
         // keep cached content on failure
       }
     }

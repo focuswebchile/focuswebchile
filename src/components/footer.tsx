@@ -22,6 +22,11 @@ export function Footer() {
             <h4 className="font-semibold text-sm sm:text-base">Enlaces rápidos</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li>
+                <a href="/servicios" className="hover:text-primary transition-colors">
+                  Servicios
+                </a>
+              </li>
+              <li>
                 <a href="/precios" className="hover:text-primary transition-colors">
                   Precios
                 </a>
@@ -57,7 +62,7 @@ export function Footer() {
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </a>
               <a
-                href="https://www.facebook.com/people/Focus-Web-Chile/61585246727387/"
+                href="https://www.facebook.com/people/Focus-Web-Chile/61585246727387"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"

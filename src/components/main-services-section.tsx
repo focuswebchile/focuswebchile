@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { SearchCheck, Gauge, Code2, Check, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 const cards = [
   {
@@ -28,8 +29,8 @@ const cards = [
       valueClass: "mt-3",
     },
     cta: {
-      label: "Ir al diagnóstico",
-      href: "/metodologia",
+      label: "Conocer auditoría SEO",
+      href: "/servicios/auditoria-seo-tecnico",
       external: false,
     },
     relatedLinks: [
@@ -58,8 +59,8 @@ const cards = [
       subtext: "menos tiempo de carga según el estado inicial",
     },
     cta: {
-      label: "Ver metodología",
-      href: "/metodologia",
+      label: "Ver optimización",
+      href: "/servicios/optimizacion-velocidad-web",
       external: false,
     },
     relatedLinks: [
@@ -72,8 +73,8 @@ const cards = [
     description:
       "Creamos o renovamos tu sitio con base técnica sólida desde el inicio: diseño profesional, velocidad, SEO técnico y arquitectura escalable para crecer.",
     icon: Code2,
-    tone: "from-success/20 to-success/5",
-    iconTone: "bg-success/15 text-success",
+    tone: "from-amber-200/40 to-amber-50/20",
+    iconTone: "bg-amber-200/40 text-amber-700",
     bullets: [
       "Diseño profesional a medida",
       "PageSpeed 90+ desde día 1",
@@ -88,7 +89,7 @@ const cards = [
       subtext: "CLP pago único",
     },
     cta: {
-      label: "Ver precios",
+      label: "Conocer desarrollo web",
       href: "/precios",
       external: false,
     },
@@ -100,6 +101,12 @@ const cards = [
 ]
 
 export function MainServicesSection() {
+  const [openCardIndex, setOpenCardIndex] = useState<number | null>(null)
+
+  const toggleCardDetail = (index: number) => {
+    setOpenCardIndex((current) => (current === index ? null : index))
+  }
+
   return (
     <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
@@ -118,7 +125,7 @@ export function MainServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -128,7 +135,7 @@ export function MainServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
               <Card className="group h-full border-border/60 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
-                <div className={`h-full bg-gradient-to-br ${card.tone} p-6 sm:p-8 flex flex-col gap-6 transition-transform duration-300`}>
+                <div className={`bg-gradient-to-br ${card.tone} p-6 sm:p-8 lg:p-7 flex h-full flex-col gap-6 lg:gap-5 transition-transform duration-300`}>
                   <div className="flex items-center gap-3">
                     <div className={`rounded-xl p-3 ${card.iconTone}`}>
                       <card.icon className="h-6 w-6" />
@@ -138,7 +145,7 @@ export function MainServicesSection() {
 
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{card.description}</p>
 
-                  <ul className="space-y-3">
+                  <ul className={`space-y-3 ${index === 2 ? "lg:space-y-4 lg:pt-1" : ""}`}>
                     {card.bullets.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm sm:text-base">
                         <Check className="h-4 w-4 mt-1 flex-shrink-0 text-foreground/80" />
@@ -146,26 +153,34 @@ export function MainServicesSection() {
                       </li>
                     ))}
                   </ul>
+                  {index === 2 ? <div className="hidden lg:block h-4" /> : null}
 
-                  <details className="rounded-lg border border-border/60 bg-card/70 p-3">
-                    <summary className="cursor-pointer text-sm font-semibold text-foreground/85">
+                  <div className="rounded-lg border border-border/60 bg-card/70 p-3">
+                    <button
+                      type="button"
+                      onClick={() => toggleCardDetail(index)}
+                      aria-expanded={openCardIndex === index}
+                      className="w-full cursor-pointer text-left text-sm font-semibold text-foreground/85"
+                    >
                       Ver detalle técnico
-                    </summary>
-                    <div className="mt-2 space-y-2">
-                      <p className="text-sm text-muted-foreground">{card.seoDetail}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {card.relatedLinks.map((link) => (
-                          <a
-                            key={link.href}
-                            href={link.href}
-                            className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs text-info hover:bg-info/15"
-                          >
-                            {link.label}
-                          </a>
-                        ))}
+                    </button>
+                    {openCardIndex === index ? (
+                      <div className="mt-2 space-y-2">
+                        <p className="text-sm text-muted-foreground">{card.seoDetail}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {card.relatedLinks.map((link) => (
+                            <a
+                              key={link.href}
+                              href={link.href}
+                              className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs text-info hover:bg-info/15"
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </details>
+                    ) : null}
+                  </div>
 
                   <div className="mt-auto space-y-4">
                     <div className="min-h-[132px] rounded-2xl border border-white/40 bg-white/30 px-5 pb-5 pt-7 text-center transition-colors duration-300 group-hover:bg-white/40">

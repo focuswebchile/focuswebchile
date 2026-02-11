@@ -7,7 +7,7 @@ const impactRows = [
   {
     second: "1 segundo",
     label: "Base",
-    width: "10%",
+    width: "max(10%, 52px)",
     right: "0%",
     barClass: "bg-success",
     rightClass: "text-success",
@@ -27,8 +27,8 @@ const impactRows = [
     label: "+90% rebote",
     width: "90%",
     right: "+90%",
-    barClass: "bg-primary",
-    rightClass: "text-primary",
+    barClass: "bg-orange-500",
+    rightClass: "text-orange-600",
     note: "Casi el doble de usuarios abandonan",
   },
   {

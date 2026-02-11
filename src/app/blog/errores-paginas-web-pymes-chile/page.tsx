@@ -141,7 +141,7 @@ export default function BlogPostPage() {
                   desde laptops o computadores de escritorio. Esta diferencia refleja una preferencia evidente por la
                   movilidad al momento de consumir contenidos digitales.{" "}
                   <a
-                    href="https://marketing4ecommerce.cl/estado-de-la-conexion-a-internet-en-chile/"
+                    href="https://marketing4ecommerce.cl/estado-de-la-conexion-a-internet-en-chile"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 underline underline-offset-4"
@@ -240,7 +240,7 @@ export default function BlogPostPage() {
                 <p>
                   <strong>Test rápido:</strong>{" "}
                   <a
-                    href="https://pagespeed.web.dev/"
+                    href="https://pagespeed.web.dev"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 underline underline-offset-4"

@@ -3,6 +3,13 @@ import { HeroSection } from "@/components/hero-section"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { HomeSections } from "@/components/home-sections"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "SEO y Posicionamiento Web Chile | FocusWeb",
+  description:
+    "Servicios de SEO, posicionamiento web y optimización técnica en Chile. Mejoramos velocidad, corregimos errores y te posicionamos en Google. Auditoría gratis en 48hrs.",
+}
 
 const homeFaqSchema = {
   "@context": "https://schema.org",
@@ -38,6 +45,22 @@ const homeFaqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Primero diagnosticamos bloqueadores de carga, imágenes pesadas, scripts y configuración de caché. Luego priorizamos mejoras para reducir tiempos en móvil y desktop.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en verse el impacto SEO después de optimizar velocidad?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Las mejoras técnicas de velocidad se reflejan en rendimiento en pocos días. El impacto en posicionamiento puede tomar semanas, porque Google debe rastrear y reevaluar el sitio.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿La velocidad web realmente ayuda al posicionamiento en Google?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí. La velocidad y Core Web Vitals forman parte de la experiencia de página. No reemplazan contenido ni autoridad, pero sí influyen en la calidad técnica que Google evalúa.",
       },
     },
     {
