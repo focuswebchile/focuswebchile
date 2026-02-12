@@ -157,6 +157,11 @@ export default function RootLayout({
               gtag('config', 'G-33SDJFM25D');
             `}
           </Script>
+          <Script
+            src="https://analytics.ahrefs.com/analytics.js"
+            data-key="s+O8F/fzRT/Wxo/VzK5fjQ"
+            strategy="lazyOnload"
+          />
           <HashRedirect />
           <ThemeSync />
           {children}
