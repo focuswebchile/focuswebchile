@@ -166,7 +166,7 @@ export default function BlogPostPage() {
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
                   <Image
-                    src="/diseñosdel-2010.webp"
+                    src="/disenosdel-2010.webp"
                     alt="Diseños web que parecen de 2010"
                     fill
                     sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"

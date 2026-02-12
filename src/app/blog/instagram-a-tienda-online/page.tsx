@@ -8,7 +8,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
-  title: "De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar | Focus Web",
+  title: "De Instagram a Tienda Online en Chile | Focus Web",
   description:
     "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/instagram-a-tienda-online",
-    title: "De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar | Focus Web",
+    title: "De Instagram a Tienda Online en Chile | Focus Web",
     description:
       "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
     siteName: "FocusWeb Chile",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar | Focus Web",
+    title: "De Instagram a Tienda Online en Chile | Focus Web",
     description:
       "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
     images: ["https://focusweb.cl/instagramatiendaonline.webp"],

@@ -819,6 +819,49 @@ export default function ServiciosPage() {
                 </a>
               </div>
             </div>
+
+            <div className="mt-6 rounded-2xl border border-border/60 bg-card/80 p-5 sm:p-6">
+              <h3 className="text-lg font-semibold text-foreground sm:text-xl">Recursos recomendados</h3>
+              <p className="mt-2 text-sm text-foreground/75 sm:text-base">
+                Si quieres profundizar antes de decidir, estos contenidos te pueden ayudar:
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm sm:text-base">
+                <li>
+                  <Link
+                    href="/blog/instagram-a-tienda-online"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    De Instagram a tienda online en Chile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/landing-page-vs-pagina-web"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    Landing Page vs Página Web: cuál conviene según tu caso
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/check-list-ecommerce"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    Checklist ecommerce: 47 puntos para lanzar con orden
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="/reporte-ejemplo-auditoria-seo.pdf"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Descargar ejemplo de reporte de auditoría SEO (PDF)
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
         <Footer />

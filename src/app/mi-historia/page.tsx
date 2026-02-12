@@ -7,6 +7,7 @@ import { SobreMiHero } from "./hero"
 import { TextRevealByWord } from "@/components/ui/text-reveal-by-word"
 import { Layout, MessageCircle, Target } from "lucide-react"
 import { DiferenteTimeline } from "./diferente-timeline"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Mi historia | Focus Web – SEO técnico, diagnóstico y desarrollo web",
@@ -80,11 +81,23 @@ export default function SobreMiPage() {
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <h1 className="sr-only">Mi historia en Focus Web</h1>
+        <section className="px-6 pt-24 md:px-10 md:pt-28">
+          <div className="mx-auto w-full max-w-6xl">
+            <SiteBreadcrumb
+              className="mb-2"
+              items={[
+                { label: "Inicio", href: "/" },
+                { label: "Mi historia" },
+              ]}
+            />
+          </div>
+        </section>
         <SobreMiHero />
-        <section className="w-full py-5 md:py-5">
+        <header className="w-full py-5 md:py-5">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="min-h-[35vh] flex w-full items-center justify-center">
               <div className="w-full">
+                <h2 className="sr-only">Quién soy</h2>
                 <p className="mx-auto w-full max-w-[18ch] text-center text-4xl font-medium leading-relaxed text-foreground sm:hidden fade-in-up">
                   Quien soy
                 </p>
@@ -116,11 +129,11 @@ export default function SobreMiPage() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="w-full py-16 md:py-24">
+        </header>
+        <section aria-labelledby="lo-que-me-mueve-title" className="w-full py-16 md:py-24">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="space-y-4 text-center">
-              <h2 className="text-3xl font-semibold sm:text-5xl md:text-7xl">
+              <h2 id="lo-que-me-mueve-title" className="text-3xl font-semibold sm:text-5xl md:text-7xl">
                 <span className="text-foreground">Lo que</span>{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   me mueve
@@ -132,7 +145,7 @@ export default function SobreMiPage() {
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div className="rounded-2xl border border-black/5 ring-1 ring-black/5 bg-white/70 p-8 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.35)] md:h-full md:p-10">
+              <figure className="rounded-2xl border border-black/5 ring-1 ring-black/5 bg-white/70 p-8 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.35)] md:h-full md:p-10">
                 <div className="relative h-full min-h-[320px] w-full overflow-hidden rounded-2xl">
                   <Image
                     src="/lo-que-me-mueve.webp"
@@ -144,10 +157,11 @@ export default function SobreMiPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#F4F1EC]/55 via-[#F4F1EC]/20 to-transparent" />
                 </div>
-              </div>
+                <figcaption className="sr-only">Felipe Ibar y su enfoque de trabajo en Focus Web.</figcaption>
+              </figure>
 
               <div className="flex flex-col gap-8 md:h-full">
-                <div className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/55 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
+                <article className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/55 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
                   <Layout className="h-7 w-7 text-primary" aria-hidden="true" />
                   <div className="mt-4 inline-flex w-fit items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100/70 text-emerald-700">
                     Claridad
@@ -158,9 +172,9 @@ export default function SobreMiPage() {
                   <p className="mt-3 text-base text-foreground/70 sm:text-lg">
                     Antes de mover piezas, reviso qué está fallando de verdad: estructura, SEO on-page, indexación, rendimiento o experiencia móvil. Así evitamos cambios al azar y priorizamos lo que más impacto tiene.
                   </p>
-                </div>
+                </article>
 
-                <div className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/30 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
+                <article className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/30 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
                   <MessageCircle className="h-7 w-7 text-primary" aria-hidden="true" />
                   <div className="mt-4 inline-flex w-fit items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100/70 text-emerald-700">
                     Acompañamiento
@@ -171,8 +185,8 @@ export default function SobreMiPage() {
                   <p className="mt-3 text-base text-foreground/70 sm:text-lg">
                    Dejamos de lado promesas vacías. Te explico en simple qué está bien, qué está mal y qué conviene hacer primero. Decidimos juntos con criterio y contexto de negocio.
                   </p>
-                </div>
-                <div className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/30 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
+                </article>
+                <article className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-emerald-400/30 bg-[radial-gradient(1200px_circle_at_0%_0%,rgba(16,185,129,0.08),rgba(255,255,255,0.92),rgba(255,255,255,0.85))] p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(16,185,129,0.25)] md:p-10">
                   <Target className="h-7 w-7 text-primary" aria-hidden="true" />
                   <div className="mt-4 inline-flex w-fit items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100/70 text-emerald-700">
                     Estrategia
@@ -183,7 +197,7 @@ export default function SobreMiPage() {
                   <p className="mt-3 text-base text-foreground/70 sm:text-lg">
                     Si hay que desarrollar, lo hacemos con SEO técnico y rendimiento desde el inicio. Si no, optimizamos lo existente. El objetivo es el mismo: una web sólida que crezca contigo.
                   </p>
-                </div>
+                </article>
               </div>
             </div>
           </div>
@@ -191,7 +205,7 @@ export default function SobreMiPage() {
         <DiferenteTimeline />
         <section className="w-full py-16 md:py-24">
           <div className="mx-auto w-full max-w-5xl px-6 md:px-10">
-            <div className="relative mx-auto max-w-3xl text-center">
+            <blockquote className="relative mx-auto max-w-3xl text-center">
               <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 text-6xl text-primary/20 md:-top-12 md:text-7xl">
                 “
               </span>
@@ -206,10 +220,10 @@ export default function SobreMiPage() {
               <span className="pointer-events-none absolute -bottom-10 right-6 text-6xl text-primary/20 md:-bottom-12 md:text-7xl">
                 ”
               </span>
-            </div>
-            <p className="mt-8 text-center text-sm font-medium uppercase tracking-[0.2em] text-foreground/60">
+            </blockquote>
+            <cite className="mt-8 block text-center text-sm font-medium uppercase tracking-[0.2em] text-foreground/60 not-italic">
               Felipe / Focus Web
-            </p>
+            </cite>
           </div>
         </section>
         <section className="w-full py-16 md:py-24">
