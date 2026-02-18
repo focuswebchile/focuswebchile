@@ -49,7 +49,7 @@ export async function POST(request: Request) {
     }
 
     const resendApiKey = process.env.RESEND_API_KEY
-    const toEmail = "focuswebchile@gmail.com"
+    const toEmail = process.env.CONTACT_TO_EMAIL || "focuswebchile@gmail.com"
     const fromEmail = process.env.CONTACT_FROM_EMAIL || "Focus Web <onboarding@resend.dev>"
 
     if (!resendApiKey) {
