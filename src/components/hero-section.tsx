@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useEffect, useCallback } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -11,7 +12,7 @@ export function HeroSection() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [recaptchaSiteKey, setRecaptchaSiteKey] = useState<string | null>(null)
 
-  const ensureRecaptchaReady = async () => {
+  const ensureRecaptchaReady = useCallback(async () => {
     let siteKey = recaptchaSiteKey
     if (!siteKey) {
       const response = await fetch("/api/recaptcha/site-key")
@@ -44,22 +45,70 @@ export function HeroSection() {
     }
 
     return siteKey
-  }
+  }, [recaptchaSiteKey])
+
+  useEffect(() => {
+    let canceled = false
+
+    const warmupRecaptcha = async () => {
+      try {
+        await ensureRecaptchaReady()
+      } catch {
+        // Warmup failure should not block manual submit flow
+      }
+    }
+
+    const schedule = () => {
+      if ("requestIdleCallback" in window) {
+        ;(window as Window & { requestIdleCallback: (callback: () => void) => number }).requestIdleCallback(() => {
+          if (!canceled) {
+            void warmupRecaptcha()
+          }
+        })
+      } else {
+        window.setTimeout(() => {
+          if (!canceled) {
+            void warmupRecaptcha()
+          }
+        }, 900)
+      }
+    }
+
+    schedule()
+    return () => {
+      canceled = true
+    }
+  }, [ensureRecaptchaReady])
 
   const executeRecaptcha = async (action: string) => {
-    const siteKey = await ensureRecaptchaReady()
+    let lastError: unknown = null
 
-    return new Promise<string>((resolve, reject) => {
-      const grecaptcha = window.grecaptcha
-      if (!grecaptcha?.execute) {
-        reject(new Error("reCAPTCHA no disponible"))
-        return
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      try {
+        const siteKey = await ensureRecaptchaReady()
+
+        const token = await new Promise<string>((resolve, reject) => {
+          const grecaptcha = window.grecaptcha
+          if (!grecaptcha?.execute) {
+            reject(new Error("reCAPTCHA no disponible"))
+            return
+          }
+
+          grecaptcha.ready(() => {
+            grecaptcha.execute(siteKey, { action }).then(resolve).catch(reject)
+          })
+        })
+
+        return token
+      } catch (error) {
+        lastError = error
+        if (attempt === 0) {
+          await new Promise((resolve) => window.setTimeout(resolve, 350))
+        }
       }
+    }
 
-      grecaptcha.ready(() => {
-        grecaptcha.execute(siteKey, { action }).then(resolve).catch(reject)
-      })
-    })
+    throw lastError ?? new Error("reCAPTCHA no disponible")
   }
 
   const handleReviewSubmit = async (event: React.FormEvent) => {
@@ -111,7 +160,7 @@ export function HeroSection() {
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 gap-12 md:items-stretch md:min-h-[calc(100vh-80px)] xl:grid-cols-2 xl:gap-24">
-          <div className="relative z-20 space-y-6 pt-24 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] xl:pr-20 xl:max-w-[760px] lg:pr-24">
+          <div className="relative z-20 space-y-6 pt-24 pb-8 md:pb-10 md:mt-6 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] lg:mt-8 xl:mt-10 xl:pr-20 xl:max-w-[760px] lg:pr-24">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280]">
               <p>Optimización web con criterio e impacto real.</p>
               <p>Priorizamos lo que importa.</p>
@@ -177,8 +226,8 @@ export function HeroSection() {
             </form>
           </div>
 
-          <div className="relative hidden h-[360px] w-full items-end justify-end overflow-visible sm:h-[420px] md:h-full xl:flex">
-            <div className="relative z-10 h-full w-full max-w-none md:absolute md:bottom-0 md:right-0 md:h-[760px] md:w-[860px] md:translate-x-[clamp(120px,10vw,260px)] lg:h-[820px] lg:w-[980px] xl:h-[880px] xl:w-[1040px]">
+          <div className="relative hidden w-full items-end justify-end overflow-visible xl:flex xl:min-h-[calc(100vh-80px)]">
+            <div className="relative z-10 h-full w-full max-w-none xl:absolute xl:bottom-0 xl:right-0 xl:h-[clamp(440px,62vh,700px)] xl:w-[clamp(460px,40vw,820px)] xl:translate-x-[clamp(8px,2vw,56px)] 2xl:h-[760px] 2xl:w-[900px] 2xl:translate-x-[96px]">
               <Image
                 src="/svghero.svg"
                 alt="Ilustración de optimización web"
@@ -190,8 +239,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-48 bg-gradient-to-t from-[#22C55E]/20 via-[#3B82F6]/12 to-transparent" />
     </section>
   )
 }

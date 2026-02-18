@@ -20,12 +20,16 @@ const navItems = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const isScrolledRef = useRef(false)
   const pathname = usePathname()
   const isHome = pathname === "/"
   const shouldShowBackground = isScrolled || !isHome
 
   useEffect(() => {
+    const mountTimer = window.setTimeout(() => {
+      setIsMounted(true)
+    }, 0)
     let rafId: number | null = null
 
     const syncScrollState = () => {
@@ -45,6 +49,7 @@ export function Header() {
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
+      window.clearTimeout(mountTimer)
       window.removeEventListener("scroll", handleScroll)
       if (rafId !== null) {
         window.cancelAnimationFrame(rafId)
@@ -105,7 +110,8 @@ export function Header() {
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:ml-auto md:flex md:translate-x-8 lg:translate-x-12 xl:translate-x-16 items-center gap-4 lg:gap-6 xl:gap-8">
+            {isMounted ? (
+              <div className="hidden md:ml-auto md:flex items-center gap-3 lg:gap-5 xl:gap-6">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
@@ -130,7 +136,10 @@ export function Header() {
                   Comenzar
                 </a>
               </Button>
-            </div>
+              </div>
+            ) : (
+              <div className="hidden md:flex md:ml-auto h-9 w-[560px] max-w-[62vw]" aria-hidden />
+            )}
 
             {/* Mobile Menu Button */}
             <Button

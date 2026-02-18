@@ -305,8 +305,8 @@ export default function ServiciosPage() {
           <div className="container mx-auto max-w-6xl rounded-3xl border border-success/30 bg-gradient-to-br from-success/10 via-card/90 to-card/95 p-6 shadow-lg shadow-success/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-success/10 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.6fr_0.75fr]">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-success/40 bg-success/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-success">
-                  <Activity className="h-3.5 w-3.5" />
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-success/40 bg-success/15 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.08em] text-success">
+                  <Activity className="h-4 w-4" />
                   Servicio 1
                 </div>
                 <h2 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">
@@ -406,8 +406,8 @@ export default function ServiciosPage() {
           <div className="container mx-auto max-w-6xl rounded-3xl border border-info/30 bg-gradient-to-br from-info/10 via-card/90 to-card/95 p-6 shadow-lg shadow-info/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-info/10 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.6fr_0.75fr]">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-info/40 bg-info/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-info">
-                  <Gauge className="h-3.5 w-3.5" />
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-info/40 bg-info/15 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.08em] text-info">
+                  <Gauge className="h-4 w-4" />
                   Servicio 2
                 </div>
                 <h2 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">
@@ -504,8 +504,8 @@ export default function ServiciosPage() {
           <div className="container mx-auto max-w-6xl rounded-3xl border border-amber-400/40 bg-gradient-to-br from-amber-100/60 via-card/90 to-card/95 p-6 shadow-lg shadow-amber-500/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/15 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.6fr_0.75fr]">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-amber-700">
-                  <Hammer className="h-3.5 w-3.5" />
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-400/50 bg-amber-100 px-4 py-1.5 text-sm font-bold uppercase tracking-[0.08em] text-amber-700">
+                  <Hammer className="h-4 w-4" />
                   Servicio 3
                 </div>
                 <h2 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">

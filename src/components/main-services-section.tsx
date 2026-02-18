@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { SearchCheck, Gauge, Code2, Check, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const cards = [
   {
@@ -102,6 +102,34 @@ const cards = [
 
 export function MainServicesSection() {
   const [openCardIndex, setOpenCardIndex] = useState<number | null>(null)
+  const [lightMotion, setLightMotion] = useState(false)
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 1023px)")
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const syncMotion = () => {
+      setLightMotion(mobileQuery.matches || reducedMotionQuery.matches)
+    }
+
+    syncMotion()
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", syncMotion)
+      reducedMotionQuery.addEventListener("change", syncMotion)
+      return () => {
+        mobileQuery.removeEventListener("change", syncMotion)
+        reducedMotionQuery.removeEventListener("change", syncMotion)
+      }
+    }
+
+    mobileQuery.addListener(syncMotion)
+    reducedMotionQuery.addListener(syncMotion)
+    return () => {
+      mobileQuery.removeListener(syncMotion)
+      reducedMotionQuery.removeListener(syncMotion)
+    }
+  }, [])
 
   const toggleCardDetail = (index: number) => {
     setOpenCardIndex((current) => (current === index ? null : index))
@@ -110,37 +138,42 @@ export function MainServicesSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
-            Nuestros Servicios Principales
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
-            Especializados en optimización técnica para que tu sitio web genere resultados reales
-          </p>
-        </motion.div>
+        {lightMotion ? (
+          <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+              Nuestros Servicios Principales
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
+              Especializados en optimización técnica para que tu sitio web genere resultados reales
+            </p>
+          </div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+              Nuestros Servicios Principales
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
+              Especializados en optimización técnica para que tu sitio web genere resultados reales
+            </p>
+          </motion.div>
+        )}
 
         <div className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {cards.map((card, index) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.12 }}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-            >
+            <div key={card.title}>
               <Card className="group h-full border-border/60 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
                 <div className={`bg-gradient-to-br ${card.tone} p-6 sm:p-8 lg:p-7 flex h-full flex-col gap-6 lg:gap-5 transition-transform duration-300`}>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-start gap-3.5">
                     <div className={`rounded-xl p-3 ${card.iconTone}`}>
                       <card.icon className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight">{card.title}</h3>
+                    <h3 className="text-2xl sm:text-[2rem] font-bold leading-tight tracking-tight">{card.title}</h3>
                   </div>
 
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{card.description}</p>
@@ -204,7 +237,7 @@ export function MainServicesSection() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
