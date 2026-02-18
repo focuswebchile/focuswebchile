@@ -1,32 +1,42 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Inter, Nunito, Poppins } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import HashRedirect from "@/components/auth/hash-redirect"
 import { ThemeSync } from "@/components/theme-sync"
 import "./globals.css"
 
-const poppins = Poppins({
-  subsets: ["latin"],
+const poppins = localFont({
+  src: [
+    { path: "../../public/fonts/Poppins/Poppins-Light.woff2", weight: "300", style: "normal" },
+    { path: "../../public/fonts/Poppins/Poppins-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Poppins/Poppins-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Poppins/Poppins-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../../public/fonts/Poppins/Poppins-Bold.woff2", weight: "700", style: "normal" },
+  ],
   display: "swap",
+  preload: true,
   variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"],
 })
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "../../public/fonts/Inter/Inter-VariableFont_opsz,wght.woff2",
+  weight: "100 900",
+  style: "normal",
   display: "swap",
+  preload: false,
   variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
 })
 
-const nunito = Nunito({
-  subsets: ["latin"],
+const nunito = localFont({
+  src: "../../public/fonts/Nunito/Nunito-VariableFont_wght.woff2",
+  weight: "200 1000",
+  style: "normal",
   display: "swap",
+  preload: false,
   variable: "--font-nunito",
-  weight: ["300", "400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
