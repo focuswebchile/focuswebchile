@@ -51,8 +51,8 @@ export function HomeSocialProofSection() {
                 </div>
               </div>
               <p className="mt-3 text-xs text-muted-foreground">
-                Ejemplo de lectura: período de 30-60 días, fuente GA4 (usuarios, engagement, evento clave) + validación
-                técnica con PageSpeed/Core Web Vitals.
+                Datos de interacción orgánica que reflejan búsqueda activa, lectura profunda y evaluación antes de
+                tomar una decisión.
               </p>
               <div className="mt-3 inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5">
                 <p className="text-xs font-semibold uppercase tracking-[0.06em] text-primary">
