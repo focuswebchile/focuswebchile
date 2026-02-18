@@ -83,4 +83,16 @@ export const blogPosts: BlogPost[] = [
       alt: "Mi página web tarda mucho en cargar",
     },
   },
+  {
+    category: "SEO Local",
+    title: "Google Business Profile (antes Google Mi Negocio): guía para PYMEs chilenas",
+    excerpt:
+      "Pasos simples para optimizar tu perfil local, atraer búsquedas orgánicas y convertir más clientes en Chile.",
+    href: "/blog/seo-local-google-business-chile",
+    date: "16-02-2026",
+    image: {
+      src: "/google-business.profile.seo.webp",
+      alt: "Google Business Profile para PYMEs chilenas",
+    },
+  },
 ]
