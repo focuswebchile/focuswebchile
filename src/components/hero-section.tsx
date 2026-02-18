@@ -59,19 +59,24 @@ export function HeroSection() {
     }
 
     const schedule = () => {
-      if ("requestIdleCallback" in window) {
-        ;(window as Window & { requestIdleCallback: (callback: () => void) => number }).requestIdleCallback(() => {
+      const win = globalThis as Window & {
+        requestIdleCallback?: (callback: () => void) => number
+      }
+
+      if (typeof win.requestIdleCallback === "function") {
+        win.requestIdleCallback(() => {
           if (!canceled) {
             void warmupRecaptcha()
           }
         })
-      } else {
-        window.setTimeout(() => {
-          if (!canceled) {
-            void warmupRecaptcha()
-          }
-        }, 900)
+        return
       }
+
+      globalThis.setTimeout(() => {
+        if (!canceled) {
+          void warmupRecaptcha()
+        }
+      }, 900)
     }
 
     schedule()
