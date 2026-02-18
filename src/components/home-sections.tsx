@@ -46,8 +46,12 @@ export function HomeSections() {
   return (
     <>
       <MainServicesSection />
-      <DelayImpactSection />
-      <NeedsSection />
+      <LazyOnViewport>
+        <DelayImpactSection />
+      </LazyOnViewport>
+      <LazyOnViewport>
+        <NeedsSection />
+      </LazyOnViewport>
       <LazyOnViewport>
         <ProcessSection />
       </LazyOnViewport>

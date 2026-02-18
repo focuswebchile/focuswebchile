@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
@@ -20,17 +20,36 @@ const navItems = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const isScrolledRef = useRef(false)
   const pathname = usePathname()
   const isHome = pathname === "/"
   const shouldShowBackground = isScrolled || !isHome
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+    let rafId: number | null = null
+
+    const syncScrollState = () => {
+      const nextIsScrolled = window.scrollY > 20
+      if (nextIsScrolled !== isScrolledRef.current) {
+        isScrolledRef.current = nextIsScrolled
+        setIsScrolled(nextIsScrolled)
+      }
+      rafId = null
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const handleScroll = () => {
+      if (rafId !== null) return
+      rafId = window.requestAnimationFrame(syncScrollState)
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId)
+      }
+    }
   }, [])
 
   const scrollToSection = (href: string) => {

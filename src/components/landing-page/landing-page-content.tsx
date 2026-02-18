@@ -55,29 +55,34 @@ function LandingHero({
   title,
   subtitle,
   links = [],
+  lightMotion = false,
 }: {
   title: string;
   subtitle: string;
   links?: { label: string; href: string }[];
+  lightMotion?: boolean;
 }) {
   const words = title.split(" ");
+  const HeroWrapper = lightMotion ? "div" : motion.div;
+  const heroWrapperMotionProps = lightMotion
+    ? {}
+    : {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 1.6 },
+      };
 
   return (
     <div className="relative min-h-[100vh] w-full flex items-center justify-center overflow-hidden bg-background pt-16 sm:pt-0">
       <div className="absolute inset-0">
-        <FloatingPaths position={1} />
-        <FloatingPaths position={-1} />
+        {!lightMotion ? <FloatingPaths position={1} /> : null}
+        {!lightMotion ? <FloatingPaths position={-1} /> : null}
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-none px-0 text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.6 }}
-          className="mx-auto max-w-5xl"
-        >
+        <HeroWrapper className="mx-auto max-w-5xl" {...heroWrapperMotionProps}>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-6 tracking-tight text-balance leading-[1.13] overflow-visible">
-            {words.map((word, wordIndex) => (
+            {lightMotion ? title : words.map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block mr-3 last:mr-0">
                 {word.split("").map((letter, letterIndex) => (
                   <motion.span
@@ -122,7 +127,7 @@ function LandingHero({
               <a href="#cta-final">Hablemos por WhatsApp</a>
             </Button>
           </div>
-        </motion.div>
+        </HeroWrapper>
       </div>
     </div>
   );
@@ -397,6 +402,35 @@ function ScrollGlobe({ sections, className }: ScrollGlobeProps) {
 }
 
 export default function LandingPageContent() {
+  const [isLightMotion, setIsLightMotion] = useState(false)
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 1023px)")
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const syncMotion = () => {
+      setIsLightMotion(mobileQuery.matches || reducedMotionQuery.matches)
+    }
+
+    syncMotion()
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", syncMotion)
+      reducedMotionQuery.addEventListener("change", syncMotion)
+      return () => {
+        mobileQuery.removeEventListener("change", syncMotion)
+        reducedMotionQuery.removeEventListener("change", syncMotion)
+      }
+    }
+
+    mobileQuery.addListener(syncMotion)
+    reducedMotionQuery.addListener(syncMotion)
+    return () => {
+      mobileQuery.removeListener(syncMotion)
+      reducedMotionQuery.removeListener(syncMotion)
+    }
+  }, [])
+
   const landingSections = [
     {
       id: "que-es",
@@ -410,6 +444,7 @@ export default function LandingPageContent() {
           <LandingHero
             title="Landing pages en Chile que convierten"
             subtitle="Landing pages para pymes en Chile con foco en conversion, SEO tecnico y velocidad web. Estructura clara para usuarios y base solida para que Google entienda mejor tu pagina."
+            lightMotion={isLightMotion}
             links={[
               { label: "Mira nuestro proceso de trabajo", href: "/nuestro-proceso" },
               { label: "Ver servicio de optimizacion", href: "/servicios/optimizacion-velocidad-web" },

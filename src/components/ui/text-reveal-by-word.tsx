@@ -17,29 +17,42 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className, textClas
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const pinRef = useRef<HTMLDivElement | null>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(media.matches);
+    const motionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileMedia = window.matchMedia("(max-width: 1023px)");
+
+    const update = () => {
+      setReducedMotion(motionMedia.matches);
+      setIsMobile(mobileMedia.matches);
+    };
+
     update();
 
-    if (media.addEventListener) {
-      media.addEventListener("change", update);
+    if (motionMedia.addEventListener) {
+      motionMedia.addEventListener("change", update);
+      mobileMedia.addEventListener("change", update);
     } else {
-      media.addListener(update);
+      motionMedia.addListener(update);
+      mobileMedia.addListener(update);
     }
 
     return () => {
-      if (media.removeEventListener) {
-        media.removeEventListener("change", update);
+      if (motionMedia.removeEventListener) {
+        motionMedia.removeEventListener("change", update);
+        mobileMedia.removeEventListener("change", update);
       } else {
-        media.removeListener(update);
+        motionMedia.removeListener(update);
+        mobileMedia.removeListener(update);
       }
     };
   }, []);
 
+  const useStaticMode = reducedMotion || isMobile;
+
   useEffect(() => {
-    if (reducedMotion) return;
+    if (useStaticMode) return;
     if (!sectionRef.current || !pinRef.current) return;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -56,7 +69,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className, textClas
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [reducedMotion]);
+  }, [useStaticMode]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -79,7 +92,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className, textClas
             const paragraphStart = paragraphs
               .slice(0, paragraphIndex)
               .reduce((count, item) => count + countWords(item), 0);
-            return reducedMotion ? (
+            return useStaticMode ? (
               <p
                 key={paragraphIndex}
                 className={cn(

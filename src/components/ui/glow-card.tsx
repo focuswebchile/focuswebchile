@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, ReactNode } from "react"
+import { useState } from "react"
 
 interface GlowCardProps {
   children: ReactNode
@@ -36,8 +37,38 @@ const GlowCard: React.FC<GlowCardProps> = ({
   customSize = false,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
+  const [isGlowEnabled, setIsGlowEnabled] = useState(false)
 
   useEffect(() => {
+    const mobileQuery = window.matchMedia("(min-width: 1024px)")
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const syncGlow = () => {
+      setIsGlowEnabled(mobileQuery.matches && !motionQuery.matches)
+    }
+
+    syncGlow()
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", syncGlow)
+      motionQuery.addEventListener("change", syncGlow)
+      return () => {
+        mobileQuery.removeEventListener("change", syncGlow)
+        motionQuery.removeEventListener("change", syncGlow)
+      }
+    }
+
+    mobileQuery.addListener(syncGlow)
+    motionQuery.addListener(syncGlow)
+    return () => {
+      mobileQuery.removeListener(syncGlow)
+      motionQuery.removeListener(syncGlow)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isGlowEnabled) return
+
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e
 
@@ -51,7 +82,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
 
     document.addEventListener("pointermove", syncPointer)
     return () => document.removeEventListener("pointermove", syncPointer)
-  }, [])
+  }, [isGlowEnabled])
 
   const { base, spread, saturation, lightness } = glowColorMap[glowColor]
 
@@ -61,6 +92,22 @@ const GlowCard: React.FC<GlowCardProps> = ({
   }
 
   const getInlineStyles = () => {
+    if (!isGlowEnabled) {
+      const baseStyles: React.CSSProperties = {
+        position: "relative",
+        touchAction: "pan-y",
+      }
+
+      if (width !== undefined) {
+        baseStyles.width = typeof width === "number" ? `${width}px` : width
+      }
+      if (height !== undefined) {
+        baseStyles.height = typeof height === "number" ? `${height}px` : height
+      }
+
+      return baseStyles
+    }
+
     const baseStyles: React.CSSProperties & Record<string, string | number> = {
       "--base": base,
       "--spread": spread,
@@ -159,10 +206,10 @@ const GlowCard: React.FC<GlowCardProps> = ({
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: beforeAfterStyles }} />
+      {isGlowEnabled ? <style dangerouslySetInnerHTML={{ __html: beforeAfterStyles }} /> : null}
       <div
         ref={cardRef}
-        data-glow
+        data-glow={isGlowEnabled ? "" : undefined}
         style={getInlineStyles()}
         className={`
           ${getSizeClasses()}
@@ -178,7 +225,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
           ${className}
         `}
       >
-        <div data-glow></div>
+        {isGlowEnabled ? <div data-glow></div> : null}
         {children}
       </div>
     </>
