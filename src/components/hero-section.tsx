@@ -59,7 +59,7 @@ export function HeroSection() {
     }
 
     const schedule = () => {
-      const win = globalThis as Window & {
+      const win = window as Window & {
         requestIdleCallback?: (callback: () => void) => number
       }
 
@@ -72,7 +72,7 @@ export function HeroSection() {
         return
       }
 
-      globalThis.setTimeout(() => {
+      window.setTimeout(() => {
         if (!canceled) {
           void warmupRecaptcha()
         }
