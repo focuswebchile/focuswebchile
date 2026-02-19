@@ -122,6 +122,37 @@ export default function ContactoPage() {
             </div>
           </div>
         </section>
+        <section className="pb-10 px-4 sm:px-6">
+          <div className="container mx-auto max-w-5xl">
+            <div className="rounded-3xl border border-border/60 bg-card/70 p-6 shadow-sm sm:p-8">
+              <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
+                Qué información ayuda a darte una respuesta más útil
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm text-foreground/75 sm:text-base">
+                Mientras más contexto nos compartas, mejor podemos orientarte desde el primer mensaje. No necesitas un
+                brief técnico: con una explicación simple de tu objetivo ya podemos detectar si conviene partir por
+                auditoría, optimización o desarrollo.
+              </p>
+              <ul className="mt-5 grid gap-2 text-sm text-foreground/80 sm:grid-cols-2 sm:text-base">
+                <li>Objetivo principal: más tráfico, más contactos o mejorar velocidad</li>
+                <li>URL actual de tu sitio (si ya está publicado)</li>
+                <li>Problema que hoy te frena: SEO, rendimiento o estructura</li>
+                <li>Plazo estimado y nivel de urgencia del proyecto</li>
+              </ul>
+              <p className="mt-5 text-sm text-foreground/75 sm:text-base">
+                Si todavía no tienes claro qué servicio necesitas, puedes revisar nuestros{" "}
+                <a href="/servicios" className="text-primary underline underline-offset-4 hover:text-primary/80">
+                  servicios de SEO y posicionamiento web
+                </a>{" "}
+                o hacer una evaluación inicial en{" "}
+                <a href="/metodologia" className="text-primary underline underline-offset-4 hover:text-primary/80">
+                  metodología
+                </a>
+                . Así llegas con un diagnóstico base y la conversación avanza más rápido.
+              </p>
+            </div>
+          </div>
+        </section>
         <section className="pb-16 px-6 md:px-10">
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
             Si buscas una página clara y enfocada en resultados, revisa nuestras{" "}

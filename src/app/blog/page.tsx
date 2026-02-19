@@ -89,6 +89,25 @@ export default function BlogPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
               Blog de Optimización Web
             </h1>
+            <div className="mt-5 max-w-4xl space-y-3 text-sm leading-relaxed text-foreground/75 sm:text-base">
+              <p>
+                Este blog está pensado para emprendedores, pymes y equipos que quieren entender el SEO de página web
+                con criterios prácticos, sin tecnicismos innecesarios. Compartimos guías sobre velocidad, SEO técnico,
+                posicionamiento local y estructura de contenidos para que puedas tomar mejores decisiones antes de
+                invertir tiempo o presupuesto.
+              </p>
+              <p>
+                Si hoy sientes que tu sitio no aparece en Google o no convierte como esperabas, aquí encontrarás pasos
+                accionables para diagnosticar problemas reales. Cada artículo se conecta con escenarios comunes en
+                Chile: sitios lentos, errores de indexación, arquitectura confusa y oportunidades claras de mejora en
+                experiencia de usuario.
+              </p>
+              <p>
+                Puedes partir por la guía que más se parezca a tu situación y luego profundizar con nuestro contenido
+                de SEO web, optimización técnica y rendimiento. La idea es simple: menos teoría, más claridad para
+                ejecutar.
+              </p>
+            </div>
             <div className="mt-4">
               <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10 transition-transform duration-300">
                 <Image
@@ -128,6 +147,14 @@ export default function BlogPage() {
 
         <section className="w-full pt-0 pb-16 lg:pb-20 px-4 sm:px-6">
           <div className="container mx-auto flex flex-col gap-8 max-w-6xl">
+            <div className="rounded-2xl border border-border/60 bg-white/80 p-5 text-sm text-foreground/75 shadow-sm sm:p-6 sm:text-base">
+              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Cómo aprovechar mejor este contenido</h2>
+              <p className="mt-3">
+                Recomendamos leer cada artículo con foco en tu etapa actual: si ya tienes sitio, parte por diagnóstico
+                técnico y velocidad; si estás comenzando, revisa también estructura, jerarquía de páginas y enfoque de
+                conversión. Así conectas contenido, SEO y negocio sin perder tiempo.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {posts.slice(1).map((post) => (
                 <article key={post.title} className="flex flex-col gap-4 hover:opacity-90 transition-opacity">

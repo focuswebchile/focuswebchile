@@ -7,7 +7,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Mi Página Web Tarda en Cargar: Soluciones | Focus Web",
+  title: "Mi web tarda en cargar: causas y soluciones | FocusWeb",
   description:
     "Descubre por qué tu página web tarda mucho en cargar, cómo impacta en SEO y ventas, y qué acciones priorizar para optimizar WordPress en Chile.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/mi-pagina-web-tarda-mucho-en-cargar",
-    title: "Mi Página Web Tarda en Cargar: Soluciones | Focus Web",
+    title: "Mi web tarda en cargar: causas y soluciones | FocusWeb",
     description:
       "Guía práctica para entender por qué tu web es lenta, cómo medir Core Web Vitals y qué hacer para mejorar velocidad y conversión.",
     siteName: "FocusWeb Chile",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mi Página Web Tarda en Cargar: Soluciones | Focus Web",
+    title: "Mi web tarda en cargar: causas y soluciones | FocusWeb",
     description:
       "Guía práctica para entender por qué tu web es lenta, cómo medir Core Web Vitals y qué hacer para mejorar velocidad y conversión.",
     images: ["https://focusweb.cl/og-mi-sitio-carga-lento.webp"],
