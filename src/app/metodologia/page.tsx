@@ -13,6 +13,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/metodologia",
   },
+  openGraph: {
+    type: "article",
+    locale: "es_CL",
+    url: "https://focusweb.cl/metodologia",
+    title: "Diagnóstico inicial web | Focus Web",
+    description:
+      "Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero.",
+    siteName: "Focus Web",
+    images: [
+      {
+        url: "https://focusweb.cl/open-graph-metodologia.webp",
+        width: 1200,
+        height: 630,
+        alt: "Diagnóstico inicial web de Focus Web con enfoque en impacto real",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Diagnóstico inicial web | Focus Web",
+    description:
+      "Conoce cómo funciona nuestro diagnóstico inicial web: revisión clara para detectar qué está frenando tu sitio y qué conviene priorizar primero.",
+    images: ["https://focusweb.cl/open-graph-metodologia.webp"],
+  },
 }
 
 const principles = [
