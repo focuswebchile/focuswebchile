@@ -41,6 +41,11 @@ export function Footer() {
                   Contacto
                 </a>
               </li>
+              <li>
+                <a href="/mapa-del-sitio" className="hover:text-primary transition-colors">
+                  Mapa del sitio
+                </a>
+              </li>
             </ul>
           </div>
 

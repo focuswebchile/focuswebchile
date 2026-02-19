@@ -8,7 +8,7 @@ const whatsappNumber = "420733796959";
 const whatsappBase = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=`;
 
 export function FloatingWhatsApp() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

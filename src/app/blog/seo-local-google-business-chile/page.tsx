@@ -86,7 +86,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
       </Script>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
-        <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">
+        <section className="pt-24 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">
           <div className="container mx-auto max-w-3xl">
             <article className="space-y-6 text-foreground">
               <SiteBreadcrumb
@@ -97,7 +97,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 ]}
               />
 
-              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Publicado: 16-02-2026</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Tiempo de lectura: 7 min</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                 Google Business Profile para tu Pyme chilena
               </h1>
@@ -117,7 +117,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
 
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
                 <li>Qué es Google Business Profile y por qué tu Pyme lo necesita ya mismo.</li>
-                <li>Beneficios concretos que obtendrás (más visibilidad local, más clientes tocando tu puerta virtual).</li>
+                <li>Beneficios concretos que obtendrás (más visibilidad local y más clientes contactándote).</li>
                 <li>Cómo crear y verificar tu perfil en minutos.</li>
                 <li>Tips prácticos de optimización para sacarle todo el jugo a tu ficha.</li>
               </ul>
@@ -155,7 +155,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
               <p>
                 Por ejemplo, si tienes una cafetería en Ñuñoa y alguien busca “café cerca de mí”, un perfil de Google
                 Business bien hecho puede hacer que tu cafetería aparezca destacada en el mapa y en el famoso “paquete
-                local” (los 3 locales que Google muestra primero). ¡Es como estar en una vidriera abierta 24/7!
+                local” (los 3 locales que Google muestra primero). Es como tener una vitrina abierta todo el día.
               </p>
 
               <p>
@@ -168,8 +168,8 @@ export default function SeoLocalGoogleBusinessChilePage() {
               <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Por qué es tan importante para tu Pyme?</h2>
 
               <p>
-                Imagina esto: un vecino con hambre busca una “carnicería en Maipú”. Si tu negocio no aparece en
-                Google, es como si tu carnicería estuviera escondida en una bodega sin cartel. Además, Google favorece
+                Imagina esto: un vecino con hambre busca “sushi en Maipú”. Si tu negocio no aparece en Google, para ese
+                cliente simplemente no existes. Además, Google favorece
                 los perfiles completos y activos. Eso significa que si tienes buena información, fotos buenas y
                 reseñas respondidas, Google te mueve hacia arriba en los resultados locales.
               </p>
@@ -199,7 +199,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 digital. Si tu cliente te busca, quieres que te encuentre al tiro, ¿no?
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso a paso: crea y reclama tu perfil</h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso a paso: crea y verifica tu perfil</h2>
 
               <p>
                 Lo bueno es que crear el perfil es bastante intuitivo. Vamos por pasos (tranquilo, no hace falta un
@@ -208,14 +208,22 @@ export default function SeoLocalGoogleBusinessChilePage() {
 
               <ol className="list-decimal pl-6 text-muted-foreground space-y-2">
                 <li>
-                  <strong>Ve a Google Business Profile:</strong> Ingresa en <strong>business.google.com/add</strong>.
+                  <strong>Ve a Google Business Profile:</strong>{" "}
+                  <a
+                    href="https://business.google.com/add"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    business.google.com/add
+                  </a>
                 </li>
                 <li>
                   <strong>Inicia sesión con tu cuenta de Google:</strong> Puede ser una cuenta personal o corporativa
                   (la que uses para tu empresa).
                 </li>
                 <li>
-                  <strong>Registra o reclama tu negocio:</strong> Si tu negocio ya aparece, el sistema te lo mostrará y
+                  <strong>Registra o verifica tu negocio:</strong> Si tu negocio ya aparece, el sistema te lo mostrará y
                   puedes reclamar la propiedad. Si no existe, elige “Agregar tu negocio” e ingresa los datos básicos.
                 </li>
                 <li>
@@ -254,8 +262,8 @@ export default function SeoLocalGoogleBusinessChilePage() {
               </ul>
 
               <p>
-                ¡Listo! Ahora tu negocio existe en Google para tu barrio y sus alrededores. Pero no te duermas: hay
-                que sacarle partido con un par de consejitos extra…
+                ¡Listo! Ahora tu negocio puede aparecer en Google cuando te buscan en tu comuna y alrededores. Pero no
+                te duermas: hay que sacarle partido con un par de consejitos extra…
               </p>
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-muted/30 shadow-lg shadow-primary/10">
@@ -271,7 +279,9 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Tips de optimización (¡Hora de exprimir el jugo!)</h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+                Tips de optimización para sacarle el máximo partido
+              </h2>
 
               <p>
                 <strong>Palabras clave locales en la descripción:</strong> ¿Cómo busca la gente tu negocio en Chile?
@@ -389,8 +399,8 @@ export default function SeoLocalGoogleBusinessChilePage() {
               </ul>
 
               <p>
-                En cambio, si no haces nada, es como tener la mejor sanguchería del barrio pero escondida tras una
-                puerta secreta. No esperes a que te descubran por arte de magia.
+                En cambio, si no haces nada, aunque tengas un buen servicio, muchas personas no te van a encontrar en
+                Google. No esperes que te descubran por arte de magia.
               </p>
 
               <p>

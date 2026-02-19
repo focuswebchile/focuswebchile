@@ -50,7 +50,7 @@ export function HomeSocialProofSection() {
                   </p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-xs sm:leading-normal">
                 Datos de interacción orgánica que reflejan búsqueda activa, lectura profunda y evaluación antes de
                 tomar una decisión.
               </p>
