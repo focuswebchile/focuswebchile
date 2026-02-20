@@ -8,9 +8,9 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Activity, ArrowRight, Gauge, Hammer, ListChecks } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Servicios SEO y Posicionamiento Web Chile | Auditoría Gratis | FocusWeb",
+  title: "Servicios SEO y Posicionamiento en Chile | FocusWeb",
   description:
-    "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad, SEO on-page y estrategia de contenido. Desde $110.000 CLP. Consulta gratis.",
+    "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad y SEO on-page. Desde $110.000 CLP. Consulta gratis.",
   alternates: {
     canonical: "/servicios",
   },
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/servicios",
-    title: "Servicios SEO y Posicionamiento Web Chile | Auditoría Gratis | FocusWeb",
+    title: "Servicios SEO y Posicionamiento en Chile | FocusWeb",
     description:
-      "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad, SEO on-page y estrategia de contenido. Desde $110.000 CLP. Consulta gratis.",
+      "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad y SEO on-page. Desde $110.000 CLP. Consulta gratis.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Servicios SEO y Posicionamiento Web Chile | Auditoría Gratis | FocusWeb",
+    title: "Servicios SEO y Posicionamiento en Chile | FocusWeb",
     description:
-      "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad, SEO on-page y estrategia de contenido. Desde $110.000 CLP. Consulta gratis.",
+      "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad y SEO on-page. Desde $110.000 CLP. Consulta gratis.",
     images: ["https://focusweb.cl/servicios-digitales.webp"],
   },
 }

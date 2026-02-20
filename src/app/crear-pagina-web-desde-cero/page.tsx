@@ -7,7 +7,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 export const metadata: Metadata = {
   title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
   description:
-    "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
+    "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
   alternates: {
     canonical: "/crear-pagina-web-desde-cero",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/crear-pagina-web-desde-cero",
     title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     description:
-      "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
+      "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     description:
-      "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
+      "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
     images: ["https://focusweb.cl/crea-pagina-web-desde-cero.webp"],
   },
 }
@@ -44,7 +44,7 @@ export default function BlogPostPage() {
     name: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     url: "https://focusweb.cl/crear-pagina-web-desde-cero",
     description:
-      "Aprende a crear una página web desde cero en Chile con pasos simples y ejemplos claros para pymes.",
+      "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
     inLanguage: "es-CL",
     isPartOf: {
       "@type": "WebSite",

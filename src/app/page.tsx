@@ -8,7 +8,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "SEO y Posicionamiento Web Chile | FocusWeb",
   description:
-    "Servicios de SEO, posicionamiento web y optimización técnica en Chile. Mejoramos velocidad, corregimos errores y te posicionamos en Google. Auditoría gratis en 48hrs.",
+    "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
 }
 
 const homeFaqSchema = {

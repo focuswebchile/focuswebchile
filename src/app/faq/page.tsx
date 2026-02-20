@@ -8,7 +8,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes - Diseño Web Chile 2026 | FocusWeb",
   description:
-    "¿Cuánto cuesta una página web en Chile? ¿Cuánto demora? Resuelve todas tus dudas sobre diseño web, hosting, SEO, Webpay y más. Respuestas de expertos FocusWeb 2026.",
+    "Resuelve tus dudas sobre diseño web, SEO, hosting y Webpay en Chile. Preguntas frecuentes claras para tomar mejores decisiones.",
   alternates: {
     canonical: "/faq",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/faq",
     title: "Preguntas Frecuentes - Diseño Web Chile 2026 | FocusWeb",
     description:
-      "¿Cuánto cuesta una página web en Chile? ¿Cuánto demora? Resuelve todas tus dudas sobre diseño web, hosting, SEO, Webpay y más. Respuestas de expertos FocusWeb 2026.",
+      "Resuelve tus dudas sobre diseño web, SEO, hosting y Webpay en Chile. Preguntas frecuentes claras para tomar mejores decisiones.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Preguntas Frecuentes - Diseño Web Chile 2026 | FocusWeb",
     description:
-      "¿Cuánto cuesta una página web en Chile? ¿Cuánto demora? Resuelve todas tus dudas sobre diseño web, hosting, SEO, Webpay y más. Respuestas de expertos FocusWeb 2026.",
+      "Resuelve tus dudas sobre diseño web, SEO, hosting y Webpay en Chile. Preguntas frecuentes claras para tomar mejores decisiones.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
 }

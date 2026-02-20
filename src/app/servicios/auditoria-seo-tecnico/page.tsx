@@ -9,7 +9,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 export const metadata: Metadata = {
   title: "Auditoría SEO Técnica Chile | Diagnóstico Completo Gratis | FocusWeb",
   description:
-    "Auditoría SEO técnica completa para tu sitio web en Chile. Identificamos errores, oportunidades y creamos plan de acción priorizado. Primera auditoría GRATIS con reporte inicial en 48 horas.",
+    "Auditoría SEO técnica en Chile para detectar errores y oportunidades con plan priorizado. Primera auditoría gratis y reporte inicial en 48 horas.",
   alternates: {
     canonical: "/servicios/auditoria-seo-tecnico",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/servicios/auditoria-seo-tecnico",
     title: "Auditoría SEO Técnica Chile | Diagnóstico Completo Gratis | FocusWeb",
     description:
-      "Auditoría SEO técnica completa para tu sitio web en Chile. Identificamos errores, oportunidades y creamos plan de acción priorizado. Primera auditoría GRATIS con reporte inicial en 48 horas.",
+      "Auditoría SEO técnica en Chile para detectar errores y oportunidades con plan priorizado. Primera auditoría gratis y reporte inicial en 48 horas.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Auditoría SEO Técnica Chile | Diagnóstico Completo Gratis | FocusWeb",
     description:
-      "Auditoría SEO técnica completa para tu sitio web en Chile. Identificamos errores, oportunidades y creamos plan de acción priorizado. Primera auditoría GRATIS con reporte inicial en 48 horas.",
+      "Auditoría SEO técnica en Chile para detectar errores y oportunidades con plan priorizado. Primera auditoría gratis y reporte inicial en 48 horas.",
     images: ["https://focusweb.cl/og-auditoria.webp"],
   },
 }

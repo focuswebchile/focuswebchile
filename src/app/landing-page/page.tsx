@@ -6,7 +6,7 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import LandingPageContent from "@/components/landing-page/landing-page-content"
 
 export const metadata: Metadata = {
-  title: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
+  title: "Landing pages en Chile: SEO y conversión | FocusWeb",
   description:
     "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
   alternates: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/landing-page",
-    title: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
+    title: "Landing pages en Chile: SEO y conversión | FocusWeb",
     description:
       "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
     siteName: "FocusWeb Chile",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Landing pages en Chile: conversion, SEO tecnico y velocidad | Focus Web",
+    title: "Landing pages en Chile: SEO y conversión | FocusWeb",
     description:
       "Creamos landing pages para pymes en Chile con enfoque en conversion, SEO tecnico y velocidad de carga para generar contactos reales.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],

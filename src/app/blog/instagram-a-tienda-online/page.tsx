@@ -11,7 +11,7 @@ import { ArticleAuthorCta } from "@/components/article-author-cta"
 export const metadata: Metadata = {
   title: "Instagram a tienda online en Chile: guía práctica | FocusWeb",
   description:
-    "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
+    "Guía para pasar de Instagram a tienda online en Chile: costos reales, Transbank, couriers y elección entre WooCommerce o Shopify.",
   alternates: {
     canonical: "/blog/instagram-a-tienda-online",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/blog/instagram-a-tienda-online",
     title: "Instagram a tienda online en Chile: guía práctica | FocusWeb",
     description:
-      "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
+      "Guía para pasar de Instagram a tienda online en Chile: costos reales, Transbank, couriers y elección entre WooCommerce o Shopify.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Instagram a tienda online en Chile: guía práctica | FocusWeb",
     description:
-      "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify. Sin letra chica. Por Focus Web.",
+      "Guía para pasar de Instagram a tienda online en Chile: costos reales, Transbank, couriers y elección entre WooCommerce o Shopify.",
     images: ["https://focusweb.cl/instagramatiendaonline.webp"],
   },
 }
@@ -48,7 +48,7 @@ const articleAndBreadcrumbSchema = {
       "@type": "Article",
       headline: "De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar",
       description:
-        "Guía completa para crear tu tienda online en Chile: costos reales, integraciones con Transbank y couriers, WooCommerce vs Shopify.",
+        "Guía para pasar de Instagram a tienda online en Chile: costos reales, Transbank, couriers y elección entre WooCommerce o Shopify.",
       image: ["https://focusweb.cl/instagramatiendaonline.webp"],
       author: { "@type": "Organization", name: "Focus Web" },
       publisher: {

@@ -11,7 +11,8 @@ import { Compass } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Blog | FocusWeb",
-  description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
+  description:
+    "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
   alternates: {
     canonical: "/blog",
   },
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: "https://focusweb.cl/blog",
     title: "Blog | FocusWeb",
-    description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
+    description:
+      "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,7 +36,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog | FocusWeb",
-    description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
+    description:
+      "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
 }
@@ -47,7 +50,8 @@ export default function BlogPage() {
     "@type": "WebPage",
     name: "Blog | FocusWeb",
     url: "https://focusweb.cl/blog",
-    description: "Ideas, guías y consejos sobre diseño web y presencia digital para emprendedores en Chile.",
+    description:
+      "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
     inLanguage: "es-CL",
     isPartOf: {
       "@type": "WebSite",

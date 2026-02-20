@@ -8,7 +8,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Landing Page vs Página Web: diferencias clave en diseño web | Focus Web",
+  title: "Landing page vs web: diferencias clave | FocusWeb",
   description:
     "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/landing-page-vs-pagina-web",
-    title: "Landing Page vs Página Web: diferencias clave en diseño web | Focus Web",
+    title: "Landing page vs web: diferencias clave | FocusWeb",
     description:
       "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
     siteName: "FocusWeb Chile",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Landing Page vs Página Web: diferencias clave en diseño web | Focus Web",
+    title: "Landing page vs web: diferencias clave | FocusWeb",
     description:
       "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
     images: ["https://focusweb.cl/landingvswebsite.webp"],
