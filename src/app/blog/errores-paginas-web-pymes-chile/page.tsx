@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
+import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
   title: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
@@ -341,35 +342,11 @@ export default function BlogPostPage() {
                 </p>
               </section>
 
-              <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">¿Quieres una auditoría gratuita de tu sitio web?</h2>
-                <p>
-                  En FocusWeb revisamos tu página sin costo y te decimos exactamente qué errores tiene y cómo
-                  solucionarlos.{" "}
-                  <a href="/contacto" className="text-primary hover:text-primary/80 underline underline-offset-4">
-                    Conversemos
-                  </a>{" "}
-                  y veamos cómo podemos ayudarte.
-                </p>
-              </section>
-
-              <div className="rounded-2xl border border-border/60 bg-white p-6 sm:p-8">
-                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Auditoría gratuita</p>
-                <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-foreground">
-                  Revisamos tu sitio y te decimos qué está fallando
-                </h3>
-                <p className="mt-3 text-base text-foreground/80">
-                  Sin vueltas ni tecnicismos. Una revisión clara para que sepas por dónde mejorar.
-                </p>
-                <a
-                  href="https://wa.me/420733796959"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
-                >
-                  Solicitar auditoría
-                </a>
-              </div>
+              <p>
+                Corregir estos errores de forma priorizada te da una base más sólida para crecer en Google sin
+                desperdiciar tiempo en cambios al azar.
+              </p>
+              <ArticleAuthorCta />
             </article>
           </div>
         </section>

@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
+import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
   title: "Cómo crear una página web en Chile: guía clara para pymes | Focus Web",
@@ -374,29 +375,11 @@ export default function BlogPostPage() {
 
               <p>
                 Crear una página web en Chile no tiene por qué ser complicado. Con entender lo básico y tomar buenas
-                decisiones, puedes tener una web clara, útil y que realmente funcione para tu negocio.
+                decisiones, puedes tener una web clara, útil y que realmente funcione para tu negocio, y si prefieres
+                no hacerlo solo, está bien. Para eso existen los profesionales.
               </p>
-
-              <p>Y si prefieres no hacerlo solo, está bien. Para eso existen los profesionales.</p>
+              <ArticleAuthorCta />
             </article>
-            <div className="mt-12 rounded-3xl border border-border/60 bg-white/70 px-6 py-10 text-center shadow-xl shadow-primary/10 sm:px-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">
-                ¿Conversamos sobre tu proyecto?
-              </h2>
-              <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-                Escríbenos por WhatsApp y te ayudamos a definir la mejor opción para tu negocio.
-              </p>
-              <div className="mt-6 flex justify-center">
-                <a
-                  href="https://wa.me/420733796959"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90"
-                >
-                  Escribir por WhatsApp
-                </a>
-              </div>
-            </div>
           </div>
         </section>
 

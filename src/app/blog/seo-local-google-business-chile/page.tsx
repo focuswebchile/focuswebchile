@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
+import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
   title: "Google Business Profile (antes Google Mi Negocio): guía para PYMEs chilenas | Focus Web",
@@ -425,27 +426,11 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-primary/35 bg-primary/10 p-5 sm:p-6">
-                <h2 className="text-2xl font-semibold text-foreground">¿Quieres implementarlo sin perder tiempo?</h2>
-                <p className="mt-3 text-foreground/85">
-                  Si prefieres enfocarte en vender y no en configurar todo manualmente, partamos por una revisión clara
-                  de tu caso.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <Link
-                    href="/metodologia"
-                    className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                  >
-                    Auditar mi sitio
-                  </Link>
-                  <Link
-                    href="/servicios"
-                    className="inline-flex items-center justify-center rounded-full border border-primary/35 bg-background px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
-                  >
-                    Ver servicios
-                  </Link>
-                </div>
-              </div>
+              <p className="text-foreground/85">
+                Con una ficha bien optimizada y un sitio técnicamente sólido, el SEO local deja de ser una apuesta y
+                pasa a ser una ventaja concreta para tu pyme.
+              </p>
+              <ArticleAuthorCta />
             </article>
           </div>
         </section>

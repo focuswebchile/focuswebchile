@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
+import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
   title: "Mi web tarda en cargar: causas y soluciones | FocusWeb",
@@ -379,38 +380,11 @@ export default function BlogPostPage() {
                 </details>
               </div>
 
-              <section
-                id="cta-final"
-                className="rounded-3xl border border-primary/30 bg-gradient-to-r from-primary/10 via-card to-info/10 p-6 sm:p-8"
-              >
-                <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
-                  Conclusión: la velocidad es una decisión estratégica
-                </h2>
-                <p className="mt-3 text-muted-foreground">
-                  Si tu web carga lento, no es solo un tema técnico: impacta experiencia, SEO y ventas. El siguiente
-                  paso natural es auditar con criterio y ejecutar mejoras en orden.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <a
-                    href="/metodologia"
-                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
-                  >
-                    Ir al diagnóstico inicial
-                  </a>
-                  <a
-                    href="/servicios/desarrollo-web"
-                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-primary px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/5"
-                  >
-                    Ver precios
-                  </a>
-                  <a
-                    href="/blog/errores-paginas-web-pymes-chile"
-                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-border px-5 py-3 text-sm font-semibold text-foreground hover:bg-muted"
-                  >
-                    Leer artículo relacionado
-                  </a>
-                </div>
-              </section>
+              <p className="text-muted-foreground">
+                Si tu web carga lento, no es solo un tema técnico: afecta experiencia, SEO y ventas. Lo importante es
+                ordenar prioridades, ejecutar por impacto y medir avances de forma continua.
+              </p>
+              <ArticleAuthorCta />
             </article>
           </div>
         </section>

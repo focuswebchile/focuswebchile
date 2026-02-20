@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { blogPosts } from "@/lib/blog-posts"
+import { Compass } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Blog | FocusWeb",
@@ -147,13 +148,32 @@ export default function BlogPage() {
 
         <section className="w-full pt-0 pb-16 lg:pb-20 px-4 sm:px-6">
           <div className="container mx-auto flex flex-col gap-8 max-w-6xl">
-            <div className="rounded-2xl border border-border/60 bg-white/80 p-5 text-sm text-foreground/75 shadow-sm sm:p-6 sm:text-base">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Cómo aprovechar mejor este contenido</h2>
-              <p className="mt-3">
-                Recomendamos leer cada artículo con foco en tu etapa actual: si ya tienes sitio, parte por diagnóstico
-                técnico y velocidad; si estás comenzando, revisa también estructura, jerarquía de páginas y enfoque de
-                conversión. Así conectas contenido, SEO y negocio sin perder tiempo.
-              </p>
+            <div className="overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/5 via-white to-info/5 shadow-sm">
+              <div className="grid gap-4 p-5 sm:grid-cols-[auto,1fr] sm:items-start sm:p-6">
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Compass className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">Guía rápida</p>
+                  <h2 className="mt-1 text-xl font-semibold text-foreground sm:text-2xl">
+                    Cómo aprovechar mejor este contenido
+                  </h2>
+                  <p className="mt-2 text-sm text-foreground/75 sm:text-base">
+                    Lee según tu etapa y enfócate en lo que más impacto puede darte hoy.
+                  </p>
+                  <ul className="mt-4 grid gap-2 text-sm text-foreground/80 sm:grid-cols-3">
+                    <li className="rounded-lg border border-emerald-200/70 bg-emerald-50/70 px-3 py-2">
+                      Sitio activo: parte por diagnóstico técnico y velocidad.
+                    </li>
+                    <li className="rounded-lg border border-sky-200/70 bg-sky-50/70 px-3 py-2">
+                      Etapa inicial: prioriza estructura y jerarquía de páginas.
+                    </li>
+                    <li className="rounded-lg border border-violet-200/70 bg-violet-50/70 px-3 py-2">
+                      Objetivo negocio: conecta SEO, UX y conversión.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {posts.slice(1).map((post) => (

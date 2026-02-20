@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 type BreadcrumbItem = {
   label: string
@@ -14,7 +15,7 @@ export function SiteBreadcrumb({ items, className }: SiteBreadcrumbProps) {
   if (!items.length) return null
 
   return (
-    <nav aria-label="Breadcrumb" className={className}>
+    <nav aria-label="Breadcrumb" className={cn("pt-2 sm:pt-0", className)}>
       <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
         {items.map((item, index) => {
           const isLast = index === items.length - 1

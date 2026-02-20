@@ -411,6 +411,16 @@ body[data-font="nunito"] {
   animation: whatsappPulse 2.6s ease-in-out infinite;
 }
 
+@media (min-width: 1025px) {
+  .whatsapp-widget[data-open="false"] .whatsapp-trigger {
+    animation: none;
+  }
+
+  .whatsapp-panel {
+    width: 332px;
+  }
+}
+
 @keyframes whatsappPulse {
   0% {
     transform: translateZ(0) scale(1);

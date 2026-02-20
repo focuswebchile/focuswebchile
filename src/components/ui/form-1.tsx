@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -52,23 +52,95 @@ export default function FormOne({
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  const [recaptchaSiteKey, setRecaptchaSiteKey] = useState<string | null>(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? null)
   const titleParts = title.trim().split(/\s+/)
   const titleTail = titleParts.length > 0 ? titleParts.pop() : ""
   const titleHead = titleParts.join(" ")
 
-  const executeRecaptcha = (action: string) =>
-    new Promise<string>((resolve, reject) => {
-      const grecaptcha = window.grecaptcha
-      if (!recaptchaSiteKey || !grecaptcha?.execute) {
-        reject(new Error("reCAPTCHA no disponible"))
-        return
+  const ensureRecaptchaReady = useCallback(async () => {
+    let siteKey = recaptchaSiteKey
+
+    if (!siteKey) {
+      const response = await fetch("/api/recaptcha/site-key")
+      const data = await response.json()
+      siteKey = data?.siteKey ?? null
+
+      if (!siteKey) {
+        throw new Error("reCAPTCHA no disponible")
       }
 
-      grecaptcha.ready(() => {
-        grecaptcha.execute(recaptchaSiteKey, { action }).then(resolve).catch(reject)
+      setRecaptchaSiteKey(siteKey)
+    }
+
+    if (!window.grecaptcha?.execute) {
+      await new Promise<void>((resolve, reject) => {
+        const existingScript = document.getElementById("recaptcha-script")
+        if (existingScript) {
+          existingScript.addEventListener("load", () => resolve(), { once: true })
+          existingScript.addEventListener("error", () => reject(new Error("reCAPTCHA no disponible")), { once: true })
+          return
+        }
+
+        const script = document.createElement("script")
+        script.id = "recaptcha-script"
+        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+        script.async = true
+        script.defer = true
+        script.onload = () => resolve()
+        script.onerror = () => reject(new Error("reCAPTCHA no disponible"))
+        document.head.appendChild(script)
       })
-    })
+    }
+
+    return siteKey
+  }, [recaptchaSiteKey])
+
+  useEffect(() => {
+    let canceled = false
+
+    const warmupRecaptcha = async () => {
+      try {
+        await ensureRecaptchaReady()
+      } catch {
+        if (canceled) return
+      }
+    }
+
+    void warmupRecaptcha()
+
+    return () => {
+      canceled = true
+    }
+  }, [ensureRecaptchaReady])
+
+  const executeRecaptcha = async (action: string) => {
+    const siteKey = await ensureRecaptchaReady()
+    let lastError: unknown = null
+
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      try {
+        const token = await new Promise<string>((resolve, reject) => {
+          const grecaptcha = window.grecaptcha
+          if (!grecaptcha?.execute) {
+            reject(new Error("reCAPTCHA no disponible"))
+            return
+          }
+
+          grecaptcha.ready(() => {
+            grecaptcha.execute(siteKey, { action }).then(resolve).catch(reject)
+          })
+        })
+        return token
+      } catch (error) {
+        lastError = error
+        if (attempt === 0) {
+          await new Promise((resolve) => window.setTimeout(resolve, 150))
+        }
+      }
+    }
+
+    throw lastError ?? new Error("reCAPTCHA no disponible")
+  }
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
@@ -109,9 +181,13 @@ export default function FormOne({
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center text-sm text-foreground">
-      <RecaptchaScript lazy />
+      <RecaptchaScript />
       {successMessage && (
-        <div className="mb-4 w-full max-w-xl rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm text-emerald-700">
+        <div
+          className="mb-4 w-full max-w-2xl rounded-xl border border-emerald-400 bg-emerald-100 px-4 py-3 text-center text-base font-semibold leading-snug text-emerald-900"
+          role="status"
+          aria-live="polite"
+        >
           {successMessage}
         </div>
       )}

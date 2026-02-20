@@ -35,25 +35,6 @@ export function FloatingWhatsApp() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
-    const syncOpen = () => {
-      setOpen(!mediaQuery.matches);
-    };
-
-    syncOpen();
-
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener("change", syncOpen);
-      return () => mediaQuery.removeEventListener("change", syncOpen);
-    }
-
-    mediaQuery.addListener(syncOpen);
-    return () => mediaQuery.removeListener(syncOpen);
-  }, [mounted]);
-
   if (!mounted) {
     return null;
   }

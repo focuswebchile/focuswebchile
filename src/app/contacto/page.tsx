@@ -133,13 +133,22 @@ export default function ContactoPage() {
                 brief técnico: con una explicación simple de tu objetivo ya podemos detectar si conviene partir por
                 auditoría, optimización o desarrollo.
               </p>
-              <ul className="mt-5 grid gap-2 text-sm text-foreground/80 sm:grid-cols-2 sm:text-base">
-                <li>Objetivo principal: más tráfico, más contactos o mejorar velocidad</li>
-                <li>URL actual de tu sitio (si ya está publicado)</li>
-                <li>Problema que hoy te frena: SEO, rendimiento o estructura</li>
-                <li>Plazo estimado y nivel de urgencia del proyecto</li>
+              <p className="mt-5 text-sm font-medium text-foreground/85 sm:text-base">Checklist rápido para escribirnos:</p>
+              <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+                <li className="rounded-xl border border-emerald-200/70 bg-emerald-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                  Objetivo principal: más tráfico, más contactos o mejorar velocidad
+                </li>
+                <li className="rounded-xl border border-sky-200/70 bg-sky-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                  URL actual de tu sitio (si ya está publicado)
+                </li>
+                <li className="rounded-xl border border-violet-200/70 bg-violet-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                  Problema que hoy te frena: SEO, rendimiento o estructura
+                </li>
+                <li className="rounded-xl border border-amber-200/70 bg-amber-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                  Plazo estimado y nivel de urgencia del proyecto
+                </li>
               </ul>
-              <p className="mt-5 text-sm text-foreground/75 sm:text-base">
+              <p className="mt-6 text-sm text-foreground/75 sm:text-base">
                 Si todavía no tienes claro qué servicio necesitas, puedes revisar nuestros{" "}
                 <a href="/servicios" className="text-primary underline underline-offset-4 hover:text-primary/80">
                   servicios de SEO y posicionamiento web
