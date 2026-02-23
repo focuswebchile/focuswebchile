@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 }
 
-const preciosHtml = readFileSync(join(process.cwd(), "src/app/servicios/desarrollo-web/precios-content.html"), "utf8")
+const preciosHtml = readFileSync(join(process.cwd(), "public/legacy-precios/precios-content.html"), "utf8")
 
 export default function DesarrolloWebPage() {
   const webPageSchema = {
