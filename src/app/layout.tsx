@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import HashRedirect from "@/components/auth/hash-redirect"
 import { ThemeSync } from "@/components/theme-sync"
+import { DeferredAnalytics } from "@/components/deferred-analytics"
 import "./globals.css"
 
 const poppins = localFont({
@@ -150,28 +151,12 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${inter.variable} ${nunito.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
-            strategy="lazyOnload"
-          />
-          <Script
             id="structured-data"
             type="application/ld+json"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
-          <Script id="ga4" strategy="lazyOnload">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-33SDJFM25D');
-            `}
-          </Script>
-          <Script
-            src="https://analytics.ahrefs.com/analytics.js"
-            data-key="s+O8F/fzRT/Wxo/VzK5fjQ"
-            strategy="lazyOnload"
-          />
+          <DeferredAnalytics />
           <HashRedirect />
           <ThemeSync />
           {children}

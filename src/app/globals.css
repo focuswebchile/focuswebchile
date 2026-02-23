@@ -437,6 +437,26 @@ body[data-font="nunito"] {
 }
 
 @media (max-width: 640px) {
+  .gradient-mesh {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(59, 130, 246, 0.08));
+    background-color: #f4f7f6;
+  }
+
+  .faq-hero-bg {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.08) 1px, transparent 0),
+      linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.08));
+    background-size: 20px 20px, auto;
+  }
+
+  .faq-hero-bg-animate {
+    animation: none;
+  }
+
+  .whatsapp-widget[data-open="false"] .whatsapp-trigger {
+    animation: none;
+  }
+
   .whatsapp-widget {
     bottom: max(20px, env(safe-area-inset-bottom)) !important;
     right: max(20px, env(safe-area-inset-right)) !important;
@@ -453,6 +473,16 @@ body[data-font="nunito"] {
 
   .grecaptcha-badge {
     display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-hero-bg-animate {
+    animation: none;
+  }
+
+  .whatsapp-widget[data-open="false"] .whatsapp-trigger {
+    animation: none;
   }
 }
 
