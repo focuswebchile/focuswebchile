@@ -2,8 +2,6 @@
 
 import { Card } from "@/components/ui/card"
 import { Search, Code2, Rocket, LifeBuoy } from "lucide-react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
 
 const steps = [
   {
@@ -53,30 +51,12 @@ const steps = [
 ]
 
 export function ProcessSection() {
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [80, -80])
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
-
   return (
-    <section ref={ref} id="proceso" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 relative overflow-hidden">
-      <motion.div
-        style={{ y, opacity }}
-        className="hidden sm:block absolute top-10 left-20 w-56 h-56 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-3xl pointer-events-none"
-      />
+    <section id="proceso" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 relative overflow-hidden">
+      <div className="hidden sm:block absolute top-10 left-20 w-56 h-56 bg-gradient-to-br from-primary/15 to-accent/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
-        >
+        <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
             Un proceso{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -86,19 +66,15 @@ export function ProcessSection() {
           <p className="text-base sm:text-lg md:text-[1.05rem] lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Diagnóstico, implementación, validación y soporte en una ruta clara para crear o mejorar tu sitio
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 relative">
           {/* Connecting line - show only on extra large screens */}
           <div className="hidden xl:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20" />
 
-          {steps.map((step, index) => (
-            <motion.div
+          {steps.map((step) => (
+            <div
               key={step.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative w-full max-w-[420px] mx-auto md:max-w-none"
             >
               <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border-border/60 overflow-hidden group border-2 border-emerald-300 sm:border sm:border-border/50 text-left">
@@ -141,7 +117,7 @@ export function ProcessSection() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

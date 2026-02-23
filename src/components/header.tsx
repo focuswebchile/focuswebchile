@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
   { name: "Inicio", href: "/" },
@@ -74,10 +73,7 @@ export function Header() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.3 }}
+      <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           shouldShowBackground
             ? "bg-background/70 backdrop-blur-xl border-b border-border/40 shadow-md"
@@ -153,55 +149,44 @@ export function Header() {
             </Button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden"
-          >
-            <div
-              className="absolute inset-0 bg-background/95 backdrop-blur-xl"
-              onClick={() => setMobileMenuOpen(false)}
-            />
-            <nav className="relative container mx-auto px-4 pt-20 sm:pt-24 pb-8">
-              <div className="flex flex-col gap-2 sm:gap-4">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => {
-                      if (isHome && item.href.startsWith("/#")) {
-                        e.preventDefault()
-                        scrollToSection(item.href.replace("/#", "#"))
-                      } else if (item.href === "/" && isHome) {
-                        e.preventDefault()
-                        scrollToSection("#hero")
-                      }
-                    }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-base sm:text-lg font-medium text-foreground hover:text-accent transition-colors py-3 px-4 rounded-xl hover:bg-muted active:bg-muted/80"
-                  >
-                    {item.name}
-                  </motion.a>
-                ))}
-                <Button className="mt-2 sm:mt-4 shadow-lg shadow-accent/25 h-12 text-base" asChild>
-                  <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
-                    Comenzar ahora
-                  </a>
-                </Button>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          <div
+            className="absolute inset-0 bg-background/95 backdrop-blur-xl"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <nav className="relative container mx-auto px-4 pt-20 sm:pt-24 pb-8">
+            <div className="flex flex-col gap-2 sm:gap-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => {
+                    if (isHome && item.href.startsWith("/#")) {
+                      e.preventDefault()
+                      scrollToSection(item.href.replace("/#", "#"))
+                    } else if (item.href === "/" && isHome) {
+                      e.preventDefault()
+                      scrollToSection("#hero")
+                    }
+                  }}
+                  className="text-base sm:text-lg font-medium text-foreground hover:text-accent transition-colors py-3 px-4 rounded-xl hover:bg-muted active:bg-muted/80"
+                >
+                  {item.name}
+                </a>
+              ))}
+              <Button className="mt-2 sm:mt-4 shadow-lg shadow-accent/25 h-12 text-base" asChild>
+                <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
+                  Comenzar ahora
+                </a>
+              </Button>
+            </div>
+          </nav>
+        </div>
+      )}
     </>
   )
 }
