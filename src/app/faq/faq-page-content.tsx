@@ -60,9 +60,9 @@ const faqCategories: FAQCategory[] = [
   {
     id: "chile",
     title: "Específico Chile",
-    subtitle: "4 preguntas",
+    subtitle: "5 preguntas",
     icon: "",
-    countLabel: "4 preguntas",
+    countLabel: "5 preguntas",
     items: [
       {
         question: "¿Mi página web puede integrar Webpay en Chile?",
@@ -83,6 +83,21 @@ const faqCategories: FAQCategory[] = [
         question: "¿Necesito un hosting o dominio especial para Chile?",
         answer:
           "No es obligatorio, pero sí recomendable:\n- Un dominio .cl transmite mayor cercanía y confianza al público chileno.\n- Un hosting optimizado para Chile o Latinoamérica mejora la velocidad de carga.\nLa velocidad y estabilidad del sitio influyen tanto en la experiencia del usuario como en el posicionamiento en Google Chile.",
+      },
+      {
+        question: "¿Cómo optimizo Google Mi Negocio en Chile para aparecer en Google Maps?",
+        answer: (
+          <>
+            Si quieres una guía paso a paso para pymes, revisa{" "}
+            <Link
+              href="/blog/seo-local-google-business-chile"
+              className="text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              Google Mi Negocio en Chile
+            </Link>
+            . Ahí explicamos configuración, errores comunes y mejoras prácticas.
+          </>
+        ),
       },
     ],
   },

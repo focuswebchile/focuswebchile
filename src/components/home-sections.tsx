@@ -28,7 +28,7 @@ function LazyOnViewport({ children }: { children: ReactNode }) {
           observer.disconnect()
         }
       },
-      { rootMargin: "300px 0px" },
+      { rootMargin: "900px 0px" },
     )
     observer.observe(target)
     return () => observer.disconnect()
@@ -38,7 +38,7 @@ function LazyOnViewport({ children }: { children: ReactNode }) {
     return <>{children}</>
   }
 
-  return <div ref={placeholderRef} className="min-h-[40vh]" aria-hidden="true" />
+  return <div ref={placeholderRef} className="min-h-[10vh] md:min-h-[18vh]" aria-hidden="true" />
 }
 
 export function HomeSections() {
@@ -48,18 +48,10 @@ export function HomeSections() {
     <>
       <MainServicesSection />
       <HomeSocialProofSection />
-      <LazyOnViewport>
-        <DelayImpactSection />
-      </LazyOnViewport>
-      <LazyOnViewport>
-        <NeedsSection />
-      </LazyOnViewport>
-      <LazyOnViewport>
-        <ProcessSection />
-      </LazyOnViewport>
-      <LazyOnViewport>
-        <ProcessAuditCta />
-      </LazyOnViewport>
+      <DelayImpactSection />
+      <NeedsSection />
+      <ProcessSection />
+      <ProcessAuditCta />
       {toggles.showTestimonials && (
         <LazyOnViewport>
           <TestimonialsSection />

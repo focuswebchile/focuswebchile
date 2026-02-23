@@ -1,7 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const impactRows = [
   {
@@ -44,24 +43,17 @@ const impactRows = [
 
 export function DelayImpactSection() {
   const barRef = useRef<HTMLDivElement | null>(null)
-  const barsInView = useInView(barRef, { once: true, amount: 0.35 })
+  const [barsReady, setBarsReady] = useState(false)
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setBarsReady(true), 120)
+    return () => window.clearTimeout(timer)
+  }, [])
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-      className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24"
-    >
+    <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <div className="container mx-auto max-w-7xl rounded-3xl border border-border/50 bg-gradient-to-br from-primary/15 via-info/10 to-foreground/10 px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mx-auto max-w-4xl text-center"
-        >
+        <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground">
             ¿Cuántos Clientes Pierdes por Cada Segundo de Retraso?
           </h2>
@@ -75,61 +67,50 @@ export function DelayImpactSection() {
               tiene y qué conviene priorizar primero.
             </p>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, delay: 0.06, ease: "easeOut" }}
-          className="mt-10 rounded-2xl border border-border/60 bg-card p-5 shadow-xl sm:p-8 lg:p-10"
-          ref={barRef}
-        >
+        <div className="mt-10 rounded-2xl border border-border/60 bg-card p-5 shadow-xl sm:p-8 lg:p-10" ref={barRef}>
           <h3 className="text-center text-2xl font-semibold text-card-foreground sm:text-3xl">
             Probabilidad de Rebote según Tiempo de Carga
           </h3>
 
           <div className="mt-8 space-y-7">
             {impactRows.map((row, index) => (
-              <motion.div
+              <div
                 key={row.second}
                 className="grid grid-cols-1 gap-2 sm:grid-cols-[120px_1fr_72px] sm:items-center sm:gap-4"
-                initial={{ opacity: 0, y: 10 }}
-                animate={barsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                transition={{ duration: 0.35, delay: index * 0.07 }}
               >
                 <p className="text-sm font-semibold text-foreground/90">{row.second}</p>
 
                 <div>
                   <div className="h-9 w-full overflow-hidden rounded-md bg-muted">
-                    <motion.div
+                    <div
                       className={`flex h-full items-center justify-center text-xs font-bold text-white ${row.barClass}`}
-                      initial={{ width: 0 }}
-                      animate={barsInView ? { width: row.width } : { width: 0 }}
-                      transition={{ duration: 0.6, delay: 0.15 + index * 0.1, ease: "easeOut" }}
+                      style={{
+                        width: barsReady ? row.width : "0%",
+                        transitionProperty: "width",
+                        transitionDuration: "700ms",
+                        transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
+                        transitionDelay: `${150 + index * 100}ms`,
+                      }}
                     >
                       {row.label}
-                    </motion.div>
+                    </div>
                   </div>
                   <p className="mt-2 text-xs text-muted-foreground">{row.note}</p>
                 </div>
 
                 <p className={`text-sm font-bold sm:text-right ${row.rightClass}`}>{row.right}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={barsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-            className="mt-9 rounded-xl border-l-4 border-accent bg-accent/15 p-4 sm:p-5"
-          >
+          <div className="mt-9 rounded-xl border-l-4 border-accent bg-accent/15 p-4 sm:p-5">
             <p className="text-sm text-foreground sm:text-base">
               <strong>En móviles es peor:</strong> el 53% de usuarios móviles abandona sitios que tardan más de 3
               segundos. En Chile, el 70% del tráfico web es móvil.
             </p>
-          </motion.div>
+          </div>
 
           <details className="mt-6 rounded-xl border border-border/60 bg-card/70 p-4">
             <summary className="cursor-pointer text-sm font-semibold text-foreground/85">
@@ -160,8 +141,8 @@ export function DelayImpactSection() {
               </div>
             </div>
           </details>
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { ArrowRight, CheckCircle2, Rocket, Wrench } from "lucide-react"
-import { motion, useInView } from "framer-motion"
+import { useInView } from "framer-motion"
 
 const needsCards = [
   {
@@ -115,36 +115,18 @@ function CountUpMetric({ value, prefix = "", suffix = "" }: { value: number; pre
 
 export function NeedsSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-      className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24"
-    >
+    <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <div className="container mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center"
-        >
+        <div className="text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">¿Qué Necesitas?</h2>
           <p className="mx-auto mt-4 max-w-3xl text-base text-muted-foreground sm:text-lg">
             Identifica tu situación y descubre qué servicio se ajusta mejor a tus necesidades
           </p>
-        </motion.div>
+        </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {needsCards.map((card, index) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-            >
+          {needsCards.map((card) => (
+            <div key={card.title}>
               <Card
                 className={`group relative h-full overflow-visible border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
                   card.featured
@@ -246,29 +228,17 @@ export function NeedsSection() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-          className="mt-14 rounded-2xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10"
-        >
+        <div className="mt-14 rounded-2xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
           <h3 className="text-center text-3xl font-bold text-foreground sm:text-4xl">
             ¿Por Qué Tu Sitio Web No Está Vendiendo?
           </h3>
 
           <div className="mt-8 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
-            <motion.article
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.45, delay: 0.05 }}
-              className="flex h-full flex-col items-center"
-            >
+            <article className="flex h-full flex-col items-center">
               <CountUpMetric value={32} prefix="+" suffix="%" />
               <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-muted-foreground sm:text-base">
                 rebote si tu sitio tarda 3 segundos vs 1 segundo en cargar
@@ -276,15 +246,9 @@ export function NeedsSection() {
               <p className="mt-6 self-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-info/80 md:mt-auto">
                 Fuente: Google
               </p>
-            </motion.article>
+            </article>
 
-            <motion.article
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.45, delay: 0.12 }}
-              className="flex h-full flex-col items-center"
-            >
+            <article className="flex h-full flex-col items-center">
               <CountUpMetric value={90} prefix="+" suffix="%" />
               <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-muted-foreground sm:text-base">
                 rebote si el tiempo de carga llega a 5 segundos
@@ -292,15 +256,9 @@ export function NeedsSection() {
               <p className="mt-6 self-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-info/80 md:mt-auto">
                 Fuente: Google
               </p>
-            </motion.article>
+            </article>
 
-            <motion.article
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.45, delay: 0.18 }}
-              className="flex h-full flex-col items-center"
-            >
+            <article className="flex h-full flex-col items-center">
               <CountUpMetric value={53} suffix="%" />
               <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-muted-foreground sm:text-base">
                 de usuarios móviles abandona sitios que tardan más de 3 segundos
@@ -308,10 +266,10 @@ export function NeedsSection() {
               <p className="mt-6 self-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-info/80 md:mt-auto">
                 Fuente: Google Mobile Study
               </p>
-            </motion.article>
+            </article>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

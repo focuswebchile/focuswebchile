@@ -50,6 +50,26 @@ export function HeroSection() {
   useEffect(() => {
     let canceled = false
 
+    const isMobile = window.matchMedia("(max-width: 767px)").matches
+    const connection = (navigator as Navigator & { connection?: unknown }).connection as
+      | {
+          saveData?: boolean
+          effectiveType?: string
+        }
+      | undefined
+    const isConstrainedNetwork =
+      connection?.saveData === true ||
+      connection?.effectiveType === "slow-2g" ||
+      connection?.effectiveType === "2g"
+
+    // Fase 1 de performance: evitamos precargar reCAPTCHA en móvil/red lenta.
+    // Se seguirá cargando al enviar el formulario.
+    if (isMobile || isConstrainedNetwork) {
+      return () => {
+        canceled = true
+      }
+    }
+
     const warmupRecaptcha = async () => {
       try {
         await ensureRecaptchaReady()
@@ -76,7 +96,7 @@ export function HeroSection() {
         if (!canceled) {
           void warmupRecaptcha()
         }
-      }, 900)
+      }, 1400)
     }
 
     schedule()

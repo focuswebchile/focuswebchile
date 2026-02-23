@@ -297,6 +297,16 @@ export default function ServiciosPage() {
               <p className="mt-6 text-base leading-relaxed text-foreground/80">
                 A continuación, detallamos cada servicio para que elijas con claridad.
               </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/75 sm:text-base">
+                Si además quieres captar clientes desde búsquedas locales, te recomendamos partir por esta guía de{" "}
+                <Link
+                  href="/blog/seo-local-google-business-chile"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Google Mi Negocio en Chile
+                </Link>
+                , donde explicamos cómo configurar y optimizar tu perfil paso a paso.
+              </p>
             </div>
           </div>
         </section>

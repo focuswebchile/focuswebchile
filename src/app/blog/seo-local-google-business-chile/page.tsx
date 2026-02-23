@@ -9,9 +9,9 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Google Business Profile (antes Google Mi Negocio): guía para PYMEs chilenas | Focus Web",
+  title: "Google Mi Negocio Chile: guía pyme | FocusWeb",
   description:
-    "Aprende a optimizar tu Google Business y atrae clientes desde búsquedas locales gratuitas. Pasos simples y consejos SEO para tu pyme.",
+    "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales, atraer clientes y mejorar tu SEO local.",
   alternates: {
     canonical: "/blog/seo-local-google-business-chile",
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/seo-local-google-business-chile",
-    title: "Google Business Profile (antes Google Mi Negocio): guía para PYMEs chilenas | Focus Web",
+    title: "Google Mi Negocio Chile: guía pyme | FocusWeb",
     description:
-      "Aprende a optimizar tu Google Business y atrae clientes desde búsquedas locales gratuitas. Pasos simples y consejos SEO para tu pyme.",
+      "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales, atraer clientes y mejorar tu SEO local.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Google Business Profile (antes Google Mi Negocio): guía para PYMEs chilenas | Focus Web",
+    title: "Google Mi Negocio Chile: guía pyme | FocusWeb",
     description:
-      "Aprende a optimizar tu Google Business y atrae clientes desde búsquedas locales gratuitas. Pasos simples y consejos SEO para tu pyme.",
+      "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales, atraer clientes y mejorar tu SEO local.",
     images: ["https://focusweb.cl/og-google-business.webp"],
   },
 }
@@ -46,9 +46,9 @@ const articleSchema = {
   "@graph": [
     {
       "@type": "Article",
-      headline: "Google Business Profile (antes Google Mi Negocio): guía para tu Pyme chilena",
+      headline: "Google Mi Negocio en Chile: guía para tu pyme",
       description:
-        "Aprende a optimizar tu Google Business y atrae clientes desde búsquedas locales gratuitas. Pasos simples y consejos SEO para tu pyme.",
+        "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales y atraer más clientes.",
       image: ["https://focusweb.cl/og-google-business.webp"],
       author: { "@type": "Organization", name: "Focus Web" },
       publisher: {
@@ -71,8 +71,45 @@ const articleSchema = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Google Business Profile para PYMEs chilenas",
+          name: "Google Mi Negocio en Chile",
           item: "https://focusweb.cl/blog/seo-local-google-business-chile",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "¿Es difícil crear una ficha de Google Business Profile?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "El proceso es relativamente simple, pero tiene pasos importantes como elegir la categoría correcta, completar bien la información del negocio y pasar por la verificación. Si algo queda mal configurado desde el inicio, puede afectar cómo apareces en los resultados de búsqueda.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Cuánto demora activar una ficha en Chile?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Depende del método de verificación que solicite Google (correo, video o validación automática). En la mayoría de los casos puede tardar desde unos días hasta una semana. Mientras antes completes correctamente los datos, más rápido podrás empezar a aparecer.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Necesito una página web para crear mi ficha?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No es obligatorio. Puedes aparecer en Google Maps solo con tu ficha bien configurada. Sin embargo, tener una página web profesional ayuda a generar más confianza y mejorar tu visibilidad cuando las personas buscan más información sobre tu negocio.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Puedo crear la ficha yo mismo o conviene hacerlo acompañado?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Puedes hacerlo tú mismo siguiendo los pasos correctos. Ahora bien, si no quieres equivocarte en la configuración inicial o prefieres asegurarte de que todo quede bien desde el comienzo, contar con apoyo puede ahorrarte tiempo y problemas futuros.",
+          },
         },
       ],
     },
@@ -94,13 +131,13 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 items={[
                   { label: "Inicio", href: "/" },
                   { label: "Blog", href: "/blog" },
-                  { label: "Google Business Profile para PYMEs chilenas" },
+                  { label: "Google Mi Negocio en Chile" },
                 ]}
               />
 
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Tiempo de lectura: 7 min</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                Google Business Profile para tu Pyme chilena
+                Google Mi Negocio en Chile para tu pyme
               </h1>
 
               <p>
@@ -137,7 +174,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Qué demonios es Google Business Profile?</h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Google Mi Negocio Chile: qué es y cómo funciona</h2>
 
               <p>
                 Google Business Profile es como un “carnet de presentación virtual” para tu negocio. Es una ficha
@@ -166,7 +203,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 dedicar unos minutos a configurarlo.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Por qué es tan importante para tu Pyme?</h2>
+              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Por qué Google Mi Negocio en Chile es clave para tu pyme?</h2>
 
               <p>
                 Imagina esto: un vecino con hambre busca “sushi en Maipú”. Si tu negocio no aparece en Google, para ese
@@ -322,6 +359,15 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 Google Business y tú respondiendo, todo sin salir a perseguirlos.
               </p>
 
+              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Errores comunes en Google Mi Negocio en Chile</h2>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-1">
+                <li>Perfil sin verificar o con datos incompletos (horarios, categoría, teléfono).</li>
+                <li>No responder reseñas y perder señales de confianza local.</li>
+                <li>No publicar actualizaciones y dejar la ficha desactualizada.</li>
+                <li>Nombre del negocio con keywords forzadas que pueden generar suspensión.</li>
+                <li>No conectar la ficha con un sitio optimizado para SEO local.</li>
+              </ul>
+
               <h2 className="pt-4 text-2xl font-semibold sm:text-3xl">
                 <span className="block">Otros recursos avanzados</span>
                 <span className="mt-1 block text-lg font-medium text-foreground/80 sm:text-xl">
@@ -430,6 +476,57 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 Con una ficha bien optimizada y un sitio técnicamente sólido, el SEO local deja de ser una apuesta y
                 pasa a ser una ventaja concreta para tu pyme.
               </p>
+
+              <h2 className="text-2xl sm:text-3xl font-semibold pt-2">Preguntas frecuentes</h2>
+              <div className="space-y-3">
+                <details className="rounded-xl border border-border/60 bg-card p-4">
+                  <summary className="cursor-pointer font-semibold">
+                    ¿Es difícil crear una ficha de Google Business Profile?
+                  </summary>
+                  <p className="mt-2 text-muted-foreground">
+                    El proceso es relativamente simple, pero tiene pasos importantes como elegir la categoría correcta,
+                    completar bien la información del negocio y pasar por la verificación. Si algo queda mal
+                    configurado desde el inicio, puede afectar cómo apareces en los resultados de búsqueda.
+                  </p>
+                </details>
+
+                <details className="rounded-xl border border-border/60 bg-card p-4">
+                  <summary className="cursor-pointer font-semibold">¿Cuánto demora activar una ficha en Chile?</summary>
+                  <p className="mt-2 text-muted-foreground">
+                    Depende del método de verificación que solicite Google (correo, video o validación automática). En
+                    la mayoría de los casos puede tardar desde unos días hasta una semana. Mientras antes completes
+                    correctamente los datos, más rápido podrás empezar a aparecer.
+                  </p>
+                </details>
+
+                <details className="rounded-xl border border-border/60 bg-card p-4">
+                  <summary className="cursor-pointer font-semibold">
+                    ¿Necesito una página web para crear mi ficha?
+                  </summary>
+                  <p className="mt-2 text-muted-foreground">
+                    No es obligatorio. Puedes aparecer en Google Maps solo con tu ficha bien configurada. Sin embargo,
+                    tener una página web profesional ayuda a generar más confianza y mejorar tu visibilidad cuando las
+                    personas buscan más información sobre tu negocio.
+                  </p>
+                </details>
+
+                <details className="rounded-xl border border-border/60 bg-card p-4">
+                  <summary className="cursor-pointer font-semibold">
+                    ¿Puedo crear la ficha yo mismo o conviene hacerlo acompañado?
+                  </summary>
+                  <p className="mt-2 text-muted-foreground">
+                    Puedes hacerlo tú mismo siguiendo los pasos correctos. Ahora bien, si no quieres equivocarte en la
+                    configuración inicial o prefieres asegurarte de que todo quede bien desde el comienzo, contar con
+                    apoyo puede ahorrarte tiempo y problemas futuros.
+                  </p>
+                </details>
+              </div>
+              <div className="rounded-2xl border border-primary/30 bg-primary/10 px-5 py-4 sm:px-6 sm:py-5">
+                <p className="text-base font-medium leading-relaxed text-foreground">
+                  Si estás partiendo con tu presencia digital, crear tu ficha es un buen primer paso. Y si quieres
+                  revisar cómo está tu web o tu visibilidad actual, también podemos verlo contigo.
+                </p>
+              </div>
               <ArticleAuthorCta />
             </article>
           </div>
