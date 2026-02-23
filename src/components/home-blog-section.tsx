@@ -35,7 +35,7 @@ export function HomeBlogSection() {
                 <div className="flex flex-row gap-2 text-sm items-center text-muted-foreground">
                   <span>Autor</span>
                   <Avatar className="h-6 w-6">
-                    <AvatarImage src="/logo.png" alt="FocusWeb" />
+                    <AvatarImage src="/logo_focus_web.webp" alt="FocusWeb" />
                     <AvatarFallback>FW</AvatarFallback>
                   </Avatar>
                   <span className="text-foreground">FocusWeb</span>

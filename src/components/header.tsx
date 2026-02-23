@@ -93,7 +93,7 @@ export function Header() {
               className="flex items-center gap-2 text-xl sm:text-2xl font-bold hover:opacity-80 transition-opacity shrink-0"
             >
               <Image
-                src="/logo.png"
+                src="/logo_focus_web.webp"
                 alt="FocusWeb"
                 width={40}
                 height={40}
