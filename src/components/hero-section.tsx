@@ -10,7 +10,18 @@ export function HeroSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
+  const [securityMessage, setSecurityMessage] = useState<string | null>(null)
   const [recaptchaSiteKey, setRecaptchaSiteKey] = useState<string | null>(null)
+
+  const waitForGrecaptcha = useCallback(async () => {
+    for (let attempt = 0; attempt < 40; attempt += 1) {
+      if (window.grecaptcha?.execute) {
+        return
+      }
+      await new Promise((resolve) => setTimeout(resolve, 50))
+    }
+    throw new Error("reCAPTCHA no disponible")
+  }, [])
 
   const ensureRecaptchaReady = useCallback(async () => {
     let siteKey = recaptchaSiteKey
@@ -28,6 +39,10 @@ export function HeroSection() {
       await new Promise<void>((resolve, reject) => {
         const existingScript = document.getElementById("recaptcha-script")
         if (existingScript) {
+          if (window.grecaptcha?.execute) {
+            resolve()
+            return
+          }
           existingScript.addEventListener("load", () => resolve(), { once: true })
           existingScript.addEventListener("error", () => reject(new Error("reCAPTCHA no disponible")), { once: true })
           return
@@ -44,8 +59,17 @@ export function HeroSection() {
       })
     }
 
+    await waitForGrecaptcha()
     return siteKey
-  }, [recaptchaSiteKey])
+  }, [recaptchaSiteKey, waitForGrecaptcha])
+
+  const warmupRecaptcha = useCallback(async () => {
+    try {
+      await ensureRecaptchaReady()
+    } catch {
+      // silent warmup failure; submit handles final error
+    }
+  }, [ensureRecaptchaReady])
 
   const executeRecaptcha = async (action: string) => {
     let lastError: unknown = null
@@ -82,6 +106,7 @@ export function HeroSection() {
     event.preventDefault()
     setErrorMessage(null)
     setSuccessMessage(null)
+    setSecurityMessage(null)
 
     const trimmedUrl = websiteUrl.trim()
     if (!trimmedUrl) {
@@ -97,6 +122,7 @@ export function HeroSection() {
     }
 
     setIsSubmitting(true)
+    setSecurityMessage("Validando seguridad...")
     try {
       const action = "hero_review"
       const token = await executeRecaptcha(action)
@@ -116,6 +142,7 @@ export function HeroSection() {
     } catch {
       setErrorMessage("No pudimos enviar la solicitud. Intenta nuevamente.")
     } finally {
+      setSecurityMessage(null)
       setIsSubmitting(false)
     }
   }
@@ -174,6 +201,7 @@ export function HeroSection() {
                   placeholder="https://tusitio.cl"
                   value={websiteUrl}
                   onChange={(event) => setWebsiteUrl(event.target.value)}
+                  onFocus={warmupRecaptcha}
                   disabled={isSubmitting}
                   className="flex-1 rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
                 />
@@ -188,6 +216,7 @@ export function HeroSection() {
               <p className="text-xs font-medium text-[#3B82F6]">
                 Recuerda: pega tu URL con https://
               </p>
+              {securityMessage && <p className="text-xs text-[#3B82F6]">{securityMessage}</p>}
               {errorMessage && <p className="text-xs text-red-600">{errorMessage}</p>}
               {successMessage && <p className="text-xs text-emerald-700">{successMessage}</p>}
             </form>
