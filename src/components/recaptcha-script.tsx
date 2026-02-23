@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 
 let recaptchaLoaded = false
+let recaptchaLoadingPromise: Promise<void> | null = null
 
 type RecaptchaScriptProps = {
   lazy?: boolean
@@ -55,14 +56,47 @@ export function RecaptchaScript({ lazy = false, rootMargin = "200px" }: Recaptch
   useEffect(() => {
     if (!siteKey || recaptchaLoaded) return
 
-    const script = document.createElement("script")
-    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
-    script.async = true
-    script.defer = true
-    script.onload = () => {
+    if (window.grecaptcha?.execute) {
       recaptchaLoaded = true
+      return
     }
-    document.head.appendChild(script)
+
+    const existingScript = document.getElementById("recaptcha-script")
+    if (existingScript) {
+      if (!recaptchaLoadingPromise) {
+        recaptchaLoadingPromise = new Promise<void>((resolve, reject) => {
+          existingScript.addEventListener(
+            "load",
+            () => {
+              recaptchaLoaded = true
+              resolve()
+            },
+            { once: true }
+          )
+          existingScript.addEventListener("error", () => reject(new Error("reCAPTCHA no disponible")), { once: true })
+        })
+      }
+      return
+    }
+
+    if (!recaptchaLoadingPromise) {
+      recaptchaLoadingPromise = new Promise<void>((resolve, reject) => {
+        const script = document.createElement("script")
+        script.id = "recaptcha-script"
+        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+        script.async = true
+        script.defer = true
+        script.onload = () => {
+          recaptchaLoaded = true
+          resolve()
+        }
+        script.onerror = () => {
+          recaptchaLoadingPromise = null
+          reject(new Error("reCAPTCHA no disponible"))
+        }
+        document.head.appendChild(script)
+      })
+    }
   }, [siteKey])
 
   if (!lazy) return null

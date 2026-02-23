@@ -2,7 +2,7 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
-import { DeferredHomeSections } from "@/components/deferred-home-sections"
+import { HomeSections } from "@/components/home-sections"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -80,7 +80,7 @@ export default function Home() {
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <HeroSection />
-        <DeferredHomeSections />
+        <HomeSections />
         <Footer />
       </main>
       <script

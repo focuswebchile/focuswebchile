@@ -470,7 +470,7 @@ export function FAQPageContent() {
                       aria-expanded={isOpen}
                       onClick={() => toggleAccordionItem(category.id, index)}
                     >
-                      <h3 className="text-xl font-semibold text-foreground">{item.question}</h3>
+                      <h3 className="text-lg font-semibold leading-snug text-foreground sm:text-xl">{item.question}</h3>
                       <span
                         className={`flex h-8 w-8 items-center justify-center rounded-full text-base text-white transition ${
                           isOpen ? "bg-primary" : "bg-primary/80"
@@ -494,7 +494,7 @@ export function FAQPageContent() {
             ) : (
               category.items.map((item, index) => (
                 <div key={`${category.id}-${index}`} className="rounded-xl border border-border bg-white px-6 py-5 shadow-sm">
-                  <h3 className="text-xl font-semibold text-foreground">{item.question}</h3>
+                  <h3 className="text-lg font-semibold leading-snug text-foreground sm:text-xl">{item.question}</h3>
                   <p className="mt-3 text-sm text-muted-foreground whitespace-pre-line">{item.answer}</p>
                 </div>
               ))

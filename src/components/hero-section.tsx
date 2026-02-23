@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useEffect, useCallback } from "react"
+import { useCallback } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -46,64 +46,6 @@ export function HeroSection() {
 
     return siteKey
   }, [recaptchaSiteKey])
-
-  useEffect(() => {
-    let canceled = false
-
-    const isMobile = window.matchMedia("(max-width: 767px)").matches
-    const connection = (navigator as Navigator & { connection?: unknown }).connection as
-      | {
-          saveData?: boolean
-          effectiveType?: string
-        }
-      | undefined
-    const isConstrainedNetwork =
-      connection?.saveData === true ||
-      connection?.effectiveType === "slow-2g" ||
-      connection?.effectiveType === "2g"
-
-    // Fase 1 de performance: evitamos precargar reCAPTCHA en móvil/red lenta.
-    // Se seguirá cargando al enviar el formulario.
-    if (isMobile || isConstrainedNetwork) {
-      return () => {
-        canceled = true
-      }
-    }
-
-    const warmupRecaptcha = async () => {
-      try {
-        await ensureRecaptchaReady()
-      } catch {
-        // Warmup failure should not block manual submit flow
-      }
-    }
-
-    const schedule = () => {
-      const win = window as Window & {
-        requestIdleCallback?: (callback: () => void) => number
-      }
-
-      if (typeof win.requestIdleCallback === "function") {
-        win.requestIdleCallback(() => {
-          if (!canceled) {
-            void warmupRecaptcha()
-          }
-        })
-        return
-      }
-
-      window.setTimeout(() => {
-        if (!canceled) {
-          void warmupRecaptcha()
-        }
-      }, 1400)
-    }
-
-    schedule()
-    return () => {
-      canceled = true
-    }
-  }, [ensureRecaptchaReady])
 
   const executeRecaptcha = async (action: string) => {
     let lastError: unknown = null
