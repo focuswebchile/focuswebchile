@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { Footer } from "@/components/footer"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
-import "../../precios/precios.css"
+import "./precios.css"
 
 export const metadata: Metadata = {
   title: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
