@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { MessageCircle, X } from "lucide-react";
+import styles from "@/components/floating-whatsapp.module.css";
 
 const whatsappNumber = "420733796959";
 const whatsappBase = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=`;
@@ -41,7 +42,7 @@ export function FloatingWhatsApp() {
 
   return createPortal(
     <div
-      className="whatsapp-widget"
+      className={styles.whatsappWidget}
       data-open={open ? "true" : "false"}
       style={{
         position: "fixed",
@@ -51,26 +52,26 @@ export function FloatingWhatsApp() {
         transform: "none",
       }}
     >
-      <div className="whatsapp-panel" aria-live="polite">
+      <div className={styles.whatsappPanel} aria-live="polite">
         <button
-          className="whatsapp-close"
+          className={styles.whatsappClose}
           type="button"
           aria-label="Cerrar chat"
           onClick={() => setOpen(false)}
         >
           <X size={14} />
         </button>
-        <div className="whatsapp-header">
-          <p className="whatsapp-title">
+        <div className={styles.whatsappHeader}>
+          <p className={styles.whatsappTitle}>
             Hola, soy Felipe 👋
             <br />
             Conversemos sobre tu idea o proyecto.
           </p>
-          <p className="whatsapp-status">Asistente · Ahora</p>
+          <p className={styles.whatsappStatus}>Asistente · Ahora</p>
         </div>
-        <div className="whatsapp-bubbles">
+        <div className={styles.whatsappBubbles}>
           <a
-            className="whatsapp-bubble"
+            className={styles.whatsappBubble}
             href={`${whatsappBase}Tengo%20una%20pregunta%20sobre%20los%20servicios`}
             target="_blank"
             rel="noreferrer"
@@ -78,7 +79,7 @@ export function FloatingWhatsApp() {
             Tengo una pregunta sobre los servicios
           </a>
           <a
-            className="whatsapp-bubble"
+            className={styles.whatsappBubble}
             href={`${whatsappBase}Soy%20cliente%20y%20necesito%20ayuda`}
             target="_blank"
             rel="noreferrer"
@@ -88,15 +89,15 @@ export function FloatingWhatsApp() {
         </div>
       </div>
       <button
-        className="whatsapp-trigger"
+        className={styles.whatsappTrigger}
         type="button"
         aria-label="Abrir chat de WhatsApp"
         aria-expanded={open ? "true" : "false"}
         onClick={() => setOpen((prev) => !prev)}
       >
-        <span className="whatsapp-badge">1</span>
-        <MessageCircle className="whatsapp-icon" size={18} />
-        <span className="label">WhatsApp</span>
+        <span className={styles.whatsappBadge}>1</span>
+        <MessageCircle className={styles.whatsappIcon} size={18} />
+        <span className={styles.label}>WhatsApp</span>
       </button>
     </div>,
     document.body

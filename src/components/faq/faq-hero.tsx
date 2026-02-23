@@ -1,11 +1,12 @@
 "use client"
 
 import { DotScreenShader } from "@/components/ui/dot-shader-background"
+import styles from "@/components/faq/faq-hero.module.css"
 
 export default function FaqHero() {
   return (
     <section className="relative h-[640px] overflow-hidden pt-16 sm:h-[835px] sm:pt-28">
-      <div className="absolute inset-0 z-0 faq-hero-bg faq-hero-bg-animate" aria-hidden="true" />
+      <div className={`absolute inset-0 z-0 ${styles.faqHeroBg} ${styles.faqHeroBgAnimate}`} aria-hidden="true" />
       <div className="absolute inset-0 z-10 hidden md:block pointer-events-none">
         <DotScreenShader />
       </div>
