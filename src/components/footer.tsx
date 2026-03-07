@@ -6,20 +6,20 @@ export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-card/50 backdrop-blur-xl">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 gap-8 mb-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
           {/* Brand */}
           <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
             <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               FocusWeb
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              SEO y posicionamiento web en Chile con enfoque técnico: optimización de velocidad, diagnóstico y desarrollo web para convertir más visitas en clientes.
+              SEO técnico, optimización web y estructura digital para negocios que necesitan una base clara antes de crecer.
             </p>
           </div>
 
-          {/* Links */}
+          {/* Navigation */}
           <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
-            <h4 className="font-semibold text-sm sm:text-base">Enlaces rápidos</h4>
+            <h4 className="font-semibold text-sm sm:text-base">Navegación</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <a href="/servicios" className="hover:text-primary transition-colors">
@@ -33,12 +33,29 @@ export function Footer() {
               </li>
               <li>
                 <a href="/blog" className="hover:text-primary transition-colors">
-                  Noticias
+                  Blog
                 </a>
               </li>
               <li>
                 <a href="/contacto" className="hover:text-primary transition-colors">
                   Contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+            <h4 className="font-semibold text-sm sm:text-base">Recursos clave</h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
+              <li>
+                <a href="/metodologia" className="hover:text-primary transition-colors">
+                  Metodología
+                </a>
+              </li>
+              <li>
+                <a href="/5-pasos-antes-de-lanzar-un-sitio-web" className="hover:text-primary transition-colors">
+                  5 pasos antes de lanzar tu sitio
                 </a>
               </li>
               <li>
@@ -47,12 +64,7 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Social */}
-          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
-            <h4 className="font-semibold text-sm sm:text-base">Síguenos</h4>
-            <div className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
+            <div className="flex gap-3 pt-2 justify-center sm:justify-start">
               <a
                 href="https://www.instagram.com/focuswebchile"
                 target="_blank"
