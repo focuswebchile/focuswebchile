@@ -285,7 +285,7 @@ export default function LaunchChecklistPage() {
                 Enfoque practico
               </p>
               <p className="mx-auto mt-3 max-w-[44rem] text-base leading-relaxed text-emerald-950/80 sm:text-lg">
-                En muchos proyectos el problema no esta en el diseno, sino en pequenos detalles que quedan pendientes
+                En muchos proyectos el problema no esta en el diseño, sino en pequeños detalles que quedan pendientes
                 antes de publicar. Revisarlos a tiempo puede evitar errores, caidas de rendimiento o problemas de
                 indexacion en Google.
               </p>
