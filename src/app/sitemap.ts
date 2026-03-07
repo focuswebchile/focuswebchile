@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${baseUrl}`, lastModified: now },
     { url: `${baseUrl}/landing-page`, lastModified: now },
+    { url: `${baseUrl}/5-pasos-antes-de-lanzar-un-sitio-web`, lastModified: now },
     { url: `${baseUrl}/servicios`, lastModified: now },
     { url: `${baseUrl}/servicios/auditoria-seo-tecnico`, lastModified: now },
     { url: `${baseUrl}/servicios/desarrollo-web`, lastModified: now },

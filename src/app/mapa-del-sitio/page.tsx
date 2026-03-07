@@ -27,6 +27,7 @@ const sections = [
       { label: "FAQ", href: "/faq" },
       { label: "Mi historia", href: "/mi-historia" },
       { label: "Landing Page", href: "/landing-page" },
+      { label: "5 pasos antes de lanzar un sitio web", href: "/5-pasos-antes-de-lanzar-un-sitio-web" },
     ],
   },
   {
