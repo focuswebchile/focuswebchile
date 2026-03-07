@@ -9,6 +9,28 @@ export const metadata: Metadata = {
   title: "SEO y Posicionamiento Web Chile | FocusWeb",
   description:
     "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+  openGraph: {
+    type: "website",
+    locale: "es_CL",
+    url: "https://focusweb.cl",
+    title: "SEO y Posicionamiento Web Chile | FocusWeb",
+    description:
+      "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+    siteName: "FocusWeb Chile",
+    images: [
+      {
+        url: "https://focusweb.cl/Optimizacion-web-con-criterio-tecnico.webp",
+        alt: "Optimización web con criterio técnico para negocios en Chile",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SEO y Posicionamiento Web Chile | FocusWeb",
+    description:
+      "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+    images: ["https://focusweb.cl/Optimizacion-web-con-criterio-tecnico.webp"],
+  },
 }
 
 const homeFaqSchema = {

@@ -45,6 +45,7 @@ const sections = [
       { label: "Blog", href: "/blog" },
       { label: "Mi página web tarda mucho en cargar", href: "/blog/mi-pagina-web-tarda-mucho-en-cargar" },
       { label: "Google Business Profile para PYMEs chilenas", href: "/blog/seo-local-google-business-chile" },
+      { label: "Seguridad de páginas web para PYMEs", href: "/blog/seguridad-web-pymes" },
       { label: "10 Errores Críticos en Páginas Web de PyMEs", href: "/blog/errores-paginas-web-pymes-chile" },
       { label: "Landing Page vs Página Web", href: "/blog/landing-page-vs-pagina-web" },
       { label: "Cómo crear una página web en Chile", href: "/blog/como-crear-una-pagina-web-en-chile" },

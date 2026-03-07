@@ -95,4 +95,16 @@ export const blogPosts: BlogPost[] = [
       alt: "Google Business Profile para PYMEs chilenas",
     },
   },
+  {
+    category: "Seguridad",
+    title: "Seguridad web para PYMEs: HTTPS, contraseñas y respaldos",
+    excerpt:
+      "Informate sobre cómo mejorar la seguridad web de tu Pyme con HTTPS, contraseñas seguras y copias de respaldo para proteger tu sitio y evitar problemas comunes.",
+    href: "/blog/seguridad-web-pymes",
+    date: "07-03-2026",
+    image: {
+      src: "/seguridad-web.webp",
+      alt: "Seguridad web para PYMEs con HTTPS, contraseñas y respaldos",
+    },
+  },
 ]
