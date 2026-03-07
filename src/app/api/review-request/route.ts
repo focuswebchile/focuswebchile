@@ -5,15 +5,16 @@ const RECAPTCHA_THRESHOLD = 0.5
 
 type ReviewRequest = {
   websiteUrl?: string
+  email?: string
   token?: string
   action?: string
 }
 
 export async function POST(request: Request) {
   try {
-    const { websiteUrl, token, action } = (await request.json()) as ReviewRequest
+    const { websiteUrl, email, token, action } = (await request.json()) as ReviewRequest
 
-    if (!websiteUrl || !token || !action) {
+    if (!websiteUrl || !email || !token || !action) {
       return NextResponse.json({ success: false, error: "Datos incompletos" }, { status: 400 })
     }
 
@@ -27,6 +28,12 @@ export async function POST(request: Request) {
       parsedUrl = new URL(websiteUrl.trim())
     } catch {
       return NextResponse.json({ success: false, error: "URL invalida" }, { status: 400 })
+    }
+
+    const normalizedEmail = email.trim().toLowerCase()
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(normalizedEmail)) {
+      return NextResponse.json({ success: false, error: "Email invalido" }, { status: 400 })
     }
 
     const secretKey = process.env.RECAPTCHA_SECRET_KEY
@@ -66,6 +73,7 @@ export async function POST(request: Request) {
         "Solicitud de auditoria desde home hero",
         "",
         `URL: ${parsedUrl.toString()}`,
+        `Email: ${normalizedEmail}`,
         `Action: ${normalizedAction}`,
       ].join("\n"),
     })

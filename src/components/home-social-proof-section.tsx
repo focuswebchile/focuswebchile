@@ -35,7 +35,7 @@ export function HomeSocialProofSection() {
                   <span className="inline-flex rounded-full bg-info px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-white">
                     GA4
                   </span>
-                  <p className="mt-2 text-2xl font-bold text-foreground">6 min</p>
+                  <p className="mt-2 text-2xl font-bold text-foreground">3 min</p>
                   <p className="mt-1 text-sm text-foreground/85">
                     promedio de lectura e interacción
                   </p>

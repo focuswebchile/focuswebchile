@@ -162,7 +162,7 @@ export function AuditoriaSeoCtaForm() {
       <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
         <div className="grid gap-4 md:grid-cols-2">
           <label className="flex flex-col gap-1.5 text-sm text-foreground/80">
-            <span className="font-medium">Nombre completo*</span>
+            <span className="font-medium">Nombre*</span>
             <input
               type="text"
               value={formData.fullName}

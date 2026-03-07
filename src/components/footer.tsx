@@ -59,6 +59,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/check-list-ecommerce" className="hover:text-primary transition-colors">
+                  Checklist ecommerce
+                </a>
+              </li>
+              <li>
                 <a href="/mapa-del-sitio" className="hover:text-primary transition-colors">
                   Mapa del sitio
                 </a>

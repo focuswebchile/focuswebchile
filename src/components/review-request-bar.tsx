@@ -10,6 +10,7 @@ type ReviewRequestBarProps = {
 
 export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewRequestBarProps) {
   const [websiteUrl, setWebsiteUrl] = useState("")
+  const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
@@ -96,8 +97,13 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
     setSecurityMessage(null)
 
     const trimmedUrl = websiteUrl.trim()
+    const trimmedEmail = email.trim().toLowerCase()
     if (!trimmedUrl) {
       setErrorMessage("Ingresa una URL para revisar.")
+      return
+    }
+    if (!trimmedEmail) {
+      setErrorMessage("Ingresa un correo para enviarte el diagnostico.")
       return
     }
 
@@ -105,6 +111,12 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
       new URL(trimmedUrl)
     } catch {
       setErrorMessage("La URL no es valida. Usa formato https://tusitio.cl")
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(trimmedEmail)) {
+      setErrorMessage("El correo no es valido.")
       return
     }
 
@@ -116,7 +128,7 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
       const submitResponse = await fetch("/api/review-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ websiteUrl: trimmedUrl, token, action }),
+        body: JSON.stringify({ websiteUrl: trimmedUrl, email: trimmedEmail, token, action }),
       })
       const submitData = await submitResponse.json()
 
@@ -126,6 +138,7 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
 
       setSuccessMessage("Solicitud enviada. Te contactaremos con un diagnostico.")
       setWebsiteUrl("")
+      setEmail("")
     } catch {
       setErrorMessage("No pudimos enviar la solicitud. Intenta nuevamente.")
     } finally {
@@ -138,8 +151,8 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
     <div className="rounded-2xl border border-[#dbeafe] bg-white p-5 shadow-sm sm:p-6">
       <form className="space-y-3" onSubmit={handleReviewSubmit}>
         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#3B82F6]">{leadText}</p>
-        <p className="text-sm text-[#6B7280]">Pega tu URL y recibe un diagnóstico inicial con prioridades reales.</p>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <p className="text-sm text-[#6B7280]">Pega tu URL y tu correo para recibir un diagnóstico inicial con prioridades reales.</p>
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,0.9fr)_170px] lg:items-center">
           <input
             type="url"
             placeholder="https://tusitio.cl"
@@ -149,10 +162,19 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
             disabled={isSubmitting}
             className="flex-1 rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
           />
+          <input
+            type="email"
+            placeholder="tu@correo.com"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            onFocus={warmupRecaptcha}
+            disabled={isSubmitting}
+            className="rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
+          />
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb]"
+            className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb] lg:w-full"
           >
             {isSubmitting ? "Revisando..." : "Revisar"}
           </Button>

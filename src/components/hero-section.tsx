@@ -1,17 +1,26 @@
 "use client"
 
-import { useState } from "react"
-import { useCallback } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   const [websiteUrl, setWebsiteUrl] = useState("")
+  const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [securityMessage, setSecurityMessage] = useState<string | null>(null)
   const [recaptchaSiteKey, setRecaptchaSiteKey] = useState<string | null>(null)
+  const [desktopHeroVisible, setDesktopHeroVisible] = useState(false)
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setDesktopHeroVisible(true)
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [])
 
   const waitForGrecaptcha = useCallback(async () => {
     for (let attempt = 0; attempt < 40; attempt += 1) {
@@ -109,8 +118,13 @@ export function HeroSection() {
     setSecurityMessage(null)
 
     const trimmedUrl = websiteUrl.trim()
+    const trimmedEmail = email.trim().toLowerCase()
     if (!trimmedUrl) {
       setErrorMessage("Ingresa una URL para revisar.")
+      return
+    }
+    if (!trimmedEmail) {
+      setErrorMessage("Ingresa un correo para enviarte el diagnostico.")
       return
     }
 
@@ -118,6 +132,12 @@ export function HeroSection() {
       new URL(trimmedUrl)
     } catch {
       setErrorMessage("La URL no es valida. Usa formato https://tusitio.cl")
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(trimmedEmail)) {
+      setErrorMessage("El correo no es valido.")
       return
     }
 
@@ -129,7 +149,7 @@ export function HeroSection() {
       const submitResponse = await fetch("/api/review-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ websiteUrl: trimmedUrl, token, action }),
+        body: JSON.stringify({ websiteUrl: trimmedUrl, email: trimmedEmail, token, action }),
       })
       const submitData = await submitResponse.json()
 
@@ -139,6 +159,7 @@ export function HeroSection() {
 
       setSuccessMessage("Solicitud enviada. Te contactaremos con un diagnostico.")
       setWebsiteUrl("")
+      setEmail("")
     } catch {
       setErrorMessage("No pudimos enviar la solicitud. Intenta nuevamente.")
     } finally {
@@ -147,20 +168,27 @@ export function HeroSection() {
     }
   }
 
+  const desktopRevealClass = desktopHeroVisible
+    ? "xl:translate-y-0 xl:opacity-100"
+    : "xl:translate-y-4 xl:opacity-0"
+  const desktopImageRevealClass = desktopHeroVisible ? "xl:opacity-100" : "xl:opacity-0"
+
   return (
     <section
       id="hero"
-      className="relative w-full bg-[#F9FAFB] pb-10 overflow-visible md:min-h-[calc(100vh-80px)] md:pb-0"
+      className="relative w-full overflow-visible bg-[#F9FAFB] pb-10 md:pb-0 xl:min-h-[calc(84vh-80px)] 2xl:min-h-[calc(82vh-80px)]"
     >
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 gap-12 md:items-stretch md:min-h-[calc(100vh-80px)] xl:grid-cols-2 xl:gap-24">
-          <div className="relative z-20 space-y-6 pt-24 pb-8 md:pb-10 md:mt-6 md:h-full md:pt-0 md:flex md:flex-col md:justify-center md:max-w-[680px] lg:mt-8 xl:mt-10 xl:pr-20 xl:max-w-[760px] lg:pr-24">
+      <div className="mx-auto max-w-[1520px] px-6 sm:px-10 lg:px-16 xl:px-20">
+        <div className="grid grid-cols-1 gap-12 md:items-stretch xl:min-h-[calc(84vh-80px)] xl:grid-cols-[minmax(580px,1.14fr)_minmax(420px,0.86fr)] xl:gap-20 2xl:min-h-[calc(82vh-80px)] 2xl:grid-cols-[minmax(640px,1.12fr)_minmax(480px,0.88fr)] 2xl:gap-24">
+          <div
+            className={`relative z-20 space-y-6 pt-24 pb-8 transition-all duration-700 ease-out md:mt-6 md:flex md:h-full md:flex-col md:justify-center md:pb-10 md:pt-0 lg:mt-8 xl:mt-10 xl:max-w-[920px] xl:pr-16 2xl:max-w-[980px] 2xl:pr-20 ${desktopRevealClass}`}
+          >
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280]">
               <p>Optimización web con criterio e impacto real.</p>
               <p>Priorizamos lo que importa.</p>
             </div>
 
-            <h1 className="max-w-[820px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="max-w-[900px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="block lg:whitespace-nowrap">Posicionamiento</span>
               <span className="block lg:whitespace-nowrap">Web y técnico</span>
               <span className="block lg:whitespace-nowrap">en Chile</span>
@@ -191,11 +219,11 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <form className="space-y-3 pt-4" onSubmit={handleReviewSubmit}>
+            <form className="max-w-[860px] space-y-3 pt-4" onSubmit={handleReviewSubmit}>
               <p className="text-sm text-[#6B7280]">
-                Pega tu URL y recibe un diagnóstico claro con prioridades reales.
+                Pega tu URL y tu correo para recibir un diagnóstico claro con prioridades reales.
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="grid gap-3 xl:grid-cols-[minmax(0,1.95fr)_minmax(220px,0.72fr)] xl:items-center 2xl:grid-cols-[minmax(0,2.15fr)_minmax(240px,0.72fr)_170px]">
                 <input
                   type="url"
                   placeholder="https://tusitio.cl"
@@ -205,10 +233,19 @@ export function HeroSection() {
                   disabled={isSubmitting}
                   className="flex-1 rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
                 />
+                <input
+                  type="email"
+                  placeholder="tu@correo.com"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  onFocus={warmupRecaptcha}
+                  disabled={isSubmitting}
+                  className="rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
+                />
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb]"
+                  className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb] xl:col-span-2 2xl:col-span-1 2xl:w-full"
                 >
                   {isSubmitting ? "Revisando..." : "Revisar"}
                 </Button>
@@ -222,13 +259,15 @@ export function HeroSection() {
             </form>
           </div>
 
-          <div className="relative hidden w-full items-end justify-end overflow-visible xl:flex xl:min-h-[calc(100vh-80px)]">
-            <div className="relative z-10 h-full w-full max-w-none xl:absolute xl:bottom-0 xl:right-0 xl:h-[clamp(440px,62vh,700px)] xl:w-[clamp(460px,40vw,820px)] xl:translate-x-[clamp(8px,2vw,56px)] 2xl:h-[760px] 2xl:w-[900px] 2xl:translate-x-[96px]">
+          <div
+            className={`relative hidden w-full items-end justify-end overflow-visible transition-opacity duration-700 ease-out xl:flex xl:min-h-[calc(84vh-80px)] 2xl:min-h-[calc(82vh-80px)] ${desktopImageRevealClass}`}
+          >
+            <div className="relative z-10 h-full w-full max-w-none xl:absolute xl:bottom-[-2px] xl:right-[clamp(-56px,-1vw,-8px)] xl:h-[clamp(480px,60vh,675px)] xl:w-[clamp(410px,31vw,655px)] 2xl:bottom-[-2px] 2xl:right-[-12px] 2xl:h-[730px] 2xl:w-[810px]">
               <Image
                 src="/svghero.svg"
                 alt="Ilustración de optimización web"
                 fill
-                className="object-contain"
+                className="object-contain object-bottom"
                 priority
               />
             </div>

@@ -178,7 +178,7 @@ export function MainServicesSection() {
 
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{card.description}</p>
 
-                  <ul className={`space-y-3 ${index === 2 ? "lg:space-y-4 lg:pt-1" : ""}`}>
+                  <ul className={`space-y-3 ${index === 2 ? "lg:space-y-4 lg:pt-3" : ""}`}>
                     {card.bullets.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm sm:text-base">
                         <Check className="h-4 w-4 mt-1 flex-shrink-0 text-foreground/80" />
@@ -186,7 +186,7 @@ export function MainServicesSection() {
                       </li>
                     ))}
                   </ul>
-                  {index === 2 ? <div className="hidden lg:block h-4" /> : null}
+                  {index === 2 ? <div className="hidden lg:block h-9" /> : null}
 
                   <div className="rounded-lg border border-border/60 bg-card/70 p-3">
                     <button
