@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "FocusWeb Chile",
     images: [
       {
-        url: "https://focusweb.cl/precios/favicon/og-precios.png?v=2026-01-19",
+        url: "https://focusweb.cl/servicios-digitales.webp",
         width: 1200,
         height: 630,
         alt: "Desarrollo web FocusWeb",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
     description:
       "Servicio de desarrollo web en Chile. Landing pages, sitios web y tiendas online con foco en rendimiento, SEO técnico y resultados.",
-    images: ["https://focusweb.cl/precios/favicon/og-precios.png?v=2026-01-19"],
+    images: ["https://focusweb.cl/servicios-digitales.webp"],
   },
 }
 

@@ -6,6 +6,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/contacto/",
+        destination: "/contacto",
+        permanent: true,
+      },
+      {
+        source: "/faq/",
+        destination: "/faq",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [{ type: "host", value: "www.focusweb.cl" }],
         destination: "https://focusweb.cl/:path*",
