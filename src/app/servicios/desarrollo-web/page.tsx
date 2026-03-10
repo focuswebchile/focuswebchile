@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { Footer } from "@/components/footer"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
-import "./precios.css"
+import "./desarrollo-web-legacy.css"
 
 export const metadata: Metadata = {
   title: "Desarrollo Web Profesional en Chile | Focus Web",
@@ -40,7 +40,10 @@ export const metadata: Metadata = {
   },
 }
 
-const preciosHtml = readFileSync(join(process.cwd(), "public/legacy-precios/precios-content.html"), "utf8")
+const desarrolloWebHtml = readFileSync(
+  join(process.cwd(), "public/legacy-desarrollo-web/desarrollo-web-content.html"),
+  "utf8",
+)
 
 export default function DesarrolloWebPage() {
   const webPageSchema = {
@@ -99,8 +102,8 @@ export default function DesarrolloWebPage() {
             />
           </div>
         </section>
-        <article className="precios-content" aria-label="Planes y precios de desarrollo web">
-          <div dangerouslySetInnerHTML={{ __html: preciosHtml }} />
+        <article className="precios-content" aria-label="Contenido principal de desarrollo web">
+          <div dangerouslySetInnerHTML={{ __html: desarrolloWebHtml }} />
         </article>
         <section className="pb-16 px-6 md:px-10">
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
