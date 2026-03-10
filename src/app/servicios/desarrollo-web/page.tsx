@@ -8,9 +8,9 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import "./precios.css"
 
 export const metadata: Metadata = {
-  title: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
+  title: "Desarrollo Web Profesional en Chile | Focus Web",
   description:
-    "Servicio de desarrollo web en Chile. Landing pages, sitios web y tiendas online con foco en rendimiento, SEO técnico y resultados.",
+    "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
   alternates: {
     canonical: "/servicios/desarrollo-web",
   },
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/servicios/desarrollo-web",
-    title: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
+    title: "Desarrollo Web Profesional en Chile | Focus Web",
     description:
-      "Servicio de desarrollo web en Chile. Landing pages, sitios web y tiendas online con foco en rendimiento, SEO técnico y resultados.",
+      "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
+    title: "Desarrollo Web Profesional en Chile | Focus Web",
     description:
-      "Servicio de desarrollo web en Chile. Landing pages, sitios web y tiendas online con foco en rendimiento, SEO técnico y resultados.",
+      "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
     images: ["https://focusweb.cl/servicios-digitales.webp"],
   },
 }
@@ -46,10 +46,10 @@ export default function DesarrolloWebPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Desarrollo Web en Chile | Landing pages y sitios web – Focus Web",
+    name: "Desarrollo Web Profesional en Chile | Focus Web",
     url: "https://focusweb.cl/servicios/desarrollo-web",
     description:
-      "Servicio de desarrollo web en Chile. Landing pages, sitios web y tiendas online con foco en rendimiento, SEO técnico y resultados.",
+      "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
     inLanguage: "es-CL",
     isPartOf: {
       "@type": "WebSite",
