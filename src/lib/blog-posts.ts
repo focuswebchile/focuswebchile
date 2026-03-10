@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     title: "Crear una página web desde cero: pasos reales (sin tecnicismos)",
     excerpt:
       "Guía paso a paso para emprendedores y pymes que quieren crear su web desde cero, sin enredos.",
-    href: "/crear-pagina-web-desde-cero",
+    href: "/blog/crear-pagina-web-desde-cero",
     date: "19-01-2026",
     image: {
       src: "/sintecnisimo.webp",

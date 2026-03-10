@@ -54,7 +54,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/5-pasos-antes-de-lanzar-un-sitio-web" className="hover:text-primary transition-colors">
+                <a href="/blog/5-pasos-antes-de-lanzar-un-sitio-web" className="hover:text-primary transition-colors">
                   5 pasos antes de lanzar tu sitio
                 </a>
               </li>

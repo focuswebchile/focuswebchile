@@ -449,7 +449,7 @@ export default function LandingPageContent() {
               { label: "Mira nuestro proceso de trabajo", href: "/nuestro-proceso" },
               { label: "Ver servicio de optimizacion", href: "/servicios/optimizacion-velocidad-web" },
               { label: "Cómo crear una página web en Chile", href: "/blog/como-crear-una-pagina-web-en-chile" },
-              { label: "Crear una página web desde cero", href: "/crear-pagina-web-desde-cero" },
+              { label: "Crear una página web desde cero", href: "/blog/crear-pagina-web-desde-cero" },
               { label: "Ver precios y opciones", href: "/servicios/desarrollo-web" },
             ]}
           />
