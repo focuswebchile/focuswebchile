@@ -235,6 +235,14 @@ export default function BlogPostPage() {
               <p>
                 Tiene varias secciones: inicio, servicios, quién eres y contacto. Sirve cuando quieres explicar mejor tu
                 negocio y proyectar algo más estable. Es una muy buena opción para pymes que quieren crecer con orden.
+                Si estás en ese punto, puedes revisar nuestro{" "}
+                <a
+                  href="/servicios/desarrollo-web"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  desarrollo web profesional
+                </a>
+                .
               </p>
 
               <h3 className="text-xl sm:text-2xl font-semibold pt-2">Tienda online: vender directamente</h3>
@@ -326,7 +334,16 @@ export default function BlogPostPage() {
 
               <h3 className="text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
 
-              <p>Después cuesta más y suele salir más caro.</p>
+              <p>
+                Después cuesta más y suele salir más caro. Si quieres revisar esa base antes de avanzar, una{" "}
+                <a
+                  href="/servicios/auditoria-seo-tecnico"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  auditoría SEO técnica
+                </a>{" "}
+                puede ayudarte a detectar problemas a tiempo.
+              </p>
 
               <h3 className="text-xl sm:text-2xl font-semibold pt-2">No tener claro el objetivo</h3>
 

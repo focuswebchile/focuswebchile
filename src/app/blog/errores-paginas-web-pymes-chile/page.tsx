@@ -217,7 +217,7 @@ export default function BlogPostPage() {
                   <strong>Lo bueno:</strong> la mayoría de los hostings en Chile incluyen SSL gratis. Solo hay que
                   activarlo. Si no sabes cómo hacerlo, en nuestra sección de{" "}
                   <a href="/servicios/desarrollo-web" className="text-primary hover:text-primary/80 underline underline-offset-4">
-                    precios
+                    desarrollo web profesional
                   </a>{" "}
                   incluimos la configuración SSL en todos nuestros planes.
                 </p>
@@ -256,7 +256,14 @@ export default function BlogPostPage() {
                   >
                     Analiza tu sitio en PageSpeed Insights
                   </a>
-                  . Si sale en rojo, es crítico.
+                  . Si sale en rojo, es crítico y probablemente ya convenga revisar una{" "}
+                  <a
+                    href="/servicios/optimizacion-velocidad-web"
+                    className="text-primary hover:text-primary/80 underline underline-offset-4"
+                  >
+                    optimización de velocidad web
+                  </a>
+                  .
                 </p>
               </section>
 
@@ -268,7 +275,14 @@ export default function BlogPostPage() {
                 </p>
                 <p>
                   Usa Google Search Console y revisa que no tengas <code>noindex</code> activado o un archivo{" "}
-                  <code>robots.txt</code> bloqueando el sitio.
+                  <code>robots.txt</code> bloqueando el sitio. Si ya detectaste señales de este tipo, una{" "}
+                  <a
+                    href="/servicios/auditoria-seo-tecnico"
+                    className="text-primary hover:text-primary/80 underline underline-offset-4"
+                  >
+                    auditoría SEO técnica
+                  </a>{" "}
+                  te ayuda a encontrar qué está frenando la visibilidad real.
                 </p>
               </section>
 

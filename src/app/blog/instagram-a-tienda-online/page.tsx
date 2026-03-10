@@ -227,7 +227,15 @@ export default function BlogPostPage() {
 
               <p>
                 <strong>En resumen:</strong> Si ya validaste que tu producto se vende y ahora el problema eres TÚ (tu
-                tiempo, tus manos), entonces sí. Es hora de crear tu tienda online.
+                tiempo, tus manos), entonces sí. Es hora de crear tu tienda online. Si quieres dar ese paso con una
+                base más ordenada, puedes revisar nuestro servicio de{" "}
+                <a
+                  href="/servicios/desarrollo-web"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  desarrollo de tienda online
+                </a>
+                .
               </p>
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-white/70 shadow-lg shadow-primary/10">
@@ -628,7 +636,7 @@ export default function BlogPostPage() {
                   href="/servicios/desarrollo-web"
                   className="mt-5 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                 >
-                  Ver precios y planes
+                  Ver planes de desarrollo web
                 </a>
               </div>
 
@@ -694,7 +702,15 @@ export default function BlogPostPage() {
 
               <p>
                 Un hosting malo significa: tu web se cae en Black Friday justo cuando más vendes. O se pone lenta y la
-                gente se aburre y se va. O te hackean y pierdes TODO porque no había respaldos.
+                gente se aburre y se va. O te hackean y pierdes TODO porque no había respaldos. Cuando ya estás en ese
+                escenario, suele ser buena idea revisar una{" "}
+                <a
+                  href="/servicios/optimizacion-velocidad-web"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  optimización de velocidad web
+                </a>
+                .
               </p>
 
               <p>

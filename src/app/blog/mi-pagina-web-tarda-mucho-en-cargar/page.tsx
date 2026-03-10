@@ -239,7 +239,15 @@ export default function BlogPostPage() {
 
               <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Cómo optimizar la velocidad de WordPress en Chile</h2>
               <p>
-                Si buscas <strong>optimizar velocidad WordPress Chile</strong>, estas acciones suelen dar mejor retorno:
+                Si buscas <strong>optimizar velocidad WordPress Chile</strong>, estas acciones suelen dar mejor retorno.
+                Si quieres una referencia más completa, también puedes revisar nuestro servicio de{" "}
+                <a
+                  href="/servicios/optimizacion-velocidad-web"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  optimización de velocidad web
+                </a>
+                :
               </p>
 
               <div className="rounded-2xl border border-info/35 bg-gradient-to-br from-info/15 via-card to-primary/10 p-5 shadow-md shadow-info/10">
@@ -306,7 +314,14 @@ export default function BlogPostPage() {
                 <a href="/metodologia" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   metodología de diagnóstico inicial
                 </a>{" "}
-                y luego decide si avanzar a auditoría completa.
+                y luego decide si avanzar a una{" "}
+                <a
+                  href="/servicios/auditoria-seo-tecnico"
+                  className="text-primary hover:text-primary/80 underline underline-offset-4"
+                >
+                  auditoría SEO técnica
+                </a>
+                .
               </p>
 
               <div className="rounded-2xl border border-primary/25 bg-primary/10 p-5">
