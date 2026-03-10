@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "SEO y Posicionamiento Web Chile | FocusWeb",
   description:
     "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+  alternates: {
+    canonical: "https://focusweb.cl",
+  },
   openGraph: {
     type: "website",
     locale: "es_CL",
