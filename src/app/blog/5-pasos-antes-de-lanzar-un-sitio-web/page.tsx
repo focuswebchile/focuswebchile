@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
-import { LaunchChecklistPageContent } from "./launch-checklist-page-content"
+import { LaunchChecklistPageContent } from "@/app/5-pasos-antes-de-lanzar-un-sitio-web/launch-checklist-page-content"
 
 export const metadata: Metadata = {
   title: "5 pasos antes de lanzar un sitio web | FocusWeb",
   description:
     "Revisa los aspectos clave antes de lanzar un sitio web: base tecnica, indexacion en Google, medicion, presencia local y SEO minimo.",
   alternates: {
-    canonical: "/5-pasos-antes-de-lanzar-un-sitio-web",
+    canonical: "/blog/5-pasos-antes-de-lanzar-un-sitio-web",
   },
   openGraph: {
     type: "website",
     locale: "es_CL",
-    url: "https://focusweb.cl/5-pasos-antes-de-lanzar-un-sitio-web",
+    url: "https://focusweb.cl/blog/5-pasos-antes-de-lanzar-un-sitio-web",
     title: "5 pasos antes de lanzar un sitio web | FocusWeb",
     description:
       "Revisa los aspectos clave antes de lanzar un sitio web: base tecnica, indexacion en Google, medicion, presencia local y SEO minimo.",
@@ -34,6 +34,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function LaunchChecklistPage() {
-  return <LaunchChecklistPageContent pageUrl="https://focusweb.cl/5-pasos-antes-de-lanzar-un-sitio-web" />
+export default function BlogLaunchChecklistPage() {
+  return <LaunchChecklistPageContent pageUrl="https://focusweb.cl/blog/5-pasos-antes-de-lanzar-un-sitio-web" />
 }

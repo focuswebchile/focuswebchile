@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
-import { ArticlePageContent } from "./article-page-content"
+import { ArticlePageContent } from "@/app/crear-pagina-web-desde-cero/article-page-content"
 
 export const metadata: Metadata = {
   title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
   description:
     "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
   alternates: {
-    canonical: "/crear-pagina-web-desde-cero",
+    canonical: "/blog/crear-pagina-web-desde-cero",
   },
   openGraph: {
     type: "article",
     locale: "es_CL",
-    url: "https://focusweb.cl/crear-pagina-web-desde-cero",
+    url: "https://focusweb.cl/blog/crear-pagina-web-desde-cero",
     title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
     description:
       "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
@@ -34,6 +34,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function BlogPostPage() {
-  return <ArticlePageContent pageUrl="https://focusweb.cl/crear-pagina-web-desde-cero" />
+export default function BlogArticlePage() {
+  return <ArticlePageContent pageUrl="https://focusweb.cl/blog/crear-pagina-web-desde-cero" />
 }
