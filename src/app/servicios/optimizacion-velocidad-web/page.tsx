@@ -7,9 +7,9 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Optimización de Velocidad Web y SEO Técnico | FocusWeb",
+  title: "Optimización de Velocidad Web y SEO Técnico en Chile | FocusWeb",
   description:
-    "Optimizamos la velocidad y el SEO técnico de tu página web para que cargue rápido, se entienda mejor en Google y convierta visitas en clientes.",
+    "Servicio de optimización de velocidad web y SEO técnico en Chile para mejorar carga, Core Web Vitals, claridad técnica y conversión.",
   alternates: {
     canonical: "/servicios/optimizacion-velocidad-web",
   },
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/servicios/optimizacion-velocidad-web",
-    title: "Optimización de Velocidad Web y SEO Técnico | FocusWeb",
+    title: "Optimización de Velocidad Web y SEO Técnico en Chile | FocusWeb",
     description:
-      "Optimizamos la velocidad y el SEO técnico de tu página web para que cargue rápido, se entienda mejor en Google y convierta visitas en clientes.",
+      "Servicio de optimización de velocidad web y SEO técnico en Chile para mejorar carga, Core Web Vitals, claridad técnica y conversión.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Optimización de Velocidad Web y SEO Técnico | FocusWeb",
+    title: "Optimización de Velocidad Web y SEO Técnico en Chile | FocusWeb",
     description:
-      "Optimizamos la velocidad y el SEO técnico de tu página web para que cargue rápido, se entienda mejor en Google y convierta visitas en clientes.",
+      "Servicio de optimización de velocidad web y SEO técnico en Chile para mejorar carga, Core Web Vitals, claridad técnica y conversión.",
     images: ["https://focusweb.cl/velocidad-web-y-seo-tecnico.webp"],
   },
 }
@@ -67,10 +67,10 @@ const breadcrumbSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Velocidad Web y SEO Técnico para tu Página",
+  name: "Optimización de Velocidad Web y SEO Técnico en Chile",
   url: "https://focusweb.cl/servicios/optimizacion-velocidad-web",
   description:
-    "Optimizamos la velocidad y el SEO técnico de tu página web para que cargue rápido, se entienda mejor en Google y convierta visitas en clientes.",
+    "Servicio de optimización de velocidad web y SEO técnico para mejorar carga, Core Web Vitals, claridad de indexación y conversión.",
   isPartOf: {
     "@type": "WebSite",
     name: "FocusWeb Chile",
@@ -170,11 +170,11 @@ export default function OptimizacionVelocidadWebPage() {
               />
 
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Velocidad Web y SEO Técnico para tu Página
+                Optimización de velocidad web y SEO técnico
               </h1>
               <p className="mt-5 max-w-4xl text-base leading-relaxed text-foreground/85 sm:text-lg">
-                Optimizamos la velocidad y el SEO técnico de tu página web para que cargue rápido, se entienda mejor
-                en Google y convierta visitas en clientes.
+                Optimizamos la velocidad y el SEO técnico de tu sitio para que cargue mejor, entregue una experiencia
+                más estable y sostenga mejor su rendimiento en Google y en conversión.
               </p>
               <p className="mt-4 max-w-4xl text-base leading-relaxed text-foreground/80 sm:text-lg">
                 Si hoy estás buscando soluciones porque <strong>mi página web tarda mucho en cargar</strong>, este
@@ -206,7 +206,26 @@ export default function OptimizacionVelocidadWebPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
               <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                ¿Tu sitio carga lento y te hace perder clientes?
+                Qué es la optimización de velocidad web
+              </h2>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                La optimización de velocidad web es el trabajo técnico que mejora cómo carga, responde y se comporta tu
+                sitio en condiciones reales. No se trata solo de subir una nota en PageSpeed, sino de corregir fricción
+                en recursos, carga crítica, estabilidad visual, caché y señales que afectan experiencia y SEO técnico.
+              </p>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Cuando esta base está bien resuelta, tu web deja de perder rendimiento por detalles estructurales y
+                queda mejor preparada para campañas, contenido y crecimiento orgánico.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 pb-12 sm:px-6 sm:pb-16">
+          <div className="container mx-auto max-w-6xl">
+            <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                Qué problemas resuelve una web lenta
               </h2>
               <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
                 En la práctica, una <strong>web lenta</strong> no solo afecta performance: también daña tu{" "}
@@ -236,7 +255,7 @@ export default function OptimizacionVelocidadWebPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
               <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                Qué incluye nuestra optimización de velocidad web
+                Qué incluye la optimización de velocidad web
               </h2>
               <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 <article className="rounded-2xl border border-info/40 bg-info/10 p-4">
@@ -332,52 +351,13 @@ export default function OptimizacionVelocidadWebPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
               <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                Cómo trabajamos la optimización (paso a paso)
-              </h2>
-              <ol className="mt-5 list-decimal space-y-3 pl-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
-                <li>Medición inicial y priorización técnica.</li>
-                <li>Implementación de mejoras en recursos, caché y carga crítica.</li>
-                <li>Pruebas de estabilidad y validación móvil.</li>
-                <li>Reporte final con resultados y plan de continuidad.</li>
-              </ol>
-              <p className="mt-5 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
-                Este enfoque sirve tanto para <strong>site web seo</strong> como para proyectos de{" "}
-                <strong>website seo optimization</strong> más avanzados.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-4 pb-12 sm:px-6 sm:pb-16">
-          <div className="container mx-auto max-w-6xl">
-            <div className="rounded-2xl border border-primary/30 bg-primary/10 p-5 sm:p-6">
-              <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                ¿No sabes si optimizar o rehacer tu sitio?
-              </h2>
-              <p className="mt-2 max-w-4xl text-sm leading-relaxed text-foreground/80 sm:text-base">
-                Parte por auditar tu página sin compromiso. Inserta tu URL y revisa qué está funcionando y qué no.
-              </p>
-              <Link
-                href="/metodologia"
-                className="mt-4 inline-flex rounded-full border border-primary/35 bg-white px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
-              >
-                Auditar mi página gratis
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-4 pb-12 sm:px-6 sm:pb-16">
-          <div className="container mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
-              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                Qué resultados puedes esperar (sin promesas infladas)
+                Beneficios de mejorar la velocidad
               </h2>
               <ul className="mt-5 list-disc space-y-2 pl-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
-                <li>Mejora de carga percibida y respuesta en móvil.</li>
-                <li>Reducción de fricción en navegación y formularios.</li>
-                <li>Mejor lectura técnica para Google en escenarios de web &amp; seo.</li>
-                <li>Base sólida para escalar contenido y campañas.</li>
+                <li>Mejor carga percibida y navegación más estable, especialmente en móvil.</li>
+                <li>Menor fricción en formularios, interacción y recorridos clave de conversión.</li>
+                <li>Señales técnicas más claras para Google en escenarios de SEO técnico.</li>
+                <li>Base más sólida para escalar campañas, contenido y nuevas mejoras.</li>
               </ul>
 
               <article className="mt-7 grid gap-5 rounded-2xl border border-border/60 bg-background/70 p-5 md:grid-cols-[1.1fr_1fr]">
@@ -422,8 +402,65 @@ export default function OptimizacionVelocidadWebPage() {
 
         <section className="px-4 pb-12 sm:px-6 sm:pb-16">
           <div className="container mx-auto max-w-6xl">
+            <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                Cómo trabajamos paso a paso
+              </h2>
+              <ol className="mt-5 list-decimal space-y-3 pl-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
+                <li>Medición inicial y priorización técnica.</li>
+                <li>Implementación de mejoras en recursos, caché y carga crítica.</li>
+                <li>Pruebas de estabilidad y validación móvil.</li>
+                <li>Reporte final con resultados y plan de continuidad.</li>
+              </ol>
+              <p className="mt-5 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Este enfoque sirve tanto para <strong>site web seo</strong> como para proyectos de{" "}
+                <strong>website seo optimization</strong> más avanzados.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 pb-12 sm:px-6 sm:pb-16">
+          <div className="container mx-auto max-w-6xl">
+            <div className="rounded-3xl border border-primary/30 bg-primary/10 p-6 shadow-lg shadow-primary/5 sm:p-10">
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                Cuándo conviene optimizar y cuándo rehacer
+              </h2>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Optimizar conviene cuando tu sitio ya tiene una base funcional, pero pierde rendimiento por recursos
+                pesados, carga ineficiente, mala configuración o decisiones técnicas que se pueden corregir sin rehacer
+                toda la plataforma.
+              </p>
+              <div className="mt-6 grid gap-5 md:grid-cols-2">
+                <article className="rounded-2xl border border-success/35 bg-success/10 p-5">
+                  <h3 className="text-xl font-semibold text-foreground">Conviene optimizar si:</h3>
+                  <ul className="mt-3 list-disc space-y-2 pl-6 text-base leading-relaxed text-foreground/80">
+                    <li>Tu web ya cumple su función comercial, pero carga lento.</li>
+                    <li>El problema está en performance, Core Web Vitals o configuración técnica.</li>
+                    <li>Quieres mejorar sin partir desde cero.</li>
+                  </ul>
+                </article>
+                <article className="rounded-2xl border border-amber-400/50 bg-amber-100/70 p-5">
+                  <h3 className="text-xl font-semibold text-foreground">Conviene rehacer si:</h3>
+                  <ul className="mt-3 list-disc space-y-2 pl-6 text-base leading-relaxed text-foreground/80">
+                    <li>La plataforma actual limita cambios importantes.</li>
+                    <li>La arquitectura está desordenada desde la base.</li>
+                    <li>Necesitas una solución más amplia que velocidad técnica.</li>
+                  </ul>
+                </article>
+              </div>
+              <p className="mt-6 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Si no lo tienes claro, parte por una auditoría. Ahí se ve rápido si el problema es de optimización o si
+                tu sitio ya necesita una intervención más profunda.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 pb-12 sm:px-6 sm:pb-16">
+          <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-red-300/60 bg-red-50/80 p-6 shadow-lg shadow-red-500/5 sm:p-10">
-              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Qué NO incluye este servicio</h2>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Qué no incluye este servicio</h2>
               <ul className="mt-5 space-y-2 text-base leading-relaxed text-foreground/80 sm:text-lg">
                 <li>❌ Rediseño completo de sitio.</li>
                 <li>❌ Estrategia editorial profunda de contenidos.</li>
@@ -481,7 +518,7 @@ export default function OptimizacionVelocidadWebPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
               <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                Preguntas frecuentes sobre velocidad web
+                Preguntas frecuentes sobre optimización de velocidad web
               </h2>
               <div className="mt-6 space-y-4">
                 {speedFaqItems.map((item, index) => (

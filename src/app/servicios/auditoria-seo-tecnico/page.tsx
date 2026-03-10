@@ -328,6 +328,31 @@ export default function AuditoriaSeoTecnicoPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
               <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                Qué es una auditoría SEO técnica
+              </h2>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Una auditoría SEO técnica revisa si tu sitio web está bien preparado para que Google pueda rastrearlo,
+                entenderlo e indexarlo correctamente. Analiza aspectos como indexación, rastreo, headings, velocidad,
+                estructura de URLs, canónicas, datos estructurados y otros errores que pueden limitar tu visibilidad.
+              </p>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Es importante porque muchos problemas de posicionamiento no vienen del contenido, sino de una base
+                técnica mal resuelta. Cuando esos errores no se detectan a tiempo, el sitio pierde tráfico, claridad y
+                capacidad de crecer en Google.
+              </p>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Conviene hacerla cuando tu sitio no aparece bien en buscadores, tiene errores en Search Console,
+                perdió tráfico, cambió de plataforma o simplemente necesitas saber qué está frenando tus resultados
+                antes de seguir invirtiendo en SEO.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 pb-12 sm:px-6 sm:pb-16">
+          <div className="container mx-auto max-w-6xl">
+            <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
                 ¿Por Qué Tu Sitio Web No Aparece en Google?
               </h2>
 
@@ -389,7 +414,7 @@ export default function AuditoriaSeoTecnicoPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-10">
               <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                Qué incluye nuestra auditoría SEO técnico
+                Qué incluye nuestra auditoría SEO técnica
               </h2>
               <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
                 Nuestra auditoría cubre 6 áreas críticas que determinan si Google puede encontrar, entender y rankear
