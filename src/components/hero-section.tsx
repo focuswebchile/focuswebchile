@@ -183,7 +183,7 @@ export function HeroSection() {
           <div
             className={`relative z-20 space-y-6 pt-24 pb-8 transition-all duration-700 ease-out md:mt-6 md:flex md:h-full md:flex-col md:justify-center md:pb-10 md:pt-0 lg:mt-8 xl:mt-10 xl:max-w-[920px] xl:pr-16 2xl:max-w-[980px] 2xl:pr-20 ${desktopRevealClass}`}
           >
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280]">
+            <div className="pt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280] md:pt-12 lg:pt-6 xl:pt-0">
               <p>Optimización web con criterio e impacto real.</p>
               <p>Priorizamos lo que importa.</p>
             </div>
