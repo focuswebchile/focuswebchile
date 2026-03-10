@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${baseUrl}`, lastModified: now },
     { url: `${baseUrl}/landing-page`, lastModified: now },
-    { url: `${baseUrl}/5-pasos-antes-de-lanzar-un-sitio-web`, lastModified: now },
     { url: `${baseUrl}/blog/5-pasos-antes-de-lanzar-un-sitio-web`, lastModified: now },
     { url: `${baseUrl}/servicios`, lastModified: now },
     { url: `${baseUrl}/servicios/auditoria-seo-tecnico`, lastModified: now },
@@ -24,7 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/mi-pagina-web-tarda-mucho-en-cargar`, lastModified: now },
     { url: `${baseUrl}/blog/seo-local-google-business-chile`, lastModified: now },
     { url: `${baseUrl}/blog/seguridad-web-pymes`, lastModified: now },
-    { url: `${baseUrl}/crear-pagina-web-desde-cero`, lastModified: now },
     { url: `${baseUrl}/blog/crear-pagina-web-desde-cero`, lastModified: now },
     { url: `${baseUrl}/mi-historia`, lastModified: now },
     { url: `${baseUrl}/metodologia`, lastModified: now },
