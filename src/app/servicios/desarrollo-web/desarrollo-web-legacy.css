@@ -343,6 +343,18 @@
             line-height: 1.7;
             color: #4B5563;
         }
+        .faq-item a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-thickness: 1.5px;
+            text-underline-offset: 3px;
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+        .faq-item a:hover {
+            color: #1D4ED8;
+            text-decoration-color: currentColor;
+        }
         .pillar-icon {
             width: 56px;
             height: 56px;
