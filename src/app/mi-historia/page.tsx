@@ -81,7 +81,7 @@ export default function SobreMiPage() {
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <h1 className="sr-only">Mi historia en Focus Web</h1>
-        <section className="px-6 pt-24 md:px-10 md:pt-28">
+        <section aria-label="Breadcrumb" className="px-6 pt-24 md:px-10 md:pt-28">
           <div className="mx-auto w-full max-w-6xl">
             <SiteBreadcrumb
               className="mb-2"
@@ -93,11 +93,11 @@ export default function SobreMiPage() {
           </div>
         </section>
         <SobreMiHero />
-        <header className="w-full py-5 md:py-5">
+        <section aria-labelledby="quien-soy-title" className="w-full py-5 md:py-5">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="min-h-[35vh] flex w-full items-center justify-center">
               <div className="w-full">
-                <h2 className="sr-only">Quién soy</h2>
+                <h2 id="quien-soy-title" className="sr-only">Quién soy</h2>
                 <p className="mx-auto w-full max-w-[18ch] text-center text-4xl font-medium leading-relaxed text-foreground sm:hidden fade-in-up">
                   Quien soy
                 </p>
@@ -129,7 +129,7 @@ export default function SobreMiPage() {
               </div>
             </div>
           </div>
-        </header>
+        </section>
         <section aria-labelledby="lo-que-me-mueve-title" className="w-full py-16 md:py-24">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="space-y-4 text-center">
@@ -203,40 +203,45 @@ export default function SobreMiPage() {
           </div>
         </section>
         <DiferenteTimeline />
-        <section className="w-full py-16 md:py-24">
+        <section aria-labelledby="cierre-personal-title" className="w-full py-16 md:py-24">
           <div className="mx-auto w-full max-w-5xl px-6 md:px-10">
-            <blockquote className="relative mx-auto max-w-3xl text-center">
-              <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 text-6xl text-primary/20 md:-top-12 md:text-7xl">
-                “
-              </span>
-              <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl">
-                Bueno, ahora que me conoces un poco mejor,{" "}
-                <span className="text-primary underline decoration-primary/40 underline-offset-4">
-                  hablemos
+            <figure className="mx-auto max-w-3xl">
+              <figcaption id="cierre-personal-title" className="sr-only">
+                Cierre personal
+              </figcaption>
+              <blockquote className="relative text-center">
+                <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 text-6xl text-primary/20 md:-top-12 md:text-7xl">
+                  “
                 </span>
-                . Cuéntame qué te preocupa hoy: si no apareces en Google, si tu sitio carga lento o si necesitas
-                construir una base técnica mejor. Lo revisamos juntos y definimos el siguiente paso.
-              </p>
-              <span className="pointer-events-none absolute -bottom-10 right-6 text-6xl text-primary/20 md:-bottom-12 md:text-7xl">
-                ”
-              </span>
-            </blockquote>
-            <cite className="mt-8 block text-center text-sm font-medium uppercase tracking-[0.2em] text-foreground/60 not-italic">
-              Felipe / Focus Web
-            </cite>
+                <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl">
+                  Bueno, ahora que me conoces un poco mejor,{" "}
+                  <span className="text-primary underline decoration-primary/40 underline-offset-4">
+                    hablemos
+                  </span>
+                  . Cuéntame qué te preocupa hoy: si no apareces en Google, si tu sitio carga lento o si necesitas
+                  construir una base técnica mejor. Lo revisamos juntos y definimos el siguiente paso.
+                </p>
+                <span className="pointer-events-none absolute -bottom-10 right-6 text-6xl text-primary/20 md:-bottom-12 md:text-7xl">
+                  ”
+                </span>
+              </blockquote>
+              <figcaption className="mt-8 block text-center text-sm font-medium uppercase tracking-[0.2em] text-foreground/60 not-italic">
+                Felipe / Focus Web
+              </figcaption>
+            </figure>
           </div>
         </section>
-        <section className="w-full py-16 md:py-24">
+        <section aria-labelledby="cta-mi-historia-title" className="w-full py-16 md:py-24">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
-            <div className="rounded-3xl border border-primary/20 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 px-8 py-10 md:px-12 md:py-12">
+            <aside className="rounded-3xl border border-primary/20 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 px-8 py-10 md:px-12 md:py-12">
               <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
                 <div className="space-y-3">
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/70">
                     Un primer paso
                   </p>
-                  <h3 className="text-3xl font-semibold text-foreground md:text-4xl">
+                  <h2 id="cta-mi-historia-title" className="text-3xl font-semibold text-foreground md:text-4xl">
                     Hablemos de tu proyecto
-                  </h3>
+                  </h2>
                   <p className="text-base text-foreground/70 md:text-lg">
                     Para revisar qué no está funcionando y qué conviene priorizar primero
                   </p>
@@ -250,7 +255,7 @@ export default function SobreMiPage() {
                   Conversemos
                 </a>
               </div>
-            </div>
+            </aside>
           </div>
         </section>
       </main>

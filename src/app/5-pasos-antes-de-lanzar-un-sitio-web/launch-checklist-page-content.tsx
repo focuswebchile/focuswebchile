@@ -323,6 +323,19 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                     <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                       {step.explanation}
                     </p>
+                    {step.number === "01" ? (
+                      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/75 sm:text-base">
+                        Si tu sitio ya esta publicado y sientes que la base tecnica o el rendimiento no estan bien resueltos,
+                        puede ayudarte una{" "}
+                        <Link
+                          className="inline-block whitespace-nowrap text-primary underline underline-offset-4 hover:text-primary/80"
+                          href="/servicios/optimizacion-velocidad-web"
+                        >
+                          optimizacion de velocidad web
+                        </Link>
+                        .
+                      </p>
+                    ) : null}
                     {step.number === "02" ? (
                       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/75 sm:text-base">
                         Si quieres revisar este punto con mas detalle, puedes partir por nuestra{" "}
@@ -528,7 +541,12 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-foreground/75">
                   Corregir estos puntos antes de publicar evita errores frecuentes de indexacion, medicion incompleta o
-                  estructuras que despues cuestan mucho mas ajustar una vez que tu sitio web ya esta publicado.
+                  estructuras que despues cuestan mucho mas ajustar una vez que tu sitio web ya esta publicado. Si
+                  necesitas ordenar mejor esa base desde el inicio, puede ayudarte un{" "}
+                  <Link className="text-primary underline underline-offset-4 hover:text-primary/80" href="/servicios/desarrollo-web">
+                    desarrollo web profesional
+                  </Link>
+                  .
                 </p>
               </aside>
             </div>

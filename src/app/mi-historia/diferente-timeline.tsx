@@ -15,7 +15,7 @@ export function DiferenteTimeline() {
   }
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-16 md:pt-24">
+    <section ref={sectionRef} aria-labelledby="timeline-diferente-title" className="relative w-full pt-16 md:pt-24">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
         <TimelineContent
           timelineRef={sectionRef}
@@ -30,7 +30,7 @@ export function DiferenteTimeline() {
             },
           }}
         >
-          <h2 className="text-4xl font-semibold sm:text-5xl md:text-7xl text-center mb-18 md:mb-35">
+          <h2 id="timeline-diferente-title" className="text-4xl font-semibold sm:text-5xl md:text-7xl text-center mb-18 md:mb-35">
             <span className="text-foreground">Qué me</span>{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               hace diferente
@@ -42,7 +42,7 @@ export function DiferenteTimeline() {
           <div className="relative pl-28 sm:pl-32 md:pl-36">
             <span className="absolute left-[2.5rem] top-2 h-full w-px bg-primary/30 sm:left-[2.75rem] md:left-[3rem]" />
 
-            <div className="relative pb-10 md:pb-14">
+            <article className="relative pb-10 md:pb-14">
             <span className="absolute -left-[3.5rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground sm:-left-[3.75rem] sm:h-9 sm:w-9 sm:text-sm md:-left-[4rem] md:h-10 md:w-10">
               01
             </span>
@@ -103,9 +103,9 @@ export function DiferenteTimeline() {
                   y accionable para que avances con foco, no con suposiciones.
                 </p>
               </TimelineContent>
-            </div>
+            </article>
 
-            <div className="relative pb-10 md:pb-14">
+            <article className="relative pb-10 md:pb-14">
             <span className="absolute -left-[3.5rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground sm:-left-[3.75rem] sm:h-9 sm:w-9 sm:text-sm md:-left-[4rem] md:h-10 md:w-10">
               02
             </span>
@@ -148,9 +148,9 @@ export function DiferenteTimeline() {
                   .
                 </p>
               </div>
-            </div>
+            </article>
 
-            <div className="relative">
+            <article className="relative">
             <span className="absolute -left-[3.5rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground sm:-left-[3.75rem] sm:h-9 sm:w-9 sm:text-sm md:-left-[4rem] md:h-10 md:w-10">
               03
             </span>
@@ -194,7 +194,7 @@ export function DiferenteTimeline() {
                   y crecen a tu ritmo, sin depender de terceros ni quedar amarrado a nadie.
                 </p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
