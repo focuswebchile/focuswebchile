@@ -10,7 +10,7 @@ import { blogPosts } from "@/lib/blog-posts"
 import { Compass } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Blog | FocusWeb",
+  title: "Blog SEO, Desarrollo Web y Velocidad en Chile | FocusWeb",
   description:
     "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/blog",
-    title: "Blog | FocusWeb",
+    title: "Blog SEO, Desarrollo Web y Velocidad en Chile | FocusWeb",
     description:
       "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
     siteName: "FocusWeb Chile",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | FocusWeb",
+    title: "Blog SEO, Desarrollo Web y Velocidad en Chile | FocusWeb",
     description:
       "Guías de SEO, velocidad y posicionamiento web para pymes en Chile. Aprende a mejorar tu sitio, atraer tráfico orgánico y convertir visitas en clientes.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],

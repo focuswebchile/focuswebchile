@@ -7,7 +7,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Clock3, SearchCheck, ShieldCheck } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Contacto | FocusWeb",
+  title: "Contacto SEO Técnico y Desarrollo Web Chile | FocusWeb",
   description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
   alternates: {
     canonical: "/contacto",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/contacto",
-    title: "Contacto | FocusWeb",
+    title: "Contacto SEO Técnico y Desarrollo Web Chile | FocusWeb",
     description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
     siteName: "FocusWeb Chile",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contacto | FocusWeb",
+    title: "Contacto SEO Técnico y Desarrollo Web Chile | FocusWeb",
     description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
