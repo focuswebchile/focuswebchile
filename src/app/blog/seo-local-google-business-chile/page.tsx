@@ -9,9 +9,9 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Google Mi Negocio Chile: guía pyme | FocusWeb",
+  title: "Google Mi Negocio Chile: guía para PYMEs | Focus Web",
   description:
-    "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales, atraer clientes y mejorar tu SEO local.",
+    "Google Mi Negocio Chile: aprende a optimizar tu perfil y atraer clientes desde búsquedas locales en Google. Guía práctica para PYMEs chilenas.",
   alternates: {
     canonical: "/blog/seo-local-google-business-chile",
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/seo-local-google-business-chile",
-    title: "Google Mi Negocio Chile: guía pyme | FocusWeb",
+    title: "Google Mi Negocio Chile: guía para PYMEs | Focus Web",
     description:
-      "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales, atraer clientes y mejorar tu SEO local.",
+      "Google Mi Negocio Chile: aprende a optimizar tu perfil y atraer clientes desde búsquedas locales en Google. Guía práctica para PYMEs chilenas.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Google Mi Negocio Chile: guía pyme | FocusWeb",
+    title: "Google Mi Negocio Chile: guía para PYMEs | Focus Web",
     description:
-      "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales, atraer clientes y mejorar tu SEO local.",
+      "Google Mi Negocio Chile: aprende a optimizar tu perfil y atraer clientes desde búsquedas locales en Google. Guía práctica para PYMEs chilenas.",
     images: ["https://focusweb.cl/og-google-business.webp"],
   },
 }
