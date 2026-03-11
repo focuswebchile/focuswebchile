@@ -132,7 +132,7 @@ export default function BlogPostPage() {
               />
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Tiempo de lectura: 8 min</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                Mi página web tarda mucho en cargar: causas reales y soluciones efectivas en Chile
+                Mi página web tarda mucho en cargar: causas y soluciones
               </h1>
 
               <p>

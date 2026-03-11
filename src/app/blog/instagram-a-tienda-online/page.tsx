@@ -116,7 +116,7 @@ export default function BlogPostPage() {
                 Tiempo de lectura: 7 min
               </p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar
+                De Instagram a tienda online en Chile
               </h1>
 
               <p>
