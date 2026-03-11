@@ -9,7 +9,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Seguridad de páginas web para PYMEs: HTTPS y respaldos | FocusWeb",
+  title: "Seguridad Web para PYMEs: HTTPS y Backups | FocusWeb",
   description:
     "Seguridad web para pymes: protege tu sitio con HTTPS, SSL, contraseñas seguras, respaldos y medidas básicas contra ataques comunes.",
   alternates: {

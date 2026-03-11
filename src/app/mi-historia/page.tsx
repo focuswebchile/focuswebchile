@@ -10,7 +10,7 @@ import { DiferenteTimeline } from "./diferente-timeline"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Mi historia | Focus Web – SEO técnico, diagnóstico y desarrollo web",
+  title: "Mi historia | FocusWeb",
   description:
     "Soy Felipe de Focus Web. Ayudo a pymes y emprendedores en Chile a ordenar su web con diagnóstico técnico, SEO, velocidad y desarrollo claro.",
   alternates: {

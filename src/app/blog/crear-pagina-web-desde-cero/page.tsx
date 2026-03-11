@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ArticlePageContent } from "@/app/crear-pagina-web-desde-cero/article-page-content"
 
 export const metadata: Metadata = {
-  title: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
+  title: "Cómo crear una página web en Chile | FocusWeb",
   description:
     "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
   alternates: {

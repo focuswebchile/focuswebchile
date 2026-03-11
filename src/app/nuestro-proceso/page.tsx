@@ -6,7 +6,7 @@ import ProcessContent from "@/components/process/process-content"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Proceso de SEO técnico, optimización y desarrollo web | Focus Web",
+  title: "Nuestro proceso de SEO técnico y desarrollo web | FocusWeb",
   description:
     "Así trabajamos: diagnóstico técnico, priorización SEO, optimización de velocidad y ejecución web para pymes en Chile.",
   alternates: {

@@ -7,7 +7,7 @@ import { AuditoriaSeoCtaForm } from "@/components/auditoria-seo-cta-form"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Auditoría SEO Técnica Chile | Diagnóstico Completo Gratis | FocusWeb",
+  title: "Auditoría SEO Técnica en Chile | FocusWeb",
   description:
     "Auditoría SEO técnica en Chile para detectar errores y oportunidades con plan priorizado. Primera auditoría gratis y reporte inicial en 48 horas.",
   alternates: {
@@ -388,6 +388,16 @@ export default function AuditoriaSeoTecnicoPage() {
                   <strong>Competencia te supera</strong> aunque tu producto/servicio es mejor
                 </li>
               </ul>
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                Si quieres reconocer estos patrones antes de auditar, revisa estos{" "}
+                <Link
+                  href="/blog/errores-paginas-web-pymes-chile"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  errores comunes en páginas web de pymes
+                </Link>
+                .
+              </p>
 
               <h3 className="mt-6 text-xl font-semibold text-foreground">La causa real:</h3>
               <p className="mt-3 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
@@ -418,7 +428,21 @@ export default function AuditoriaSeoTecnicoPage() {
               </h2>
               <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
                 Nuestra auditoría cubre 6 áreas críticas que determinan si Google puede encontrar, entender y rankear
-                tu sitio web:
+                tu sitio web. Si hoy tu principal dolor es performance, empieza por{" "}
+                <Link
+                  href="/blog/mi-pagina-web-tarda-mucho-en-cargar"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  mi página web tarda mucho en cargar
+                </Link>
+                . Y si necesitas contexto sobre la base técnica, revisa{" "}
+                <Link
+                  href="/blog/seguridad-web-pymes"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  seguridad web para pymes
+                </Link>
+                :
               </p>
 
               <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
