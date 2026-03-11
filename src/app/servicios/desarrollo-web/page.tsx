@@ -10,7 +10,7 @@ import "./desarrollo-web-legacy.css"
 export const metadata: Metadata = {
   title: "Desarrollo Web Profesional en Chile | Focus Web",
   description:
-    "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
+    "Desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
   alternates: {
     canonical: "/servicios/desarrollo-web",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/servicios/desarrollo-web",
     title: "Desarrollo Web Profesional en Chile | Focus Web",
     description:
-      "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
+      "Desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Desarrollo Web Profesional en Chile | Focus Web",
     description:
-      "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",
+      "Desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
     images: ["https://focusweb.cl/servicios-digitales.webp"],
   },
 }

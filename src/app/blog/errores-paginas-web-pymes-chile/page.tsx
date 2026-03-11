@@ -10,7 +10,7 @@ import { ArticleAuthorCta } from "@/components/article-author-cta"
 export const metadata: Metadata = {
   title: "10 errores web en PyMEs chilenas: cómo evitarlos | FocusWeb",
   description:
-    "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs. Guía práctica con soluciones reales de desarrollo web.",
+    "Errores comunes en páginas web de pymes en Chile: cómo detectarlos y evitarlos antes de perder clientes, visibilidad y conversiones.",
   alternates: {
     canonical: "/blog/errores-paginas-web-pymes-chile",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/blog/errores-paginas-web-pymes-chile",
     title: "10 errores web en PyMEs chilenas: cómo evitarlos | FocusWeb",
     description:
-      "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs. Guía práctica con soluciones reales de desarrollo web.",
+      "Errores comunes en páginas web de pymes en Chile: cómo detectarlos y evitarlos antes de perder clientes, visibilidad y conversiones.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "10 errores web en PyMEs chilenas: cómo evitarlos | FocusWeb",
     description:
-      "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs. Guía práctica con soluciones reales de desarrollo web.",
+      "Errores comunes en páginas web de pymes en Chile: cómo detectarlos y evitarlos antes de perder clientes, visibilidad y conversiones.",
     images: ["https://focusweb.cl/og-10%20errores.webp"],
   },
 }

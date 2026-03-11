@@ -11,7 +11,7 @@ import { ArticleAuthorCta } from "@/components/article-author-cta"
 export const metadata: Metadata = {
   title: "Seguridad de páginas web para PYMEs: HTTPS y respaldos | FocusWeb",
   description:
-    "Informate sobre cómo mejorar la seguridad de páginas web para PYMEs con HTTPS, SSL, contraseñas seguras, respaldos y protección básica contra ataques comunes.",
+    "Seguridad web para pymes: protege tu sitio con HTTPS, SSL, contraseñas seguras, respaldos y medidas básicas contra ataques comunes.",
   alternates: {
     canonical: "/blog/seguridad-web-pymes",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl/blog/seguridad-web-pymes",
     title: "Seguridad de páginas web para PYMEs: HTTPS y respaldos | FocusWeb",
     description:
-      "Informate sobre cómo mejorar la seguridad de páginas web para PYMEs con HTTPS, SSL, contraseñas seguras, respaldos y protección básica contra ataques comunes.",
+      "Seguridad web para pymes: protege tu sitio con HTTPS, SSL, contraseñas seguras, respaldos y medidas básicas contra ataques comunes.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Seguridad de páginas web para PYMEs: HTTPS y respaldos | FocusWeb",
     description:
-      "Informate sobre cómo mejorar la seguridad de páginas web para PYMEs con HTTPS, SSL, contraseñas seguras, respaldos y protección básica contra ataques comunes.",
+      "Seguridad web para pymes: protege tu sitio con HTTPS, SSL, contraseñas seguras, respaldos y medidas básicas contra ataques comunes.",
     images: ["https://focusweb.cl/Protege-la-web-de-tu-pyme.webp"],
   },
 }
