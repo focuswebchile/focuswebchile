@@ -245,6 +245,13 @@ export default function OptimizacionVelocidadWebPage() {
                 >
                   mi página web tarda mucho en cargar
                 </Link>
+                . También puedes revisar estos{" "}
+                <Link
+                  href="/blog/errores-paginas-web-pymes-chile"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  errores comunes que frenan una web
+                </Link>
                 .
               </p>
             </div>
@@ -468,7 +475,14 @@ export default function OptimizacionVelocidadWebPage() {
               </ul>
               <p className="mt-4 max-w-5xl text-base leading-relaxed text-foreground/80 sm:text-lg">
                 Si tu caso requiere <strong>desarrollo web y seo</strong> desde cero, te lo decimos y te derivamos al
-                servicio correcto.
+                servicio correcto. Si además quieres revisar riesgos técnicos complementarios, mira{" "}
+                <Link
+                  href="/blog/seguridad-web-pymes"
+                  className="text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  seguridad web para pymes
+                </Link>
+                .
               </p>
             </div>
           </div>
