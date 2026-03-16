@@ -3,7 +3,6 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
-  skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       {
