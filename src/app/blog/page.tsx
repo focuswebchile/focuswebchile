@@ -43,8 +43,19 @@ export const metadata: Metadata = {
 }
 
 const posts = blogPosts
+const featuredPostHref = "/blog/landing-page-vs-pagina-web"
+
+function parsePostDate(value: string) {
+  const [day, month, year] = value.split("-").map(Number)
+  return new Date(year, month - 1, day).getTime()
+}
 
 export default function BlogPage() {
+  const featuredPost = posts.find((post) => post.href === featuredPostHref) ?? posts[0]
+  const secondaryPosts = posts
+    .filter((post) => post.href !== featuredPost.href)
+    .sort((a, b) => parsePostDate(b.date) - parsePostDate(a.date))
+
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -116,8 +127,8 @@ export default function BlogPage() {
             <div className="mt-4">
               <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-border/60 shadow-2xl shadow-primary/10 transition-transform duration-300">
                 <Image
-                  src={posts[0].image.src}
-                  alt={posts[0].image.alt}
+                  src={featuredPost.image.src}
+                  alt={featuredPost.image.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 960px, (min-width: 640px) 90vw, 100vw"
@@ -127,7 +138,7 @@ export default function BlogPage() {
             </div>
             <article className="mt-6 flex flex-col gap-4 hover:opacity-90 transition-opacity">
               <div className="flex flex-row flex-wrap gap-4 items-center">
-                <Badge>{posts[0].category}</Badge>
+                <Badge>{featuredPost.category}</Badge>
                 <div className="flex flex-row gap-2 text-sm items-center text-muted-foreground">
                   <span>Autor</span>
                   <Avatar className="h-6 w-6">
@@ -136,15 +147,15 @@ export default function BlogPage() {
                   </Avatar>
                   <span className="text-foreground">FocusWeb</span>
                 </div>
-                <span className="text-sm text-muted-foreground">• {posts[0].date}</span>
+                <span className="text-sm text-muted-foreground">• {featuredPost.date}</span>
               </div>
               <div className="flex flex-col gap-2">
                 <h2 className="max-w-3xl text-2xl tracking-tight text-foreground">
-                  <a href={posts[0].href} className="hover:text-primary transition-colors">
-                    {posts[0].title}
+                  <a href={featuredPost.href} className="hover:text-primary transition-colors">
+                    {featuredPost.title}
                   </a>
                 </h2>
-                <p className="max-w-3xl text-muted-foreground text-base">{posts[0].excerpt}</p>
+                <p className="max-w-3xl text-muted-foreground text-base">{featuredPost.excerpt}</p>
               </div>
             </article>
           </div>
@@ -180,7 +191,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {posts.slice(1).map((post) => (
+              {secondaryPosts.map((post) => (
                 <article key={post.title} className="flex flex-col gap-4 hover:opacity-90 transition-opacity">
                   <div className="group relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70 transition-transform duration-300">
                     {post.image ? (
