@@ -178,6 +178,7 @@ const auditoriaWebPageSchema = {
   url: "https://focusweb.cl/servicios/auditoria-seo-tecnico",
   description:
     "Auditoría SEO técnica completa para tu sitio web en Chile. Identificamos errores, oportunidades y creamos plan de acción priorizado. Primera auditoría GRATIS con reporte inicial en 48 horas.",
+  inLanguage: "es-CL",
   isPartOf: {
     "@type": "WebSite",
     name: "FocusWeb Chile",
@@ -280,7 +281,8 @@ export default function AuditoriaSeoTecnicoPage() {
                 ]}
               />
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Auditoría SEO Técnica: Identifica Qué Está Frenando Tu Sitio
+                Auditoría SEO Técnica:
+                <span className="block">Detecta Qué Frena Tu Sitio</span>
               </h1>
               <p className="mt-5 max-w-4xl text-base leading-relaxed text-foreground/85 sm:text-lg">
                 Si tu sitio web no aparece en Google, tiene problemas de indexación o simplemente no entiendes por qué

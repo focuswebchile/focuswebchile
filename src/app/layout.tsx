@@ -125,7 +125,7 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Focus Web",
+      name: "FocusWeb Chile",
       url: "https://focusweb.cl",
       logo: "https://focusweb.cl/logo-512.png",
       description:
@@ -141,8 +141,9 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Focus Web",
+      name: "FocusWeb Chile",
       url: "https://focusweb.cl",
+      inLanguage: "es-CL",
     },
   ]
 

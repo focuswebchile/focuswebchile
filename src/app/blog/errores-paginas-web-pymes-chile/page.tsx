@@ -48,11 +48,12 @@ const articleAndBreadcrumbSchema = {
       headline: "10 Errores Críticos en Páginas Web de PyMEs Chilenas (Y Cómo Evitarlos)",
       description:
         "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs.",
+      inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-10%20errores.webp"],
-      author: { "@type": "Organization", name: "Focus Web" },
+      author: { "@type": "Organization", name: "FocusWeb Chile" },
       publisher: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
         logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
       },
       datePublished: "2026-02-02",
@@ -100,10 +101,10 @@ export default function BlogPostPage() {
                 Tiempo de lectura: 10 min
               </p>
               <header className="space-y-2">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                  10 Errores Críticos Que Cometen las PyMEs Chilenas en Sus Páginas Web
+                <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+                  10 errores críticos en páginas web de PyMEs chilenas
                 </h1>
-                <p className="text-lg font-semibold text-muted-foreground">(Y Cómo Evitarlos)</p>
+                <p className="text-lg font-semibold text-muted-foreground">(y cómo evitarlos)</p>
               </header>
 
               <p>

@@ -79,11 +79,12 @@ const articleAndBreadcrumbSchema = {
       headline: "Mi página web tarda mucho en cargar: causas reales y soluciones efectivas en Chile",
       description:
         "Descubre por qué tu página web tarda mucho en cargar, cómo impacta en SEO y ventas, y qué acciones priorizar para optimizar WordPress en Chile.",
+      inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-mi-sitio-carga-lento.webp"],
-      author: { "@type": "Organization", name: "Focus Web" },
+      author: { "@type": "Organization", name: "FocusWeb Chile" },
       publisher: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
         logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
       },
       datePublished: "2026-02-10",
@@ -131,7 +132,7 @@ export default function BlogPostPage() {
                 ]}
               />
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Tiempo de lectura: 8 min</p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Mi página web tarda mucho en cargar: causas y soluciones
               </h1>
 

@@ -8,7 +8,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import "./desarrollo-web-legacy.css"
 
 export const metadata: Metadata = {
-  title: "Desarrollo Web Profesional en Chile | Focus Web",
+  title: "Desarrollo Web Profesional en Chile | FocusWeb",
   description:
     "Desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/servicios/desarrollo-web",
-    title: "Desarrollo Web Profesional en Chile | Focus Web",
+    title: "Desarrollo Web Profesional en Chile | FocusWeb",
     description:
       "Desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
     siteName: "FocusWeb Chile",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Desarrollo Web Profesional en Chile | Focus Web",
+    title: "Desarrollo Web Profesional en Chile | FocusWeb",
     description:
       "Desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
     images: ["https://focusweb.cl/servicios-digitales.webp"],
@@ -49,7 +49,7 @@ export default function DesarrolloWebPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Desarrollo Web Profesional en Chile | Focus Web",
+    name: "Desarrollo Web Profesional en Chile | FocusWeb",
     url: "https://focusweb.cl/servicios/desarrollo-web",
     description:
       "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en rendimiento, SEO técnico y crecimiento.",

@@ -48,11 +48,12 @@ const articleAndBreadcrumbSchema = {
       headline: "Landing Page vs Página Web: diferencias clave en diseño web",
       description:
         "¿Landing page o página web? Te explicamos las diferencias en diseño web profesional, con ejemplos claros para negocios y pymes en Chile.",
+      inLanguage: "es-CL",
       image: ["https://focusweb.cl/landingvswebsite.webp"],
-      author: { "@type": "Organization", name: "Focus Web" },
+      author: { "@type": "Organization", name: "FocusWeb Chile" },
       publisher: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
         logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
       },
       datePublished: "2026-01-05",
@@ -114,7 +115,7 @@ export default function BlogPostPage() {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 5 min
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 ¿Qué es una landing page y en qué se diferencia de una página web?
               </h1>
 

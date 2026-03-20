@@ -119,4 +119,15 @@ export const blogPosts: BlogPost[] = [
       alt: "Seguridad web para PYMEs con HTTPS, contraseñas y respaldos",
     },
   },
+  {
+    category: "Landing Page",
+    title: "Landing Page para Negocios en Chile: Qué es y Cómo Crear",
+    excerpt: "“Necesito una página donde mostrar mi negocio, mis servicios y que se vea profesional.”",
+    href: "/blog/landing-page-para-negocios-en-chile",
+    date: "20-03-2026",
+    image: {
+      src: "/que-es-landing-page-focusweb.webp",
+      alt: "Qué es una landing page para negocios en Chile",
+    },
+  },
 ]

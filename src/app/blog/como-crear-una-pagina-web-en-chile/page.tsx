@@ -49,14 +49,15 @@ const articleAndBreadcrumbSchema = {
       headline: "Cómo crear una página web en Chile: guía clara para negocios y pymes",
       description:
         "Guía clara para crear una página web en Chile: pasos, tipos de web y errores comunes, sin tecnicismos.",
+      inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-como-crea-una-pagina.webp"],
       author: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
       },
       publisher: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
         logo: {
           "@type": "ImageObject",
           url: "https://focusweb.cl/logo-512.png",
@@ -121,8 +122,8 @@ export default function BlogPostPage() {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 5 min
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                Cómo crear una página web en Chile: guía clara para negocios y pymes
+              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+                Cómo crear una página web en Chile: guía clara para pymes
               </h1>
 
               <p>

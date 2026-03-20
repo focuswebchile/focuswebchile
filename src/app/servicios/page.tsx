@@ -113,7 +113,10 @@ const serviciosSchema = {
       description:
         "Revisión inicial técnica para detectar problemas de indexación, SEO on-page y estructura con prioridades claras. Incluye consulta inicial gratuita y opción de diagnóstico profundo pagado.",
       provider: { "@id": "https://focusweb.cl/#organization" },
-      areaServed: "CL",
+      areaServed: {
+        "@type": "Country",
+        name: "Chile",
+      },
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "CLP",
@@ -132,7 +135,10 @@ const serviciosSchema = {
       description:
         "Optimización técnica de carga para mejorar Core Web Vitals, reducir tiempos y mejorar experiencia móvil.",
       provider: { "@id": "https://focusweb.cl/#organization" },
-      areaServed: "CL",
+      areaServed: {
+        "@type": "Country",
+        name: "Chile",
+      },
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "CLP",
@@ -150,7 +156,10 @@ const serviciosSchema = {
       description:
         "Creación o rediseño de sitios web con SEO técnico, rendimiento y estructura escalable desde el inicio.",
       provider: { "@id": "https://focusweb.cl/#organization" },
-      areaServed: "CL",
+      areaServed: {
+        "@type": "Country",
+        name: "Chile",
+      },
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "CLP",
@@ -189,6 +198,7 @@ const serviciosWebPageSchema = {
   url: "https://focusweb.cl/servicios",
   description:
     "Servicios de SEO y posicionamiento web en Chile: auditoría técnica, optimización de velocidad, SEO on-page y estrategia de contenido. Desde $110.000 CLP. Consulta gratis.",
+  inLanguage: "es-CL",
   isPartOf: {
     "@type": "WebSite",
     name: "FocusWeb Chile",
@@ -214,8 +224,9 @@ export default function ServiciosPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 FocusWeb Chile
               </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Servicios de SEO y Posicionamiento Web en Chile
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground leading-[0.96] sm:text-4xl lg:text-5xl">
+                Servicios de SEO y
+                <span className="block">Posicionamiento Web en Chile</span>
               </h1>
               <p className="mt-5 max-w-4xl text-base leading-relaxed text-foreground/85 sm:text-lg">
                 Si tu sitio web no aparece en Google, carga lento o no genera ventas, tenemos servicios específicos

@@ -17,8 +17,8 @@ export function ArticleAuthorCta() {
         <div>
           <p className="text-sm font-semibold text-foreground">Felipe Ibar · Fundador de FocusWeb</p>
           <p className="mt-1 text-sm text-foreground/75">
-            Ayudo a pymes a ordenar los pasos técnicos y de SEO para que su sitio deje de ser una carga y empiece a
-            generar resultados reales.
+            Ayudo a pymes chilenas a optimizar su web y su SEO para que su sitio trabaje mejor y genere resultados
+            reales.
           </p>
         </div>
       </div>
@@ -41,4 +41,3 @@ export function ArticleAuthorCta() {
     </aside>
   )
 }
-

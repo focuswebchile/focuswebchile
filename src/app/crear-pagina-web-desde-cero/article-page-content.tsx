@@ -7,7 +7,7 @@ function buildWebPageSchema(pageUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Crear una página web desde cero en Chile: pasos reales | Focus Web",
+    name: "Crear una página web desde cero en Chile: pasos reales | FocusWeb Chile",
     url: pageUrl,
     description:
       "Aprende a crear una página web desde cero en Chile con pasos claros para pymes: estructura, contenidos, SEO básico y decisiones clave para empezar bien.",
@@ -74,8 +74,8 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 4 min
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                Crear una página web desde cero: pasos reales (sin tecnicismos)
+              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+                Crear una página web desde cero: pasos reales
               </h1>
 
               <p>

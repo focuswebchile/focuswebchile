@@ -49,11 +49,12 @@ const articleAndBreadcrumbSchema = {
       headline: "De Instagram a tu Propia Tienda Online: Todo lo que Nadie te Cuenta Antes de Empezar",
       description:
         "Guía para pasar de Instagram a tienda online en Chile: costos reales, Transbank, couriers y elección entre WooCommerce o Shopify.",
+      inLanguage: "es-CL",
       image: ["https://focusweb.cl/instagramatiendaonline.webp"],
-      author: { "@type": "Organization", name: "Focus Web" },
+      author: { "@type": "Organization", name: "FocusWeb Chile" },
       publisher: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
         logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
       },
       datePublished: "2026-01-26",
@@ -115,7 +116,7 @@ export default function BlogPostPage() {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 7 min
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 De Instagram a tienda online en Chile
               </h1>
 

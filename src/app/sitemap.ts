@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/mi-pagina-web-tarda-mucho-en-cargar`, lastModified: now },
     { url: `${baseUrl}/blog/seo-local-google-business-chile`, lastModified: now },
     { url: `${baseUrl}/blog/seguridad-web-pymes`, lastModified: now },
+    { url: `${baseUrl}/blog/landing-page-para-negocios-en-chile`, lastModified: now },
     { url: `${baseUrl}/blog/crear-pagina-web-desde-cero`, lastModified: now },
     { url: `${baseUrl}/mi-historia`, lastModified: now },
     { url: `${baseUrl}/metodologia`, lastModified: now },

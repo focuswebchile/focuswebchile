@@ -49,11 +49,12 @@ const articleSchema = {
       headline: "Seguridad de páginas web para PYMEs: HTTPS y respaldos",
       description:
         "Informate sobre cómo mejorar la seguridad de páginas web para PYMEs con HTTPS, SSL, contraseñas seguras, respaldos y protección básica contra ataques comunes.",
+      inLanguage: "es-CL",
       image: ["https://focusweb.cl/Protege-la-web-de-tu-pyme.webp"],
-      author: { "@type": "Organization", name: "Focus Web" },
+      author: { "@type": "Organization", name: "FocusWeb Chile" },
       publisher: {
         "@type": "Organization",
-        name: "Focus Web",
+        name: "FocusWeb Chile",
         logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
       },
       datePublished: "2026-03-07",
@@ -99,8 +100,8 @@ export default function SeguridadWebPymesPage() {
               />
 
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Tiempo de lectura: 4 min</p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-                Seguridad de páginas web para PYMEs: HTTPS, contraseñas y respaldos
+              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[1.02]">
+                Seguridad web para PYMEs: HTTPS, contraseñas y respaldos
               </h1>
 
               <div className="overflow-hidden rounded-3xl border border-border/60 bg-muted/30 shadow-lg shadow-primary/10">
