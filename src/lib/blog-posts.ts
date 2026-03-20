@@ -24,6 +24,18 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
+    category: "Checklist",
+    title: "5 pasos antes de lanzar un sitio web",
+    excerpt:
+      "Checklist práctica para revisar base técnica, indexación, medición y SEO mínimo antes de publicar tu sitio.",
+    href: "/blog/5-pasos-antes-de-lanzar-un-sitio-web",
+    date: "08-01-2026",
+    image: {
+      src: "/checklist-antes-de-publicar.webp",
+      alt: "Checklist antes de publicar un sitio web",
+    },
+  },
+  {
     category: "Guía",
     title: "Cómo crear una página web en Chile: guía clara para negocios y pymes",
     excerpt:
