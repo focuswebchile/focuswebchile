@@ -65,9 +65,9 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Checklist ecommerce | Focus Web",
+  title: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb",
   description:
-    "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",
+    "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
   alternates: {
     canonical: "/check-list-ecommerce",
   },
@@ -75,42 +75,102 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/check-list-ecommerce",
-    title: "Checklist ecommerce | Focus Web",
+    title: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb",
     description:
-      "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",
+      "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
     siteName: "FocusWeb Chile",
     images: [
       {
         url: "https://focusweb.cl/check-list-e-commerce.webp",
         width: 1200,
         height: 630,
-        alt: "Checklist ecommerce Focus Web",
+        alt: "Checklist ecommerce en Chile FocusWeb",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Checklist ecommerce | Focus Web",
+    title: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb",
     description:
-      "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",
+      "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
     images: ["https://focusweb.cl/check-list-e-commerce.webp"],
   },
 }
 
 export default function CheckListEcommercePage() {
+  const checklistSections = [
+    { position: 1, name: "Diagnóstico y objetivos", url: "https://focusweb.cl/check-list-ecommerce#slide-02" },
+    { position: 2, name: "Categorías del checklist", url: "https://focusweb.cl/check-list-ecommerce#slide-03" },
+    { position: 3, name: "Técnico y hosting", url: "https://focusweb.cl/check-list-ecommerce#slide-04" },
+    { position: 4, name: "Diseño y experiencia de usuario", url: "https://focusweb.cl/check-list-ecommerce#slide-05" },
+    { position: 5, name: "Catálogo y contenido", url: "https://focusweb.cl/check-list-ecommerce#slide-06" },
+    { position: 6, name: "Pagos en Chile", url: "https://focusweb.cl/check-list-ecommerce#slide-07" },
+    { position: 7, name: "Envíos y logística", url: "https://focusweb.cl/check-list-ecommerce#slide-08" },
+    { position: 8, name: "Aspectos legales en Chile", url: "https://focusweb.cl/check-list-ecommerce#slide-09" },
+    { position: 9, name: "Seguridad y confianza", url: "https://focusweb.cl/check-list-ecommerce#slide-10" },
+    { position: 10, name: "Marketing y SEO", url: "https://focusweb.cl/check-list-ecommerce#slide-11" },
+    { position: 11, name: "Progreso y revisión final", url: "https://focusweb.cl/check-list-ecommerce#slide-12" },
+    { position: 12, name: "Lanzamiento de tu tienda online", url: "https://focusweb.cl/check-list-ecommerce#slide-13" },
+  ]
+
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Checklist ecommerce | Focus Web",
+    name: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb Chile",
     url: "https://focusweb.cl/check-list-ecommerce",
     description:
-      "Checklist ecommerce con 47 puntos clave para lanzar tu tienda online en Chile con orden, seguridad y claridad.",
+      "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
     inLanguage: "es-CL",
+    about: {
+      "@type": "Thing",
+      name: "Lanzamiento de tiendas online en Chile",
+    },
     isPartOf: {
       "@type": "WebSite",
       url: "https://focusweb.cl",
       name: "FocusWeb Chile",
     },
+  }
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Cómo lanzar una tienda online en Chile con una checklist ecommerce",
+    description:
+      "Checklist ecommerce en Chile para revisar Webpay, envíos, seguridad, SEO y requisitos legales antes de lanzar tu tienda online.",
+    inLanguage: "es-CL",
+    totalTime: "PT15M",
+    supply: [
+      { "@type": "HowToSupply", name: "Checklist de 47 puntos para ecommerce en Chile" },
+    ],
+    tool: [{ "@type": "HowToTool", name: "Revisión técnica y estratégica de ecommerce" }],
+    audience: {
+      "@type": "Audience",
+      audienceType: "Pymes chilenas, emprendedores y negocios que venden online en Chile",
+      geographicArea: {
+        "@type": "Country",
+        name: "Chile",
+      },
+    },
+    step: checklistSections.map((section) => ({
+      "@type": "HowToStep",
+      position: section.position,
+      name: section.name,
+      url: section.url,
+    })),
+  }
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Checklist ecommerce en Chile",
+    description:
+      "Secciones principales del checklist ecommerce de FocusWeb Chile para lanzar una tienda online con base técnica, pagos, logística, SEO y cumplimiento legal.",
+    numberOfItems: checklistSections.length,
+    itemListElement: checklistSections.map((section) => ({
+      "@type": "ListItem",
+      position: section.position,
+      name: section.name,
+      url: section.url,
+    })),
   }
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -188,13 +248,13 @@ export default function CheckListEcommercePage() {
                       </div>
 
                       <h1 className="mt-8 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
-                        Checklist 47 puntos
-                        <span className="block text-primary">Tienda Online</span>
+                        Checklist Ecommerce en Chile
+                        <span className="block text-primary">47 puntos para lanzar tu tienda online</span>
                       </h1>
 
                       <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
-                        La guía técnica y estratégica definitiva para lanzar tu ecommerce sin sorpresas. Asegura
-                        calidad, seguridad y ventas desde el día uno.
+                        Usa este checklist ecommerce en Chile para revisar pagos, envíos, SEO, aspectos legales y
+                        experiencia de compra antes de lanzar tu tienda online con una base técnica sólida.
                       </p>
 
                       <div className="mt-8 flex flex-wrap gap-4">
@@ -395,7 +455,7 @@ export default function CheckListEcommercePage() {
                             <p className="mt-2 text-sm text-foreground/60">
                               Este documento agrupa los{" "}
                               <span className="font-semibold text-foreground">47 puntos esenciales</span> identificados
-                              por Focus Web tras ayudar a emprendedores chilenos a digitalizar sus negocios.
+                              por FocusWeb Chile tras ayudar a emprendedores chilenos a digitalizar sus negocios.
                             </p>
                           </div>
                         </div>
@@ -2202,7 +2262,7 @@ export default function CheckListEcommercePage() {
                         </div>
 
                         <p className="mt-6 text-center text-xs text-foreground/40">
-                          Focus Web © 2026. Todos los derechos reservados.
+                          FocusWeb Chile © 2026. Todos los derechos reservados.
                         </p>
                       </div>
                     </div>
@@ -2214,6 +2274,8 @@ export default function CheckListEcommercePage() {
         </section>
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Footer />
       <FloatingWhatsApp />
