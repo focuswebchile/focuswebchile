@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Instagram, Facebook, Mail } from "lucide-react"
 
 export function Footer() {
@@ -6,9 +7,18 @@ export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-card/50 backdrop-blur-xl">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-12">
-        <div className="grid grid-cols-1 gap-8 mb-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr]">
+        <div className="grid grid-cols-1 gap-8 mb-8 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.8fr_1fr_1fr]">
           {/* Brand */}
           <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+            <div className="flex justify-center sm:justify-start">
+              <Image
+                src="/logo_focus_web.webp"
+                alt="FocusWeb"
+                width={52}
+                height={52}
+                className="h-11 w-11 sm:h-12 sm:w-12 rounded-full"
+              />
+            </div>
             <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               FocusWeb
             </h3>
@@ -93,6 +103,21 @@ export function Footer() {
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </a>
             </div>
+          </div>
+
+          {/* Payment */}
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+            <h4 className="font-semibold text-sm sm:text-base">Métodos de pago y facturación</h4>
+            <Image
+              src="/transferencia_electronica.png"
+              alt="Transferencia electrónica"
+              width={320}
+              height={192}
+              className="h-14 w-auto sm:h-16"
+            />
+            <p className="max-w-xs text-xs sm:text-sm leading-relaxed text-muted-foreground mx-auto sm:mx-0">
+              Pago por transferencia electrónica. Se emite boleta electrónica al finalizar el proyecto.
+            </p>
           </div>
         </div>
 
