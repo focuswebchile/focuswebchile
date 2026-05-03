@@ -157,6 +157,20 @@ export default function RootLayout({
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
           />
+          <Script
+            id="ga4-src"
+            src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
+            strategy="afterInteractive"
+          />
+          <Script id="ga4-config" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('js', new Date());
+              gtag('config', 'G-33SDJFM25D');
+            `}
+          </Script>
           <DeferredAnalytics />
           <HashRedirect />
           <ThemeSync />

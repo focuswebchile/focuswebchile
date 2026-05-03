@@ -4,12 +4,10 @@ import { useEffect, useRef } from "react"
 
 declare global {
   interface Window {
-    dataLayer?: unknown[]
-    gtag?: (...args: unknown[]) => void
+    ahrefs?: unknown
   }
 }
 
-const GA_ID = "G-33SDJFM25D"
 const AHREFS_KEY = "s+O8F/fzRT/Wxo/VzK5fjQ"
 
 function injectScript(id: string, src: string, attrs: Record<string, string> = {}) {
@@ -31,15 +29,6 @@ export function DeferredAnalytics() {
     const loadAnalytics = () => {
       if (hasLoaded.current) return
       hasLoaded.current = true
-
-      injectScript("ga4-src", `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`)
-
-      window.dataLayer = window.dataLayer || []
-      window.gtag = function gtag(...args: unknown[]) {
-        window.dataLayer?.push(args)
-      }
-      window.gtag("js", new Date())
-      window.gtag("config", GA_ID)
 
       injectScript("ahrefs-src", "https://analytics.ahrefs.com/analytics.js", {
         "data-key": AHREFS_KEY,
