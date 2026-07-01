@@ -139,11 +139,15 @@ export function MainServicesSection() {
     <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
         {lightMotion ? (
-          <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-balance px-4">
-              Nuestros Servicios Principales
+          <div className="mb-12 sm:mb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Servicios
+            </p>
+            <h2 className="mt-4 text-4xl font-black leading-[0.9] tracking-tighter text-foreground sm:text-5xl md:text-6xl">
+              Nuestros servicios<br />
+              <span className="text-primary">principales</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
+            <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
               Especializados en optimización técnica para que tu sitio web genere resultados reales
             </p>
           </div>
@@ -153,12 +157,16 @@ export function MainServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
+            className="mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-balance px-4">
-              Nuestros Servicios Principales
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Servicios
+            </p>
+            <h2 className="mt-4 text-4xl font-black leading-[0.9] tracking-tighter text-foreground sm:text-5xl md:text-6xl">
+              Nuestros servicios<br />
+              <span className="text-primary">principales</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
+            <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
               Especializados en optimización técnica para que tu sitio web genere resultados reales
             </p>
           </motion.div>

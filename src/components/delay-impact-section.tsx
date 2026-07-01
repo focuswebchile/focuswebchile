@@ -1,48 +1,47 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 const impactRows = [
   {
     second: "1 segundo",
     label: "Base",
-    width: "max(10%, 52px)",
-    right: "0%",
-    barClass: "bg-success",
-    rightClass: "text-success",
-    note: "Sitio rápido = experiencia óptima",
+    width: "max(8%, 44px)",
+    pct: "0%",
+    barClass: "bg-primary",
+    pctClass: "text-primary",
+    note: "Experiencia óptima",
   },
   {
     second: "3 segundos",
-    label: "+32% rebote",
+    label: "+32%",
     width: "32%",
-    right: "+32%",
+    pct: "+32%",
     barClass: "bg-accent",
-    rightClass: "text-accent",
+    pctClass: "text-accent",
     note: "1 de cada 3 visitantes adicionales se va",
   },
   {
     second: "5 segundos",
-    label: "+90% rebote",
+    label: "+90%",
     width: "90%",
-    right: "+90%",
+    pct: "+90%",
     barClass: "bg-orange-500",
-    rightClass: "text-orange-600",
-    note: "Casi el doble de usuarios abandonan",
+    pctClass: "text-orange-600",
+    note: "Casi el doble de usuarios abandona",
   },
   {
     second: "10 segundos",
-    label: "+123% rebote",
+    label: "+123%",
     width: "100%",
-    right: "+123%",
+    pct: "+123%",
     barClass: "bg-foreground",
-    rightClass: "text-foreground",
-    note: "Catastrófico: más del doble se van",
+    pctClass: "text-foreground",
+    note: "Catastrófico: más del doble se va",
   },
 ]
 
 export function DelayImpactSection() {
-  const barRef = useRef<HTMLDivElement | null>(null)
   const [barsReady, setBarsReady] = useState(false)
 
   useEffect(() => {
@@ -52,40 +51,55 @@ export function DelayImpactSection() {
 
   return (
     <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-      <div className="container mx-auto max-w-7xl rounded-xl border border-border/50 bg-gradient-to-br from-primary/15 via-info/10 to-foreground/10 px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-foreground">
-            ¿Cuántos Clientes Pierdes por Cada Segundo de Retraso?
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Datos de Google revelan que la velocidad de carga tiene impacto directo en tus ventas. No es opinión, es
-            matemática.
-          </p>
-          <div className="mx-auto mt-6 max-w-3xl rounded-xl border border-info/25 bg-info/10 px-4 py-3 sm:px-5 sm:py-4">
-            <p className="text-sm text-foreground/85 sm:text-base">
-              Si hoy piensas <strong>&quot;mi página web tarda mucho en cargar&quot;</strong>, aquí puedes ver qué impacto
-              tiene y qué conviene priorizar primero.
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-20">
+
+          {/* ── LEFT: editorial headline ─────────────────────────── */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Impacto de velocidad
             </p>
+            <h2 className="mt-4 text-5xl font-black leading-[0.88] tracking-tighter text-foreground sm:text-6xl lg:text-7xl">
+              Cada<br />
+              segundo<br />
+              cuesta<br />
+              <span className="text-primary">clientes.</span>
+            </h2>
+
+            <div className="mt-10 border-t border-border pt-8">
+              <p className="text-7xl font-black leading-none tracking-tighter text-foreground sm:text-8xl">
+                53%
+              </p>
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground sm:text-base">
+                de usuarios móviles abandona sitios que tardan más de 3&nbsp;segundos.
+                En Chile, el&nbsp;70% del tráfico web es móvil.
+              </p>
+              <div className="mt-4 inline-flex items-center rounded-lg border border-border bg-muted px-3 py-1.5">
+                <span className="text-xs font-semibold text-muted-foreground">Fuente: Google Mobile Study</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-10 rounded-xl border border-border/60 bg-card p-5 shadow-xl sm:p-8 lg:p-10" ref={barRef}>
-          <h3 className="text-center text-2xl font-semibold text-card-foreground sm:text-3xl">
-            Probabilidad de Rebote según Tiempo de Carga
-          </h3>
+          {/* ── RIGHT: bar chart ─────────────────────────────────── */}
+          <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
+            <p className="mb-6 text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground">
+              Probabilidad de rebote según tiempo de carga
+            </p>
 
-          <div className="mt-8 space-y-7">
-            {impactRows.map((row, index) => (
-              <div
-                key={row.second}
-                className="grid grid-cols-1 gap-2 sm:grid-cols-[120px_1fr_72px] sm:items-center sm:gap-4"
-              >
-                <p className="text-sm font-semibold text-foreground/90">{row.second}</p>
-
-                <div>
-                  <div className="h-9 w-full overflow-hidden rounded-md bg-muted">
+            <div className="space-y-6">
+              {impactRows.map((row, index) => (
+                <div key={row.second}>
+                  <div className="mb-2 flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold text-foreground/60 sm:text-sm">
+                      {row.second}
+                    </span>
+                    <span className={`text-sm font-bold sm:text-base ${row.pctClass}`}>
+                      {row.pct}
+                    </span>
+                  </div>
+                  <div className="h-9 w-full overflow-hidden rounded-sm bg-muted">
                     <div
-                      className={`flex h-full items-center justify-center text-xs font-bold text-white ${row.barClass}`}
+                      className={`flex h-full items-center px-3 text-xs font-bold text-white ${row.barClass}`}
                       style={{
                         width: barsReady ? row.width : "0%",
                         transitionProperty: "width",
@@ -97,50 +111,19 @@ export function DelayImpactSection() {
                       {row.label}
                     </div>
                   </div>
-                  <p className="mt-2 text-xs text-muted-foreground">{row.note}</p>
+                  <p className="mt-1.5 text-xs text-muted-foreground">{row.note}</p>
                 </div>
-
-                <p className={`text-sm font-bold sm:text-right ${row.rightClass}`}>{row.right}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-9 rounded-xl border-l-4 border-accent bg-accent/15 p-4 sm:p-5">
-            <p className="text-sm text-foreground sm:text-base">
-              <strong>En móviles es peor:</strong> el 53% de usuarios móviles abandona sitios que tardan más de 3
-              segundos. En Chile, el 70% del tráfico web es móvil.
-            </p>
-          </div>
-
-          <details className="mt-6 rounded-xl border border-border/60 bg-card/70 p-4">
-            <summary className="cursor-pointer text-sm font-semibold text-foreground/85">
-              Ver explicación ampliada
-            </summary>
-            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <p>
-                No todos los sitios parten en el mismo estado. Por eso trabajamos con prioridades: primero los
-                bloqueadores críticos de carga, luego optimizaciones de recursos y finalmente ajustes de estabilidad.
-              </p>
-              <p>
-                El objetivo no es solo subir métricas, sino mejorar experiencia real de usuario y capacidad de
-                conversión en móviles y desktop.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-1">
-                <a
-                  href="/metodologia"
-                  className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs text-info hover:bg-info/15"
-                >
-                  Ver metodología
-                </a>
-                <a
-                  href="/blog"
-                  className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs text-info hover:bg-info/15"
-                >
-                  Leer artículos de optimización
-                </a>
-              </div>
+              ))}
             </div>
-          </details>
+
+            <div className="mt-8 rounded-lg border-l-4 border-accent bg-accent/10 p-4">
+              <p className="text-sm text-foreground/85 sm:text-base">
+                <strong>En móviles es peor:</strong> el 53% abandona sitios que tardan más de 3&nbsp;s.
+                En Chile, el 70% del tráfico web es móvil.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
