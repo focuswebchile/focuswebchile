@@ -17,9 +17,9 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-balance px-4">
             Preguntas{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">frecuentes</span>
+            <span className="text-primary">frecuentes</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
             Resolvemos tus dudas sobre el proceso de desarrollo
