@@ -31,6 +31,22 @@ const nextConfig: NextConfig = {
         destination: "https://focusweb.cl/:path*",
         permanent: true,
       },
+      // Subfase 1B: consolidar las tres páginas duplicadas en la nueva URL canónica
+      {
+        source: "/blog/crear-pagina-web-desde-cero",
+        destination: "/crear-pagina-web-chile",
+        permanent: true,
+      },
+      {
+        source: "/blog/como-crear-una-pagina-web-en-chile",
+        destination: "/crear-pagina-web-chile",
+        permanent: true,
+      },
+      {
+        source: "/crear-pagina-web-desde-cero",
+        destination: "/crear-pagina-web-chile",
+        permanent: true,
+      },
     ];
   },
   turbopack: {
