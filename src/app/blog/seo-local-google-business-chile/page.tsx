@@ -9,9 +9,9 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Google Mi Negocio Chile: guía para PYMEs | Focus Web",
+  title: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
   description:
-    "Google Mi Negocio Chile: aprende a optimizar tu perfil y atraer clientes desde búsquedas locales en Google. Guía práctica para PYMEs chilenas.",
+    "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
   alternates: {
     canonical: "/blog/seo-local-google-business-chile",
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/seo-local-google-business-chile",
-    title: "Google Mi Negocio Chile: guía para PYMEs | Focus Web",
+    title: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
     description:
-      "Google Mi Negocio Chile: aprende a optimizar tu perfil y atraer clientes desde búsquedas locales en Google. Guía práctica para PYMEs chilenas.",
+      "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Google Mi Negocio Chile: guía para PYMEs | Focus Web",
+    title: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
     description:
-      "Google Mi Negocio Chile: aprende a optimizar tu perfil y atraer clientes desde búsquedas locales en Google. Guía práctica para PYMEs chilenas.",
+      "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
     images: ["https://focusweb.cl/og-google-business.webp"],
   },
 }
@@ -46,9 +46,9 @@ const articleSchema = {
   "@graph": [
     {
       "@type": "Article",
-      headline: "Google Mi Negocio en Chile: guía para tu pyme",
+      headline: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
       description:
-        "Google Mi Negocio en Chile: aprende a crear, verificar y optimizar tu perfil para aparecer en búsquedas locales y atraer más clientes.",
+        "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
       inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-google-business.webp"],
       author: { "@type": "Organization", name: "FocusWeb Chile" },
@@ -58,7 +58,7 @@ const articleSchema = {
         logo: { "@type": "ImageObject", url: "https://focusweb.cl/logo-512.png" },
       },
       datePublished: "2026-02-16",
-      dateModified: "2026-02-16",
+      dateModified: "2026-07-01",
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id": "https://focusweb.cl/blog/seo-local-google-business-chile",

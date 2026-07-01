@@ -6,9 +6,9 @@ import { HomeSections } from "@/components/home-sections"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "SEO y Posicionamiento Web Chile | FocusWeb",
+  title: "SEO Técnico y Posicionamiento Web en Chile | FocusWeb",
   description:
-    "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+    "¿Tu sitio web no vende o carga lento? Optimizamos el SEO técnico y la velocidad de tu página en Chile para dominar Google. ¡Cotiza tu auditoría hoy!",
   alternates: {
     canonical: "https://focusweb.cl",
   },
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl",
-    title: "SEO y Posicionamiento Web Chile | FocusWeb",
+    title: "SEO Técnico y Posicionamiento Web en Chile | FocusWeb",
     description:
-      "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+      "¿Tu sitio web no vende o carga lento? Optimizamos el SEO técnico y la velocidad de tu página en Chile para dominar Google. ¡Cotiza tu auditoría hoy!",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO y Posicionamiento Web Chile | FocusWeb",
+    title: "SEO Técnico y Posicionamiento Web en Chile | FocusWeb",
     description:
-      "SEO y posicionamiento web en Chile. Mejoramos velocidad, corregimos errores técnicos y optimizamos tu sitio para crecer en Google. Auditoría gratis.",
+      "¿Tu sitio web no vende o carga lento? Optimizamos el SEO técnico y la velocidad de tu página en Chile para dominar Google. ¡Cotiza tu auditoría hoy!",
     images: ["https://focusweb.cl/Optimizacion-web-con-criterio-tecnico.webp"],
   },
 }
