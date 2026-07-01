@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background gradient-mesh">
+      <main className="min-h-screen bg-background">
         <HeroSection />
         <HomeSections />
         <Footer />
