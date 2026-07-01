@@ -93,6 +93,10 @@ const cards = [
       href: "/servicios/desarrollo-web",
       external: false,
     },
+    guideLink: {
+      label: "¿Cómo crear una página web en Chile?",
+      href: "/crear-pagina-web-chile",
+    },
     relatedLinks: [
       { label: "Explorar landing pages", href: "/landing-page" },
       { label: "Ver paquetes y precios", href: "/servicios/desarrollo-web" },
@@ -242,6 +246,16 @@ export function MainServicesSection() {
                       <span>{card.cta.label}</span>
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </a>
+
+                    {"guideLink" in card && card.guideLink ? (
+                      <a
+                        href={card.guideLink.href}
+                        className="flex items-center justify-center gap-1 text-xs text-foreground/55 transition-colors hover:text-foreground/80"
+                      >
+                        <ArrowRight className="h-3 w-3" />
+                        {card.guideLink.label}
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </Card>
