@@ -2,9 +2,24 @@
 
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
-import { Star } from "lucide-react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { Star, ShieldCheck } from "lucide-react"
+import { motion } from "framer-motion"
+
+const featuredCase = {
+  badge: "Caso de Rescate SEO",
+  name: "Equipo ABCIS",
+  role: "Gestión y Operaciones · abcis.cl",
+  project: "Recuperación SEO · Desindexación Masiva · Backend Seguro",
+  content:
+    "Nuestro sitio fue hackeado y millones de páginas de spam se indexaron en Google, destruyendo nuestra visibilidad y credibilidad por completo. FocusWeb diagnosticó la raíz del ataque, ejecutó una limpieza masiva de indexación, reorganizó toda la arquitectura y desarrolló un backend personalizado ultra seguro desde cero. Pasamos de catástrofe total a sitio limpio, rápido y blindado.",
+  rating: 5,
+  metrics: [
+    { label: "Páginas spam desindexadas", value: "+1 M" },
+    { label: "Backend construido desde cero", value: "100%" },
+    { label: "Incidentes tras la entrega", value: "0" },
+  ],
+  initials: "AB",
+}
 
 const testimonials = [
   {
@@ -19,107 +34,142 @@ const testimonials = [
   {
     name: "Verki Bambas",
     role: "Fundadora de Stay Loco · Rep. Checa",
-    project: "Optimización Web · Hero · SEO",
+    project: "Reestructuración Técnica · Hero · SEO Internacional",
     content:
-      "Felipe hizo exactamente lo que le pedí. El proyecto fue rápido, claro y bien ejecutado. La nueva estructura, el hero y el SEO marcaron una diferencia real.",
+      "Coordinamos todo desde Europa y fue impecable. Felipe reestructuró la arquitectura técnica, reordenó el SEO y rediseñó el hero. El resultado fue inmediato: mejor rendimiento, mejor posicionamiento y una base sólida para crecer internacionalmente.",
     rating: 5,
     avatar: "/verki.webp",
   },
-  {
-    name: "James Fraser",
-    role: "Director de Marketing · Crest Painting Canada",
-    project: "SEO · Creación de contenido",
-    content:
-      "FocusWeb.cl optimizó nuestro SEO y creó contenido claro para la empresa. El trabajo fue preciso y los resultados se notaron rápido. Muy conformes con el proceso.",
-    rating: 5,
-    avatar: "/james.webp",
-  },
 ]
 
+function Stars({ count }: { count: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+      ))}
+    </div>
+  )
+}
+
 export function TestimonialsSection() {
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
-
   return (
     <section
-      ref={ref}
       id="testimonios"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-muted/30 relative overflow-hidden"
+      className="bg-muted/30 px-4 py-16 sm:px-6 sm:py-20 lg:py-24"
     >
-      <motion.div
-        style={{ y, opacity }}
-        className="hidden sm:block absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-3xl pointer-events-none"
-      />
-      <motion.div
-        style={{ y: useTransform(scrollYProgress, [0, 1], [-50, 50]), opacity }}
-        className="hidden sm:block absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl pointer-events-none"
-      />
+      <div className="container mx-auto max-w-7xl">
 
-      <div className="container mx-auto max-w-7xl relative z-10">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-12 space-y-3 text-center sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
-            Lo que dicen nuestros{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">clientes</span>
+          <h2 className="text-3xl font-extrabold text-balance px-4 sm:text-4xl md:text-5xl">
+            Resultados reales de{" "}
+            <span className="text-primary">clientes reales</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Emprendedores que confiaron en nosotros para su presencia digital
+          <p className="mx-auto max-w-2xl px-4 text-base text-muted-foreground sm:text-lg">
+            Desde emprendedores en Chile hasta empresas con ataques de seguridad críticos
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card className="h-full p-5 sm:p-6 glass hover:shadow-xl transition-all duration-300 border-border/50">
-                <div className="space-y-3.5 sm:space-y-4">
-                  {/* Stars */}
-                  <div className="flex gap-0.5 sm:gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-primary text-primary" />
-                    ))}
-                  </div>
+        {/* ── CASO PROTAGONISTA: ABCIS ───────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mb-6 sm:mb-8"
+        >
+          <div className="relative overflow-hidden rounded-xl bg-foreground text-background">
 
-                  {/* Content */}
-                  <p className="text-sm sm:text-base text-foreground/90 leading-relaxed text-pretty">
-                    {`“${testimonial.content}”`}
+            {/* Crisis badge */}
+            <div className="absolute right-5 top-5 flex items-center gap-1.5 rounded-lg border border-amber-400/30 bg-amber-400/15 px-3 py-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-amber-400" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-amber-400">
+                {featuredCase.badge}
+              </span>
+            </div>
+
+            <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-start lg:p-12">
+
+              {/* Left: quote + metrics */}
+              <div className="space-y-6">
+                <Stars count={featuredCase.rating} />
+
+                <blockquote className="max-w-3xl text-lg font-medium leading-relaxed text-background/90 sm:text-xl lg:text-2xl lg:leading-snug">
+                  &ldquo;{featuredCase.content}&rdquo;
+                </blockquote>
+
+                {/* Metrics strip */}
+                <div className="grid grid-cols-3 gap-3 border-t border-background/15 pt-6 sm:gap-6">
+                  {featuredCase.metrics.map((m) => (
+                    <div key={m.label}>
+                      <p className="text-2xl font-black text-primary sm:text-3xl lg:text-4xl">{m.value}</p>
+                      <p className="mt-1 text-[11px] leading-tight text-background/50 sm:text-xs">{m.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: author card */}
+              <div className="flex items-center gap-4 lg:min-w-[200px] lg:flex-col lg:items-start lg:gap-4 lg:pt-10">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-xl font-black text-primary">
+                  {featuredCase.initials}
+                </div>
+                <div className="space-y-1">
+                  <p className="font-bold text-background">{featuredCase.name}</p>
+                  <p className="text-sm text-background/55">{featuredCase.role}</p>
+                  <div className="mt-3 inline-flex rounded-md border border-primary/30 bg-primary/15 px-3 py-1">
+                    <span className="text-xs font-semibold text-primary">{featuredCase.project}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ── TESTIMONIOS SECUNDARIOS ────────────────────────────── */}
+        <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+            >
+              <Card className="h-full border-border bg-card p-5 transition-shadow duration-300 hover:shadow-lg sm:p-6">
+                <div className="space-y-4">
+                  <Stars count={t.rating} />
+
+                  <p className="text-sm leading-relaxed text-foreground/85 text-pretty sm:text-base">
+                    &ldquo;{t.content}&rdquo;
                   </p>
 
-                  <div className="pt-3 sm:pt-4 border-t border-border/50 space-y-2.5 sm:space-y-3">
-                    <div className="flex items-center gap-2.5 sm:gap-3">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-gradient-to-br from-primary to-accent flex-shrink-0">
+                  <div className="border-t border-border pt-4 space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full ring-2 ring-primary/20">
                         <Image
-                          src={testimonial.avatar || "/placeholder.svg"}
-                          alt={testimonial.name}
-                          width={96}
-                          height={96}
-                          className="w-full h-full object-cover"
+                          src={t.avatar}
+                          alt={t.name}
+                          width={88}
+                          height={88}
+                          className="h-full w-full object-cover"
                         />
                       </div>
-                      <div>
-                        <p className="font-semibold text-xs sm:text-sm">{testimonial.name}</p>
-                        <p className="text-[10px] sm:text-xs text-muted-foreground">{testimonial.role}</p>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                        <p className="text-xs text-muted-foreground">{t.role}</p>
                       </div>
                     </div>
-                    <div className="pl-2 border-l-2 border-primary/50">
-                      <p className="text-xs sm:text-sm text-muted-foreground">Proyecto:</p>
-                      <p className="font-bold text-sm sm:text-base text-primary">{testimonial.project}</p>
+                    <div className="inline-flex items-center rounded-md border border-primary/20 bg-primary/10 px-3 py-1">
+                      <span className="text-xs font-semibold text-primary">{t.project}</span>
                     </div>
                   </div>
                 </div>
@@ -127,6 +177,7 @@ export function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   )
