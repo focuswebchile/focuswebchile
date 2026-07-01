@@ -7,13 +7,13 @@ export function HomeSocialProofSection() {
   return (
     <section className="px-4 py-12 sm:px-6 sm:py-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="rounded-3xl border border-border/60 bg-card/90 p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="rounded-xl border border-border/60 bg-card/90 p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
               <p className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-info">
                 Prueba social
               </p>
-              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-extrabold text-foreground sm:text-4xl">
                 Datos reales de tráfico orgánico desde Google
               </h2>
               <p className="mt-4 text-base leading-relaxed text-foreground/80 sm:text-lg">
@@ -76,7 +76,7 @@ export function HomeSocialProofSection() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-dashed border-border bg-muted/20 p-4">
+            <div className="rounded-xl border border-dashed border-border bg-muted/20 p-4">
               <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted/40">
                 <Image
                   src="/datos-Ga4.webp"

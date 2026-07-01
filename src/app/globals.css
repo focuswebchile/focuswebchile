@@ -16,55 +16,59 @@ body[data-scroll-locked] {
 
 :root {
   --font-sans: var(--font-poppins);
-  /* Nueva paleta fresca y cercana: verde principal, azul secundario */
+  /* Design System v2 — Technical Minimalism (UI/UX Pro Max · Developer Tool palette) */
 
-  /* Fondo y textos base */
-  --background: oklch(0.99 0.002 80); /* #F9FAFB - blanco/gris muy claro */
-  --foreground: oklch(0.28 0.01 260); /* #1F2937 - gris oscuro */
+  /* Fondo y textos base — blanco puro + near-black máximo contraste (WCAG AAA) */
+  --background: oklch(1 0 0);           /* #FFFFFF — puro, sin tinte */
+  --foreground: oklch(0.11 0.025 260);  /* #0F172A — slate-900, casi negro */
 
-  --card: oklch(1 0 0); /* Blanco puro para cards */
-  --card-foreground: oklch(0.28 0.01 260);
+  --card: oklch(0.985 0.005 260);       /* #F8FAFC — slate-50, cards ligeramente diferenciadas */
+  --card-foreground: oklch(0.11 0.025 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.28 0.01 260);
+  --popover-foreground: oklch(0.11 0.025 260);
 
-  /* Primary: Verde fresco #22C55E - para botones, CTAs y estados activos */
-  --primary: oklch(0.7 0.2 145);
+  /* Primary: Verde bosque oscuro #15803D — autoridad técnica, no verde lima */
+  --primary: oklch(0.52 0.22 145);
   --primary-foreground: oklch(1 0 0);
 
-  /* Secondary: Azul claro #3B82F6 - para acentos y detalles */
-  --secondary: oklch(0.97 0.01 240);
+  /* Secondary: superficie de baja saturación para chips y tags */
+  --secondary: oklch(0.97 0.007 260);
   --secondary-foreground: oklch(0.32 0.05 260);
 
-  /* Muted: grises suaves */
-  --muted: oklch(0.96 0.005 260);
-  --muted-foreground: oklch(0.48 0.02 260);
+  /* Muted: slate-100 / slate-500 */
+  --muted: oklch(0.97 0.007 260);
+  --muted-foreground: oklch(0.50 0.04 260); /* #64748B — slate-500 */
 
-  /* Accent: Azul claro para links e íconos secundarios */
-  --accent: oklch(0.62 0.2 250);
+  /* Accent: azul confianza #2563EB — CTAs secundarios, links */
+  --accent: oklch(0.55 0.22 260);
   --accent-foreground: oklch(1 0 0);
 
-  /* Success: Verde fresco (igual que primary para consistencia) */
-  --success: oklch(0.7 0.2 145);
+  /* Success / Info */
+  --success: oklch(0.52 0.22 145);
   --success-foreground: oklch(1 0 0);
-
-  /* Info: Azul claro (igual que accent) */
-  --info: oklch(0.62 0.2 250);
+  --info: oklch(0.55 0.22 260);
   --info-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.01 260);
-  --input: oklch(0.95 0.008 260);
-  --ring: oklch(0.7 0.2 145); /* Verde para focus rings */
+  --border: oklch(0.91 0.012 260);      /* #E2E8F0 — slate-200, bordes visibles */
+  --input: oklch(0.94 0.009 260);
+  --ring: oklch(0.52 0.22 145);
 
-  /* Charts con verde como primario y azul como secundario */
-  --chart-1: oklch(0.7 0.2 145); /* Verde fresco */
-  --chart-2: oklch(0.62 0.2 250); /* Azul claro */
-  --chart-3: oklch(0.68 0.17 35); /* Naranja suave */
-  --chart-4: oklch(0.65 0.15 180); /* Turquesa */
-  --chart-5: oklch(0.62 0.16 320); /* Púrpura suave */
+  --chart-1: oklch(0.52 0.22 145);
+  --chart-2: oklch(0.55 0.22 260);
+  --chart-3: oklch(0.68 0.17 35);
+  --chart-4: oklch(0.65 0.15 180);
+  --chart-5: oklch(0.62 0.16 320);
 
-  --radius: 1.25rem;
+  /* Tipografía: escala de pesos con 800/900 activos */
+  --font-weight-display: 900;   /* Poppins Black  — H1 hero */
+  --font-weight-heading: 800;   /* Poppins ExtraBold — H2 secciones */
+  --font-weight-subheading: 700; /* Poppins Bold — H3 tarjetas */
+  --font-weight-label: 600;     /* Poppins SemiBold — labels, tags */
+  --font-weight-body: 400;      /* Poppins Regular — cuerpo */
+
+  --radius: 0.5rem; /* 8px — esquinas técnicas (antes 20px) */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -76,39 +80,37 @@ body[data-scroll-locked] {
 }
 
 .dark {
-  /* Dark mode con la misma paleta verde/azul adaptada */
-  --background: oklch(0.2 0.015 260);
-  --foreground: oklch(0.95 0.01 80);
-  --card: oklch(0.24 0.02 260);
-  --card-foreground: oklch(0.95 0.01 80);
-  --popover: oklch(0.22 0.02 260);
-  --popover-foreground: oklch(0.95 0.01 80);
+  /* Dark mode — Developer Tool/IDE palette del skill (slate-dark + verde brillante) */
+  --background: oklch(0.13 0.02 260);   /* #0F172A slate-950 */
+  --foreground: oklch(0.97 0.005 260);  /* #F8FAFC slate-50 */
+  --card: oklch(0.17 0.02 260);         /* #1B2336 */
+  --card-foreground: oklch(0.97 0.005 260);
+  --popover: oklch(0.15 0.02 260);
+  --popover-foreground: oklch(0.97 0.005 260);
 
-  /* Verde más brillante para dark mode */
-  --primary: oklch(0.75 0.22 145);
-  --primary-foreground: oklch(0.15 0.01 260);
+  --primary: oklch(0.72 0.22 145);      /* Verde más brillante sobre oscuro */
+  --primary-foreground: oklch(0.10 0.02 260);
 
-  --secondary: oklch(0.27 0.025 280);
-  --secondary-foreground: oklch(0.95 0.01 80);
-  --muted: oklch(0.26 0.02 260);
-  --muted-foreground: oklch(0.62 0.025 260);
+  --secondary: oklch(0.22 0.025 260);
+  --secondary-foreground: oklch(0.97 0.005 260);
+  --muted: oklch(0.20 0.02 260);
+  --muted-foreground: oklch(0.60 0.03 260);
 
-  /* Azul claro para dark mode */
-  --accent: oklch(0.67 0.22 250);
-  --accent-foreground: oklch(0.15 0.01 260);
+  --accent: oklch(0.65 0.22 260);
+  --accent-foreground: oklch(0.10 0.02 260);
 
-  --success: oklch(0.75 0.22 145);
-  --success-foreground: oklch(0.15 0.01 260);
-  --info: oklch(0.67 0.22 250);
-  --info-foreground: oklch(0.15 0.01 260);
+  --success: oklch(0.72 0.22 145);
+  --success-foreground: oklch(0.10 0.02 260);
+  --info: oklch(0.65 0.22 260);
+  --info-foreground: oklch(0.10 0.02 260);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.3 0.025 260);
-  --input: oklch(0.28 0.025 260);
-  --ring: oklch(0.75 0.22 145);
+  --border: oklch(0.28 0.025 260);      /* #334155 slate-700 */
+  --input: oklch(0.24 0.025 260);
+  --ring: oklch(0.72 0.22 145);
 
-  --chart-1: oklch(0.75 0.22 145);
-  --chart-2: oklch(0.67 0.22 250);
+  --chart-1: oklch(0.72 0.22 145);
+  --chart-2: oklch(0.65 0.22 260);
   --chart-3: oklch(0.72 0.18 35);
   --chart-4: oklch(0.7 0.16 180);
   --chart-5: oklch(0.68 0.17 320);

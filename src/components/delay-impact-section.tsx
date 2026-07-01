@@ -52,16 +52,16 @@ export function DelayImpactSection() {
 
   return (
     <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-      <div className="container mx-auto max-w-7xl rounded-3xl border border-border/50 bg-gradient-to-br from-primary/15 via-info/10 to-foreground/10 px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
+      <div className="container mx-auto max-w-7xl rounded-xl border border-border/50 bg-gradient-to-br from-primary/15 via-info/10 to-foreground/10 px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-foreground">
             ¿Cuántos Clientes Pierdes por Cada Segundo de Retraso?
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Datos de Google revelan que la velocidad de carga tiene impacto directo en tus ventas. No es opinión, es
             matemática.
           </p>
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-info/25 bg-info/10 px-4 py-3 sm:px-5 sm:py-4">
+          <div className="mx-auto mt-6 max-w-3xl rounded-xl border border-info/25 bg-info/10 px-4 py-3 sm:px-5 sm:py-4">
             <p className="text-sm text-foreground/85 sm:text-base">
               Si hoy piensas <strong>&quot;mi página web tarda mucho en cargar&quot;</strong>, aquí puedes ver qué impacto
               tiene y qué conviene priorizar primero.
@@ -69,7 +69,7 @@ export function DelayImpactSection() {
           </div>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-border/60 bg-card p-5 shadow-xl sm:p-8 lg:p-10" ref={barRef}>
+        <div className="mt-10 rounded-xl border border-border/60 bg-card p-5 shadow-xl sm:p-8 lg:p-10" ref={barRef}>
           <h3 className="text-center text-2xl font-semibold text-card-foreground sm:text-3xl">
             Probabilidad de Rebote según Tiempo de Carga
           </h3>

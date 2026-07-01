@@ -57,7 +57,7 @@ export function ProcessSection() {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-balance px-4">
             Un proceso{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               simple y claro
@@ -77,7 +77,7 @@ export function ProcessSection() {
               key={step.title}
               className="relative w-full max-w-[420px] mx-auto md:max-w-none"
             >
-              <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border-border/60 overflow-hidden group border-2 border-emerald-300 sm:border sm:border-border/50 text-left">
+              <Card className="relative h-full p-6 sm:p-8 glass hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden group border border-border text-left">
                 {/* Step number background */}
                 <div className="absolute -top-4 -right-4 text-7xl sm:text-8xl font-bold text-primary/5 group-hover:text-primary/10 transition-colors">
                   {step.step}
@@ -87,9 +87,9 @@ export function ProcessSection() {
                   {/* Icon */}
                   <div className="relative">
                     <div
-                      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${step.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-gradient-to-br ${step.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}
                     >
-                      <div className="w-full h-full bg-card rounded-xl sm:rounded-2xl flex items-center justify-center">
+                      <div className="w-full h-full bg-card rounded-lg flex items-center justify-center">
                         <step.icon
                           className={`w-7 h-7 sm:w-8 sm:h-8 ${step.iconColor}`}
                         />

@@ -140,7 +140,7 @@ export function MainServicesSection() {
       <div className="container mx-auto max-w-7xl">
         {lightMotion ? (
           <div className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-balance px-4">
               Nuestros Servicios Principales
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
@@ -155,7 +155,7 @@ export function MainServicesSection() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center mb-12 sm:mb-16 space-y-3 sm:space-y-4"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-balance px-4">
               Nuestros Servicios Principales
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-light px-4">
@@ -167,7 +167,7 @@ export function MainServicesSection() {
         <div className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {cards.map((card, index) => (
             <div key={card.title}>
-              <Card className="group h-full border-border/60 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
+              <Card className="group h-full border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
                 <div className={`bg-gradient-to-br ${card.tone} p-6 sm:p-8 lg:p-7 flex h-full flex-col gap-6 lg:gap-5 transition-transform duration-300`}>
                   <div className="flex items-start gap-3.5">
                     <div className={`rounded-xl p-3 ${card.iconTone}`}>
@@ -216,7 +216,7 @@ export function MainServicesSection() {
                   </div>
 
                   <div className="mt-auto space-y-4">
-                    <div className="min-h-[132px] rounded-2xl border border-white/40 bg-white/30 px-5 pb-5 pt-7 text-center transition-colors duration-300 group-hover:bg-white/40">
+                    <div className="min-h-[132px] rounded-xl border border-white/40 bg-white/30 px-5 pb-5 pt-7 text-center transition-colors duration-300 group-hover:bg-white/40">
                       <p className="text-sm text-foreground/75">{card.highlight.label}</p>
                       <p className={`${card.highlight.valueClass ?? "mt-1"} text-4xl font-extrabold leading-none tracking-tight`}>
                         {card.highlight.value}

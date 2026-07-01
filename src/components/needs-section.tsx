@@ -118,7 +118,7 @@ export function NeedsSection() {
     <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">¿Qué Necesitas?</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground">¿Qué Necesitas?</h2>
           <p className="mx-auto mt-4 max-w-3xl text-base text-muted-foreground sm:text-lg">
             Identifica tu situación y descubre qué servicio se ajusta mejor a tus necesidades
           </p>
@@ -232,8 +232,8 @@ export function NeedsSection() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
-          <h3 className="text-center text-3xl font-bold text-foreground sm:text-4xl">
+        <div className="mt-14 rounded-xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
+          <h3 className="text-center text-3xl font-extrabold text-foreground sm:text-4xl">
             ¿Por Qué Tu Sitio Web No Está Vendiendo?
           </h3>
 

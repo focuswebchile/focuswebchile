@@ -12,6 +12,7 @@ import { DelayImpactSection } from "@/components/delay-impact-section"
 import { NeedsSection } from "@/components/needs-section"
 import { ProcessAuditCta } from "@/components/process-audit-cta"
 import { HomeSocialProofSection } from "@/components/home-social-proof-section"
+import { ValuePropDarkSection } from "@/components/value-prop-dark-section"
 import { useSiteToggles } from "@/components/toggle-sections"
 
 function LazyOnViewport({ children }: { children: ReactNode }) {
@@ -47,6 +48,7 @@ export function HomeSections() {
   return (
     <>
       <MainServicesSection />
+      <ValuePropDarkSection />
       <HomeSocialProofSection />
       <DelayImpactSection />
       <NeedsSection />

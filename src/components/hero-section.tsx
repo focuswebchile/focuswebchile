@@ -18,15 +18,12 @@ export function HeroSection() {
     const frame = window.requestAnimationFrame(() => {
       setDesktopHeroVisible(true)
     })
-
     return () => window.cancelAnimationFrame(frame)
   }, [])
 
   const waitForGrecaptcha = useCallback(async () => {
     for (let attempt = 0; attempt < 40; attempt += 1) {
-      if (window.grecaptcha?.execute) {
-        return
-      }
+      if (window.grecaptcha?.execute) return
       await new Promise((resolve) => setTimeout(resolve, 50))
     }
     throw new Error("reCAPTCHA no disponible")
@@ -38,9 +35,7 @@ export function HeroSection() {
       const response = await fetch("/api/recaptcha/site-key")
       const data = await response.json()
       siteKey = data?.siteKey ?? null
-      if (!siteKey) {
-        throw new Error("reCAPTCHA no disponible")
-      }
+      if (!siteKey) throw new Error("reCAPTCHA no disponible")
       setRecaptchaSiteKey(siteKey)
     }
 
@@ -48,15 +43,11 @@ export function HeroSection() {
       await new Promise<void>((resolve, reject) => {
         const existingScript = document.getElementById("recaptcha-script")
         if (existingScript) {
-          if (window.grecaptcha?.execute) {
-            resolve()
-            return
-          }
+          if (window.grecaptcha?.execute) { resolve(); return }
           existingScript.addEventListener("load", () => resolve(), { once: true })
           existingScript.addEventListener("error", () => reject(new Error("reCAPTCHA no disponible")), { once: true })
           return
         }
-
         const script = document.createElement("script")
         script.id = "recaptcha-script"
         script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
@@ -73,41 +64,25 @@ export function HeroSection() {
   }, [recaptchaSiteKey, waitForGrecaptcha])
 
   const warmupRecaptcha = useCallback(async () => {
-    try {
-      await ensureRecaptchaReady()
-    } catch {
-      // silent warmup failure; submit handles final error
-    }
+    try { await ensureRecaptchaReady() } catch { /* silent */ }
   }, [ensureRecaptchaReady])
 
   const executeRecaptcha = async (action: string) => {
     let lastError: unknown = null
-
     for (let attempt = 0; attempt < 2; attempt += 1) {
       try {
         const siteKey = await ensureRecaptchaReady()
-
         const token = await new Promise<string>((resolve, reject) => {
           const grecaptcha = window.grecaptcha
-          if (!grecaptcha?.execute) {
-            reject(new Error("reCAPTCHA no disponible"))
-            return
-          }
-
-          grecaptcha.ready(() => {
-            grecaptcha.execute(siteKey, { action }).then(resolve).catch(reject)
-          })
+          if (!grecaptcha?.execute) { reject(new Error("reCAPTCHA no disponible")); return }
+          grecaptcha.ready(() => { grecaptcha.execute(siteKey, { action }).then(resolve).catch(reject) })
         })
-
         return token
       } catch (error) {
         lastError = error
-        if (attempt === 0) {
-          await new Promise((resolve) => window.setTimeout(resolve, 350))
-        }
+        if (attempt === 0) await new Promise((resolve) => window.setTimeout(resolve, 350))
       }
     }
-
     throw lastError ?? new Error("reCAPTCHA no disponible")
   }
 
@@ -119,25 +94,16 @@ export function HeroSection() {
 
     const trimmedUrl = websiteUrl.trim()
     const trimmedEmail = email.trim().toLowerCase()
-    if (!trimmedUrl) {
-      setErrorMessage("Ingresa una URL para revisar.")
-      return
-    }
-    if (!trimmedEmail) {
-      setErrorMessage("Ingresa un correo para enviarte el diagnostico.")
+    if (!trimmedUrl) { setErrorMessage("Ingresa una URL para revisar."); return }
+    if (!trimmedEmail) { setErrorMessage("Ingresa un correo para enviarte el diagnóstico."); return }
+
+    try { new URL(trimmedUrl) } catch {
+      setErrorMessage("La URL no es válida. Usa formato https://tusitio.cl")
       return
     }
 
-    try {
-      new URL(trimmedUrl)
-    } catch {
-      setErrorMessage("La URL no es valida. Usa formato https://tusitio.cl")
-      return
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(trimmedEmail)) {
-      setErrorMessage("El correo no es valido.")
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setErrorMessage("El correo no es válido.")
       return
     }
 
@@ -152,12 +118,10 @@ export function HeroSection() {
         body: JSON.stringify({ websiteUrl: trimmedUrl, email: trimmedEmail, token, action }),
       })
       const submitData = await submitResponse.json()
-
       if (!submitResponse.ok || !submitData.success) {
-        throw new Error(submitData?.error || "No pudimos enviar la revision")
+        throw new Error(submitData?.error || "No pudimos enviar la revisión")
       }
-
-      setSuccessMessage("Solicitud enviada. Te contactaremos con un diagnostico.")
+      setSuccessMessage("Solicitud enviada. Te contactaremos con un diagnóstico.")
       setWebsiteUrl("")
       setEmail("")
     } catch {
@@ -174,107 +138,124 @@ export function HeroSection() {
   const desktopImageRevealClass = desktopHeroVisible ? "xl:opacity-100" : "xl:opacity-0"
 
   return (
-    <section
-      id="hero"
-      className="relative w-full overflow-visible bg-[#F9FAFB] pb-10 md:pb-0 xl:min-h-[calc(84vh-80px)] 2xl:min-h-[calc(82vh-80px)]"
-    >
-      <div className="mx-auto max-w-[1520px] px-6 sm:px-10 lg:px-16 xl:px-20">
-        <div className="grid grid-cols-1 gap-12 md:items-stretch xl:min-h-[calc(84vh-80px)] xl:grid-cols-[minmax(580px,1.14fr)_minmax(420px,0.86fr)] xl:gap-20 2xl:min-h-[calc(82vh-80px)] 2xl:grid-cols-[minmax(640px,1.12fr)_minmax(480px,0.88fr)] 2xl:gap-24">
-          <div
-            className={`relative z-20 space-y-6 pt-24 pb-8 transition-all duration-700 ease-out md:mt-6 md:flex md:h-full md:flex-col md:justify-center md:pb-10 md:pt-0 lg:mt-8 xl:mt-10 xl:max-w-[920px] xl:pr-16 2xl:max-w-[980px] 2xl:pr-20 ${desktopRevealClass}`}
-          >
-            <div className="pt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#6B7280] md:pt-12 lg:pt-6 xl:pt-0">
-              <p>Optimización web con criterio e impacto real.</p>
-              <p>Priorizamos lo que importa.</p>
-            </div>
+    <>
+      {/* ── HERO BAND ──────────────────────────────────────────── */}
+      <section
+        id="hero"
+        className="relative w-full overflow-visible bg-background pb-12 pt-24 md:pb-16 xl:min-h-[calc(82vh-80px)] 2xl:min-h-[calc(80vh-80px)]"
+      >
+        <div className="mx-auto max-w-[1520px] px-6 sm:px-10 lg:px-16 xl:px-20">
+          <div className="grid grid-cols-1 gap-12 xl:min-h-[calc(82vh-80px)] xl:grid-cols-[minmax(560px,1.14fr)_minmax(400px,0.86fr)] xl:items-center xl:gap-20 2xl:min-h-[calc(80vh-80px)] 2xl:grid-cols-[minmax(620px,1.12fr)_minmax(460px,0.88fr)] 2xl:gap-24">
 
-            <h1 className="max-w-[900px] text-4xl font-extrabold leading-tight text-[#1F2937] sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="block lg:whitespace-nowrap">Posicionamiento</span>
-              <span className="block lg:whitespace-nowrap">Web y técnico</span>
-              <span className="block lg:whitespace-nowrap">en Chile</span>
-            </h1>
+            {/* Left: headline */}
+            <div
+              className={`relative z-20 space-y-7 transition-all duration-700 ease-out md:mt-6 lg:mt-8 xl:mt-0 xl:max-w-[900px] xl:pr-12 2xl:pr-16 ${desktopRevealClass}`}
+            >
+              <p className="pt-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:pt-12 lg:pt-6 xl:pt-0">
+                SEO técnico · Velocidad · Desarrollo · Chile
+              </p>
 
-            <p className="max-w-xl text-base leading-relaxed text-[#6B7280] sm:text-lg">
-              Servicios de posicionamiento web y SEO técnico para que tu sitio aparezca en Google,
-              cargue rápido y genere ventas. No vendemos paquetes genéricos: auditamos,
-              priorizamos por impacto real y ejecutamos con criterio técnico.
-            </p>
+              <h1 className="max-w-[860px] text-5xl font-black leading-[0.88] tracking-tighter text-foreground sm:text-6xl lg:text-7xl xl:text-[5rem] 2xl:text-[5.5rem]">
+                <span className="block">Posicionamiento</span>
+                <span className="block">Web y técnico</span>
+                <span className="block text-primary">en Chile</span>
+              </h1>
 
-            <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.16em] text-[#9CA3AF] sm:text-xs sm:tracking-[0.18em]">
-              Rendimiento · SEO técnico · Core Web Vitals · Velocidad
-            </p>
+              <p className="max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
+                Auditamos, optimizamos velocidad y corregimos errores técnicos para que tu sitio
+                aparezca en Google, cargue rápido y genere ventas. Sin paquetes genéricos.
+              </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Button className="rounded-lg bg-[#22C55E] px-8 py-4 text-white hover:bg-[#1ea34d]" asChild>
-                <a href="https://wa.me/420733796959" target="_blank" rel="noopener noreferrer">
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://wa.me/420733796959"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"
+                >
                   Conversar por WhatsApp
                 </a>
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-lg border-2 border-[#3B82F6] px-8 py-4 text-[#3B82F6] hover:bg-[#EFF6FF]"
-                asChild
-              >
-                <a href="/metodologia">Ver metodología</a>
-              </Button>
-            </div>
-
-            <form className="max-w-[860px] space-y-3 pt-4" onSubmit={handleReviewSubmit}>
-              <p className="text-sm text-[#6B7280]">
-                Pega tu URL y tu correo para recibir un diagnóstico claro con prioridades reales.
-              </p>
-              <div className="grid gap-3 xl:grid-cols-[minmax(0,1.95fr)_minmax(220px,0.72fr)] xl:items-center 2xl:grid-cols-[minmax(0,2.15fr)_minmax(240px,0.72fr)_170px]">
-                <input
-                  type="url"
-                  placeholder="https://tusitio.cl"
-                  value={websiteUrl}
-                  onChange={(event) => setWebsiteUrl(event.target.value)}
-                  onFocus={warmupRecaptcha}
-                  disabled={isSubmitting}
-                  className="flex-1 rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
-                />
-                <input
-                  type="email"
-                  placeholder="tu@correo.com"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  onFocus={warmupRecaptcha}
-                  disabled={isSubmitting}
-                  className="rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
-                />
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb] xl:col-span-2 2xl:col-span-1 2xl:w-full"
+                <a
+                  href="/metodologia"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-foreground/20 px-8 py-4 text-base font-semibold text-foreground transition-colors hover:bg-muted"
                 >
-                  {isSubmitting ? "Revisando..." : "Revisar"}
-                </Button>
+                  Ver metodología
+                </a>
               </div>
-              <p className="text-xs font-medium text-[#3B82F6]">
-                Recuerda: pega tu URL con https://
-              </p>
-              {securityMessage && <p className="text-xs text-[#3B82F6]">{securityMessage}</p>}
-              {errorMessage && <p className="text-xs text-red-600">{errorMessage}</p>}
-              {successMessage && <p className="text-xs text-emerald-700">{successMessage}</p>}
-            </form>
-          </div>
 
-          <div
-            className={`relative hidden w-full items-end justify-end overflow-visible transition-opacity duration-700 ease-out xl:flex xl:min-h-[calc(84vh-80px)] 2xl:min-h-[calc(82vh-80px)] ${desktopImageRevealClass}`}
-          >
-            <div className="relative z-10 h-full w-full max-w-none xl:absolute xl:bottom-[-2px] xl:right-[clamp(-56px,-1vw,-8px)] xl:h-[clamp(480px,60vh,675px)] xl:w-[clamp(410px,31vw,655px)] 2xl:bottom-[-2px] 2xl:right-[-12px] 2xl:h-[730px] 2xl:w-[810px]">
-              <Image
-                src="/svghero.svg"
-                alt="Ilustración de optimización web"
-                fill
-                className="object-contain object-bottom"
-                priority
-              />
+              {/* Inline metrics */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-sm">
+                <span className="font-semibold text-foreground">200+ sitios auditados</span>
+                <span className="text-border" aria-hidden="true">·</span>
+                <span className="font-semibold text-foreground">95+ PageSpeed Score</span>
+                <span className="text-border" aria-hidden="true">·</span>
+                <span className="font-semibold text-foreground">Todo Chile, 100% remoto</span>
+              </div>
             </div>
+
+            {/* Right: hero image (xl+) */}
+            <div
+              className={`relative hidden w-full items-end justify-end overflow-visible transition-opacity duration-700 ease-out xl:flex xl:min-h-[calc(82vh-80px)] 2xl:min-h-[calc(80vh-80px)] ${desktopImageRevealClass}`}
+            >
+              <div className="relative z-10 h-full w-full max-w-none xl:absolute xl:bottom-[-2px] xl:right-[clamp(-56px,-1vw,-8px)] xl:h-[clamp(480px,60vh,675px)] xl:w-[clamp(410px,31vw,655px)] 2xl:bottom-[-2px] 2xl:right-[-12px] 2xl:h-[730px] 2xl:w-[810px]">
+                <Image
+                  src="/svghero.svg"
+                  alt="Ilustración de optimización web"
+                  fill
+                  className="object-contain object-bottom"
+                  priority
+                />
+              </div>
+            </div>
+
           </div>
         </div>
+      </section>
+
+      {/* ── AUDIT FORM BAND ────────────────────────────────────── */}
+      <div className="border-y border-border bg-card px-4 py-8 sm:px-6">
+        <div className="container mx-auto max-w-3xl">
+          <form className="space-y-3" onSubmit={handleReviewSubmit}>
+            <p className="text-sm font-semibold text-foreground">
+              Diagnóstico gratuito — pega tu URL y recibe prioridades reales
+            </p>
+            <div className="grid gap-3 sm:grid-cols-[1fr_1fr_auto]">
+              <input
+                type="url"
+                placeholder="https://tusitio.cl"
+                value={websiteUrl}
+                onChange={(e) => setWebsiteUrl(e.target.value)}
+                onFocus={warmupRecaptcha}
+                disabled={isSubmitting}
+                className="rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-50"
+              />
+              <input
+                type="email"
+                placeholder="tu@correo.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onFocus={warmupRecaptcha}
+                disabled={isSubmitting}
+                className="rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20 disabled:opacity-50"
+              />
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="rounded-lg bg-accent px-6 py-3 font-semibold text-white hover:bg-accent/90 disabled:opacity-50"
+              >
+                {isSubmitting ? "Revisando..." : "Revisar"}
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Recuerda: pega tu URL con https://
+            </p>
+            {securityMessage && <p className="text-xs text-accent">{securityMessage}</p>}
+            {errorMessage && <p className="text-xs text-destructive">{errorMessage}</p>}
+            {successMessage && <p className="text-xs text-success">{successMessage}</p>}
+          </form>
+        </div>
       </div>
-    </section>
+    </>
   )
 }
 
