@@ -1,81 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Card } from "@/components/ui/card"
-import { ArrowRight, CheckCircle2, Rocket, Wrench } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { useInView } from "framer-motion"
-
-const needsCards = [
-  {
-    title: "Ya Tengo Sitio Web",
-    icon: Wrench,
-    badges: ["Más común"],
-    problemTitle: "Tu problema:",
-    problemText:
-      "Tu sitio existe pero no funciona bien: carga lento, no aparece en Google, no genera ventas o está desactualizado.",
-    solutionTitle: "Necesitas OPTIMIZACIÓN",
-    bullets: [
-      "Auditoría técnica SEO",
-      "Mejora de velocidad (Core Web Vitals)",
-      "Corrección de errores técnicos",
-      "Optimización de conversión",
-      "SEO on-page y contenido",
-    ],
-    price: "Desde $111.000 CLP",
-    ctaLabel: "Conocer auditoría SEO",
-    ctaHref: "/servicios/auditoria-seo-tecnico",
-    chips: [
-      "WordPress lento",
-      "E-commerce que no vende",
-      "Sitio invisible en Google",
-      "Rediseño con problemas",
-      "Alta tasa de rebote",
-    ],
-    featured: true,
-    cardTone: "from-success/15 via-primary/10 to-card",
-    iconTone: "bg-success/20 text-success",
-    ctaTone: "bg-primary text-primary-foreground hover:bg-primary/90",
-    seoDetail:
-      "Ideal para sitios publicados que no convierten o no posicionan. El diagnóstico inicial ordena prioridades y te muestra dónde invertir primero para mejorar resultados.",
-    seoLinks: [
-      { label: "Ir al diagnóstico inicial", href: "/metodologia" },
-      { label: "Errores comunes en pymes", href: "/blog/errores-paginas-web-pymes-chile" },
-    ],
-  },
-  {
-    title: "No Tengo Sitio Web",
-    icon: Rocket,
-    badges: [],
-    problemTitle: "Tu situación:",
-    problemText:
-      "Estás empezando o necesitas un sitio completamente nuevo. Quieres hacerlo bien desde el inicio.",
-    solutionTitle: "Necesitas DESARROLLO",
-    bullets: [
-      "Diseño profesional",
-      "Optimizado desde día 1",
-      "SEO técnico integrado",
-      "Velocidad garantizada",
-      "Arquitectura web escalable",
-    ],
-    price: "Desde $180.000 CLP",
-    ctaLabel: "Ver precios",
-    ctaHref: "/servicios/desarrollo-web",
-    secondaryCtaLabel: "Ver landing page",
-    secondaryCtaHref: "/landing-page",
-    chips: ["Sitio nuevo", "E-commerce", "Landing page", "Venta por WhatsApp", "Negocio en crecimiento"],
-    featured: false,
-    cardTone: "from-info/15 via-primary/10 to-card",
-    iconTone: "bg-info/20 text-info",
-    ctaTone: "bg-info text-white hover:bg-info/90",
-    priceOffset: "mt-9",
-    seoDetail:
-      "Si estás comenzando, una base técnica correcta desde el inicio evita retrabajos, mejora la velocidad de lanzamiento y facilita escalar SEO, contenidos y campañas.",
-    seoLinks: [
-      { label: "Ver landing pages", href: "/landing-page" },
-      { label: "Conocer precios", href: "/servicios/desarrollo-web" },
-    ],
-  },
-]
 
 function CountUpMetric({ value, prefix = "", suffix = "" }: { value: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0)
@@ -84,31 +11,21 @@ function CountUpMetric({ value, prefix = "", suffix = "" }: { value: number; pre
 
   useEffect(() => {
     if (!isInView) return
-
-    const start = 0
     const duration = 900
     const startedAt = performance.now()
-
     const tick = (now: number) => {
       const elapsed = now - startedAt
       const progress = Math.min(elapsed / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      const next = Math.round(start + (value - start) * eased)
-      setCount(next)
-
-      if (progress < 1) {
-        requestAnimationFrame(tick)
-      }
+      setCount(Math.round(value * eased))
+      if (progress < 1) requestAnimationFrame(tick)
     }
-
     requestAnimationFrame(tick)
   }, [isInView, value])
 
   return (
-    <p ref={ref} className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">
-      {prefix}
-      {count}
-      {suffix}
+    <p ref={ref} className="text-4xl font-black tracking-tight text-primary sm:text-5xl">
+      {prefix}{count}{suffix}
     </p>
   )
 }
@@ -117,158 +34,146 @@ export function NeedsSection() {
   return (
     <section className="px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <div className="container mx-auto max-w-7xl">
+
+        {/* Header */}
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground">¿Qué Necesitas?</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base text-muted-foreground sm:text-lg">
-            Identifica tu situación y descubre qué servicio se ajusta mejor a tus necesidades
+          <h2 className="text-3xl font-black tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            ¿Cuál es tu situación?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
+            Identifica tu punto de partida y toma el camino correcto desde el primer paso.
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {needsCards.map((card) => (
-            <div key={card.title}>
-              <Card
-                className={`group relative h-full overflow-visible border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
-                  card.featured
-                    ? "border-success/70 shadow-lg shadow-success/10 hover:shadow-success/20"
-                    : "border-border/60 shadow-md shadow-primary/5 hover:shadow-info/20"
-                }`}
-              >
-                {card.badges?.length ? (
-                  <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
-                    <div className="flex flex-wrap items-center justify-center gap-2">
-                      {card.badges.map((badge) => (
-                        <span
-                          key={badge}
-                          className="inline-flex rounded-full border-2 border-background bg-primary px-4 py-1 text-[11px] font-extrabold uppercase tracking-[0.08em] text-primary-foreground shadow-md shadow-primary/25"
-                        >
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-                <div className={`absolute inset-0 rounded-[inherit] bg-gradient-to-br ${card.cardTone} opacity-80`} />
-                <div className={`relative h-full p-5 sm:p-6 ${card.badges?.length ? "pt-8 sm:pt-9" : ""}`}>
+        {/* Cards */}
+        <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
 
-                  <div className="flex items-center gap-3">
-                    <div className={`rounded-xl p-2.5 ${card.iconTone}`}>
-                      <card.icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="text-2xl font-semibold tracking-tight text-card-foreground">{card.title}</h3>
-                  </div>
+          {/* ── TARJETA OSCURA: Ya Tengo Sitio (dominante) ─────── */}
+          <div className="relative overflow-hidden rounded-xl bg-foreground p-6 sm:p-8">
 
-                  <div className="mt-4 rounded-xl border border-accent/40 bg-accent/15 p-4 text-sm leading-relaxed text-foreground/90 backdrop-blur-sm">
-                    <strong>{card.problemTitle}</strong> {card.problemText}
-                  </div>
-
-                  <div className="mt-4 rounded-xl border border-border/60 bg-card/90 p-4 shadow-sm sm:p-5">
-                    <p className="text-base font-semibold text-success">→ {card.solutionTitle}</p>
-                    <ul className="mt-3 space-y-2">
-                      {card.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-2.5 text-sm text-foreground/90 sm:text-base">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-success" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <details className="mt-4 sm:mt-3 rounded-lg border border-border/60 bg-card/70 p-3">
-                      <summary className="cursor-pointer text-sm font-semibold text-foreground/85">
-                        Ver contexto SEO y negocio
-                      </summary>
-                      <div className="mt-2 space-y-2">
-                        <p className="text-sm text-muted-foreground">{card.seoDetail}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {card.seoLinks.map((link) => (
-                            <a
-                              key={link.href}
-                              href={link.href}
-                              className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs text-info hover:bg-info/15"
-                            >
-                              {link.label}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    </details>
-
-                    <div className={`${card.priceOffset ?? "mt-5"} rounded-lg border border-primary/20 bg-primary/10 p-3`}>
-                      <p className="text-2xl font-bold text-primary">{card.price}</p>
-                    </div>
-                    <div className="mt-8 flex flex-wrap items-center gap-3">
-                      <a
-                        href={card.ctaHref}
-                        className={`inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all duration-300 group-hover:translate-x-0.5 ${card.ctaTone}`}
-                      >
-                        <span>{card.ctaLabel}</span>
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                      </a>
-                      {card.secondaryCtaLabel && card.secondaryCtaHref ? (
-                        <a
-                          href={card.secondaryCtaHref}
-                          className="inline-flex items-center justify-center gap-2 rounded-lg border border-info/40 bg-info/10 px-5 py-3 text-sm font-semibold text-info transition-colors hover:bg-info/15"
-                        >
-                          <span>{card.secondaryCtaLabel}</span>
-                          <ArrowRight className="h-4 w-4" />
-                        </a>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <p className="text-sm font-semibold text-muted-foreground">Ideal si tienes:</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {card.chips.map((chip) => (
-                        <span key={chip} className="rounded-md border border-info/20 bg-info/10 px-3 py-1 text-xs text-info">
-                          {chip}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
+            {/* Badge */}
+            <div className="mb-5 inline-flex items-center rounded-lg border border-primary/40 bg-primary/20 px-3 py-1">
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">Más común</span>
             </div>
-          ))}
+
+            <h3 className="text-3xl font-black leading-tight tracking-tight text-background sm:text-4xl">
+              Ya tengo sitio<br />que no convierte
+            </h3>
+
+            <p className="mt-3 text-base text-background/60">
+              Carga lento, no aparece en Google o no genera ventas. El problema suele ser técnico.
+            </p>
+
+            <div className="mt-6 border-t border-background/10 pt-6">
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-primary">
+                → Necesitas Optimización
+              </p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  "Auditoría técnica SEO con prioridades claras",
+                  "Corrección de Core Web Vitals y velocidad",
+                  "Errores técnicos que frenan el posicionamiento",
+                  "SEO on-page y estructura de contenidos",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-background/80 sm:text-base">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 border-t border-background/10 pt-6">
+              <p className="text-3xl font-black text-primary">Desde $111.000 CLP</p>
+              <a
+                href="/servicios/auditoria-seo-tecnico"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90"
+              >
+                Conocer auditoría SEO
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* ── TARJETA CLARA: No Tengo Sitio (secundaria) ──────── */}
+          <div className="rounded-xl border-2 border-border bg-card p-6 sm:p-8">
+
+            <h3 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+              No tengo sitio<br />y quiero empezar
+            </h3>
+
+            <p className="mt-3 text-base text-muted-foreground">
+              Quieres una base técnica sólida desde el día uno: velocidad, SEO y diseño profesional.
+            </p>
+
+            <div className="mt-6 border-t border-border pt-6">
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-foreground/60">
+                → Necesitas Desarrollo
+              </p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  "Diseño profesional adaptado a tu negocio",
+                  "PageSpeed 90+ garantizado desde día 1",
+                  "SEO técnico integrado en la arquitectura",
+                  "Entrega en 2 semanas, soporte incluido",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 sm:text-base">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-foreground/50" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="text-3xl font-black text-foreground">Desde $180.000 CLP</p>
+              <a
+                href="/servicios/desarrollo-web"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-foreground/20 bg-background px-6 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-muted"
+              >
+                Ver precios y proyectos
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-14 rounded-xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
-          <h3 className="text-center text-3xl font-extrabold text-foreground sm:text-4xl">
-            ¿Por Qué Tu Sitio Web No Está Vendiendo?
+        {/* Stats block */}
+        <div className="mt-12 rounded-xl border border-border bg-card p-6 sm:p-8 lg:p-10">
+          <h3 className="text-center text-2xl font-extrabold text-foreground sm:text-3xl">
+            Por qué la velocidad destruye (o construye) tu negocio
           </h3>
-
           <div className="mt-8 grid grid-cols-1 gap-8 text-center md:grid-cols-3">
             <article className="flex h-full flex-col items-center">
               <CountUpMetric value={32} prefix="+" suffix="%" />
-              <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-muted-foreground sm:text-base">
-                rebote si tu sitio tarda 3 segundos vs 1 segundo en cargar
+              <p className="mx-auto mt-3 max-w-[200px] text-sm leading-relaxed text-muted-foreground sm:text-base">
+                más rebote si tu sitio tarda 3 s en vez de 1 s
               </p>
-              <p className="mt-6 self-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-info/80 md:mt-auto">
+              <span className="mt-6 rounded-full bg-muted px-3 py-1 text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground md:mt-auto">
                 Fuente: Google
-              </p>
+              </span>
             </article>
-
             <article className="flex h-full flex-col items-center">
               <CountUpMetric value={90} prefix="+" suffix="%" />
-              <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-muted-foreground sm:text-base">
-                rebote si el tiempo de carga llega a 5 segundos
+              <p className="mx-auto mt-3 max-w-[200px] text-sm leading-relaxed text-muted-foreground sm:text-base">
+                más rebote si el tiempo de carga llega a 5 segundos
               </p>
-              <p className="mt-6 self-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-info/80 md:mt-auto">
+              <span className="mt-6 rounded-full bg-muted px-3 py-1 text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground md:mt-auto">
                 Fuente: Google
-              </p>
+              </span>
             </article>
-
             <article className="flex h-full flex-col items-center">
               <CountUpMetric value={53} suffix="%" />
-              <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-muted-foreground sm:text-base">
-                de usuarios móviles abandona sitios que tardan más de 3 segundos
+              <p className="mx-auto mt-3 max-w-[200px] text-sm leading-relaxed text-muted-foreground sm:text-base">
+                de usuarios móviles abandona sitios que tardan más de 3 s
               </p>
-              <p className="mt-6 self-center rounded-full bg-info/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-info/80 md:mt-auto">
+              <span className="mt-6 rounded-full bg-muted px-3 py-1 text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground md:mt-auto">
                 Fuente: Google Mobile Study
-              </p>
+              </span>
             </article>
           </div>
         </div>
+
       </div>
     </section>
   )
