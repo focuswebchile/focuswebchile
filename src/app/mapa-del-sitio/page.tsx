@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/mapa-del-sitio",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 const sections = [

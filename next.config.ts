@@ -47,6 +47,11 @@ const nextConfig: NextConfig = {
         destination: "/crear-pagina-web-chile",
         permanent: true,
       },
+      {
+        source: "/5-pasos-antes-de-lanzar-un-sitio-web",
+        destination: "/blog/5-pasos-antes-de-lanzar-un-sitio-web",
+        permanent: true,
+      },
     ];
   },
   turbopack: {
