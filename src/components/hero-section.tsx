@@ -142,7 +142,7 @@ export function HeroSection() {
       {/* ── HERO BAND ──────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative w-full overflow-visible bg-background pb-12 pt-24 md:pb-16 xl:min-h-[calc(82vh-80px)] 2xl:min-h-[calc(80vh-80px)]"
+        className="relative w-full overflow-visible bg-background pb-12 pt-24 md:pb-16 xl:pb-0 xl:min-h-[calc(82vh-80px)] 2xl:min-h-[calc(80vh-80px)]"
       >
         <div className="mx-auto max-w-[1520px] px-6 sm:px-10 lg:px-16 xl:px-20">
           <div className="grid grid-cols-1 gap-12 xl:min-h-[calc(82vh-80px)] xl:grid-cols-[minmax(560px,1.14fr)_minmax(400px,0.86fr)] xl:items-center xl:gap-20 2xl:min-h-[calc(80vh-80px)] 2xl:grid-cols-[minmax(620px,1.12fr)_minmax(460px,0.88fr)] 2xl:gap-24">
@@ -195,7 +195,7 @@ export function HeroSection() {
 
             {/* Right: hero image (xl+) */}
             <div
-              className={`relative hidden w-full items-end justify-end overflow-visible transition-opacity duration-700 ease-out xl:flex xl:min-h-[calc(82vh-80px)] 2xl:min-h-[calc(80vh-80px)] ${desktopImageRevealClass}`}
+              className={`relative hidden w-full items-end justify-end overflow-visible transition-opacity duration-700 ease-out xl:flex xl:self-end xl:min-h-[calc(82vh-80px)] 2xl:min-h-[calc(80vh-80px)] ${desktopImageRevealClass}`}
             >
               <div className="relative z-10 h-full w-full max-w-none xl:absolute xl:bottom-[-2px] xl:right-[clamp(-56px,-1vw,-8px)] xl:h-[clamp(480px,60vh,675px)] xl:w-[clamp(410px,31vw,655px)] 2xl:bottom-[-2px] 2xl:right-[-12px] 2xl:h-[730px] 2xl:w-[810px]">
                 <Image
