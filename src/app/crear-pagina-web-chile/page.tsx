@@ -9,9 +9,9 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Crear una Página Web en Chile para tu Negocio | FocusWeb",
+  title: "Crear Página Web en Chile: Guía para Pymes | FocusWeb",
   description:
-    "Guía completa para crear una página web en Chile: tipos de web, qué necesitas, plataformas, errores comunes y cuánto cuesta. Sin tecnicismos, para pymes reales.",
+    "¿Quieres crear una página web en Chile? Guía con tipos de sitio, plataformas, costos reales y errores comunes que debes evitar. Ideal para pymes.",
   alternates: {
     canonical: "/crear-pagina-web-chile",
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/crear-pagina-web-chile",
-    title: "Crear una Página Web en Chile para tu Negocio | FocusWeb",
+    title: "Crear Página Web en Chile: Guía para Pymes | FocusWeb",
     description:
-      "Guía completa para crear una página web en Chile: tipos de web, qué necesitas, plataformas, errores comunes y cuánto cuesta. Sin tecnicismos, para pymes reales.",
+      "¿Quieres crear una página web en Chile? Guía con tipos de sitio, plataformas, costos reales y errores comunes que debes evitar. Ideal para pymes.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crear una Página Web en Chile para tu Negocio | FocusWeb",
+    title: "Crear Página Web en Chile: Guía para Pymes | FocusWeb",
     description:
-      "Guía completa para crear una página web en Chile: tipos de web, qué necesitas, plataformas, errores comunes y cuánto cuesta. Sin tecnicismos, para pymes reales.",
+      "¿Quieres crear una página web en Chile? Guía con tipos de sitio, plataformas, costos reales y errores comunes que debes evitar. Ideal para pymes.",
     images: ["https://focusweb.cl/website-chile.webp"],
   },
 }
@@ -47,10 +47,10 @@ const pageSchema = {
     {
       "@type": "WebPage",
       "@id": "https://focusweb.cl/crear-pagina-web-chile",
-      name: "Crear una página web en Chile para tu negocio | FocusWeb",
+      name: "Crear Página Web en Chile: Guía para Pymes | FocusWeb",
       url: "https://focusweb.cl/crear-pagina-web-chile",
       description:
-        "Guía completa para crear una página web en Chile: tipos de web, qué necesitas, plataformas, errores comunes y cuánto cuesta. Sin tecnicismos, para pymes reales.",
+        "¿Quieres crear una página web en Chile? Guía con tipos de sitio, plataformas, costos reales y errores comunes que debes evitar. Ideal para pymes.",
       inLanguage: "es-CL",
       isPartOf: {
         "@type": "WebSite",

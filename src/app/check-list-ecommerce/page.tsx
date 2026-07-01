@@ -65,9 +65,9 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb",
+  title: "Checklist Ecommerce en Chile: 47 Puntos Clave | FocusWeb",
   description:
-    "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
+    "¿Listo para vender online en Chile? Revisa los 47 puntos críticos antes de lanzar tu tienda: Webpay, envíos, seguridad, SEO y requisitos legales.",
   alternates: {
     canonical: "/check-list-ecommerce",
   },
@@ -75,9 +75,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl/check-list-ecommerce",
-    title: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb",
+    title: "Checklist Ecommerce en Chile: 47 Puntos Clave | FocusWeb",
     description:
-      "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
+      "¿Listo para vender online en Chile? Revisa los 47 puntos críticos antes de lanzar tu tienda: Webpay, envíos, seguridad, SEO y requisitos legales.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Checklist Ecommerce en Chile para Lanzar tu Tienda Online | FocusWeb",
+    title: "Checklist Ecommerce en Chile: 47 Puntos Clave | FocusWeb",
     description:
-      "Checklist ecommerce en Chile con 47 puntos clave para lanzar tu tienda online con Webpay, envíos, seguridad, SEO y requisitos legales.",
+      "¿Listo para vender online en Chile? Revisa los 47 puntos críticos antes de lanzar tu tienda: Webpay, envíos, seguridad, SEO y requisitos legales.",
     images: ["https://focusweb.cl/check-list-e-commerce.webp"],
   },
 }
