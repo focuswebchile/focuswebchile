@@ -35,7 +35,7 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message, token, action, website } = await request.json()
+    const { name, email, phone, message, token, action, website } = await request.json()
 
     const clientIp = getClientIp(request)
     if (isRateLimited(clientIp)) {
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true })
     }
 
-    if (!name || !email || !message || !token || !action) {
+    if (!name || !message || !token || !action) {
       return NextResponse.json({ success: false, error: "Datos incompletos" }, { status: 400 })
     }
 
@@ -84,8 +84,8 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: [toEmail],
       subject: `Nuevo contacto Focus Web - ${name}`,
-      replyTo: email,
-      text: `Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`,
+      ...(email ? { replyTo: email } : {}),
+      text: `Nombre: ${name}\n${email ? `Email: ${email}\n` : ""}${phone ? `Teléfono: ${phone}\n` : ""}\nMensaje:\n${message}`,
     })
 
     return NextResponse.json({ success: true })

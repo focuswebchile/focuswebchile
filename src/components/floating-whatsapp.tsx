@@ -96,8 +96,8 @@ export function FloatingWhatsApp() {
         onClick={() => setOpen((prev) => !prev)}
       >
         <span className={styles.whatsappBadge}>1</span>
-        <MessageCircle className={styles.whatsappIcon} size={18} />
-        <span className={styles.label}>WhatsApp</span>
+        <MessageCircle className={styles.whatsappIcon} size={26} />
+        <span className={styles.label}>¿Hablamos?</span>
       </button>
     </div>,
     document.body
