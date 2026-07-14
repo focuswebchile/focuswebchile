@@ -9,15 +9,14 @@
 ## 1. Principio rector
 
 Bold, con personalidad, con confianza. Ni "SaaS dashboard" (azul/verde Tailwind
-default), ni "editorial de revista" (serif cálido, itálicas, grillas tipo magazine),
-ni tampoco naranja/terracota (esa es la identidad de Tiny Van, otro proyecto de
-Felipe — FocusWeb necesita su propia familia visual, sin cruce).
+default), ni "editorial de revista" (serif cálido, itálicas, grillas tipo magazine).
+Familia visual propia, sin cruce con Tiny Van (otro proyecto de Felipe, identidad
+naranja/tierra).
 
 - **Prohibido:** paletas azul-informativo/verde-forest sin modificar (Tailwind
   default), terminales verdes simulando código, gradientes tipo fintech, dark cards
   genéricas usadas solo por estética.
-- **Prohibido:** naranja/terracota (colisiona con Tiny Van), tonos neón/lima muy
-  saturados (se probó y se sintió "app de producto", no marca personal).
+- **Prohibido:** naranja/terracota, tonos neón/lima muy saturados.
 - **Prohibido:** grillas tipo magazine, texto justificado, serif en párrafos,
   itálicas cálidas, layouts que parezcan artículo editorial.
 
@@ -29,16 +28,12 @@ cualquier plantilla SaaS genérica?"*
 
 ## 2. Paleta de color — Tinta índigo + dorado apagado
 
-> Descartada la dirección terracota/ocre: se acercaba demasiado a la identidad de
-> Tiny Van (naranja/tonos tierra). FocusWeb necesita su propia familia de color,
-> completamente separada, para que ambos proyectos no se confundan.
-
 ```css
 --background:      #F7F5F0;   /* Blanco roto cálido — no crema, no blanco clínico */
 --foreground:      #17162B;   /* Tinta índigo casi negro — bold, serio, con confianza */
 --foreground-soft: #4A4864;   /* Texto secundario, violeta-gris apagado */
 --primary:         #3D3A8C;   /* Índigo profundo — links, acentos, nunca el azul Tailwind default */
---accent:          #C9971F;   /* Dorado apagado — CTA principal y badges. Reemplaza al lima (demasiado saturado/app) y al terracota (demasiado cerca de Tiny Van) */
+--accent:          #C9971F;   /* Dorado apagado — CTA principal y badges */
 --accent-soft:     #E3C77A;   /* Dorado claro — texto/badges sobre fondo oscuro (--foreground) */
 --border:          #E4E1D8;   /* Borde neutro cálido sobre el fondo */
 --card:            #FFFFFF;
@@ -50,17 +45,12 @@ cualquier plantilla SaaS genérica?"*
 - CTA principal (botones): `--accent` (dorado) sólido, sin gradiente, texto en `--foreground`.
 - Bloque de contraste puntual (máx. 1 por sección, ej. card de "Desarrollo web" o testimonio): fondo `--foreground` (tinta), texto en `--accent-soft`.
 - Texto: `--foreground` para títulos y cuerpo principal, `--foreground-soft` para texto secundario.
-- Nunca usar lima/verde neón — se probó y se descartó por sentirse "app de producto" en vez de marca personal.
 
-**Evitar:** cualquier tono naranja/terracota (colisiona con Tiny Van), cualquier azul/verde Tailwind default sin modificar (`#3B82F6`, `#22C55E` — son literalmente los defaults del framework, cero decisión de marca).
+**Evitar:** naranja/terracota, lima/verde neón, y cualquier azul/verde Tailwind default sin modificar (`#3B82F6`, `#22C55E` — son literalmente los defaults del framework, cero decisión de marca).
 
 ---
 
 ## 3. Tipografía — Bricolage Grotesque + Plus Jakarta Sans
-
-> Descartada la dirección Fraunces/serif: se sentía demasiado editorial/cálida.
-> La marca busca presencia bold con personalidad, no tono de revista — grande,
-> directo, fácil de leer, con confianza.
 
 **Regla de oro: Bricolage Grotesque solo en titulares grandes (peso 800). Plus Jakarta Sans en todo lo demás.**
 
@@ -78,16 +68,25 @@ fontFamily: {
 }
 ```
 
-**Tamaños y reglas de peso:**
-| Uso | Fuente | Peso | Tamaño | Notas |
-|---|---|---|---|---|
-| H1 hero (desktop) | Bricolage Grotesque | 800 | 72px | `line-height: 0.95`, `letter-spacing: -0.02em` |
-| H1 hero (mobile) | Bricolage Grotesque | 800 | 32px | `line-height: 1.0` |
-| H2 sección | Bricolage Grotesque | 800 | 36–48px | Mismo tratamiento bold, sin itálica |
-| Subtítulos | Plus Jakarta Sans | 600–700 | 18–20px | |
-| Cuerpo de texto | Plus Jakarta Sans | 400 | 16–18px | `leading-relaxed` |
-| Botones/CTA | Plus Jakarta Sans | 700 | 14px | Nunca Bricolage en botones |
-| Nav | Plus Jakarta Sans | 500 | 14–15px | |
+**Escala tipográfica completa — OBLIGATORIA, aplica a TODA la página, no solo al hero.**
+Cada nivel tiene un tamaño único y fijo. Ninguna sección define su propio tamaño de
+título "a criterio" — se elige el nivel de la tabla que corresponda según la
+jerarquía de esa sección, punto.
+
+| Nivel | Uso | Fuente | Peso | Desktop | Mobile | Notas |
+|---|---|---|---|---|---|---|
+| H1 | Título del hero — el único de la página | Bricolage Grotesque | 800 | 72px | 32px | `line-height: 0.95`, `letter-spacing: -0.02em`. Exclusivo del hero — ningún otro título usa H1. |
+| H2 | Título de cada sección (Sobre mí, ABCIS, Servicios, ¿Cuál es tu situación?, No vendo paquetes, Proceso, Resultados, FAQ, Contacto, Blog) | Bricolage Grotesque | 800 | 48px | 28px | `line-height: 1.05`. Mismo tamaño en TODAS las secciones — es el nivel de "título de sección", no varía por importancia percibida de cada una. Testimonios **no** es sección propia — vive como H3 anidado dentro de "Resultados" (`proof-stats-section.tsx`), no lleva H2. |
+| H3 | Subtítulo dentro de una sección (ej. títulos de card individuales: "Diagnóstico SEO Técnico", "Ya tengo sitio que no convierte") | Bricolage Grotesque | 700 | 22–24px | 18–20px | Solo cuando hay jerarquía interna dentro de una sección con H2 propio. |
+| Subtítulo/eyebrow | Texto pequeño sobre el H2 (ej. "CASO REAL", "METODOLOGÍA") | Plus Jakarta Sans | 600 | 12–13px | 12–13px | Uppercase, `letter-spacing` amplio, color `--foreground-soft` o `--primary`. |
+| Cuerpo de texto | Párrafos, descripciones | Plus Jakarta Sans | 400 | 16–18px | 15–16px | `leading-relaxed` |
+| Botones/CTA | Texto de botones | Plus Jakarta Sans | 700 | 14–16px | 14–16px | Nunca Bricolage en botones |
+| Nav | Menú de navegación | Plus Jakarta Sans | 500 | 14–15px | — | |
+
+**Regla de auditoría:** si una sección nueva o editada usa un tamaño de título que
+no está en esta tabla (ej. `text-3xl` a mano, o un `clamp()` custom no documentado
+acá), es un error — hay que corregirlo al nivel correspondiente (H1/H2/H3) antes de
+darlo por terminado.
 
 ---
 
