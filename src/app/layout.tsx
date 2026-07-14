@@ -1,45 +1,29 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import localFont from "next/font/local"
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import HashRedirect from "@/components/auth/hash-redirect"
-import { ThemeSync } from "@/components/theme-sync"
+// import { ThemeSync } from "@/components/theme-sync"
+// ThemeSync desactivado: sincronizaba colores/tipografía desde el panel /admin
+// (backend Railway), que ya no existe. Candidato a eliminación completa en una
+// fase de limpieza junto con src/components/theme-sync.tsx y src/app/admin.
 import { DeferredAnalytics } from "@/components/deferred-analytics"
 import "./globals.css"
 
-const poppins = localFont({
-  src: [
-    { path: "../../public/fonts/Poppins/Poppins-Light.woff2", weight: "300", style: "normal" },
-    { path: "../../public/fonts/Poppins/Poppins-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../../public/fonts/Poppins/Poppins-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../../public/fonts/Poppins/Poppins-SemiBold.woff2", weight: "600", style: "normal" },
-    { path: "../../public/fonts/Poppins/Poppins-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../../public/fonts/Poppins/Poppins-ExtraBold.woff2", weight: "800", style: "normal" },
-    { path: "../../public/fonts/Poppins/Poppins-Black.woff2", weight: "900", style: "normal" },
-  ],
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["800"],
   display: "swap",
-  preload: true,
-  variable: "--font-poppins",
+  variable: "--font-bricolage",
 })
 
-const inter = localFont({
-  src: "../../public/fonts/Inter/Inter-VariableFont_opsz,wght.woff2",
-  weight: "100 900",
-  style: "normal",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  preload: false,
-  variable: "--font-inter",
-})
-
-const nunito = localFont({
-  src: "../../public/fonts/Nunito/Nunito-VariableFont_wght.woff2",
-  weight: "200 1000",
-  style: "normal",
-  display: "swap",
-  preload: false,
-  variable: "--font-nunito",
+  variable: "--font-jakarta",
 })
 
 export const metadata: Metadata = {
@@ -151,7 +135,7 @@ export default function RootLayout({
 
   return (
     <html lang="es-CL" suppressHydrationWarning>
-      <body className={`${poppins.variable} ${inter.variable} ${nunito.variable} font-sans antialiased`}>
+      <body className={`${bricolageGrotesque.variable} ${plusJakartaSans.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Script
             id="structured-data"
@@ -175,7 +159,7 @@ export default function RootLayout({
           </Script>
           <DeferredAnalytics />
           <HashRedirect />
-          <ThemeSync />
+          {/* <ThemeSync /> — desactivado, ver import comentado arriba */}
           {children}
           <Analytics />
         </ThemeProvider>

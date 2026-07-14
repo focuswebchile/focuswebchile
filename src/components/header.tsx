@@ -122,8 +122,8 @@ export function Header() {
                 className="h-9 w-9 sm:h-10 sm:w-10 rounded-full"
                 priority
               />
-              <span className="hidden xl:inline bg-gradient-to-r from-accent via-primary to-info bg-clip-text text-transparent">
-                FocusWeb
+              <span className="hidden xl:inline text-foreground">
+                Focus<span className="text-accent">Web</span>
               </span>
             </a>
 

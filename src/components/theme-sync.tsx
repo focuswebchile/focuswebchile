@@ -1,5 +1,11 @@
 "use client"
 
+// DEPRECADO: este componente sincronizaba colores/tipografía desde el panel
+// /admin (backend Railway), que ya no existe. Su uso en layout.tsx está
+// comentado desde el rebranding (ver design.md). Candidato a eliminación
+// completa junto con src/app/admin en una fase de limpieza aparte — no borrar
+// sin confirmar primero que nada más depende de THEME_CACHE_KEY.
+
 import { useEffect } from "react"
 
 const BACKEND_URL =

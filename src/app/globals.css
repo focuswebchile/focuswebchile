@@ -15,118 +15,118 @@ body[data-scroll-locked] {
 }
 
 :root {
-  --font-sans: var(--font-poppins);
-  /* Design System v2 — Technical Minimalism (UI/UX Pro Max · Developer Tool palette) */
+  /* Design System — Tinta índigo + dorado apagado (ver design.md §2). Reemplaza
+     por completo la paleta "Technical Minimalism" (verde/azul oklch, Poppins).
+     Los font stacks reales se resuelven en @theme inline vía las variables
+     --font-bricolage / --font-jakarta que setea next/font en layout.tsx. */
 
-  /* Fondo y textos base — blanco puro + near-black máximo contraste (WCAG AAA) */
-  --background: oklch(1 0 0);           /* #FFFFFF — puro, sin tinte */
-  --foreground: oklch(0.11 0.025 260);  /* #0F172A — slate-900, casi negro */
+  --background: #F7F5F0;      /* Blanco roto cálido — no crema, no blanco clínico */
+  --foreground: #17162B;      /* Tinta índigo casi negro — bold, serio, con confianza */
 
-  --card: oklch(0.985 0.005 260);       /* #F8FAFC — slate-50, cards ligeramente diferenciadas */
-  --card-foreground: oklch(0.11 0.025 260);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.11 0.025 260);
+  --card: #FFFFFF;
+  --card-foreground: #17162B;
+  --popover: #FFFFFF;
+  --popover-foreground: #17162B;
 
-  /* Primary: Verde bosque oscuro #15803D — autoridad técnica, no verde lima */
-  --primary: oklch(0.52 0.22 145);
-  --primary-foreground: oklch(1 0 0);
+  /* Primary: índigo profundo — links, acentos, nunca el azul Tailwind default */
+  --primary: #3D3A8C;
+  --primary-foreground: #FFFFFF;
 
   /* Secondary: superficie de baja saturación para chips y tags */
-  --secondary: oklch(0.97 0.007 260);
-  --secondary-foreground: oklch(0.32 0.05 260);
+  --secondary: #EDEBE3;
+  --secondary-foreground: #4A4864;
 
-  /* Muted: slate-100 / slate-500 */
-  --muted: oklch(0.97 0.007 260);
-  --muted-foreground: oklch(0.50 0.04 260); /* #64748B — slate-500 */
+  /* Muted: texto secundario violeta-gris apagado */
+  --muted: #EDEBE3;
+  --muted-foreground: #4A4864;
 
-  /* Accent: azul confianza #2563EB — CTAs secundarios, links */
-  --accent: oklch(0.55 0.22 260);
-  --accent-foreground: oklch(1 0 0);
+  /* Accent: dorado apagado — CTA principal y badges */
+  --accent: #C9971F;
+  --accent-foreground: #17162B;
+  --accent-soft: #E3C77A;  /* dorado claro — texto/badges sobre fondo --foreground */
 
-  /* Success / Info */
-  --success: oklch(0.52 0.22 145);
-  --success-foreground: oklch(1 0 0);
-  --info: oklch(0.55 0.22 260);
-  --info-foreground: oklch(1 0 0);
+  --success: #3D3A8C;
+  --success-foreground: #FFFFFF;
+  --info: #3D3A8C;
+  --info-foreground: #FFFFFF;
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.91 0.012 260);      /* #E2E8F0 — slate-200, bordes visibles */
-  --input: oklch(0.94 0.009 260);
-  --ring: oklch(0.52 0.22 145);
+  --border: #E4E1D8;      /* borde neutro cálido sobre el fondo */
+  --input: #E4E1D8;
+  --ring: #3D3A8C;
 
-  --chart-1: oklch(0.52 0.22 145);
-  --chart-2: oklch(0.55 0.22 260);
-  --chart-3: oklch(0.68 0.17 35);
-  --chart-4: oklch(0.65 0.15 180);
-  --chart-5: oklch(0.62 0.16 320);
+  --chart-1: #3D3A8C;
+  --chart-2: #C9971F;
+  --chart-3: #4A4864;
+  --chart-4: #E3C77A;
+  --chart-5: #17162B;
 
-  /* Tipografía: escala de pesos con 800/900 activos */
-  --font-weight-display: 900;   /* Poppins Black  — H1 hero */
-  --font-weight-heading: 800;   /* Poppins ExtraBold — H2 secciones */
-  --font-weight-subheading: 700; /* Poppins Bold — H3 tarjetas */
-  --font-weight-label: 600;     /* Poppins SemiBold — labels, tags */
-  --font-weight-body: 400;      /* Poppins Regular — cuerpo */
-
-  --radius: 0.5rem; /* 8px — esquinas técnicas (antes 20px) */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #17162B;
+  --sidebar-primary: #3D3A8C;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EDEBE3;
+  --sidebar-accent-foreground: #17162B;
+  --sidebar-border: #E4E1D8;
+  --sidebar-ring: #3D3A8C;
 }
 
 .dark {
-  /* Dark mode — Developer Tool/IDE palette del skill (slate-dark + verde brillante) */
-  --background: oklch(0.13 0.02 260);   /* #0F172A slate-950 */
-  --foreground: oklch(0.97 0.005 260);  /* #F8FAFC slate-50 */
-  --card: oklch(0.17 0.02 260);         /* #1B2336 */
-  --card-foreground: oklch(0.97 0.005 260);
-  --popover: oklch(0.15 0.02 260);
-  --popover-foreground: oklch(0.97 0.005 260);
+  /* design.md no define un sistema dark todavía (marca es light-first); esta
+     variante es una extensión conservadora de la misma familia índigo/dorado
+     para no dejar residuos verde/azul. Revisar cuando exista un toggle real
+     de tema — hoy ThemeProvider fuerza defaultTheme="light" sin toggle. */
+  --background: #17162B;
+  --foreground: #F7F5F0;
+  --card: #201F3B;
+  --card-foreground: #F7F5F0;
+  --popover: #1C1B34;
+  --popover-foreground: #F7F5F0;
 
-  --primary: oklch(0.72 0.22 145);      /* Verde más brillante sobre oscuro */
-  --primary-foreground: oklch(0.10 0.02 260);
+  --primary: #6C68C9;
+  --primary-foreground: #17162B;
 
-  --secondary: oklch(0.22 0.025 260);
-  --secondary-foreground: oklch(0.97 0.005 260);
-  --muted: oklch(0.20 0.02 260);
-  --muted-foreground: oklch(0.60 0.03 260);
+  --secondary: #2B2A4A;
+  --secondary-foreground: #F7F5F0;
+  --muted: #2B2A4A;
+  --muted-foreground: #B3B0C9;
 
-  --accent: oklch(0.65 0.22 260);
-  --accent-foreground: oklch(0.10 0.02 260);
+  --accent: #E3C77A;
+  --accent-foreground: #17162B;
+  --accent-soft: #C9971F;
 
-  --success: oklch(0.72 0.22 145);
-  --success-foreground: oklch(0.10 0.02 260);
-  --info: oklch(0.65 0.22 260);
-  --info-foreground: oklch(0.10 0.02 260);
+  --success: #6C68C9;
+  --success-foreground: #17162B;
+  --info: #6C68C9;
+  --info-foreground: #17162B;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.28 0.025 260);      /* #334155 slate-700 */
-  --input: oklch(0.24 0.025 260);
-  --ring: oklch(0.72 0.22 145);
+  --border: #383659;
+  --input: #383659;
+  --ring: #6C68C9;
 
-  --chart-1: oklch(0.72 0.22 145);
-  --chart-2: oklch(0.65 0.22 260);
-  --chart-3: oklch(0.72 0.18 35);
-  --chart-4: oklch(0.7 0.16 180);
-  --chart-5: oklch(0.68 0.17 320);
+  --chart-1: #6C68C9;
+  --chart-2: #E3C77A;
+  --chart-3: #B3B0C9;
+  --chart-4: #C9971F;
+  --chart-5: #F7F5F0;
 
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #1C1B34;
+  --sidebar-foreground: #F7F5F0;
+  --sidebar-primary: #6C68C9;
+  --sidebar-primary-foreground: #17162B;
+  --sidebar-accent: #2B2A4A;
+  --sidebar-accent-foreground: #F7F5F0;
+  --sidebar-border: #383659;
+  --sidebar-ring: #6C68C9;
 }
 
 @theme inline {
-  --font-sans: "Poppins", "Poppins Fallback", system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans Fallback", system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-bricolage), "Bricolage Grotesque Fallback", system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-jakarta), "Plus Jakarta Sans Fallback", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -142,6 +142,7 @@ body[data-scroll-locked] {
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-info: var(--info);
@@ -197,23 +198,8 @@ body[data-scroll-locked] {
   }
 }
 
-:root[data-font="poppins"],
-body[data-font="poppins"] {
-  --font-sans: var(--font-poppins) !important;
-  font-family: "Poppins", "Poppins Fallback", system-ui, -apple-system, sans-serif !important;
-}
-
-:root[data-font="inter"],
-body[data-font="inter"] {
-  --font-sans: var(--font-inter) !important;
-  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif !important;
-}
-
-:root[data-font="nunito"],
-body[data-font="nunito"] {
-  --font-sans: var(--font-nunito) !important;
-  font-family: "Nunito", "Nunito Fallback", system-ui, -apple-system, sans-serif !important;
-}
+/* El selector de fuente vía data-font (poppins/inter/nunito) queda eliminado:
+   dependía del panel /admin de ThemeSync, que ya no existe (ver layout.tsx). */
 
 @layer base {
   * {
