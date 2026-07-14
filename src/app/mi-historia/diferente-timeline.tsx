@@ -30,7 +30,7 @@ export function DiferenteTimeline() {
             },
           }}
         >
-          <h2 id="timeline-diferente-title" className="text-4xl font-semibold sm:text-5xl md:text-7xl text-center mb-18 md:mb-35">
+          <h2 id="timeline-diferente-title" className="font-display text-4xl font-semibold sm:text-5xl md:text-7xl text-center mb-18 md:mb-35">
             <span className="text-foreground">Qué me</span>{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               hace diferente
@@ -59,7 +59,7 @@ export function DiferenteTimeline() {
                   },
                 }}
               >
-                <h3 className="text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
+                <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
                   Partimos por entender el problema real
                 </h3>
               </TimelineContent>
@@ -110,7 +110,7 @@ export function DiferenteTimeline() {
               02
             </span>
               <div className="space-y-4 text-left">
-                <h3 className="text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
+                <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
                   Te ahorro prueba y error
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
@@ -155,7 +155,7 @@ export function DiferenteTimeline() {
               03
             </span>
               <div className="space-y-4 text-left">
-                <h3 className="text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
+                <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
                   Estrategia y ejecución en una misma línea
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
