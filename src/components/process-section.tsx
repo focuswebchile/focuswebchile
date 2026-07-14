@@ -1,4 +1,5 @@
 import { Search, Code2, Rocket, LifeBuoy } from "lucide-react"
+import { Reveal } from "@/components/ui/reveal"
 
 const steps = [
   {
@@ -45,11 +46,11 @@ export function ProcessSection() {
       <div className="container mx-auto max-w-7xl">
 
         {/* Header — left-aligned editorial */}
-        <div className="mb-12 sm:mb-16">
+        <Reveal className="mb-12 sm:mb-16">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             Metodología
           </p>
-          <h2 className="mt-4 text-4xl font-black leading-[0.9] tracking-tighter text-foreground sm:text-5xl md:text-6xl">
+          <h2 className="font-display mt-4 text-[28px] font-extrabold leading-[1.05] tracking-tight text-foreground md:text-[64px]">
             Un proceso{" "}
             <span className="text-primary">simple</span>
             <br />
@@ -58,13 +59,15 @@ export function ProcessSection() {
           <p className="mt-4 max-w-lg text-base text-muted-foreground sm:text-lg">
             Diagnóstico, implementación, validación y soporte en una ruta clara para crear o mejorar tu sitio
           </p>
-        </div>
+        </Reveal>
 
         {/* Numbered steps list */}
         <div className="divide-y divide-border">
-          {steps.map((step) => (
-            <div
+          {steps.map((step, i) => (
+            <Reveal
               key={step.title}
+              delay={i * 0.06}
+              as="div"
               className="grid grid-cols-1 gap-5 py-8 sm:py-10 md:grid-cols-[72px_1fr] lg:grid-cols-[80px_1fr_220px] lg:items-start lg:gap-8"
             >
               {/* Step number — typographic anchor */}
@@ -103,7 +106,7 @@ export function ProcessSection() {
                 </p>
                 <p className="mt-1.5 text-sm text-foreground/75">{step.focusText}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

@@ -2,17 +2,18 @@
 
 import type { ReactNode } from "react"
 import { useEffect, useRef, useState } from "react"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { ProcessSection } from "@/components/process-section"
-import { ContactSection } from "@/components/contact-section"
-import { FAQSection } from "@/components/faq-section"
-import { HomeBlogSection } from "@/components/home-blog-section"
+import { AboutSection } from "@/components/about-section"
+import { AbcisCaseSection } from "@/components/abcis-case-section"
 import { MainServicesSection } from "@/components/main-services-section"
-import { DelayImpactSection } from "@/components/delay-impact-section"
 import { NeedsSection } from "@/components/needs-section"
-import { ProcessAuditCta } from "@/components/process-audit-cta"
-import { HomeSocialProofSection } from "@/components/home-social-proof-section"
 import { ValuePropDarkSection } from "@/components/value-prop-dark-section"
+import { ProcessSection } from "@/components/process-section"
+import { ProofStatsSection } from "@/components/proof-stats-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { ProcessAuditCta } from "@/components/process-audit-cta"
+import { FAQSection } from "@/components/faq-section"
+import { ContactSection } from "@/components/contact-section"
+import { HomeBlogSection } from "@/components/home-blog-section"
 import { useSiteToggles } from "@/components/toggle-sections"
 
 function LazyOnViewport({ children }: { children: ReactNode }) {
@@ -47,18 +48,15 @@ export function HomeSections() {
 
   return (
     <>
+      <AboutSection />
+      <AbcisCaseSection />
       <MainServicesSection />
-      <ValuePropDarkSection />
-      <HomeSocialProofSection />
-      <DelayImpactSection />
       <NeedsSection />
+      <ValuePropDarkSection />
       <ProcessSection />
+      <ProofStatsSection />
+      <TestimonialsSection />
       <ProcessAuditCta />
-      {toggles.showTestimonials && (
-        <LazyOnViewport>
-          <TestimonialsSection />
-        </LazyOnViewport>
-      )}
       {toggles.showFAQ && (
         <LazyOnViewport>
           <FAQSection />

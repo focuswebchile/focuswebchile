@@ -1,9 +1,9 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { SearchCheck, Gauge, Code2, Check, ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { SearchCheck, Gauge, Code2, Check, ArrowRight, ChevronDown } from "lucide-react"
+import { useState } from "react"
+import { Reveal } from "@/components/ui/reveal"
 
 const cards = [
   {
@@ -14,11 +14,9 @@ const cards = [
     tone: "from-primary/20 to-primary/5",
     iconTone: "bg-primary/15 text-primary",
     bullets: [
-      "H1",
-      "H2",
-      "Meta descripción",
-      "Alt text",
-      "JSON-LD",
+      "H1 y H2 duplicados o mal estructurados",
+      "Meta descripción y alt text",
+      "Datos estructurados (JSON-LD)",
     ],
     seoDetail:
       "En esta etapa revisamos la estructura semántica de la página, consistencia de headings, señales on-page y marcado estructurado para detectar fricciones que afectan visibilidad y conversión.",
@@ -43,12 +41,11 @@ const cards = [
     description:
       "Mejoramos Core Web Vitals para reducir tiempos de carga en móvil y desktop. Optimizamos imágenes, lazy loading, caché, CDN y código para rendimiento sostenido.",
     icon: Gauge,
-    tone: "from-info/20 to-info/5",
-    iconTone: "bg-info/15 text-info",
+    tone: "from-muted to-muted/30",
+    iconTone: "bg-foreground/8 text-foreground/70",
     bullets: [
       "Análisis PageSpeed Insights",
-      "Optimización de imágenes WebP",
-      "Implementación de caché y CDN",
+      "Optimización de imágenes a WebP",
       "Meta: PageSpeed 90+ en móvil",
     ],
     seoDetail:
@@ -73,13 +70,12 @@ const cards = [
     description:
       "Creamos o renovamos tu sitio con base técnica sólida desde el inicio: diseño profesional, velocidad, SEO técnico y arquitectura escalable para crecer.",
     icon: Code2,
-    tone: "from-amber-200/40 to-amber-50/20",
-    iconTone: "bg-amber-200/40 text-amber-700",
+    tone: "from-accent/25 to-accent/5",
+    iconTone: "bg-accent/20 text-accent",
     bullets: [
       "Diseño profesional a medida",
       "PageSpeed 90+ desde día 1",
       "SEO técnico integrado",
-      "Landing, corporativo o e-commerce",
     ],
     seoDetail:
       "Cuando desarrollamos desde cero dejamos base técnica preparada para posicionamiento: estructura limpia, performance inicial sólida y arquitectura escalable para crecer sin rehacer todo.",
@@ -93,10 +89,6 @@ const cards = [
       href: "/servicios/desarrollo-web",
       external: false,
     },
-    guideLink: {
-      label: "¿Cómo crear una página web en Chile?",
-      href: "/crear-pagina-web-chile",
-    },
     relatedLinks: [
       { label: "Explorar landing pages", href: "/landing-page" },
       { label: "Ver paquetes y precios", href: "/servicios/desarrollo-web" },
@@ -106,34 +98,6 @@ const cards = [
 
 export function MainServicesSection() {
   const [openCardIndex, setOpenCardIndex] = useState<number | null>(null)
-  const [lightMotion, setLightMotion] = useState(false)
-
-  useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 1023px)")
-    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
-
-    const syncMotion = () => {
-      setLightMotion(mobileQuery.matches || reducedMotionQuery.matches)
-    }
-
-    syncMotion()
-
-    if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener("change", syncMotion)
-      reducedMotionQuery.addEventListener("change", syncMotion)
-      return () => {
-        mobileQuery.removeEventListener("change", syncMotion)
-        reducedMotionQuery.removeEventListener("change", syncMotion)
-      }
-    }
-
-    mobileQuery.addListener(syncMotion)
-    reducedMotionQuery.addListener(syncMotion)
-    return () => {
-      mobileQuery.removeListener(syncMotion)
-      reducedMotionQuery.removeListener(syncMotion)
-    }
-  }, [])
 
   const toggleCardDetail = (index: number) => {
     setOpenCardIndex((current) => (current === index ? null : index))
@@ -142,44 +106,23 @@ export function MainServicesSection() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
-        {lightMotion ? (
-          <div className="mb-12 sm:mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Servicios
-            </p>
-            <h2 className="mt-4 text-4xl font-black leading-[0.9] tracking-tighter text-foreground sm:text-5xl md:text-6xl">
-              Nuestros servicios<br />
-              <span className="text-primary">principales</span>
-            </h2>
-            <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Especializados en optimización técnica para que tu sitio web genere resultados reales
-            </p>
-          </div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="mb-12 sm:mb-16"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Servicios
-            </p>
-            <h2 className="mt-4 text-4xl font-black leading-[0.9] tracking-tighter text-foreground sm:text-5xl md:text-6xl">
-              Nuestros servicios<br />
-              <span className="text-primary">principales</span>
-            </h2>
-            <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Especializados en optimización técnica para que tu sitio web genere resultados reales
-            </p>
-          </motion.div>
-        )}
+        <Reveal className="mb-12 sm:mb-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Servicios
+          </p>
+          <h2 className="font-display mt-4 text-[28px] font-extrabold leading-[1.05] tracking-tight text-foreground md:text-[64px]">
+            Nuestros servicios<br />
+            <span className="text-primary">principales</span>
+          </h2>
+          <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
+            Especializados en optimización técnica para que tu sitio web genere resultados reales
+          </p>
+        </Reveal>
 
-        <div className="grid grid-cols-1 items-start gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {cards.map((card, index) => (
-            <div key={card.title}>
-              <Card className="group h-full border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
+            <Reveal key={card.title} delay={index * 0.07} className="h-full">
+              <Card className="group flex h-full flex-col border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:scale-[1.015] hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/40">
                 <div className={`bg-gradient-to-br ${card.tone} p-6 sm:p-8 lg:p-7 flex h-full flex-col gap-6 lg:gap-5 transition-transform duration-300`}>
                   <div className="flex items-start gap-3.5">
                     <div className={`rounded-xl p-3 ${card.iconTone}`}>
@@ -190,7 +133,7 @@ export function MainServicesSection() {
 
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{card.description}</p>
 
-                  <ul className={`space-y-3 ${index === 2 ? "lg:space-y-4 lg:pt-3" : ""}`}>
+                  <ul className="space-y-3">
                     {card.bullets.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm sm:text-base">
                         <Check className="h-4 w-4 mt-1 flex-shrink-0 text-foreground/80" />
@@ -198,19 +141,21 @@ export function MainServicesSection() {
                       </li>
                     ))}
                   </ul>
-                  {index === 2 ? <div className="hidden lg:block h-9" /> : null}
 
-                  <div className="rounded-lg border border-border/60 bg-card/70 p-3">
+                  <div>
                     <button
                       type="button"
                       onClick={() => toggleCardDetail(index)}
                       aria-expanded={openCardIndex === index}
-                      className="w-full cursor-pointer text-left text-sm font-semibold text-foreground/85"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-foreground/70 transition-colors hover:text-foreground"
                     >
                       Ver detalle técnico
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 transition-transform duration-200 ${openCardIndex === index ? "rotate-180" : ""}`}
+                      />
                     </button>
                     {openCardIndex === index ? (
-                      <div className="mt-2 space-y-2">
+                      <div className="mt-3 space-y-2 rounded-lg border border-border/60 bg-card/70 p-3">
                         <p className="text-sm text-muted-foreground">{card.seoDetail}</p>
                         <div className="flex flex-wrap gap-2">
                           {card.relatedLinks.map((link) => (
@@ -241,27 +186,26 @@ export function MainServicesSection() {
                     <a
                       href={card.cta.href}
                       {...(card.cta.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-white/90"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-base font-bold text-foreground transition-colors hover:bg-white/90"
                     >
                       <span>{card.cta.label}</span>
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </a>
-
-                    {"guideLink" in card && card.guideLink ? (
-                      <a
-                        href={card.guideLink.href}
-                        className="flex items-center justify-center gap-1 text-xs text-foreground/55 transition-colors hover:text-foreground/80"
-                      >
-                        <ArrowRight className="h-3 w-3" />
-                        {card.guideLink.label}
-                      </a>
-                    ) : null}
                   </div>
                 </div>
               </Card>
-            </div>
+            </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2} className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            ¿Recién empezando?{" "}
+            <a href="/crear-pagina-web-chile" className="font-medium text-primary hover:underline">
+              ¿Cómo crear una página web en Chile?
+            </a>
+          </p>
+        </Reveal>
       </div>
     </section>
   )

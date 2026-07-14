@@ -193,7 +193,7 @@ export function Header() {
                     </a>
                   ),
                 )}
-              <Button size="sm" className="shadow-lg shadow-accent/25 font-medium text-xs lg:text-sm" asChild>
+              <Button size="sm" className="shadow-lg shadow-accent/25 text-xs lg:text-sm" asChild>
                 <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
                   Comenzar
                 </a>

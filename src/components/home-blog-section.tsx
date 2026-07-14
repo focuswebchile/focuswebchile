@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { blogPosts } from "@/lib/blog-posts"
+import { Reveal } from "@/components/ui/reveal"
 
 export function HomeBlogSection() {
   const featuredPosts = blogPosts.slice(0, 3)
@@ -12,15 +13,15 @@ export function HomeBlogSection() {
   return (
     <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance px-4">
+        <Reveal className="mb-10 sm:mb-12">
+          <h2 className="font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-balance px-4 md:text-[64px]">
             Últimos Artículos sobre Optimización Web
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {featuredPosts.map((post) => (
-            <article key={post.title} className="flex flex-col gap-4 hover:opacity-90 transition-opacity">
+          {featuredPosts.map((post, i) => (
+            <Reveal key={post.title} delay={i * 0.07} as="article" className="flex flex-col gap-4 hover:opacity-90 transition-opacity">
               <div className="group relative aspect-video overflow-hidden rounded-2xl border border-border/60 bg-muted/70 transition-transform duration-300">
                 <Image
                   src={post.image.src}
@@ -48,11 +49,11 @@ export function HomeBlogSection() {
                 </a>
                 <p className="text-muted-foreground text-base">{post.excerpt}</p>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-10 sm:mt-12 rounded-2xl border border-border/60 bg-card/80 p-6 sm:p-8 text-center">
+        <Reveal className="mt-10 sm:mt-12 rounded-2xl border border-border/60 bg-card/80 p-6 sm:p-8 text-center">
           <h3 className="text-xl sm:text-2xl font-semibold text-foreground">
             ¿Quieres ver más ideas para mejorar tu web?
           </h3>
@@ -66,7 +67,7 @@ export function HomeBlogSection() {
           >
             Ver todos los artículos
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
