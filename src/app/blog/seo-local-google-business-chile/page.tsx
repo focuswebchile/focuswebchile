@@ -137,7 +137,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
               />
 
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Tiempo de lectura: 7 min</p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Google Mi Negocio en Chile para tu pyme
               </h1>
 
@@ -175,7 +175,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Google Mi Negocio Chile: qué es y cómo funciona</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Google Mi Negocio Chile: qué es y cómo funciona</h2>
 
               <p>
                 Google Business Profile es como un “carnet de presentación virtual” para tu negocio. Es una ficha
@@ -204,7 +204,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 dedicar unos minutos a configurarlo.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Por qué Google Mi Negocio en Chile es clave para tu pyme?</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">¿Por qué Google Mi Negocio en Chile es clave para tu pyme?</h2>
 
               <p>
                 Imagina esto: un vecino con hambre busca “sushi en Maipú”. Si tu negocio no aparece en Google, para ese
@@ -238,7 +238,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 digital. Si tu cliente te busca, quieres que te encuentre al tiro, ¿no?
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso a paso: crea y verifica tu perfil</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Paso a paso: crea y verifica tu perfil</h2>
 
               <p>
                 Lo bueno es que crear el perfil es bastante intuitivo. Vamos por pasos (tranquilo, no hace falta un
@@ -318,7 +318,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Tips de optimización para sacarle el máximo partido
               </h2>
 
@@ -360,7 +360,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 Google Business y tú respondiendo, todo sin salir a perseguirlos.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Errores comunes en Google Mi Negocio en Chile</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Errores comunes en Google Mi Negocio en Chile</h2>
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
                 <li>Perfil sin verificar o con datos incompletos (horarios, categoría, teléfono).</li>
                 <li>No responder reseñas y perder señales de confianza local.</li>
@@ -369,7 +369,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 <li>No conectar la ficha con un sitio optimizado para SEO local.</li>
               </ul>
 
-              <h2 className="pt-4 text-2xl font-semibold sm:text-3xl">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 <span className="block">Otros recursos avanzados</span>
                 <span className="mt-1 block text-lg font-medium text-foreground/80 sm:text-xl">
                   (para cuando quieras más)
@@ -429,7 +429,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
 
               <p>Google Business Profile es tu mejor aliado local. Con una ficha bien armada:</p>
 
@@ -478,7 +478,7 @@ export default function SeoLocalGoogleBusinessChilePage() {
                 pasa a ser una ventaja concreta para tu pyme.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-2">Preguntas frecuentes</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Preguntas frecuentes</h2>
               <div className="space-y-3">
                 <details className="rounded-xl border border-border/60 bg-card p-4">
                   <summary className="cursor-pointer font-semibold">

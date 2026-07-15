@@ -116,7 +116,7 @@ export default function BlogPostPage() {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 7 min
               </p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 De Instagram a tienda online en Chile
               </h1>
 
@@ -163,7 +163,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 ¿Realmente necesitas una tienda online? (El test de la verdad)
               </h2>
 
@@ -190,7 +190,7 @@ export default function BlogPostPage() {
                 <strong>Si marcaste 3 o más: sí, probablemente sea el momento.</strong>
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 Pero ojo, también hay casos donde NO necesitas una web (todavía)
               </h3>
 
@@ -214,7 +214,7 @@ export default function BlogPostPage() {
                 $1.000. Los costos fijos de una web podrían no justificarse (por ahora).
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Cuándo SÍ es el momento perfecto?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Cuándo SÍ es el momento perfecto?</h3>
 
               <p>
                 ✅ Tienes demanda constante (no son ventas de una vez al mes)
@@ -251,9 +251,9 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Las 5 preguntas que todo el mundo se hace</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Las 5 preguntas que todo el mundo se hace</h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 1. Pasarelas de pago en Chile: Webpay vs Mercado Pago (y la boleta electrónica)
               </h3>
 
@@ -332,7 +332,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 2. Integración de couriers en Chile: cómo automatizar tus envíos
               </h3>
 
@@ -395,7 +395,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 3. WooCommerce vs Shopify vs Tiendanube: ¿cuál es mejor para Chile?
               </h3>
 
@@ -476,7 +476,7 @@ export default function BlogPostPage() {
                 .
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 4. Cómo generar confianza en tu tienda online (el factor "no me estafen")
               </h3>
 
@@ -538,7 +538,7 @@ export default function BlogPostPage() {
                 cómo comunicar tus políticas.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 5. Costo real de una tienda online en Chile (desglose sin letra chica)
               </h3>
 
@@ -627,7 +627,7 @@ export default function BlogPostPage() {
 
               <div className="rounded-2xl border border-border/60 bg-muted/60 p-6 sm:p-8">
                 <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Precios y opciones</p>
-                <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-foreground">
+                <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                   Planes claros para tu tienda online
                 </h3>
                 <p className="mt-3 text-base text-foreground/80">
@@ -641,7 +641,7 @@ export default function BlogPostPage() {
                 </a>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 ¿Vale la pena si ya vendo bien por Instagram?
               </h2>
 
@@ -691,11 +691,11 @@ export default function BlogPostPage() {
                 que convierten ese tráfico de Instagram en ventas reales.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Los 3 errores más comunes (y caros) al crear tu ecommerce
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 Error #1: Elegir hosting barato porque "es lo mismo"
               </h3>
 
@@ -719,7 +719,7 @@ export default function BlogPostPage() {
                 el de $2.000/mes que te prometen "recursos ilimitados".
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">
                 Error #2: Pensar que "si la hago, la gente vendrá sola"
               </h3>
 
@@ -735,7 +735,7 @@ export default function BlogPostPage() {
                 (Google Ads, Instagram Ads). Pero necesitas traer gente.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Error #3: No optimizar para móvil</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Error #3: No optimizar para móvil</h3>
 
               <p>
                 El 70% de las compras en Chile se hacen desde el celular. Si tu web se ve mal en el teléfono, perdiste.
@@ -745,7 +745,7 @@ export default function BlogPostPage() {
                 <strong>La solución:</strong> Diseño responsive desde el día uno. No es "un extra", es LO BÁSICO.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Entonces, ¿qué hago? ¿Lo hago yo o contrato a alguien?
               </h2>
 
@@ -791,7 +791,7 @@ export default function BlogPostPage() {
                 .
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Listo para dar el salto?</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">¿Listo para dar el salto?</h2>
 
               <p>
                 Si llegaste hasta acá, ya sabes más que el 90% de la gente que está pensando en crear su tienda online.

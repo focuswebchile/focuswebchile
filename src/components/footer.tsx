@@ -123,7 +123,7 @@ export function Footer() {
               alt="Transferencia electrónica"
               width={320}
               height={192}
-              className="h-14 w-auto sm:h-16"
+              className="mx-auto h-14 w-auto sm:mx-0 sm:h-16"
             />
             <p className="max-w-xs text-xs sm:text-sm leading-relaxed text-muted-foreground mx-auto sm:mx-0">
               Pago por transferencia electrónica. Se emite boleta electrónica al finalizar el proyecto.

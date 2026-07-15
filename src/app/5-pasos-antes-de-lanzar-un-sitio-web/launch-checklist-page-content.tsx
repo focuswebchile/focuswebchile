@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/button"
 import { LaunchChecklistForm } from "./launch-checklist-form"
 
 const overviewSteps = [
-  { number: "01", title: "Base\ntecnica", numberTone: "text-emerald-500/10", accentTone: "bg-emerald-500" },
-  { number: "02", title: "Indexacion\nen Google", numberTone: "text-sky-500/10", accentTone: "bg-sky-500" },
-  { number: "03", title: "Monitoreo\nweb", numberTone: "text-amber-500/10", accentTone: "bg-amber-500" },
-  { number: "04", title: "Presencia\nlocal", numberTone: "text-cyan-500/10", accentTone: "bg-cyan-500" },
-  { number: "05", title: "Estructura\nSEO minima", numberTone: "text-indigo-500/10", accentTone: "bg-indigo-500" },
+  { number: "01", title: "Base\ntecnica", numberTone: "text-primary/10", accentTone: "bg-primary" },
+  { number: "02", title: "Indexacion\nen Google", numberTone: "text-accent/10", accentTone: "bg-accent" },
+  { number: "03", title: "Monitoreo\nweb", numberTone: "text-primary/10", accentTone: "bg-primary" },
+  { number: "04", title: "Presencia\nlocal", numberTone: "text-accent/10", accentTone: "bg-accent" },
+  { number: "05", title: "Estructura\nSEO minima", numberTone: "text-primary/10", accentTone: "bg-primary" },
 ]
 
 const detailedSteps = [
@@ -29,8 +29,8 @@ const detailedSteps = [
     ],
     error: "Publicar el sitio sin redirecciones claras o sin certificado SSL activo.",
     sectionTone: "bg-white/85",
-    badgeTone: "bg-emerald-100 text-emerald-700 border-emerald-200",
-    errorTone: "bg-amber-50 border-amber-200 text-amber-900",
+    badgeTone: "bg-primary/10 text-primary border-primary/20",
+    errorTone: "bg-accent/10 border-accent/25 text-foreground",
   },
   {
     number: "02",
@@ -43,9 +43,9 @@ const detailedSteps = [
       "El sitemap esta activo y visible",
     ],
     error: "Publicar el sitio y asumir que Google lo encontrara solo.",
-    sectionTone: "bg-slate-50/90",
-    badgeTone: "bg-sky-100 text-sky-700 border-sky-200",
-    errorTone: "bg-rose-50 border-rose-200 text-rose-900",
+    sectionTone: "bg-primary/5",
+    badgeTone: "bg-accent/10 text-accent border-accent/20",
+    errorTone: "bg-accent/10 border-accent/25 text-foreground",
   },
   {
     number: "03",
@@ -59,8 +59,8 @@ const detailedSteps = [
     ],
     error: "Instalar la medicion meses despues y perder datos clave del lanzamiento del sitio.",
     sectionTone: "bg-white/85",
-    badgeTone: "bg-amber-100 text-amber-800 border-amber-200",
-    errorTone: "bg-orange-50 border-orange-200 text-orange-900",
+    badgeTone: "bg-primary/10 text-primary border-primary/20",
+    errorTone: "bg-accent/10 border-accent/25 text-foreground",
   },
   {
     number: "04",
@@ -73,9 +73,9 @@ const detailedSteps = [
       "Ubicacion o zona de servicio clara",
     ],
     error: "Tener la web publicada pero sin ficha de Google Mi Negocio.",
-    sectionTone: "bg-slate-50/90",
-    badgeTone: "bg-cyan-100 text-cyan-800 border-cyan-200",
-    errorTone: "bg-amber-50 border-amber-200 text-amber-900",
+    sectionTone: "bg-primary/5",
+    badgeTone: "bg-accent/10 text-accent border-accent/20",
+    errorTone: "bg-accent/10 border-accent/25 text-foreground",
   },
   {
     number: "05",
@@ -89,8 +89,8 @@ const detailedSteps = [
     ],
     error: "Publicar paginas sin titulos claros o sin estructura organizada.",
     sectionTone: "bg-white/85",
-    badgeTone: "bg-indigo-100 text-indigo-700 border-indigo-200",
-    errorTone: "bg-rose-50 border-rose-200 text-rose-900",
+    badgeTone: "bg-primary/10 text-primary border-primary/20",
+    errorTone: "bg-accent/10 border-accent/25 text-foreground",
   },
 ]
 
@@ -220,7 +220,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                 <p className="inline-flex rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                   Guia practica de lanzamiento
                 </p>
-                <h1 className="mt-5 text-balance text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                <h1 className="font-display mt-5 text-balance text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                   5 pasos antes de lanzar un sitio web
                 </h1>
                 <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-base">
@@ -235,7 +235,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                   <Button
                     asChild
                     size="lg"
-                    className="rounded-full bg-primary px-8 text-base font-semibold text-primary-foreground hover:bg-primary/90"
+                    className="h-auto whitespace-normal rounded-full bg-primary px-8 py-3 text-center text-base font-semibold leading-snug text-primary-foreground hover:bg-primary/90"
                   >
                     <Link href="/metodologia">Revisar si mi sitio esta bien configurado</Link>
                   </Button>
@@ -254,11 +254,11 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
 
         <section className="px-4 pb-10 sm:px-6">
           <div className="container mx-auto max-w-5xl">
-            <div className="rounded-[1.75rem] border border-emerald-200/70 bg-emerald-50/80 px-6 py-5 text-center shadow-sm sm:px-8">
-              <p className="inline-flex rounded-full border border-emerald-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+            <div className="rounded-[1.75rem] border border-primary/20 bg-primary/5 px-6 py-5 text-center shadow-sm sm:px-8">
+              <p className="inline-flex rounded-full border border-primary/20 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                 Enfoque practico
               </p>
-              <p className="mx-auto mt-3 max-w-[44rem] text-base leading-relaxed text-emerald-950/80 sm:text-lg">
+              <p className="mx-auto mt-3 max-w-[44rem] text-base leading-relaxed text-foreground/80 sm:text-lg">
                 En muchos proyectos el problema no esta en el diseño, sino en pequeños detalles que quedan pendientes
                 antes de publicar. Revisarlos a tiempo puede evitar errores, caidas de rendimiento o problemas de
                 indexacion en Google.
@@ -267,11 +267,11 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
           </div>
         </section>
 
-        <section className="px-4 py-10 sm:px-6 xl:px-10 2xl:px-14">
+        <section className="hidden px-4 py-10 sm:px-6 lg:block xl:px-10 2xl:px-14">
           <div className="mx-auto max-w-[1600px]">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Vista general</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl xl:text-[3.4rem] xl:leading-[1.05]">
+              <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl xl:text-[3.4rem] xl:leading-[1.05]">
                 Checklist antes de publicar
               </h2>
             </div>
@@ -293,7 +293,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                     <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Paso {step.number}
                     </p>
-                    <h3 className="mt-8 max-w-[11ch] pr-8 text-[2rem] font-bold leading-[0.98] tracking-tight text-foreground xl:text-[1.9rem]">
+                    <h3 className="font-display mt-8 max-w-[11ch] pr-8 text-[2rem] font-bold leading-[0.98] tracking-tight text-foreground xl:text-[1.9rem]">
                       {step.title.split("\n").map((line) => (
                         <span key={line} className="block">
                           {line}
@@ -319,7 +319,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                     <div className={`inline-flex self-start rounded-full border px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.22em] ${step.badgeTone}`}>
                       Paso {step.number}
                     </div>
-                    <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{step.title}</h2>
+                    <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{step.title}</h2>
                     <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                       {step.explanation}
                     </p>
@@ -361,7 +361,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
 
                   <div className="space-y-4">
                     <div className="rounded-[1.5rem] border border-border/70 bg-white/90 p-5">
-                      <h3 className="text-lg font-semibold text-foreground">Que revisar</h3>
+                      <h3 className="font-display text-lg font-semibold text-foreground">Que revisar</h3>
                       <ul className="mt-4 space-y-3">
                         {step.checks.map((check) => (
                           <li key={check} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80 sm:text-base">
@@ -373,7 +373,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                                   return (
                                     <span
                                       key={`${check}-${index}`}
-                                      className="rounded-md bg-sky-100 px-1.5 py-0.5 font-semibold text-sky-800"
+                                      className="rounded-md bg-primary/10 px-1.5 py-0.5 font-semibold text-primary"
                                     >
                                       {label}
                                     </span>
@@ -391,7 +391,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                       <div className="flex items-start gap-3">
                         <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
                         <div>
-                          <h3 className="text-base font-semibold">Error comun</h3>
+                          <h3 className="font-display text-base font-semibold">Error comun</h3>
                           <p className="mt-2 text-sm leading-relaxed sm:text-base">{step.error}</p>
                         </div>
                       </div>
@@ -438,7 +438,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                     <div className={`inline-flex self-start rounded-full border px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.22em] ${step.badgeTone}`}>
                       Paso {step.number}
                     </div>
-                    <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{step.title}</h2>
+                    <h2 className="font-display mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{step.title}</h2>
                     <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                       {step.explanation}
                     </p>
@@ -467,7 +467,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
 
                   <div className="space-y-4">
                     <div className="rounded-[1.5rem] border border-border/70 bg-white/90 p-5">
-                      <h3 className="text-lg font-semibold text-foreground">Que revisar</h3>
+                      <h3 className="font-display text-lg font-semibold text-foreground">Que revisar</h3>
                       <ul className="mt-4 space-y-3">
                         {step.checks.map((check) => (
                           <li key={check} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/80 sm:text-base">
@@ -479,7 +479,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                                   return (
                                     <span
                                       key={`${check}-${index}`}
-                                      className="rounded-md bg-sky-100 px-1.5 py-0.5 font-semibold text-sky-800"
+                                      className="rounded-md bg-primary/10 px-1.5 py-0.5 font-semibold text-primary"
                                     >
                                       {label}
                                     </span>
@@ -497,7 +497,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                       <div className="flex items-start gap-3">
                         <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
                         <div>
-                          <h3 className="text-base font-semibold">Error comun</h3>
+                          <h3 className="font-display text-base font-semibold">Error comun</h3>
                           <p className="mt-2 text-sm leading-relaxed sm:text-base">{step.error}</p>
                         </div>
                       </div>
@@ -516,7 +516,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   Autoevaluacion
                 </p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-[2.6rem] sm:leading-none">
+                <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-[2.6rem] sm:leading-none">
                   Antes de lanzar tu sitio, revisa esto
                 </h2>
                 <ul className="mt-6 space-y-4">
@@ -555,8 +555,8 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
 
         <section className="px-4 py-10 sm:px-6">
           <div className="container mx-auto max-w-4xl">
-            <div className="rounded-[2rem] border border-emerald-200/60 bg-gradient-to-r from-emerald-50/95 via-white/85 to-sky-50/95 px-6 py-9 text-center shadow-[0_24px_80px_-60px_rgba(15,23,42,0.32)] backdrop-blur sm:px-10">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            <div className="rounded-[2rem] border border-primary/20 bg-primary/5 px-6 py-9 text-center shadow-[0_24px_80px_-60px_rgba(15,23,42,0.32)] backdrop-blur sm:px-10">
+              <h2 className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                 Una ultima idea importante
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-balance text-[2rem] font-semibold leading-tight text-foreground sm:text-[2.6rem]">

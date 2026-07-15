@@ -102,7 +102,7 @@ export default function BlogPage() {
                 { label: "Blog" },
               ]}
             />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
               Blog de Optimización Web
             </h1>
             <div className="mt-5 max-w-4xl space-y-3 text-sm leading-relaxed text-foreground/75 sm:text-base">
@@ -119,7 +119,7 @@ export default function BlogPage() {
                 experiencia de usuario.
               </p>
               <p>
-                Puedes partir por la guía que más se parezca a tu situación y luego profundizar con nuestro contenido
+                Puedes partir por la guía que más se parezca a tu situación y luego profundizar con mi contenido
                 de SEO web, optimización técnica y rendimiento. La idea es simple: menos teoría, más claridad para
                 ejecutar.
               </p>
@@ -150,7 +150,7 @@ export default function BlogPage() {
                 <span className="text-sm text-muted-foreground">• {featuredPost.date}</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="max-w-3xl text-2xl tracking-tight text-foreground">
+                <h2 className="font-display max-w-3xl text-2xl tracking-tight text-foreground">
                   <a href={featuredPost.href} className="hover:text-primary transition-colors">
                     {featuredPost.title}
                   </a>
@@ -163,27 +163,27 @@ export default function BlogPage() {
 
         <section className="w-full pt-0 pb-16 lg:pb-20 px-4 sm:px-6">
           <div className="container mx-auto flex flex-col gap-8 max-w-6xl">
-            <div className="overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/5 via-white to-info/5 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-primary/20 bg-primary/5 shadow-sm">
               <div className="grid gap-4 p-5 sm:grid-cols-[auto,1fr] sm:items-start sm:p-6">
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Compass className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">Guía rápida</p>
-                  <h2 className="mt-1 text-xl font-semibold text-foreground sm:text-2xl">
+                  <h2 className="font-display mt-1 text-xl font-semibold text-foreground sm:text-2xl">
                     Cómo aprovechar mejor este contenido
                   </h2>
                   <p className="mt-2 text-sm text-foreground/75 sm:text-base">
                     Lee según tu etapa y enfócate en lo que más impacto puede darte hoy.
                   </p>
                   <ul className="mt-4 grid gap-2 text-sm text-foreground/80 sm:grid-cols-3">
-                    <li className="rounded-lg border border-emerald-200/70 bg-emerald-50/70 px-3 py-2">
+                    <li className="rounded-lg border border-primary/15 bg-white/70 px-3 py-2">
                       Sitio activo: parte por diagnóstico técnico y velocidad.
                     </li>
-                    <li className="rounded-lg border border-sky-200/70 bg-sky-50/70 px-3 py-2">
+                    <li className="rounded-lg border border-primary/15 bg-white/70 px-3 py-2">
                       Etapa inicial: prioriza estructura y jerarquía de páginas.
                     </li>
-                    <li className="rounded-lg border border-violet-200/70 bg-violet-50/70 px-3 py-2">
+                    <li className="rounded-lg border border-primary/15 bg-white/70 px-3 py-2">
                       Objetivo negocio: conecta SEO, UX y conversión.
                     </li>
                   </ul>
@@ -203,7 +203,7 @@ export default function BlogPage() {
                         sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 100vw"
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-sky-50" />
+                      <div className="absolute inset-0 bg-primary/5" />
                     )}
                   </div>
                   <div className="flex flex-row flex-wrap gap-4 items-center">
@@ -219,7 +219,7 @@ export default function BlogPage() {
                     <span className="text-sm text-muted-foreground">• {post.date}</span>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h3 className="max-w-3xl text-xl sm:text-2xl tracking-tight text-foreground">
+                    <h3 className="font-display max-w-3xl text-xl sm:text-2xl tracking-tight text-foreground">
                       <a href={post.href} className="hover:text-primary transition-colors">
                         {post.title}
                       </a>

@@ -115,7 +115,7 @@ export default function BlogPostPage() {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 5 min
               </p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 ¿Qué es una landing page y en qué se diferencia de una página web?
               </h1>
 
@@ -147,7 +147,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Qué es una landing page (explicado en simple)</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Qué es una landing page (explicado en simple)</h2>
 
               <p>
                 Una landing page es una página creada con un solo objetivo claro. No tiene menús, no tiene mil
@@ -182,7 +182,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Cuándo usar una landing page</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Cuándo usar una landing page</h2>
 
               <p>
                 Una landing page es ideal cuando necesitas resultados rápidos y claros. Por ejemplo, si estás probando
@@ -200,7 +200,7 @@ export default function BlogPostPage() {
                 reemplaza a una página web completa. Todo depende del momento en el que esté tu negocio.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Qué es una página web y qué incluye</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Qué es una página web y qué incluye</h2>
 
               <p>
                 Una página web es un espacio más completo. No está pensada para una sola acción, sino para mostrar tu
@@ -229,7 +229,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Landing Page vs Página Web: diferencias clave para tu estrategia digital
               </h2>
 
@@ -250,7 +250,7 @@ export default function BlogPostPage() {
                 sino también explicar, generar confianza y mostrar el contexto completo de tu negocio.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Objetivo y enfoque</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Objetivo y enfoque</h3>
 
               <p>
                 Si tu objetivo es captar contactos rápidamente, lanzar un servicio puntual o validar una idea, diseñar
@@ -262,7 +262,7 @@ export default function BlogPostPage() {
                 plazo, una página web completa cumple mejor ese rol.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Diseño web profesional: no es solo que se vea bonito</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Diseño web profesional: no es solo que se vea bonito</h3>
 
               <p>
                 Tanto en una landing page como en una página web, el <strong>diseño web profesional</strong> no se trata
@@ -276,7 +276,7 @@ export default function BlogPostPage() {
                 van.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Cuál conviene según tu negocio?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Cuál conviene según tu negocio?</h3>
 
               <p>
                 No existe una respuesta única. Para algunos negocios, una landing page es el primer paso lógico. Para
@@ -300,7 +300,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Cómo trabajamos esto en Focus Web</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Cómo trabajamos esto en Focus Web</h2>
 
               <p>
                 En Focus Web no partimos diseñando de inmediato. Primero entendemos en qué punto está tu negocio y qué
@@ -320,7 +320,7 @@ export default function BlogPostPage() {
                 .
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Entonces… ¿qué necesitas hoy?</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Entonces… ¿qué necesitas hoy?</h2>
 
               <p>
                 Si estás partiendo, una landing page puede ser el primer paso perfecto. Te permite salir rápido, validar

@@ -122,7 +122,7 @@ export default function BlogPostPage() {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 5 min
               </p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Cómo crear una página web en Chile: guía clara para pymes
               </h1>
 
@@ -162,7 +162,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Por qué hoy es importante tener una página web en Chile
               </h2>
 
@@ -177,7 +177,7 @@ export default function BlogPostPage() {
                 alguien llegue por dato, pero muchos otros pasan de largo.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Cómo buscan hoy los clientes</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Cómo buscan hoy los clientes</h3>
 
               <p>
                 Las personas comparan. Entran a un par de resultados, miran si el texto se entiende, si hay fotos, si
@@ -185,7 +185,7 @@ export default function BlogPostPage() {
                 si eres serio y si les puedes ayudar.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Redes sociales vs página web</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Redes sociales vs página web</h3>
 
               <p>
                 Instagram sirve, obvio. Pero no reemplaza a una web. Instagram muestra, la página web explica.
@@ -209,11 +209,11 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Qué tipo de página web necesita tu negocio</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Qué tipo de página web necesita tu negocio</h2>
 
               <p>No todos los negocios necesitan lo mismo, y acá es donde muchos se equivocan.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Landing page: simple y directa</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Landing page: simple y directa</h3>
 
               <p>
                 Es una página única, pensada para una sola acción: que te escriban, te llamen o coticen. Ideal si estás
@@ -231,7 +231,7 @@ export default function BlogPostPage() {
                 .
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Sitio web: más completo y ordenado</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Sitio web: más completo y ordenado</h3>
 
               <p>
                 Tiene varias secciones: inicio, servicios, quién eres y contacto. Sirve cuando quieres explicar mejor tu
@@ -246,7 +246,7 @@ export default function BlogPostPage() {
                 .
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Tienda online: vender directamente</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Tienda online: vender directamente</h3>
 
               <p>
                 No es solo subir productos. Requiere medios de pago, despacho y soporte. Funciona bien si ya tienes
@@ -265,11 +265,11 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Qué se necesita para crear una página web en Chile</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Qué se necesita para crear una página web en Chile</h2>
 
               <p>Acá bajamos un poco la ansiedad, porque no es tan complejo como parece.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Dominio y hosting (en simple)</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Dominio y hosting (en simple)</h3>
 
               <p>
                 El dominio es tu dirección, como micliente.cl. El hosting es donde vive tu web. No necesitas el más caro
@@ -287,14 +287,14 @@ export default function BlogPostPage() {
                 , sin que tengas que aprender términos raros.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Contenido claro</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Contenido claro</h3>
 
               <p>
                 Textos simples, fotos reales y mensajes directos. No necesitas escribir bonito, necesitas que se
                 entienda. Si alguien entra a tu web y no entiende qué haces en 10 segundos, se va.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Estructura pensada en personas</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Estructura pensada en personas</h3>
 
               <p>Botones claros, contacto visible y nada escondido. La web no es para lucirse, es para ayudar.</p>
 
@@ -310,30 +310,30 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Qué plataforma usar para crear tu página web</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Qué plataforma usar para crear tu página web</h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">WordPress</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">WordPress</h3>
 
               <p>Flexible, conocido y escalable. Bien usado, funciona perfecto. Mal usado, se vuelve un caos.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Web a medida</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Web a medida</h3>
 
               <p>Tiene sentido cuando el proyecto lo necesita. No es mejor por defecto, es distinta.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Herramientas “hazlo tú mismo”</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Herramientas “hazlo tú mismo”</h3>
 
               <p>
                 Sirven para partir, probar o validar una idea. El problema aparece cuando el negocio crece y la web se
                 queda corta.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Errores comunes al crear una página web</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Errores comunes al crear una página web</h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Pensar solo en el diseño</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Pensar solo en el diseño</h3>
 
               <p>Una web linda que no genera contactos no sirve mucho.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
 
               <p>
                 Después cuesta más y suele salir más caro. Si quieres revisar esa base antes de avanzar, una{" "}
@@ -346,7 +346,7 @@ export default function BlogPostPage() {
                 puede ayudarte a detectar problemas a tiempo.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">No tener claro el objetivo</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">No tener claro el objetivo</h3>
 
               <p>Si no sabes qué quieres que haga el visitante, la web tampoco lo va a saber.</p>
 
@@ -362,7 +362,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Cuánto cuesta crear una página web en Chile</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Cuánto cuesta crear una página web en Chile</h2>
 
               <p>
                 Depende. Y no es una respuesta trucha. Influyen el tipo de web, el nivel de personalización y el
@@ -371,7 +371,7 @@ export default function BlogPostPage() {
 
               <p>Una web barata que no sirve, termina saliendo cara.</p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Cuándo conviene hacerlo con un profesional</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Cuándo conviene hacerlo con un profesional</h2>
 
               <p>
                 Si no tienes tiempo, quieres hacerlo bien desde el inicio o necesitas resultados, pedir ayuda
@@ -389,7 +389,7 @@ export default function BlogPostPage() {
                 y ver si hace sentido para tu proyecto.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
 
               <p>
                 Crear una página web en Chile no tiene por qué ser complicado. Con entender lo básico y tomar buenas

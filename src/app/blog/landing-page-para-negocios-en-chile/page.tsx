@@ -115,7 +115,7 @@ export default function LandingPageParaNegociosPage() {
               />
 
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Tiempo de lectura: 5 min</p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 ¿Qué es una landing page y cómo crearla para tu negocio?
               </h1>
 
@@ -136,7 +136,7 @@ export default function LandingPageParaNegociosPage() {
                 Lo que buscas, aunque no siempre con ese nombre, es una landing page.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Qué es una landing page</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Qué es una landing page</h2>
               <p>
                 Una landing page, o página de aterrizaje, es una página web diseñada para que una persona realice una
                 acción específica: contactarte, cotizar, escribirte por WhatsApp o conocer tus servicios.
@@ -163,7 +163,7 @@ export default function LandingPageParaNegociosPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Ejemplos de landing page en negocios reales</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Ejemplos de landing page en negocios reales</h2>
               <p>
                 Para bajarlo a tierra, estos son algunos ejemplos de landing page:
               </p>
@@ -190,7 +190,7 @@ export default function LandingPageParaNegociosPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Para qué sirve una landing page?</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">¿Para qué sirve una landing page?</h2>
               <p>
                 La pregunta clave no es solo qué es, sino para qué sirve una landing page.
               </p>
@@ -228,7 +228,7 @@ export default function LandingPageParaNegociosPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Lo que probablemente estás buscando: una página simple
               </h2>
               <p>Acá es donde entra algo importante.</p>
@@ -243,14 +243,14 @@ export default function LandingPageParaNegociosPage() {
                 Esto es lo que muchos necesitan al comenzar: no una web completa, sino una landing page tipo one page.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Cómo crear una landing page paso a paso (estructura real)
               </h2>
               <p>Si estás partiendo, esta estructura funciona para la mayoría de negocios:</p>
 
               <div className="space-y-5">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">01. ¿Qué haces? (Hero)</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">01. ¿Qué haces? (Hero)</h3>
                   <p className="mt-2">Explica claramente:</p>
                   <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                     <li>Qué servicio ofreces.</li>
@@ -260,13 +260,13 @@ export default function LandingPageParaNegociosPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">02. ¿Para quién es?</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">02. ¿Para quién es?</h3>
                   <p className="mt-2">Define a tu cliente ideal.</p>
                   <p>No es para todos, y eso hace que tu página conecte mejor.</p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">03. ¿Por qué importa?</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">03. ¿Por qué importa?</h3>
                   <p className="mt-2">Explica beneficios reales:</p>
                   <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                     <li>Qué problema solucionas.</li>
@@ -275,7 +275,7 @@ export default function LandingPageParaNegociosPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">04. ¿Por qué confiar en ti?</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">04. ¿Por qué confiar en ti?</h3>
                   <p className="mt-2">Aquí construyes autoridad:</p>
                   <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                     <li>Experiencia.</li>
@@ -286,18 +286,18 @@ export default function LandingPageParaNegociosPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">05. Servicios</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">05. Servicios</h3>
                   <p className="mt-2">Muestra lo que haces de forma simple y clara.</p>
                   <p>Sin tecnicismos innecesarios.</p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">06. Proyectos reales</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">06. Proyectos reales</h3>
                   <p className="mt-2">Nada genera más confianza que ver lo que ya hiciste.</p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">07. Llamado a la acción (CTA)</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">07. Llamado a la acción (CTA)</h3>
                   <p className="mt-2">Plantea una sola acción clara:</p>
                   <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                     <li>WhatsApp.</li>
@@ -307,7 +307,7 @@ export default function LandingPageParaNegociosPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">08. Preguntas frecuentes (FAQs)</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">08. Preguntas frecuentes (FAQs)</h3>
                   <p className="mt-2">Responde dudas típicas:</p>
                   <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                     <li>Precios.</li>
@@ -318,28 +318,28 @@ export default function LandingPageParaNegociosPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Cómo crear una landing page para tu negocio (ejemplos)
               </h2>
               <p>Dependiendo del rubro, la estructura se adapta:</p>
 
               <div className="space-y-5">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">Gasfiter</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Gasfiter</h3>
                   <p className="mt-2">
                     Hero con urgencias 24/7, CTA directo a WhatsApp y fotos de trabajos realizados.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">Electricista</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Electricista</h3>
                   <p className="mt-2">
                     Servicios bien definidos, certificaciones visibles y contacto rápido.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-semibold">Inmobiliaria</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Inmobiliaria</h3>
                   <p className="mt-2">
                     Propiedades destacadas, formulario de contacto e información clara sobre precios y ubicación.
                   </p>
@@ -348,7 +348,7 @@ export default function LandingPageParaNegociosPage() {
 
               <div className="rounded-3xl border border-border/60 bg-white/85 p-5 shadow-lg shadow-primary/10 sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Ejemplo real</p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">ABcis Chile</h3>
+                <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">ABcis Chile</h3>
                 <p className="mt-3 text-base leading-relaxed text-foreground/80">
                   ABcis necesitaba una página simple para mostrar con claridad su servicio, mantener los colores de la
                   marca y tener una web profesional que pudiera vincularse con su perfil de Google Mi Negocio.
@@ -384,7 +384,7 @@ export default function LandingPageParaNegociosPage() {
                 </p>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Cómo hacer una landing page efectiva para captar clientes
               </h2>
               <p>No basta con tener una página.</p>
@@ -426,7 +426,7 @@ export default function LandingPageParaNegociosPage() {
                 en Chile con ejemplos reales.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Cómo aparecer en Google con una landing page?</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">¿Cómo aparecer en Google con una landing page?</h2>
               <p>Acá hay que ser claro.</p>
               <p>Una landing page por sí sola no te posiciona automáticamente.</p>
 
@@ -458,7 +458,7 @@ export default function LandingPageParaNegociosPage() {
                 .
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Plataformas para crear una landing page sin saber programar
               </h2>
               <p>Hoy existen varias opciones para crear una landing page sin experiencia técnica:</p>
@@ -503,13 +503,13 @@ export default function LandingPageParaNegociosPage() {
                 tienen pros y contras.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold">Ventajas</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Ventajas</h3>
               <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                 <li>Rapidez extrema para tener algo funcionando.</li>
                 <li>No necesitas tocar código ni diseñar desde cero.</li>
               </ul>
 
-              <h3 className="text-xl sm:text-2xl font-semibold">Limitaciones</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Limitaciones</h3>
               <ul className="list-disc space-y-2 pl-6 text-foreground/90">
                 <li>Menos control sobre detalles técnicos y de experiencia de usuario.</li>
                 <li>Diseños genéricos que pueden no reflejar bien tu marca.</li>
@@ -533,7 +533,7 @@ export default function LandingPageParaNegociosPage() {
                 .
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">¿Cuánto cuesta una landing page?</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">¿Cuánto cuesta una landing page?</h2>
               <p>El precio de una landing page puede variar bastante:</p>
 
               <ul className="list-disc space-y-2 pl-6 text-foreground/90">
@@ -544,7 +544,7 @@ export default function LandingPageParaNegociosPage() {
 
               <p>Todo depende del nivel de personalización y de la estrategia detrás del proyecto.</p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Conclusión: no necesitas una web compleja para empezar
               </h2>
               <p>Muchas personas creen que necesitan una página web completa desde el inicio.</p>

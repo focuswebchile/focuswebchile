@@ -217,7 +217,7 @@ export default function PaginasWebChilePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 FocusWeb Chile · desde $180.000 CLP
               </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground leading-[0.96] sm:text-4xl lg:text-5xl">
+              <h1 className="font-display mt-3 text-3xl font-bold tracking-tight text-foreground leading-[0.96] sm:text-4xl lg:text-5xl">
                 Diseño y Creación de Páginas Web en Chile:
                 <span className="block text-primary">Rápidas y Optimizadas</span>
               </h1>
@@ -259,11 +259,11 @@ export default function PaginasWebChilePage() {
         {/* ── QUÉ INCLUYE ──────────────────────────────────────── */}
         <section className="px-4 py-8 sm:px-6 sm:py-10">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Qué incluye cada proyecto
             </h2>
             <p className="mt-2 text-base text-foreground/75">
-              Nada de costos escondidos. Esto es lo que entra en todos nuestros proyectos de desarrollo web:
+              Nada de costos escondidos. Esto es lo que entra en todos mis proyectos de desarrollo web:
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {inclusions.map(({ icon: Icon, label, detail }) => (
@@ -285,7 +285,7 @@ export default function PaginasWebChilePage() {
         {/* ── PRECIOS ──────────────────────────────────────────── */}
         <section id="precios" className="scroll-mt-28 px-4 py-8 sm:px-6 sm:py-10">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Precios transparentes en CLP
             </h2>
             <p className="mt-2 text-base text-foreground/75">
@@ -296,7 +296,7 @@ export default function PaginasWebChilePage() {
               {/* Tarjeta Landing Page */}
               <div className="flex flex-col rounded-3xl border border-primary/30 bg-primary/5 p-6 shadow-lg shadow-primary/10">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Más popular</p>
-                <h3 className="mt-2 text-xl font-bold text-foreground">Landing Page</h3>
+                <h3 className="font-display mt-2 text-xl font-bold text-foreground">Landing Page</h3>
                 <p className="mt-1 text-sm text-foreground/70">
                   Una página, un objetivo. Ideal para captar clientes de forma directa.
                 </p>
@@ -333,7 +333,7 @@ export default function PaginasWebChilePage() {
               {/* Tarjeta Sitio Web */}
               <div className="flex flex-col rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Más completo</p>
-                <h3 className="mt-2 text-xl font-bold text-foreground">Sitio Web Completo</h3>
+                <h3 className="font-display mt-2 text-xl font-bold text-foreground">Sitio Web Completo</h3>
                 <p className="mt-1 text-sm text-foreground/70">
                   Inicio, servicios, sobre nosotros y contacto. Para pymes que quieren crecer con orden.
                 </p>
@@ -376,9 +376,9 @@ export default function PaginasWebChilePage() {
                 rel="noreferrer"
                 className="text-primary underline underline-offset-4 hover:text-primary/80"
               >
-                Cuéntanos tu proyecto
+                Cuéntame tu proyecto
               </a>{" "}
-              y te respondemos con opciones reales.
+              y te respondo con opciones reales.
             </p>
           </div>
         </section>
@@ -387,7 +387,7 @@ export default function PaginasWebChilePage() {
         <section className="px-4 py-8 sm:px-6 sm:py-10">
           <div className="container mx-auto max-w-4xl">
             <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-primary/5 sm:p-8">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                 ¿Cómo funciona el proceso?
               </h2>
               <p className="mt-2 text-sm text-foreground/70">
@@ -444,7 +444,7 @@ export default function PaginasWebChilePage() {
                 ¿Listo para tener tu página web en Chile?
               </p>
               <p className="mt-2 text-sm text-foreground/70">
-                Escríbenos por WhatsApp y te respondemos hoy con opciones claras para tu negocio.
+                Escríbeme por WhatsApp y te respondo hoy con opciones claras para tu negocio.
               </p>
               <a
                 href="https://wa.me/420733796959?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
@@ -462,7 +462,7 @@ export default function PaginasWebChilePage() {
         {/* ── FAQ ──────────────────────────────────────────────── */}
         <section className="px-4 py-8 sm:px-6 sm:py-10">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Preguntas frecuentes de pymes chilenas
             </h2>
             <p className="mt-2 text-sm text-foreground/70">
@@ -486,7 +486,7 @@ export default function PaginasWebChilePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 FocusWeb Chile
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
+              <h2 className="font-display mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
                 Tu página web, sin vueltas
               </h2>
               <p className="mt-4 text-base text-foreground/70 sm:text-lg">

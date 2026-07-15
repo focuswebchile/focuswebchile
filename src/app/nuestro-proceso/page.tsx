@@ -90,7 +90,7 @@ export default function NuestroProcesoPage() {
         <ProcessContent />
         <section className="pb-16 px-6 md:px-10">
           <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
-            ¿Buscas una página enfocada en convertir? Revisa nuestras{" "}
+            ¿Buscas una página enfocada en convertir? Revisa mis{" "}
             <a
               href="/landing-page"
               className="text-primary hover:text-primary/80 underline underline-offset-4"

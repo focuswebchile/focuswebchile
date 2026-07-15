@@ -6,7 +6,7 @@ import { useState } from "react"
 interface GlowCardProps {
   children: ReactNode
   className?: string
-  glowColor?: "blue" | "purple" | "green" | "red" | "orange"
+  glowColor?: "blue" | "purple" | "green" | "red" | "orange" | "indigo" | "gold"
   size?: "sm" | "md" | "lg"
   width?: string | number
   height?: string | number
@@ -19,6 +19,9 @@ const glowColorMap = {
   green: { base: 140, spread: 0, saturation: 78, lightness: 52 },
   red: { base: 0, spread: 120, saturation: 80, lightness: 55 },
   orange: { base: 30, spread: 120, saturation: 85, lightness: 60 },
+  // Tokens de marca (design.md §2): --primary índigo y --accent dorado
+  indigo: { base: 242, spread: 0, saturation: 41, lightness: 39 },
+  gold: { base: 42, spread: 120, saturation: 73, lightness: 45 },
 }
 
 const sizeMap = {

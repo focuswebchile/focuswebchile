@@ -369,7 +369,7 @@ export function FAQPageContent() {
       }
 
       setFormData({ name: "", email: "", message: "" })
-      setSuccessMessage("Gracias. Te responderemos en menos de 24 horas.")
+      setSuccessMessage("Gracias. Te respondo en menos de 24 horas.")
     } catch {
       setErrorMessage("No pudimos enviar tu mensaje. Intenta nuevamente.")
     } finally {
@@ -380,8 +380,8 @@ export function FAQPageContent() {
   return (
     <div className="w-full" id="faq-top">
       <section className="w-full px-6 pb-12 pt-8 md:pt-12">
-        <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-r from-[#4F9CF9] via-[#34D399] to-[#2FBF7C] px-6 py-12 text-center text-white shadow-lg md:px-12 md:py-16">
-          <h1 className="text-4xl font-bold md:text-6xl">
+        <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl bg-primary px-6 py-12 text-center text-white shadow-lg md:px-12 md:py-16">
+          <h1 className="font-display text-4xl font-bold md:text-6xl">
             Preguntas Frecuentes sobre Diseño Web en Chile
           </h1>
           <p className="mt-4 text-base text-white/90 md:text-lg">
@@ -422,16 +422,16 @@ export function FAQPageContent() {
           <p className="mt-4 text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">¿No encuentras tu respuesta?</span>{" "}
             <Link className="text-primary underline underline-offset-4" href="/contacto">
-              Contáctanos directamente
+              Escríbeme directamente
             </Link>{" "}
-            y te responderemos en menos de 24 horas.
+            y te respondo en menos de 24 horas.
           </p>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 pb-14">
         <div className="rounded-2xl border border-border/60 bg-white px-6 py-8 shadow-sm md:px-10">
-          <h2 className="text-3xl font-bold text-foreground">Navega por Categorías</h2>
+          <h2 className="font-display text-3xl font-bold text-foreground">Navega por Categorías</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Haz clic en cualquier categoría para ir directamente. Precios está desplegado para lectura rápida; el resto
             se muestra en acordeón.
@@ -455,7 +455,7 @@ export function FAQPageContent() {
       {filteredCategories.map((category) => (
         <section key={category.id} id={category.id} className="mx-auto w-full max-w-6xl px-6 pb-16 pt-6">
           <div className="border-b-4 border-primary pb-4">
-            <h2 className="text-3xl font-bold text-foreground">{category.title}</h2>
+            <h2 className="font-display text-3xl font-bold text-foreground">{category.title}</h2>
           </div>
 
           <div className="mt-6 space-y-5">
@@ -470,9 +470,9 @@ export function FAQPageContent() {
                       aria-expanded={isOpen}
                       onClick={() => toggleAccordionItem(category.id, index)}
                     >
-                      <h3 className="text-lg font-semibold leading-snug text-foreground sm:text-xl">{item.question}</h3>
+                      <h3 className="font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">{item.question}</h3>
                       <span
-                        className={`flex h-8 w-8 items-center justify-center rounded-full text-base text-white transition ${
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base text-white transition ${
                           isOpen ? "bg-primary" : "bg-primary/80"
                         }`}
                       >
@@ -494,7 +494,7 @@ export function FAQPageContent() {
             ) : (
               category.items.map((item, index) => (
                 <div key={`${category.id}-${index}`} className="rounded-xl border border-border bg-white px-6 py-5 shadow-sm">
-                  <h3 className="text-lg font-semibold leading-snug text-foreground sm:text-xl">{item.question}</h3>
+                  <h3 className="font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">{item.question}</h3>
                   <p className="mt-3 text-sm text-muted-foreground whitespace-pre-line">{item.answer}</p>
                 </div>
               ))
@@ -513,17 +513,17 @@ export function FAQPageContent() {
       </div>
 
       <section className="mx-auto w-full max-w-6xl px-6 pb-20">
-        <div className="rounded-3xl border border-border/60 bg-[radial-gradient(900px_circle_at_0%_0%,rgba(59,130,246,0.12),rgba(255,255,255,0.95),rgba(255,255,255,0.9))] px-6 py-10 shadow-sm md:px-10">
+        <div className="rounded-3xl border border-border/60 bg-card px-6 py-10 shadow-sm md:px-10">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground">¿Te quedó alguna duda?</h2>
+            <h2 className="font-display text-3xl font-bold text-foreground">¿Te quedó alguna duda?</h2>
             <p className="mt-3 text-sm text-muted-foreground md:text-base">
-              Déjanos tu consulta y te respondemos en menos de 24 horas.
+              Déjame tu consulta y te respondo en menos de 24 horas.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="mx-auto mt-8 grid w-full max-w-2xl gap-4">
             {successMessage && (
-              <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+              <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-primary">
                 {successMessage}
               </div>
             )}
@@ -566,7 +566,7 @@ export function FAQPageContent() {
                 id="faq-message"
                 value={formData.message}
                 onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-                placeholder="Cuéntanos tu duda"
+                placeholder="Cuéntame tu duda"
                 className="min-h-[140px] rounded-2xl border border-border bg-white px-4 py-3 text-sm text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
                 required
                 disabled={isSubmitting}

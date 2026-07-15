@@ -74,7 +74,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
                 Tiempo de lectura: 4 min
               </p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Crear una página web desde cero: pasos reales
               </h1>
 
@@ -109,7 +109,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Paso 1 – Define qué quieres lograr con tu web
               </h2>
 
@@ -160,7 +160,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso 2 – Reúne lo que necesitas</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Paso 2 – Reúne lo que necesitas</h2>
 
               <p>Una web necesita pocas cosas pero importantes: dominio, hosting, fotos y textos claros.</p>
 
@@ -206,7 +206,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso 3 – Escoge cómo construirla</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Paso 3 – Escoge cómo construirla</h2>
 
               <p>Ahora que sabes qué quieres lograr y tienes tu contenido, es momento de decidir cómo vas a construir tu web.</p>
 
@@ -249,7 +249,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso 4 – Publica y prueba</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Paso 4 – Publica y prueba</h2>
 
               <p>
                 Una vez que tu web está armada, no significa que ya está lista para funcionar. Necesitas probarla:
@@ -274,7 +274,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Paso 5 – Haz que la web respire</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Paso 5 – Haz que la web respire</h2>
 
               <p>
                 Tu web no termina al publicarla. Hay que mantenerla viva. Esto no significa rediseños cada semana, sino
@@ -296,21 +296,21 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Errores comunes al partir desde cero</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Errores comunes al partir desde cero</h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Pensar solo en el diseño</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Pensar solo en el diseño</h3>
               <p>
                 Una web bonita pero que no cumple su objetivo (contacto, venta, información clara) no sirve de mucho.
                 El diseño acompaña, pero no es lo más importante.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
               <p>
                 Muchas webs empiezan sin pensar en que alguien debe encontrarlas en Google. Esto luego cuesta tiempo y
                 dinero. Mejor organizar la información y las palabras clave desde el principio.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">No tener claro qué quieres que haga el visitante</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">No tener claro qué quieres que haga el visitante</h3>
               <p>
                 Cada web necesita un objetivo: que contacten, que compren, que lean tu historia. Si no está claro, tu
                 visitante también se va a confundir.
@@ -328,7 +328,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Consejos finales para no perderse</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Consejos finales para no perderse</h2>
 
               <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-foreground">
                 <li>Empieza simple: publica solo lo esencial al principio.</li>
@@ -349,7 +349,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
                 ayudamos a negocios como el tuyo a crear páginas web claras, confiables y efectivas.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
 
               <p>
                 Crear una página web desde cero no es magia ni requiere conocimientos imposibles. Con pasos claros,
@@ -363,7 +363,7 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
             </article>
 
             <div className="mt-12 rounded-3xl border border-border/60 bg-white/70 px-6 py-10 text-center shadow-xl shadow-primary/10 sm:px-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground">
                 ¿Conversamos sobre tu proyecto?
               </h2>
               <p className="mt-4 text-base sm:text-lg text-muted-foreground">

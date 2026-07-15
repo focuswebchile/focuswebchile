@@ -132,7 +132,7 @@ export default function BlogPostPage() {
                 ]}
               />
               <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">Tiempo de lectura: 8 min</p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Mi página web tarda mucho en cargar: causas y soluciones
               </h1>
 
@@ -159,7 +159,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 ¿Por qué una página web lenta es un problema serio hoy?
               </h2>
 
@@ -179,11 +179,11 @@ export default function BlogPostPage() {
                 &quot;La velocidad no es un detalle técnico: es parte de tu experiencia de venta.&quot;
               </blockquote>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Core Web Vitals: qué son y por qué importan en Chile
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Qué son los Core Web Vitals?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Qué son los Core Web Vitals?</h3>
               <p>
                 Son métricas que Google usa para medir experiencia real del usuario. Si buscas{" "}
                 <strong>core web vitals chile qué son</strong>, piensa en una respuesta simple: indicadores de rapidez y
@@ -202,7 +202,7 @@ export default function BlogPostPage() {
                 </li>
               </ul>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Por qué afecta tanto a sitios locales?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Por qué afecta tanto a sitios locales?</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
                 <li>Hosting mal configurado o sin foco regional.</li>
                 <li>WordPress sin optimización base.</li>
@@ -222,23 +222,23 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Principales causas de una web lenta en WordPress
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Hosting deficiente</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Hosting deficiente</h3>
               <p>Un servidor lento afecta todo el sitio, incluso si el diseño está correcto.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">WordPress sin optimización</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">WordPress sin optimización</h3>
               <p>Sin ajustes técnicos, WordPress puede cargar recursos innecesarios en cada página.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Imágenes pesadas</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Imágenes pesadas</h3>
               <p>Subir imágenes sin compresión sigue siendo uno de los errores más comunes.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Plugins y scripts externos</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Plugins y scripts externos</h3>
               <p>Chats, píxeles, mapas y plugins en exceso aumentan solicitudes y tiempo de render.</p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Cómo optimizar la velocidad de WordPress en Chile</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Cómo optimizar la velocidad de WordPress en Chile</h2>
               <p>
                 Si buscas <strong>optimizar velocidad WordPress Chile</strong>, estas acciones suelen dar mejor retorno.
                 Si quieres una referencia más completa, también puedes revisar nuestro servicio de{" "}
@@ -251,8 +251,8 @@ export default function BlogPostPage() {
                 :
               </p>
 
-              <div className="rounded-2xl border border-info/35 bg-gradient-to-br from-info/15 via-card to-primary/10 p-5 shadow-md shadow-info/10">
-                <h3 className="text-xl sm:text-2xl font-semibold text-foreground">Checklist en 30 segundos</h3>
+              <div className="rounded-2xl border border-primary/35 bg-primary/10 p-5 shadow-md shadow-primary/10">
+                <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Checklist en 30 segundos</h3>
                 <p className="mt-1 text-sm text-foreground/75">
                   Si respondes “no” a 2 o más puntos, vale la pena priorizar optimización.
                 </p>
@@ -265,7 +265,7 @@ export default function BlogPostPage() {
                 </ul>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Acciones básicas de alto impacto</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Acciones básicas de alto impacto</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
                 <li>Configurar caché de forma correcta.</li>
                 <li>Comprimir imágenes existentes.</li>
@@ -274,7 +274,7 @@ export default function BlogPostPage() {
                 <li>Optimizar CSS, fuentes y recursos críticos.</li>
               </ul>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Acciones técnicas avanzadas</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Acciones técnicas avanzadas</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
                 <li>Implementar CDN con configuración adecuada.</li>
                 <li>Optimizar servidor y stack de hosting.</li>
@@ -294,7 +294,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 ¿Cómo saber si tu sitio lento necesita una auditoría SEO técnica?
               </h2>
               <p>
@@ -302,7 +302,7 @@ export default function BlogPostPage() {
                 más eficiente es una revisión técnica estructurada.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Señales de alerta</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Señales de alerta</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
                 <li>El sitio sigue lento pese a optimizaciones básicas.</li>
                 <li>Errores recurrentes en PageSpeed.</li>
@@ -326,7 +326,7 @@ export default function BlogPostPage() {
               </p>
 
               <div className="rounded-2xl border border-primary/25 bg-primary/10 p-5">
-                <h3 className="text-xl sm:text-2xl font-semibold">Ejemplo real (antes y después)</h3>
+                <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Ejemplo real (antes y después)</h3>
                 <p className="mt-2 text-muted-foreground">
                   En un sitio de servicios, el tiempo de carga móvil bajó de <strong>6,1s</strong> a{" "}
                   <strong>2,8s</strong> tras optimizar imágenes, caché y scripts bloqueantes. El rebote en la página
@@ -334,7 +334,7 @@ export default function BlogPostPage() {
                 </p>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Página web lenta: solución según tu tipo de negocio
               </h2>
               <ul className="list-disc pl-6 text-muted-foreground space-y-1">
@@ -361,7 +361,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 FAQ breve: velocidad, SEO técnico y próximos pasos
               </h2>
 

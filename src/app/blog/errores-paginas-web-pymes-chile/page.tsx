@@ -101,10 +101,10 @@ export default function BlogPostPage() {
                 Tiempo de lectura: 10 min
               </p>
               <header className="space-y-2">
-                <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+                <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                   10 errores críticos en páginas web de PyMEs chilenas
                 </h1>
-                <p className="text-lg font-semibold text-muted-foreground">(y cómo evitarlos)</p>
+                <p className="text-lg font-medium text-foreground/90">(y cómo evitarlos)</p>
               </header>
 
               <p>
@@ -131,7 +131,7 @@ export default function BlogPostPage() {
               </div>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">1. Esconder tu información de contacto</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">1. Esconder tu información de contacto</h2>
                 <p>
                   Parece obvio, pero según nuestras auditorías en FocusWeb, el 93% de las PyMEs chilenas no muestra un
                   email visible en su página de inicio. Si un cliente interesado no encuentra cómo contactarte en 5
@@ -144,7 +144,7 @@ export default function BlogPostPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">2. No estar optimizado para celulares</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">2. No estar optimizado para celulares</h2>
                 <p>
                   En Chile, el acceso a la información y a internet está fuertemente marcado por el uso de dispositivos
                   móviles: el 93,2% de los usuarios se conecta mediante un smartphone, mientras que un 72,2% lo hace
@@ -178,7 +178,7 @@ export default function BlogPostPage() {
               </div>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">3. Diseño que parece de 2010</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">3. Diseño que parece de 2010</h2>
                 <p>
                   Tienes 0.05 segundos para causar una buena primera impresión. Un diseño anticuado con fondos raros,
                   textos centrados y GIFs animados comunica: <em>“Este negocio no se actualiza”</em>.
@@ -194,7 +194,7 @@ export default function BlogPostPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">4. Contenido desactualizado</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">4. Contenido desactualizado</h2>
                 <p>
                   El blog con el último post de 2019. La foto del equipo con personas que ya no trabajan ahí. Precios
                   desactualizados. Todo esto grita <em>“abandono”</em> y mata tu credibilidad.
@@ -209,7 +209,7 @@ export default function BlogPostPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">5. Sin certificado SSL (HTTP en vez de HTTPS)</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">5. Sin certificado SSL (HTTP en vez de HTTPS)</h2>
                 <p>
                   Si tu URL empieza con <code>http://</code> en lugar de <code>https://</code>, Chrome muestra una alerta
                   roja de “No seguro”. El 84% de los usuarios abandonan sitios sin SSL.
@@ -237,7 +237,7 @@ export default function BlogPostPage() {
               </div>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">6. Velocidad de carga desesperante</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">6. Velocidad de carga desesperante</h2>
                 <p>
                   Por cada segundo extra de carga, pierdes un 7% de conversiones. Si tu sitio tarda más de 3 segundos,
                   ya perdiste casi un tercio de tus ventas potenciales.
@@ -269,7 +269,7 @@ export default function BlogPostPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">7. Invisible en Google</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">7. Invisible en Google</h2>
                 <p>
                   Creíble pero cierto: según nuestras auditorías en FocusWeb, el 35% de las PyMEs chilenas no estaban
                   indexadas en Google.
@@ -300,7 +300,7 @@ export default function BlogPostPage() {
               </div>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">8. Formularios rotos</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">8. Formularios rotos</h2>
                 <p>
                   En nuestras pruebas en FocusWeb, casi la mitad de los sitios revisados tenía formularios rotos,
                   perdiendo leads sin saberlo.
@@ -308,14 +308,14 @@ export default function BlogPostPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">9. Sin llamados a la acción claros</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">9. Sin llamados a la acción claros</h2>
                 <p>
                   “Más información” no es un buen CTA. “Solicita tu cotización gratis en 24 horas” sí lo es.
                 </p>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">10. Sin Google My Business</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">10. Sin Google My Business</h2>
                 <p>
                   El 46% de las búsquedas tienen intención local. Sin Google My Business, no existes para muchos
                   clientes potenciales.
@@ -335,7 +335,7 @@ export default function BlogPostPage() {
               </div>
 
               <section className="space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-semibold">¿Qué hacer ahora?</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">¿Qué hacer ahora?</h2>
                 <p>
                   Cuando fundé FocusWeb después de{" "}
                   <a href="/mi-historia" className="text-primary hover:text-primary/80 underline underline-offset-4">

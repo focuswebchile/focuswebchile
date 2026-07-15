@@ -111,7 +111,7 @@ export default function CrearPaginaWebChilePage() {
                 Tiempo de lectura: 6 min
               </p>
 
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Crear una página web en Chile: guía completa para negocios y pymes
               </h1>
 
@@ -138,7 +138,7 @@ export default function CrearPaginaWebChilePage() {
               </p>
 
               {/* ── Por qué importa tener web en Chile ─────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Por qué es importante tener una página web en Chile hoy
               </h2>
 
@@ -152,7 +152,7 @@ export default function CrearPaginaWebChilePage() {
                 alguien llegue por dato, pero muchos otros pasan de largo.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Redes sociales vs. página web</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Redes sociales vs. página web</h3>
 
               <p>
                 Instagram sirve, obvio. Pero no reemplaza a una web. Instagram muestra, la página web explica.
@@ -177,13 +177,13 @@ export default function CrearPaginaWebChilePage() {
               </div>
 
               {/* ── Qué tipo de web necesita tu negocio ────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Qué tipo de página web necesita tu negocio
               </h2>
 
               <p>No todos los negocios necesitan lo mismo, y acá es donde muchos se equivocan.</p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Landing page: simple y directa</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Landing page: simple y directa</h3>
 
               <p>
                 Es una página única, pensada para una sola acción: que te escriban, te llamen o coticen. Ideal si estás
@@ -191,14 +191,14 @@ export default function CrearPaginaWebChilePage() {
               </p>
 
               <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/40 px-5 py-4 text-sm text-foreground/80 sm:text-base">
-                Si buscas una página enfocada en captar clientes directamente, mira nuestras{" "}
+                Si buscas una página enfocada en captar clientes directamente, mira mis{" "}
                 <Link href="/landing-page" className="text-primary hover:text-primary/80 underline underline-offset-4">
                   landing pages orientadas a conversión
                 </Link>
                 .
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Sitio web: más completo y ordenado</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Sitio web: más completo y ordenado</h3>
 
               <p>
                 Tiene varias secciones: inicio, servicios, quién eres y contacto. Sirve cuando quieres explicar mejor
@@ -206,7 +206,7 @@ export default function CrearPaginaWebChilePage() {
               </p>
 
               <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/40 px-5 py-4 text-sm text-foreground/80 sm:text-base">
-                Si este es tu caso, revisa nuestro servicio de{" "}
+                Si este es tu caso, revisa mi servicio de{" "}
                 <Link
                   href="/servicios/desarrollo-web"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
@@ -216,7 +216,7 @@ export default function CrearPaginaWebChilePage() {
                 .
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Tienda online: vender directamente</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Tienda online: vender directamente</h3>
 
               <p>
                 No es solo subir productos. Requiere medios de pago, despacho y soporte. Funciona bien si ya tienes
@@ -236,11 +236,11 @@ export default function CrearPaginaWebChilePage() {
               </div>
 
               {/* ── Pasos para crear tu web ─────────────────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Pasos para crear una página web desde cero
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Paso 1 – Define qué quieres lograr</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Paso 1 – Define qué quieres lograr</h3>
 
               <p>
                 Antes de pensar en diseño o herramientas, pregúntate: ¿para qué quiero esta web? ¿Quieres que te
@@ -252,7 +252,7 @@ export default function CrearPaginaWebChilePage() {
                 que necesitas.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Paso 2 – Reúne lo que necesitas</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Paso 2 – Reúne lo que necesitas</h3>
 
               <p>Una web necesita pocas cosas pero importantes: dominio, hosting, fotos y textos claros.</p>
 
@@ -274,7 +274,7 @@ export default function CrearPaginaWebChilePage() {
                 algunas fotos reales. No necesitas un fotógrafo profesional; una buena foto con el teléfono sirve.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Paso 3 – Escoge cómo construirla</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Paso 3 – Escoge cómo construirla</h3>
 
               <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-foreground">
                 <li>
@@ -291,7 +291,7 @@ export default function CrearPaginaWebChilePage() {
                 </li>
               </ul>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Paso 4 – Publica y prueba</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Paso 4 – Publica y prueba</h3>
 
               <p>
                 Una vez que tu web está armada, no significa que ya está lista. Necesitas probarla: revisa que todos
@@ -303,7 +303,7 @@ export default function CrearPaginaWebChilePage() {
                 fácil, tus clientes también lo harán.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Paso 5 – Mantenla viva</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Paso 5 – Mantenla viva</h3>
 
               <p>
                 Tu web no termina al publicarla. No significa rediseños cada semana, sino pequeños ajustes: actualizar
@@ -323,11 +323,11 @@ export default function CrearPaginaWebChilePage() {
               </div>
 
               {/* ── Qué se necesita ─────────────────────────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Qué se necesita para crear una página web en Chile
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Dominio y hosting</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Dominio y hosting</h3>
 
               <p>
                 No necesitas el más caro ni el más barato, necesitas uno confiable. Si no quieres enredarte con esta
@@ -338,14 +338,14 @@ export default function CrearPaginaWebChilePage() {
                 , sin que tengas que aprender términos raros.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Contenido claro</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Contenido claro</h3>
 
               <p>
                 Textos simples, fotos reales y mensajes directos. No necesitas escribir bonito, necesitas que se
                 entienda. Si alguien entra a tu web y no entiende qué haces en 10 segundos, se va.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Estructura pensada en personas</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Estructura pensada en personas</h3>
 
               <p>Botones claros, contacto visible y nada escondido. La web no es para lucirse, es para ayudar.</p>
 
@@ -362,17 +362,17 @@ export default function CrearPaginaWebChilePage() {
               </div>
 
               {/* ── Errores comunes ──────────────────────────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Errores comunes al crear una página web
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Pensar solo en el diseño</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Pensar solo en el diseño</h3>
               <p>
                 Una web bonita que no cumple su objetivo (contacto, venta, información clara) no sirve mucho. El diseño
                 acompaña, pero no es lo más importante.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">No considerar SEO desde el inicio</h3>
               <p>
                 Muchas webs empiezan sin pensar en que alguien debe encontrarlas en Google. Esto luego cuesta tiempo y
                 dinero. Si quieres revisar esa base antes de avanzar, una{" "}
@@ -385,7 +385,7 @@ export default function CrearPaginaWebChilePage() {
                 puede ayudarte a detectar problemas a tiempo.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">No tener claro el objetivo</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">No tener claro el objetivo</h3>
               <p>
                 Si no sabes qué quieres que haga el visitante, la web tampoco lo va a saber. Cada web necesita un
                 objetivo: que contacten, que compren, que lean tu historia.
@@ -404,7 +404,7 @@ export default function CrearPaginaWebChilePage() {
               </div>
 
               {/* ── Cuánto cuesta ────────────────────────────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Cuánto cuesta crear una página web en Chile
               </h2>
 
@@ -418,18 +418,18 @@ export default function CrearPaginaWebChilePage() {
               </p>
 
               <p>
-                Si quieres ver opciones concretas para tu negocio, en nuestro servicio de{" "}
+                Si quieres ver opciones concretas para tu negocio, en mi servicio de{" "}
                 <Link
                   href="/servicios/desarrollo-web"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
                 >
                   desarrollo web profesional
                 </Link>{" "}
-                explicamos qué incluye cada proyecto y cómo trabajamos.
+                explico qué incluye cada proyecto y cómo trabajo.
               </p>
 
               {/* ── Cuándo conviene un profesional ──────────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Cuándo conviene hacerlo con un profesional
               </h2>
 
@@ -439,7 +439,7 @@ export default function CrearPaginaWebChilePage() {
               </p>
 
               <p>
-                Si quieres ver cómo trabajamos con negocios y pymes en Chile, puedes revisar nuestro{" "}
+                Si quieres ver cómo trabajo con negocios y pymes en Chile, puedes revisar mi{" "}
                 <Link
                   href="/nuestro-proceso"
                   className="text-primary hover:text-primary/80 underline underline-offset-4"
@@ -455,7 +455,7 @@ export default function CrearPaginaWebChilePage() {
                   ¿Ya sabes qué tipo de web necesitas?
                 </p>
                 <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-                  Cuéntanos tu proyecto y te respondemos con opciones claras, sin compromiso.
+                  Cuéntame tu proyecto y te respondo con opciones claras, sin compromiso.
                 </p>
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <Link
@@ -476,7 +476,7 @@ export default function CrearPaginaWebChilePage() {
               </div>
 
               {/* ── Resumen ──────────────────────────────────────────── */}
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">En resumen</h2>
 
               <p>
                 Crear una página web en Chile no tiene por qué ser complicado. Con entender lo básico y tomar buenas

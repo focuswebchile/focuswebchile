@@ -100,7 +100,7 @@ export default function SeguridadWebPymesPage() {
               />
 
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Tiempo de lectura: 4 min</p>
-              <h1 className="text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[1.02]">
+              <h1 className="font-display text-3xl sm:text-[2.35rem] md:text-[2.55rem] lg:text-5xl font-semibold tracking-tight leading-[0.95]">
                 Seguridad web para PYMEs: HTTPS, contraseñas y respaldos
               </h1>
 
@@ -132,11 +132,11 @@ export default function SeguridadWebPymesPage() {
                 mejorar su presencia en Google.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 HTTPS y certificado SSL: tu primera barrera de protección
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Qué es SSL y por qué es tan importante?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Qué es SSL y por qué es tan importante?</h3>
 
               <p>
                 SSL (Secure Sockets Layer) es un sistema que cifra la información que viaja entre tu sitio web y el
@@ -155,17 +155,17 @@ export default function SeguridadWebPymesPage() {
                 muchas personas abandonen tu web antes de leer tu contenido.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Tipos de certificados SSL para PYMEs</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Tipos de certificados SSL para PYMEs</h3>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-emerald-200/70 bg-emerald-50/70 p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">SSL gratuito</p>
+                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">SSL gratuito</p>
                   <p className="mt-3 text-base leading-relaxed text-foreground/80">
                     Suficiente para sitios informativos, blogs o páginas corporativas simples.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-sky-200/70 bg-sky-50/70 p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">SSL de pago</p>
+                <div className="rounded-2xl border border-accent/25 bg-accent/10 p-5">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">SSL de pago</p>
                   <p className="mt-3 text-base leading-relaxed text-foreground/80">
                     Recomendado si tu web maneja formularios con datos sensibles, accesos privados o pagos en línea, ya
                     que incluye validaciones adicionales y soporte técnico.
@@ -201,11 +201,11 @@ export default function SeguridadWebPymesPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Contraseñas seguras y autenticación en dos pasos (2FA)
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Las contraseñas simples son un riesgo</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Las contraseñas simples son un riesgo</h3>
 
               <p>
                 Usar contraseñas como “empresa123” o “123456” es uno de los errores más comunes en sitios web de
@@ -218,7 +218,7 @@ export default function SeguridadWebPymesPage() {
                 tus accesos de forma segura y reducen el riesgo de repetir claves débiles.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Qué es la autenticación de dos factores?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Qué es la autenticación de dos factores?</h3>
 
               <p>
                 La autenticación de dos factores (2FA) agrega una capa extra de seguridad. Además de la contraseña,
@@ -230,9 +230,9 @@ export default function SeguridadWebPymesPage() {
                 que reduce mucho el riesgo de accesos no autorizados.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Respaldos automáticos: tu seguro digital</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Respaldos automáticos: tu seguro digital</h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Cada cuánto hacer copias de seguridad?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Cada cuánto hacer copias de seguridad?</h3>
 
               <p>
                 Si tu sitio web se dañara hoy, ¿podrías recuperarlo fácilmente? Los respaldos automáticos permiten
@@ -246,10 +246,10 @@ export default function SeguridadWebPymesPage() {
                 <li>respaldos semanales si el contenido cambia poco</li>
               </ul>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">¿Dónde guardar los respaldos?</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">¿Dónde guardar los respaldos?</h3>
 
               <div className="grid gap-4 md:grid-cols-3">
-                <div className="rounded-2xl border border-emerald-200/70 bg-emerald-50/70 p-5">
+                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70">
                     En tu computador o disco externo
                   </p>
@@ -258,13 +258,13 @@ export default function SeguridadWebPymesPage() {
                     anterior del sitio.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-sky-200/70 bg-sky-50/70 p-5">
+                <div className="rounded-2xl border border-accent/25 bg-accent/10 p-5">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70">En la nube</p>
                   <p className="mt-3 text-base leading-relaxed text-foreground/80">
                     Servicios como Google Drive o servidores externos permiten guardar versiones seguras.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-violet-200/70 bg-violet-50/70 p-5">
+                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-foreground/70">
                     Modelo mixto (local + nube)
                   </p>
@@ -279,18 +279,18 @@ export default function SeguridadWebPymesPage() {
                 Con un buen sistema de backups, recuperar tu sitio es tan simple como restaurar un archivo.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Actualizaciones, firewall y protección básica
               </h2>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Mantén tu sitio siempre actualizado</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Mantén tu sitio siempre actualizado</h3>
 
               <p>
                 Las actualizaciones de tu CMS, temas y plugins no solo agregan funciones, también corrigen errores de
                 seguridad. Dejar un sistema desactualizado es como dejar una ventana abierta en tu negocio.
               </p>
 
-              <h3 className="text-xl sm:text-2xl font-semibold pt-2">Firewalls y monitoreo</h3>
+              <h3 className="font-display text-xl sm:text-2xl font-semibold pt-2">Firewalls y monitoreo</h3>
 
               <p>
                 Un firewall web funciona como un filtro de seguridad que bloquea accesos sospechosos antes de que
@@ -323,7 +323,7 @@ export default function SeguridadWebPymesPage() {
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Seguridad web y posicionamiento en Google</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Seguridad web y posicionamiento en Google</h2>
 
               <p>
                 La seguridad web también influye en el SEO. Google prioriza los sitios seguros y los usuarios confían
@@ -340,7 +340,7 @@ export default function SeguridadWebPymesPage() {
 
               <p>La seguridad no es solo técnica: también es parte de tu imagen digital.</p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Educación y prevención en tu equipo</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Educación y prevención en tu equipo</h2>
 
               <p>
                 Muchos ataques no ocurren por fallas técnicas, sino por errores humanos: correos falsos, enlaces
@@ -357,7 +357,7 @@ export default function SeguridadWebPymesPage() {
 
               <p>es tan importante como tener HTTPS o backups.</p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 ¿Cómo proteger mi sitio web contra ataques comunes?
               </h2>
 
@@ -367,7 +367,7 @@ export default function SeguridadWebPymesPage() {
                 sitio.
               </p>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Checklist básica de seguridad web para PYMEs
               </h2>
 
@@ -404,7 +404,7 @@ export default function SeguridadWebPymesPage() {
                 .
               </blockquote>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold pt-4">Seguridad web: una inversión, no un gasto</h2>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">Seguridad web: una inversión, no un gasto</h2>
 
               <div className="mt-8 overflow-hidden rounded-3xl border border-border/60 bg-muted/30 shadow-lg shadow-primary/10">
                 <div className="relative aspect-[16/9] w-full">
