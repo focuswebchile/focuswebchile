@@ -2,13 +2,13 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingWhatsApp } from "@/components/floating-whatsapp"
-import FormOne from "@/components/ui/form-1"
+import { ContactSection } from "@/components/contact-section"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Clock3, SearchCheck, ShieldCheck } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contacto SEO Técnico y Desarrollo Web Chile | FocusWeb",
-  description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
+  description: "Escríbeme y te respondo en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
   alternates: {
     canonical: "/contacto",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: "https://focusweb.cl/contacto",
     title: "Contacto SEO Técnico y Desarrollo Web Chile | FocusWeb",
-    description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
+    description: "Escríbeme y te respondo en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
     siteName: "FocusWeb Chile",
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contacto SEO Técnico y Desarrollo Web Chile | FocusWeb",
-    description: "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
+    description: "Escríbeme y te respondo en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
     images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
   },
 }
@@ -43,7 +43,7 @@ export default function ContactoPage() {
     name: "Contacto | FocusWeb",
     url: "https://focusweb.cl/contacto",
     description:
-      "Escríbenos y recibe respuesta en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
+      "Escríbeme y te respondo en menos de 24 horas. Diseño web y soluciones digitales para tu negocio.",
     inLanguage: "es-CL",
     isPartOf: {
       "@type": "WebSite",
@@ -74,48 +74,48 @@ export default function ContactoPage() {
     <>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
-          <div className="container mx-auto max-w-4xl">
+        <h1 className="sr-only">Contacto | Focus Web</h1>
+        <section aria-label="Breadcrumb" className="px-4 pt-24 sm:px-6 md:pt-28">
+          <div className="container mx-auto max-w-3xl">
             <SiteBreadcrumb
-              className="mb-5"
               items={[
                 { label: "Inicio", href: "/" },
                 { label: "Contacto" },
               ]}
             />
-            <FormOne />
           </div>
         </section>
+        <ContactSection />
         <section className="pb-10 px-4 sm:px-6">
           <div className="container mx-auto max-w-5xl">
             <div className="rounded-3xl border border-border/60 bg-white/80 p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
-                Qué pasa después de enviar tu mensaje
+              <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
+                Qué pasa después de que me escribas
               </h2>
               <p className="mt-3 max-w-3xl text-sm text-foreground/70 sm:text-base">
-                Te respondemos con una lectura inicial y el siguiente paso recomendado según tu caso:
-                diagnóstico técnico, optimización o desarrollo.
+                Leo tu mensaje y te respondo con una primera impresión y el siguiente paso que te
+                recomendaría: diagnóstico técnico, optimización o desarrollo, según lo que me cuentes.
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
                 <article className="rounded-2xl border border-border/60 bg-card p-5">
                   <Clock3 className="h-5 w-5 text-primary" aria-hidden="true" />
-                  <h3 className="mt-3 text-base font-semibold text-foreground">Respuesta rápida</h3>
+                  <h3 className="font-display mt-3 text-base font-semibold text-foreground">Respuesta rápida</h3>
                   <p className="mt-2 text-sm text-foreground/70">
-                    Tiempo estimado de respuesta: menos de 24 horas hábiles.
+                    Te respondo en menos de 24 horas hábiles.
                   </p>
                 </article>
                 <article className="rounded-2xl border border-border/60 bg-card p-5">
                   <SearchCheck className="h-5 w-5 text-primary" aria-hidden="true" />
-                  <h3 className="mt-3 text-base font-semibold text-foreground">Evaluación inicial</h3>
+                  <h3 className="font-display mt-3 text-base font-semibold text-foreground">Evaluación inicial</h3>
                   <p className="mt-2 text-sm text-foreground/70">
-                    Revisamos tu contexto y detectamos qué conviene priorizar primero.
+                    Reviso tu caso y te digo qué conviene priorizar primero.
                   </p>
                 </article>
                 <article className="rounded-2xl border border-border/60 bg-card p-5">
                   <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
-                  <h3 className="mt-3 text-base font-semibold text-foreground">Sin compromiso</h3>
+                  <h3 className="font-display mt-3 text-base font-semibold text-foreground">Sin compromiso</h3>
                   <p className="mt-2 text-sm text-foreground/70">
-                    Conversamos tu caso con claridad, sin ventas forzadas ni letra chica.
+                    Te cuento con claridad qué conviene, sin venderte nada a la fuerza ni letra chica.
                   </p>
                 </article>
               </div>
@@ -125,46 +125,46 @@ export default function ContactoPage() {
         <section className="pb-10 px-4 sm:px-6">
           <div className="container mx-auto max-w-5xl">
             <div className="rounded-3xl border border-border/60 bg-card/70 p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
-                Qué información ayuda a darte una respuesta más útil
+              <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
+                Qué información me ayuda a darte una respuesta más útil
               </h2>
               <p className="mt-3 max-w-3xl text-sm text-foreground/75 sm:text-base">
-                Mientras más contexto nos compartas, mejor podemos orientarte desde el primer mensaje. No necesitas un
-                brief técnico: con una explicación simple de tu objetivo ya podemos detectar si conviene partir por
-                auditoría, optimización o desarrollo.
+                Mientras más contexto me compartas, mejor te puedo orientar desde el primer mensaje. No
+                necesitas un brief técnico: con que me cuentes tu objetivo en simple, ya puedo saber si
+                conviene partir por auditoría, optimización o desarrollo.
               </p>
-              <p className="mt-5 text-sm font-medium text-foreground/85 sm:text-base">Checklist rápido para escribirnos:</p>
+              <p className="mt-5 text-sm font-medium text-foreground/85 sm:text-base">Checklist rápido para escribirme:</p>
               <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-                <li className="rounded-xl border border-emerald-200/70 bg-emerald-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                <li className="rounded-xl border border-primary/15 bg-primary/5 px-4 py-3 text-sm text-foreground/85 sm:text-base">
                   Objetivo principal: más tráfico, más contactos o mejorar velocidad
                 </li>
-                <li className="rounded-xl border border-sky-200/70 bg-sky-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                <li className="rounded-xl border border-primary/15 bg-primary/5 px-4 py-3 text-sm text-foreground/85 sm:text-base">
                   URL actual de tu sitio (si ya está publicado)
                 </li>
-                <li className="rounded-xl border border-violet-200/70 bg-violet-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                <li className="rounded-xl border border-primary/15 bg-primary/5 px-4 py-3 text-sm text-foreground/85 sm:text-base">
                   Problema que hoy te frena: SEO, rendimiento o estructura
                 </li>
-                <li className="rounded-xl border border-amber-200/70 bg-amber-50/70 px-4 py-3 text-sm text-foreground/85 sm:text-base">
+                <li className="rounded-xl border border-primary/15 bg-primary/5 px-4 py-3 text-sm text-foreground/85 sm:text-base">
                   Plazo estimado y nivel de urgencia del proyecto
                 </li>
               </ul>
               <p className="mt-6 text-sm text-foreground/75 sm:text-base">
-                Si todavía no tienes claro qué servicio necesitas, puedes revisar nuestros{" "}
+                Si todavía no tienes claro qué servicio necesitas, revisa mis{" "}
                 <a href="/servicios" className="text-primary underline underline-offset-4 hover:text-primary/80">
                   servicios de SEO y posicionamiento web
                 </a>{" "}
-                o hacer una evaluación inicial en{" "}
+                o hazme una consulta inicial en{" "}
                 <a href="/metodologia" className="text-primary underline underline-offset-4 hover:text-primary/80">
                   metodología
                 </a>
-                . Así llegas con un diagnóstico base y la conversación avanza más rápido.
+                . Así llegas con un diagnóstico base y avanzamos más rápido.
               </p>
             </div>
           </div>
         </section>
         <section className="pb-16 px-6 md:px-10">
-          <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base">
-            Si buscas una página clara y enfocada en resultados, revisa nuestras{" "}
+          <div className="mx-auto max-w-3xl text-center text-sm text-foreground/75 sm:text-base md:max-w-none md:whitespace-nowrap">
+            Si buscas una página clara y enfocada en resultados, revisa mis{" "}
             <a
               href="/landing-page"
               className="text-primary hover:text-primary/80 underline underline-offset-4"
