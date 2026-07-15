@@ -247,7 +247,7 @@ export default function CheckListEcommercePage() {
                         Plan de diseño digital
                       </div>
 
-                      <h1 className="mt-8 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
+                      <h1 className="font-display mt-8 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
                         Checklist Ecommerce en Chile
                         <span className="block text-primary">47 puntos para lanzar tu tienda online</span>
                       </h1>
@@ -417,8 +417,8 @@ export default function CheckListEcommercePage() {
                   className="relative overflow-hidden rounded-3xl border border-border/60 bg-white/80 shadow-[0_30px_80px_-50px_rgba(0,0,0,0.35)]"
                   id="slide-02"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.08),transparent_55%)]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.08),transparent_55%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(61,58,140,0.08),transparent_55%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(201,151,31,0.08),transparent_55%)]" />
 
                   <div className="relative z-10 flex flex-col gap-12 px-8 py-12 md:px-12 md:py-16 lg:flex-row lg:items-center">
                     <div className="w-full lg:w-1/2">
@@ -426,7 +426,7 @@ export default function CheckListEcommercePage() {
                         <BadgeInfo className="h-4 w-4" aria-hidden="true" />
                         Introducción
                       </div>
-                      <h2 className="mt-8 text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl">
+                      <h2 className="font-display mt-8 text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl">
                         ¿Por qué necesitas
                         <span className="block text-accent">este checklist?</span>
                       </h2>
@@ -466,7 +466,7 @@ export default function CheckListEcommercePage() {
                       <div className="relative mx-auto max-w-md space-y-5">
                         <div className="rounded-2xl border border-border/60 bg-white/70 p-5 text-foreground/50 shadow-sm">
                           <div className="flex items-center gap-4">
-                            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-500">
+                            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-destructive/10 text-destructive">
                               <AlertTriangle className="h-6 w-6" aria-hidden="true" />
                             </span>
                             <div>
@@ -606,7 +606,7 @@ export default function CheckListEcommercePage() {
                         <LayoutGrid className="h-4 w-4" aria-hidden="true" />
                         Visión general
                       </div>
-                      <h2 className="mt-6 text-3xl font-semibold text-foreground sm:text-4xl md:text-5xl">
+                      <h2 className="font-display mt-6 text-3xl font-semibold text-foreground sm:text-4xl md:text-5xl">
                         Estructura del checklist
                       </h2>
                       <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70 md:text-lg">
@@ -665,19 +665,7 @@ export default function CheckListEcommercePage() {
                           count: 9,
                           Icon: Megaphone,
                         },
-                      ].map((item) => {
-                        const badgeClass =
-                          item.count === 7
-                            ? "bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200/70"
-                            : item.count === 8
-                              ? "bg-sky-100 text-sky-700 ring-1 ring-sky-200/70"
-                              : item.count === 9
-                                ? "bg-violet-100 text-violet-700 ring-1 ring-violet-200/70"
-                                : item.count === 10
-                                  ? "bg-amber-100 text-amber-700 ring-1 ring-amber-200/70"
-                                  : "bg-muted text-foreground/70 ring-1 ring-border/60"
-
-                        return (
+                      ].map((item) => (
                         <div
                           key={item.title}
                           className="group flex h-full flex-col justify-between rounded-2xl border border-border/60 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-30px_rgba(0,0,0,0.35)]"
@@ -687,13 +675,11 @@ export default function CheckListEcommercePage() {
                               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
                                 <item.Icon className="h-6 w-6" aria-hidden="true" />
                               </div>
-                              <span
-                                className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] transition-colors ${badgeClass}`}
-                              >
+                              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-primary ring-1 ring-primary/20 transition-colors">
                                 {item.count} puntos
                               </span>
                             </div>
-                            <h3 className="mt-4 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+                            <h3 className="font-display mt-4 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
                               {item.title}
                             </h3>
                             <p className="mt-2 text-sm text-foreground/60">{item.desc}</p>
@@ -702,7 +688,7 @@ export default function CheckListEcommercePage() {
                             <div className="h-1.5 w-1/3 rounded-full bg-primary/70" />
                           </div>
                         </div>
-                      )})}
+                      ))}
                     </div>
 
                     <div className="mt-8 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -782,7 +768,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 1
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Aspectos técnicos
                         <span className="block text-foreground/40">&amp; hosting</span>
                       </h2>
@@ -935,7 +921,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 2
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Diseño y experiencia
                         <span className="block text-foreground/40">de usuario</span>
                       </h2>
@@ -1090,7 +1076,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 3
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Productos
                         <span className="block text-foreground/40">&amp; catálogo</span>
                       </h2>
@@ -1246,7 +1232,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 4
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Pagos y
                         <span className="block text-foreground/40">facturación</span>
                       </h2>
@@ -1397,7 +1383,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 5
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Envíos y
                         <span className="block text-foreground/40">logística</span>
                       </h2>
@@ -1548,7 +1534,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 6
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Legales
                         <span className="block text-foreground/40">&amp; políticas</span>
                       </h2>
@@ -1699,7 +1685,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 7
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Seguridad
                         <span className="block text-foreground/40">&amp; confianza</span>
                       </h2>
@@ -1850,7 +1836,7 @@ export default function CheckListEcommercePage() {
                       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                         Categoría 8
                       </p>
-                      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                      <h2 className="font-display mt-3 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
                         Marketing
                         <span className="block text-foreground/40">&amp; SEO</span>
                       </h2>
@@ -2009,7 +1995,7 @@ export default function CheckListEcommercePage() {
                         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                           <PieChart className="h-6 w-6" aria-hidden="true" />
                         </div>
-                        <h3 className="mt-4 text-lg font-semibold text-foreground">Estado general</h3>
+                        <h3 className="font-display mt-4 text-lg font-semibold text-foreground">Estado general</h3>
                         <p className="text-sm text-foreground/60">Progreso de implementación</p>
 
                         <div className="relative mx-auto mt-6 h-48 w-48">
@@ -2060,7 +2046,7 @@ export default function CheckListEcommercePage() {
                     <div className="w-full lg:w-2/3">
                       <div className="rounded-3xl border border-border/60 bg-white/70 p-6 md:p-8">
                         <div className="flex flex-wrap items-center justify-between gap-4">
-                          <h3 className="text-lg font-semibold text-foreground">Desglose por categoría</h3>
+                          <h3 className="font-display text-lg font-semibold text-foreground">Desglose por categoría</h3>
                           <div className="flex items-center gap-4 text-xs font-semibold text-foreground/50">
                             <span className="inline-flex items-center gap-2">
                               <span className="h-2 w-2 rounded-full bg-primary" />
@@ -2167,8 +2153,8 @@ export default function CheckListEcommercePage() {
                   className="relative overflow-hidden rounded-3xl border border-border/60 bg-white/80 shadow-[0_30px_80px_-50px_rgba(0,0,0,0.35)]"
                   id="slide-13"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.12),transparent_55%)]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.12),transparent_60%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(201,151,31,0.12),transparent_55%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(61,58,140,0.12),transparent_60%)]" />
 
                   <div className="relative z-10 flex flex-col gap-10 px-8 py-12 md:px-12 md:py-16 lg:flex-row lg:items-center">
                     <div className="w-full lg:w-3/5">
@@ -2176,13 +2162,13 @@ export default function CheckListEcommercePage() {
                         <BadgeCheck className="h-4 w-4" aria-hidden="true" />
                         Misión cumplida
                       </div>
-                      <h2 className="mt-6 text-4xl font-semibold leading-tight text-foreground md:text-5xl">
+                      <h2 className="font-display mt-6 text-4xl font-semibold leading-tight text-foreground md:text-5xl">
                         Lanza tu ecommerce
                         <span className="block text-primary">sin sorpresas</span>
                       </h2>
                       <p className="mt-4 max-w-2xl text-base text-foreground/70 md:text-lg">
-                        En Focus Web nos especializamos en crear tiendas online profesionales para el mercado chileno.
-                        Conocemos cada detalle de este checklist porque lo vivimos a diario.
+                        En Focus Web me especializo en crear tiendas online profesionales para el mercado chileno.
+                        Conozco cada detalle de este checklist porque lo vivo a diario.
                       </p>
 
                       <div className="mt-6 space-y-3 text-sm text-foreground/70">
@@ -2219,9 +2205,9 @@ export default function CheckListEcommercePage() {
                           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                             <Computer className="h-8 w-8" aria-hidden="true" />
                           </div>
-                          <h3 className="mt-4 text-xl font-semibold text-foreground">Hablemos</h3>
+                          <h3 className="font-display mt-4 text-xl font-semibold text-foreground">Hablemos</h3>
                           <p className="mt-2 text-sm text-foreground/60">
-                            Estamos listos para potenciar tu negocio.
+                            Estoy listo para potenciar tu negocio.
                           </p>
                         </div>
 

@@ -133,14 +133,14 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
       const submitData = await submitResponse.json()
 
       if (!submitResponse.ok || !submitData.success) {
-        throw new Error(submitData?.error || "No pudimos enviar la revision")
+        throw new Error(submitData?.error || "No pude enviar la revision")
       }
 
-      setSuccessMessage("Solicitud enviada. Te contactaremos con un diagnostico.")
+      setSuccessMessage("Solicitud enviada. Te contacto con un diagnostico.")
       setWebsiteUrl("")
       setEmail("")
     } catch {
-      setErrorMessage("No pudimos enviar la solicitud. Intenta nuevamente.")
+      setErrorMessage("No pude enviar la solicitud. Intenta nuevamente.")
     } finally {
       setSecurityMessage(null)
       setIsSubmitting(false)
@@ -148,10 +148,10 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
   }
 
   return (
-    <div className="rounded-2xl border border-[#dbeafe] bg-white p-5 shadow-sm sm:p-6">
+    <div className="rounded-2xl border border-primary/20 bg-white p-5 shadow-sm sm:p-6">
       <form className="space-y-3" onSubmit={handleReviewSubmit}>
-        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#3B82F6]">{leadText}</p>
-        <p className="text-sm text-[#6B7280]">Pega tu URL y tu correo para recibir un diagnóstico inicial con prioridades reales.</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">{leadText}</p>
+        <p className="text-sm text-muted-foreground">Pega tu URL y tu correo para recibir un diagnóstico inicial con prioridades reales.</p>
         <div className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,0.9fr)_170px] lg:items-center">
           <input
             type="url"
@@ -160,7 +160,7 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
             onChange={(event) => setWebsiteUrl(event.target.value)}
             onFocus={warmupRecaptcha}
             disabled={isSubmitting}
-            className="flex-1 rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
+            className="flex-1 rounded-lg border-2 border-border bg-white px-5 py-3 text-sm text-foreground shadow-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
           <input
             type="email"
@@ -169,20 +169,20 @@ export function ReviewRequestBar({ leadText = "edita tu website aqui" }: ReviewR
             onChange={(event) => setEmail(event.target.value)}
             onFocus={warmupRecaptcha}
             disabled={isSubmitting}
-            className="rounded-lg border-2 border-[#E5E7EB] bg-white px-5 py-3 text-sm text-[#1F2937] shadow-sm outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20"
+            className="rounded-lg border-2 border-border bg-white px-5 py-3 text-sm text-foreground shadow-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-lg bg-[#3B82F6] px-7 py-3 text-white hover:bg-[#2563eb] lg:w-full"
+            className="rounded-lg bg-primary px-7 py-3 text-primary-foreground hover:bg-primary/90 lg:w-full"
           >
             {isSubmitting ? "Revisando..." : "Revisar"}
           </Button>
         </div>
-        <p className="text-xs font-medium text-[#3B82F6]">Recuerda: pega tu URL con https://</p>
-        {securityMessage && <p className="text-xs text-[#3B82F6]">{securityMessage}</p>}
-        {errorMessage && <p className="text-xs text-red-600">{errorMessage}</p>}
-        {successMessage && <p className="text-xs text-emerald-700">{successMessage}</p>}
+        <p className="text-xs font-medium text-primary">Recuerda: pega tu URL con https://</p>
+        {securityMessage && <p className="text-xs text-primary">{securityMessage}</p>}
+        {errorMessage && <p className="text-xs text-destructive">{errorMessage}</p>}
+        {successMessage && <p className="text-xs text-primary">{successMessage}</p>}
       </form>
     </div>
   )
