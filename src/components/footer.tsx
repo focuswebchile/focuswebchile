@@ -132,10 +132,22 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 sm:pt-8 pb-20 sm:pb-0 border-t border-border/50">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
+        <div className="py-6 sm:py-8 pb-20 sm:pb-8 border-t border-border/50">
+          <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
             <p className="text-center sm:text-left">© {currentYear} FocusWeb Chile. Todos los derechos reservados.</p>
-            <p className="flex items-center gap-2 text-center sm:text-right">
+
+            <div className="flex flex-row flex-wrap justify-center items-baseline gap-x-2 gap-y-1">
+              <span className="font-semibold text-foreground">Legal</span>
+              <a href="/terminos-y-condiciones" className="hover:text-primary transition-colors">
+                Términos y Condiciones
+              </a>
+              <span aria-hidden="true">·</span>
+              <a href="/politica-de-privacidad" className="hover:text-primary transition-colors">
+                Política de Privacidad
+              </a>
+            </div>
+
+            <p className="flex items-center justify-center sm:justify-end gap-2 text-center sm:text-right">
               <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse" />
               Hecho en Chile para emprender online
             </p>
