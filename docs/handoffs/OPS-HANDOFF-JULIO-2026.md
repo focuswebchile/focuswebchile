@@ -1,15 +1,19 @@
 # Ops & Agente — Handoff Julio 2026
 
-**Repositorio de conocimiento:** `agente-focusweb/` (dentro de `focusweb-chile`)
+**Repositorio de conocimiento:** `agente-focusweb/` (carpeta sin trackear dentro de `focusweb-chile`, no es un repo git separado — ver corrección en `SITE-HANDOFF-JULIO-2026.md` §4)
 **VPS:** Hetzner CX23 — IP `46.62.141.40` — Helsinki — `ssh root@46.62.141.40`
-**Fecha de cierre:** 15 de julio de 2026
+**Fecha de cierre original:** 15 de julio de 2026
+**Última actualización:** 16 de julio de 2026 (pasos 4 y 5 del brief, completados)
 **Brief original:** `agente-focusweb/000-brief-migracion-ops-focusweb.md`
+**Ver también:** `docs/handoffs/SITE-HANDOFF-JULIO-2026.md` (embeber el widget en el sitio, UX, punto de vista focusweb-chile)
 
 ---
 
 ## Resumen de la sesión
 
-Objetivo: sacar el agente conversacional y la automatización de Instagram de Focus Web de la infraestructura de un cliente (TinyVan, `bot.tinyvan.cl`) y levantarlos en infraestructura propia en Hetzner, sin afectar la producción de TinyVan (que comparte el mismo VPS). Se avanzó en los pasos 1-3 del brief (infraestructura + migración de Instagram), se corrigió un bug real de contenido, se limpiaron residuos en la infraestructura del cliente, y se resolvieron gaps de precio y de identidad/tono del futuro agente del sitio (paso 4, todavía no iniciado).
+Objetivo: sacar el agente conversacional y la automatización de Instagram de Focus Web de la infraestructura de un cliente (TinyVan, `bot.tinyvan.cl`) y levantarlos en infraestructura propia en Hetzner, sin afectar la producción de TinyVan (que comparte el mismo VPS). Se avanzó en los pasos 1-3 del brief (infraestructura + migración de Instagram), se corrigió un bug real de contenido, se limpiaron residuos en la infraestructura del cliente, y se resolvieron gaps de precio y de identidad/tono del agente del sitio.
+
+**Actualización del 16 de julio:** los pasos 4 y 5 del brief (construir el agente propio y cortar DNS) **ya se completaron** — ver sección 3.1 y 4.1 más abajo. El agente está en producción, respondiendo en `op.focusweb.cl` y embebido como widget en focusweb.cl.
 
 ---
 
@@ -53,19 +57,29 @@ Objetivo: sacar el agente conversacional y la automatización de Instagram de Fo
 - **Nota general agregada:** los precios de FocusWeb son por el desarrollo — cualquier suscripción de plataforma de terceros (ej. Shopify) corre por cuenta del cliente.
 - **Identidad del agente, resuelta** (`AGENTS.md`, nueva sección "Identidad del agente"; `AGENTS-identidad-visual.md` actualizado): el agente habla con el tono y los valores de Felipe (primera persona, sin "nosotros" corporativo) pero **se identifica como su asistente virtual, nunca como Felipe en persona** — para no generar una sorpresa que rompa confianza más adelante. Ejemplo de saludo ya definido en `AGENTS.md`.
 - **Corrección de tuteo:** el KB pedía "tuteo" sin especificar — se aclaró explícitamente **"tú", nunca "vos"** (se había colado voseo en el tono).
+- **(16 jul) Landing AI ahora incluye dominio y hosting:** la mantención de $13.990 CLP/mes pasó de cubrir solo "1 cambio menor/mes" a incluir explícitamente **dominio .cl + hosting + 1 cambio menor/mes**. Decisión de negocio: si el cliente deja de pagar, el dominio y el hosting dejan de renovarse y el sitio queda offline (a diferencia de la Landing Page normal, pago único, que sigue funcionando siempre). Verificado que el margen sigue siendo saludable tras amortizar el costo del dominio (~$832/mes) sobre la mantención. Actualizado en `03-servicio-desarrollo-web.md`, `04-precios-resumen.md`, `AGENTS.md` y en el `systemMessage` del agente en producción.
+- **(16 jul) Fix de identidad — primera persona indebida:** el agente decía frases tipo *"la administro yo (Felipe)"* al hablar de quién hace los cambios manuales — sonaba a que el agente se hacía pasar por Felipe. Corregido a tercera persona ("la administra Felipe") en `AGENTS.md` y en el system prompt en producción. Verificado con test en vivo.
+
+---
+
+## 3.1 Paso 4 y 5 del brief — completados (16 de julio)
+
+El agente del sitio ya está construido, probado y en producción — esto cierra los pasos 4 y 5 del brief original (`000-brief-migracion-ops-focusweb.md`).
+
+- **Workflow en n8n:** `Focus Web — Website Chat Agent` (id `SKtqO41h8gtLQrZ0`), activo, en el stack `focusweb-ops` de Hetzner. Chat Trigger (`loadPreviousSession: "notSupported"` — el widget del sitio maneja su propio historial, no la memoria nativa de n8n) → AI Agent (LangChain, modelo `claude-sonnet-5`) → Memory Buffer Window.
+- **KB completo cargado directo en el `systemMessage`** del nodo AI Agent (no RAG todavía — eso sigue siendo el paso 6, sin iniciar).
+- **Tool `guardar_contacto`:** terminó siendo un sub-workflow propio (no Code Tool — el sandbox de n8n no tiene `fetch`/red) con un nodo HTTP Request real, llamando a la API de **Resend** para el email de aviso a Felipe. Sub-workflow activo (los Tool Workflow de n8n requieren que el sub-workflow esté activo para poder ejecutarse).
+- **DNS de `op.focusweb.cl` cortado hacia Hetzner** — ya no apunta a `bot.tinyvan.cl`. Confirmado con pruebas reales contra `https://op.focusweb.cl/webhook/focusweb-site-chat/chat`.
+- **Widget embebido en focusweb.cl**, reemplazando el botón flotante de WhatsApp — detalle completo de la UX en `docs/handoffs/SITE-HANDOFF-JULIO-2026.md`.
+- Guion probado de punta a punta en producción: saludo simulado (frontend) → primera respuesta real sin repetir el saludo → preguntas calificadoras de precio → transparencia de Landing AI → oferta de dejar contacto.
 
 ---
 
 ## 4. Pendiente para retomar
 
-1. **Paso 4 del brief — construir el agente del sitio, desde cero, en `test-op.focusweb.cl`:**
-   - Chat Trigger + agente LangChain con Claude, credencial Anthropic.
-   - Cargar el KB completo de `agente-focusweb/` directo en el system prompt (no RAG todavía — eso es paso 6).
-   - Memoria de conversación por sesión.
-   - Tool `guardar_contacto` → dispara email a Felipe con datos del lead + resumen. **Falta definir cómo se envía ese email** (¿Gmail, SMTP, otro?).
-   - Probar el guion completo (saludo con identidad clara → nombre → preguntas libres → oferta de dejar teléfono → captura → confirmación).
-   - Embeber el widget en focusweb.cl con los tokens ya definidos en `AGENTS-identidad-visual.md`.
-2. **Paso 5 — cortar DNS de `op.focusweb.cl`** hacia Hetzner, recién cuando el agente del paso 4 esté probado. Es creación de registro nuevo, no repunte.
-3. **Paso 6 — optimización:** ingesta del KB vía pgvector, evaluar qué contenido de blog conviene sumar (con datos reales de conversación, no antes).
+1. ~~Paso 4 — construir el agente del sitio~~ **Completado (16 jul), ver §3.1.**
+2. ~~Paso 5 — cortar DNS de `op.focusweb.cl`~~ **Completado (16 jul), ver §3.1.**
+3. **Paso 6 — optimización:** ingesta del KB vía pgvector, evaluar qué contenido de blog conviene sumar (con datos reales de conversación, no antes). Sigue sin iniciar.
 4. Borrar el Client Secret viejo de Google Cloud (9 de julio) — pendiente de Felipe.
 5. Evaluar upgrade del plan de Hetzner si el uso real de ambos stacks (TinyVan + Focus Web) empieza a apretar la RAM (ver nota en `000-brief-migracion-ops-focusweb.md`).
+6. Con el agente ya en producción, empezar a mirar conversaciones reales para detectar preguntas que el KB no cubre bien (input directo para el paso 6).
