@@ -43,3 +43,6 @@ next-env.d.ts
 # datos internos / no publicos
 /GSC/
 /Md Agente/
+
+# config local de Claude Code
+/.claude/
