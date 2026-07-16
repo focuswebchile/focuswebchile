@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { AnimatePresence, motion, type Variants } from "framer-motion"
-import { MessageCircle, Send, X } from "lucide-react"
+import { MessageCircle, Minus, Send, X } from "lucide-react"
 
 const CHAT_WEBHOOK_URL = "https://op.focusweb.cl/webhook/focusweb-site-chat/chat"
 const SESSION_STORAGE_KEY = "focusweb-chat-session-id"
@@ -11,6 +11,18 @@ const BUBBLE_DISMISSED_KEY = "focusweb-chat-bubble-dismissed"
 const BUBBLE_DELAY_MS = 4000
 const GREETING_TYPING_MS = 1100
 const GREETING_TEXT = "¡Hola! 👋 Soy el asistente de FocusWeb. Cuéntame qué necesitas y con gusto te ayudo."
+const MIN_TYPING_MS = 900
+const MAX_TYPING_MS = 2200
+const TYPING_MS_PER_CHAR = 20
+
+function BotAvatar() {
+  return (
+    <span className="flex h-6 w-6 shrink-0 items-center justify-center self-end rounded-full bg-white shadow-sm">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/icon-96x96.png" alt="" width={18} height={18} className="rounded-full" />
+    </span>
+  )
+}
 
 type ChatMessage = {
   role: "user" | "assistant"
@@ -103,6 +115,8 @@ export function ChatWidget() {
     setInput("")
     setIsLoading(true)
 
+    const requestStart = Date.now()
+
     try {
       const response = await fetch(CHAT_WEBHOOK_URL, {
         method: "POST",
@@ -114,6 +128,11 @@ export function ChatWidget() {
 
       const data = await response.json()
       const reply = data.output ?? "Perdona, tuve un problema para responder — probemos de nuevo."
+
+      const targetTypingMs = Math.min(MAX_TYPING_MS, Math.max(MIN_TYPING_MS, reply.length * TYPING_MS_PER_CHAR))
+      const remainingTypingMs = targetTypingMs - (Date.now() - requestStart)
+      if (remainingTypingMs > 0) await new Promise((resolve) => setTimeout(resolve, remainingTypingMs))
+
       setMessages((prev) => [...prev, { role: "assistant", content: reply }])
     } catch {
       setMessages((prev) => [
@@ -171,10 +190,10 @@ export function ChatWidget() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  aria-label="Cerrar chat"
+                  aria-label="Minimizar chat"
                   className="rounded-full p-1 transition-transform duration-150 active:scale-95"
                 >
-                  <X className="h-4 w-4" />
+                  <Minus className="h-4 w-4" />
                 </button>
               </motion.div>
 
@@ -184,7 +203,12 @@ export function ChatWidget() {
                 className="flex-1 space-y-3 overflow-y-auto px-4 py-4"
               >
                 {greetingTyping && (
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-end justify-start gap-1.5"
+                  >
+                    <BotAvatar />
                     <div
                       className="flex items-center gap-1 rounded-[var(--radius)] px-3 py-2.5"
                       style={{ background: "var(--secondary)" }}
@@ -209,8 +233,9 @@ export function ChatWidget() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    className="flex justify-start"
+                    className="flex items-end justify-start gap-1.5"
                   >
+                    <BotAvatar />
                     <div
                       className="max-w-[85%] whitespace-pre-wrap rounded-[var(--radius)] px-3 py-2 text-sm leading-relaxed"
                       style={{ background: "var(--secondary)", color: "var(--foreground)" }}
@@ -225,8 +250,9 @@ export function ChatWidget() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                    className={`flex items-end gap-1.5 ${message.role === "user" ? "justify-end" : "justify-start"}`}
                   >
+                    {message.role === "assistant" && <BotAvatar />}
                     <div
                       className="max-w-[85%] whitespace-pre-wrap rounded-[var(--radius)] px-3 py-2 text-sm leading-relaxed"
                       style={
@@ -240,7 +266,12 @@ export function ChatWidget() {
                   </motion.div>
                 ))}
                 {isLoading && (
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-end justify-start gap-1.5"
+                  >
+                    <BotAvatar />
                     <div
                       className="flex items-center gap-1 rounded-[var(--radius)] px-3 py-2.5"
                       style={{ background: "var(--secondary)" }}
@@ -358,7 +389,7 @@ export function ChatWidget() {
           />
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1, rotate: isOpen ? 90 : 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", damping: 15, stiffness: 300 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -368,11 +399,17 @@ export function ChatWidget() {
               setHasEngaged(true)
               setIsOpen((open) => !open)
             }}
-            aria-label={isOpen ? "Cerrar chat" : "Abrir chat"}
+            aria-label={isOpen ? "Minimizar chat" : "Abrir chat"}
             className="group relative flex h-16 w-16 items-center justify-center rounded-full shadow-lg"
             style={{ background: "var(--accent)", color: "var(--accent-foreground)" }}
           >
-            {isOpen ? <X className="h-7 w-7" /> : <MessageCircle className="h-7 w-7" />}
+            <motion.span
+              animate={{ rotate: isOpen ? 90 : 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="flex"
+            >
+              <MessageCircle className="h-7 w-7" />
+            </motion.span>
           </motion.button>
         </div>
       </div>
