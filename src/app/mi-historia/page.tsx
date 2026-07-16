@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SobreMiHero } from "./hero"
 import { TextRevealByWord } from "@/components/ui/text-reveal-by-word"
 import { Layout, MessageCircle, Target } from "lucide-react"
@@ -303,7 +302,6 @@ export default function SobreMiPage() {
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <FloatingWhatsApp />
     </>
   )
 }

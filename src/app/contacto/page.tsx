@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { ContactSection } from "@/components/contact-section"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Clock3, SearchCheck, ShieldCheck } from "lucide-react"
@@ -178,7 +177,6 @@ export default function ContactoPage() {
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <FloatingWhatsApp />
     </>
   )
 }

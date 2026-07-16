@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { ServicesQuickNav } from "@/components/services-quick-nav"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Activity, ArrowRight, Gauge, Hammer, ListChecks } from "lucide-react"
@@ -904,7 +903,6 @@ export default function ServiciosPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviciosWebPageSchema) }}
       />
-      <FloatingWhatsApp />
     </>
   )
 }

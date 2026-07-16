@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { FAQPageContent } from "./faq-page-content"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
@@ -92,7 +91,6 @@ export default function FAQRoute() {
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <FloatingWhatsApp />
     </>
   )
 }

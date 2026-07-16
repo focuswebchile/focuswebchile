@@ -3,7 +3,6 @@ import Script from "next/script"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
@@ -406,7 +405,6 @@ export default function BlogPostPage() {
         </section>
       </main>
       <Footer />
-      <FloatingWhatsApp />
     </>
   )
 }

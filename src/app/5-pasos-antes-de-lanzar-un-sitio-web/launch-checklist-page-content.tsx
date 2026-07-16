@@ -3,7 +3,6 @@ import Script from "next/script"
 import { AlertCircle } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { Button } from "@/components/ui/button"
 import { LaunchChecklistForm } from "./launch-checklist-form"
@@ -577,7 +576,6 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
         </section>
       </main>
       <Footer />
-      <FloatingWhatsApp />
     </>
   )
 }

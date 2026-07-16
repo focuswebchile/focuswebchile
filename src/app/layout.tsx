@@ -10,6 +10,7 @@ import HashRedirect from "@/components/auth/hash-redirect"
 // (backend Railway), que ya no existe. Candidato a eliminación completa en una
 // fase de limpieza junto con src/components/theme-sync.tsx y src/app/admin.
 import { DeferredAnalytics } from "@/components/deferred-analytics"
+import { ChatWidget } from "@/components/chat-widget"
 import "./globals.css"
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -161,6 +162,7 @@ export default function RootLayout({
           <HashRedirect />
           {/* <ThemeSync /> — desactivado, ver import comentado arriba */}
           {children}
+          <ChatWidget />
           <Analytics />
         </ThemeProvider>
       </body>

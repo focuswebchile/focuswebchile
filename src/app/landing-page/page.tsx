@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import LandingPageContent from "@/components/landing-page/landing-page-content"
 
 export const metadata: Metadata = {
@@ -158,7 +157,6 @@ export default function LandingPage() {
         <LandingPageContent />
       </main>
       <Footer />
-      <FloatingWhatsApp />
     </>
   )
 }

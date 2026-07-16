@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ScrollButton } from "@/components/ui/scroll-button"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import {
   AlertTriangle,
   BadgeCheck,
@@ -2264,7 +2263,6 @@ export default function CheckListEcommercePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Footer />
-      <FloatingWhatsApp />
     </>
   )
 }

@@ -3,7 +3,6 @@ import Link from "next/link"
 import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
@@ -145,7 +144,6 @@ export default function SiteMapPage() {
         </section>
         <Footer />
       </main>
-      <FloatingWhatsApp />
     </>
   )
 }

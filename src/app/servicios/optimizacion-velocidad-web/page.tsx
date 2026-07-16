@@ -3,7 +3,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
@@ -580,7 +579,6 @@ export default function OptimizacionVelocidadWebPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speedFaqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speedServiceSchema) }} />
-      <FloatingWhatsApp />
     </>
   )
 }

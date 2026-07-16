@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 
 function buildWebPageSchema(pageUrl: string) {
   return {
@@ -387,7 +386,6 @@ export function ArticlePageContent({ pageUrl }: ArticlePageContentProps) {
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <FloatingWhatsApp />
     </>
   )
 }

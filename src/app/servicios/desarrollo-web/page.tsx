@@ -2,7 +2,6 @@ import { readFileSync } from "fs"
 import { join } from "path"
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { Footer } from "@/components/footer"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import "./desarrollo-web-legacy.css"
@@ -121,7 +120,6 @@ export default function DesarrolloWebPage() {
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <FloatingWhatsApp />
     </>
   )
 }

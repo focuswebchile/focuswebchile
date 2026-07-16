@@ -4,7 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
@@ -403,7 +402,6 @@ export default function BlogPostPage() {
 
         <Footer />
       </main>
-      <FloatingWhatsApp />
     </>
   )
 }

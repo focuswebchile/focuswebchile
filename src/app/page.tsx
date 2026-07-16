@@ -1,7 +1,6 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { Footer } from "@/components/footer"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { HomeSections } from "@/components/home-sections"
 import type { Metadata } from "next"
 
@@ -112,7 +111,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
-      <FloatingWhatsApp />
     </>
   )
 }
