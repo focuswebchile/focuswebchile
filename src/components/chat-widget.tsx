@@ -289,47 +289,54 @@ export function ChatWidget() {
                   <Send className="h-4 w-4" />
                 </motion.button>
               </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
-      <AnimatePresence>
-        {showBubble && !isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6, transition: { duration: 0.15 } }}
-            transition={{ type: "spring", stiffness: 400, damping: 28 }}
-            className="flex max-w-[240px] items-start gap-2 border px-4 py-3 text-sm shadow-lg"
-            style={{
-              background: "var(--background)",
-              borderColor: "var(--border)",
-              borderRadius: "var(--radius)",
-              color: "var(--foreground)",
-            }}
-          >
-            <button type="button" onClick={openFromBubble} className="flex-1 text-left leading-snug">
-              ¿Tienes dudas sobre tu web? Escríbeme 👋
-            </button>
-            <button
-              type="button"
-              onClick={dismissBubble}
-              aria-label="Cerrar mensaje"
-              className="shrink-0 opacity-60 transition-opacity hover:opacity-100"
-            >
-              <X className="h-3.5 w-3.5" />
-            </button>
+              <motion.p
+                variants={sectionVariants}
+                className="pb-2 text-center text-[11px]"
+                style={{ color: "var(--foreground-soft, var(--muted-foreground))" }}
+              >
+                Diseñado por FocusWeb Chile
+              </motion.p>
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="flex items-center gap-2">
-        <AnimatePresence>
-          {!hasEngaged && !isOpen && (
-            <motion.span
-              initial={{ opacity: 0, x: 8 }}
+        <AnimatePresence mode="wait">
+          {!hasEngaged && !isOpen && showBubble && (
+            <motion.div
+              key="bubble"
+              initial={{ opacity: 0, x: 12 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 8, transition: { duration: 0.15 } }}
+              exit={{ opacity: 0, x: 12, transition: { duration: 0.15 } }}
+              transition={{ type: "spring", stiffness: 400, damping: 28 }}
+              className="flex max-w-[240px] items-start gap-2 border px-4 py-3 text-sm shadow-lg"
+              style={{
+                background: "var(--background)",
+                borderColor: "var(--border)",
+                borderRadius: "var(--radius)",
+                color: "var(--foreground)",
+              }}
+            >
+              <button type="button" onClick={openFromBubble} className="flex-1 text-left leading-snug">
+                ¿Tienes dudas sobre tu web? Escríbeme 👋
+              </button>
+              <button
+                type="button"
+                onClick={dismissBubble}
+                aria-label="Cerrar mensaje"
+                className="shrink-0 opacity-60 transition-opacity hover:opacity-100"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            </motion.div>
+          )}
+          {!hasEngaged && !isOpen && !showBubble && (
+            <motion.span
+              key="pill"
+              initial={{ opacity: 0, x: 12 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 12, transition: { duration: 0.15 } }}
               transition={{ type: "spring", stiffness: 400, damping: 28 }}
               className="whitespace-nowrap px-3 py-1.5 text-sm font-medium shadow-md"
               style={{
@@ -362,10 +369,10 @@ export function ChatWidget() {
               setIsOpen((open) => !open)
             }}
             aria-label={isOpen ? "Cerrar chat" : "Abrir chat"}
-            className="group relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg"
+            className="group relative flex h-16 w-16 items-center justify-center rounded-full shadow-lg"
             style={{ background: "var(--accent)", color: "var(--accent-foreground)" }}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+            {isOpen ? <X className="h-7 w-7" /> : <MessageCircle className="h-7 w-7" />}
           </motion.button>
         </div>
       </div>
