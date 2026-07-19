@@ -4,38 +4,38 @@ import { Reveal } from "@/components/ui/reveal"
 const steps = [
   {
     icon: Search,
-    title: "Diagnóstico estratégico",
+    title: "Entender qué te pasa",
     description:
-      "Auditamos tu situación actual, definimos prioridades y ordenamos el plan antes de ejecutar.",
-    focus: "Qué revisamos",
-    focusText: "Objetivos, estado técnico y oportunidades reales",
+      "Reviso tu sitio y tu negocio, y te cuento con claridad qué está pasando antes de proponerte nada.",
+    focus: "Qué reviso",
+    focusText: "Tu objetivo, el estado real de tu sitio y qué oportunidades vale la pena perseguir",
     step: "01",
   },
   {
     icon: Code2,
-    title: "Implementación técnica",
+    title: "Hacer los cambios",
     description:
-      "Aplicamos lo definido según tu caso: desarrollo desde cero u optimización de un sitio existente.",
-    focus: "Qué hacemos",
-    focusText: "Cambios técnicos priorizados y medibles",
+      "Construyo o ajusto tu sitio según lo que decidimos juntos — sin funcionalidades de más que no vas a usar.",
+    focus: "Qué hago",
+    focusText: "Cambios concretos, priorizados por impacto real",
     step: "02",
   },
   {
     icon: Rocket,
-    title: "Publicación y validación",
+    title: "Publicarlo y probarlo",
     description:
-      "Publicamos los cambios y validamos funcionamiento, rendimiento y trazabilidad para salir con control.",
-    focus: "Qué validamos",
-    focusText: "Carga, formularios, indexación y medición",
+      "Publico los cambios y pruebo que todo funcione — carga, formularios, que Google lo encuentre — antes de darlo por terminado.",
+    focus: "Qué pruebo",
+    focusText: "Velocidad, formularios, indexación y que todo cargue bien",
     step: "03",
   },
   {
     icon: LifeBuoy,
-    title: "Soporte y mejora continua",
+    title: "Seguir ahí",
     description:
-      "Acompañamos post-lanzamiento con ajustes, mejoras y soporte cercano para mantener resultados.",
+      "Y aquí no desaparezco. Sigo disponible para ajustes, dudas y mejoras después de que el sitio esté arriba.",
     focus: "Qué sigue",
-    focusText: "Correcciones, iteración y evolución del sitio",
+    focusText: "Correcciones y ajustes, todo el tiempo que lo necesites",
     step: "04",
   },
 ]
@@ -48,16 +48,14 @@ export function ProcessSection() {
         {/* Header — left-aligned editorial */}
         <Reveal className="mb-12 sm:mb-16">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Metodología
+            Cómo trabajo
           </p>
           <h2 className="font-display mt-4 text-[28px] font-extrabold leading-[1.05] tracking-tight text-foreground md:text-[64px]">
-            Un proceso{" "}
-            <span className="text-primary">simple</span>
-            <br />
-            y claro
+            Así trabajo,{" "}
+            <span className="text-primary">sin misterios</span>
           </h2>
           <p className="mt-4 max-w-lg text-base text-muted-foreground sm:text-lg">
-            Diagnóstico, implementación, validación y soporte en una ruta clara para crear o mejorar tu sitio
+            Cuatro pasos que puedes seguir en cualquier momento — sin sorpresas ni jerga técnica.
           </p>
         </Reveal>
 

@@ -114,7 +114,7 @@ export function ContactSection() {
       if (!response.ok || !data.success) {
         throw new Error(data?.error || "No pudimos enviar tu info")
       }
-      setSuccessMessage("¡Listo! Te contactamos pronto.")
+      setSuccessMessage("¡Listo! Te contacto pronto.")
     } catch {
       setErrorMessage("No pudimos enviar tu info. Intenta nuevamente.")
     } finally {
@@ -129,7 +129,7 @@ export function ContactSection() {
           <Reveal>
             <p className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">{successMessage}</p>
             <p className="mt-3 text-base text-muted-foreground">
-              Escríbenos por WhatsApp si quieres avanzar más rápido.
+              Escríbeme por WhatsApp si quieres avanzar más rápido.
             </p>
           </Reveal>
         </div>

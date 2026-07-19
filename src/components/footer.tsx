@@ -137,7 +137,6 @@ export function Footer() {
             <p className="text-center sm:text-left">© {currentYear} FocusWeb Chile. Todos los derechos reservados.</p>
 
             <div className="flex flex-row flex-wrap justify-center items-baseline gap-x-2 gap-y-1">
-              <span className="font-semibold text-foreground">Legal</span>
               <a href="/terminos-y-condiciones" className="hover:text-primary transition-colors">
                 Términos y Condiciones
               </a>

@@ -3,12 +3,12 @@ import { Star, ShieldCheck } from "lucide-react"
 import { Reveal } from "@/components/ui/reveal"
 
 const featuredCase = {
-  badge: "Caso de Rescate SEO",
+  badge: "Cliente real",
   name: "Equipo ABCIS",
   role: "Gestión y Operaciones · abcis.cl",
   project: "Recuperación SEO · Desindexación Masiva · Backend Seguro",
   content:
-    "Nuestro sitio fue hackeado y millones de páginas de spam se indexaron en Google, destruyendo nuestra visibilidad y credibilidad por completo. FocusWeb diagnosticó la raíz del ataque, ejecutó una limpieza masiva de indexación, reorganizó toda la arquitectura y desarrolló un backend personalizado ultra seguro desde cero. Pasamos de catástrofe total a sitio limpio, rápido y blindado.",
+    "Nuestro sitio fue hackeado y millones de páginas de spam se indexaron en Google, destruyendo nuestra visibilidad y credibilidad por completo. Felipe diagnosticó la raíz del ataque, ejecutó una limpieza masiva de indexación, reorganizó toda la arquitectura y desarrolló un backend personalizado ultra seguro desde cero. Pasamos de catástrofe total a sitio limpio, rápido y blindado.",
   rating: 5,
   metrics: [
     { label: "Páginas spam desindexadas", value: "+1 M" },
@@ -38,13 +38,17 @@ export function AbcisCaseSection() {
           <h2 className="font-display mt-4 text-[28px] font-extrabold leading-[1.05] tracking-tight text-foreground md:text-[64px]">
             De catástrofe a sitio blindado
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
+            Un ataque así no es solo un problema técnico — es la reputación completa de un negocio en juego.
+            Así lo acompañé hasta dejarlo resuelto.
+          </p>
         </Reveal>
 
         <Reveal delay={0.08}>
           <div className="relative overflow-hidden rounded-xl border border-border bg-card">
-            <div className="absolute right-5 top-5 flex items-center gap-1.5 rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-amber-500" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-amber-600">
+            <div className="absolute right-5 top-5 flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 text-muted-foreground" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
                 {featuredCase.badge}
               </span>
             </div>
@@ -57,10 +61,10 @@ export function AbcisCaseSection() {
                   &ldquo;{featuredCase.content}&rdquo;
                 </blockquote>
 
-                <div className="grid grid-cols-3 gap-3 border-t border-border pt-6 sm:gap-6">
+                <div className="grid grid-cols-3 gap-3 border-t border-border/60 pt-5 sm:gap-6">
                   {featuredCase.metrics.map((m) => (
                     <div key={m.label}>
-                      <p className="text-2xl font-black text-primary sm:text-3xl lg:text-4xl">{m.value}</p>
+                      <p className="text-lg font-bold text-foreground/80 sm:text-xl lg:text-2xl">{m.value}</p>
                       <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">{m.label}</p>
                     </div>
                   ))}

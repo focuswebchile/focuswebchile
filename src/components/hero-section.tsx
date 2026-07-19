@@ -183,7 +183,7 @@ export function HeroSection() {
               className={`relative z-20 flex flex-col justify-center space-y-7 transition-all duration-700 ease-out md:mt-6 lg:mt-8 xl:mt-0 ${desktopRevealClass}`}
             >
               <p className="pt-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground md:pt-12 lg:pt-6 xl:pt-0">
-                Felipe Ibar — diseño web, SEO y automatización
+                Más que una página web
               </p>
 
               <h1 className="max-w-[860px] font-display text-[32px] font-extrabold leading-[1] tracking-[-0.02em] text-foreground sm:text-[44px] sm:leading-[0.97] md:text-[56px] lg:text-[72px] lg:leading-[0.95]">

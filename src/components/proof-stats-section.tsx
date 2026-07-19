@@ -25,10 +25,11 @@ export function ProofStatsSection() {
       <div className="container mx-auto max-w-7xl">
         <Reveal className="mb-12 space-y-3 text-center sm:mb-16">
           <h2 className="font-display text-[28px] font-extrabold leading-[1.05] tracking-tight text-foreground md:text-[64px]">
-            Resultados que se pueden medir
+            No prometo resultados.<br />
+            <span className="text-primary">Te muestro los datos.</span>
           </h2>
           <p className="mx-auto max-w-2xl px-4 text-base text-muted-foreground sm:text-lg">
-            Datos reales de tráfico, velocidad y clientes — no promesas genéricas
+            Esto es lo que le pasó a un cliente real — no promesas genéricas.
           </p>
         </Reveal>
 
@@ -40,7 +41,7 @@ export function ProofStatsSection() {
                 Tráfico orgánico
               </p>
               <h3 className="mt-4 text-2xl font-black leading-tight tracking-tight text-foreground sm:text-3xl">
-                Datos reales de Google Analytics
+                Así le fue a un cliente real
               </h3>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -78,7 +79,7 @@ export function ProofStatsSection() {
                 />
               </div>
               <p className="mt-3 text-xs text-muted-foreground">
-                Total de usuarios por primer grupo de canales (Grupo de canales predeterminado).
+                Captura real de Google Analytics, sin editar.
               </p>
             </div>
           </Card>

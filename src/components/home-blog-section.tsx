@@ -36,10 +36,10 @@ export function HomeBlogSection() {
                 <div className="flex flex-row gap-2 text-sm items-center text-muted-foreground">
                   <span>Autor</span>
                   <Avatar className="h-6 w-6">
-                    <AvatarImage src="/logo_focus_web.webp" alt="FocusWeb" />
-                    <AvatarFallback>FW</AvatarFallback>
+                    <AvatarImage src="/felipe-ibar.webp" alt="Felipe Ibar" />
+                    <AvatarFallback>FI</AvatarFallback>
                   </Avatar>
-                  <span className="text-foreground">FocusWeb</span>
+                  <span className="text-foreground">Felipe Ibar</span>
                 </div>
                 <span className="text-sm text-muted-foreground">• {post.date}</span>
               </div>

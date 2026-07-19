@@ -9,7 +9,7 @@ const cards = [
   {
     title: "Diagnóstico SEO Técnico",
     description:
-      "Revisión inicial para detectar frenos técnicos en SEO, velocidad y estructura. Recibes prioridades claras para decidir el siguiente paso.",
+      "Si no sabes por qué tu sitio no aparece en Google, empezamos por ahí. Antes de proponerte nada, reviso qué te está frenando y te lo explico en simple.",
     icon: SearchCheck,
     tone: "from-primary/20 to-primary/5",
     iconTone: "bg-primary/15 text-primary",
@@ -19,7 +19,7 @@ const cards = [
       "Datos estructurados (JSON-LD)",
     ],
     seoDetail:
-      "En esta etapa revisamos la estructura semántica de la página, consistencia de headings, señales on-page y marcado estructurado para detectar fricciones que afectan visibilidad y conversión.",
+      "Reviso la estructura semántica de tu página, la consistencia de los headings y el marcado estructurado, buscando lo que le está costando visibilidad y clientes a tu sitio.",
     highlight: {
       label: "Diagnóstico inicial",
       value: "GRATIS",
@@ -27,7 +27,7 @@ const cards = [
       valueClass: "mt-3",
     },
     cta: {
-      label: "Conocer auditoría SEO",
+      label: "Pedir mi diagnóstico gratis",
       href: "/servicios/auditoria-seo-tecnico",
       external: false,
     },
@@ -39,7 +39,7 @@ const cards = [
   {
     title: "Optimización de Velocidad",
     description:
-      "Mejoramos Core Web Vitals para reducir tiempos de carga en móvil y desktop. Optimizamos imágenes, lazy loading, caché, CDN y código para rendimiento sostenido.",
+      "Si tu sitio carga lento, estás perdiendo clientes antes de que lean una palabra. Reviso imágenes, código y caché, y empiezo por lo que más te está costando.",
     icon: Gauge,
     tone: "from-muted to-muted/30",
     iconTone: "bg-foreground/8 text-foreground/70",
@@ -49,14 +49,14 @@ const cards = [
       "Meta: PageSpeed 90+ en móvil",
     ],
     seoDetail:
-      "La optimización se prioriza por impacto real: primero los bloqueadores de carga, luego recursos pesados y finalmente mejoras finas para estabilidad y experiencia móvil.",
+      "Priorizo por impacto real: primero lo que bloquea la carga, después los recursos pesados, y al final los ajustes finos para que se sienta bien en el celular.",
     highlight: {
       label: "Mejora típica",
       value: "20%–60%",
       subtext: "menos tiempo de carga según el estado inicial",
     },
     cta: {
-      label: "Ver optimización",
+      label: "Ver cómo lo soluciono",
       href: "/servicios/optimizacion-velocidad-web",
       external: false,
     },
@@ -68,7 +68,7 @@ const cards = [
   {
     title: "Desarrollo Web",
     description:
-      "Creamos o renovamos tu sitio con base técnica sólida desde el inicio: diseño profesional, velocidad, SEO técnico y arquitectura escalable para crecer.",
+      "Si no tienes sitio, o el que tienes no te representa, lo construyo pensando en tu negocio real, no en una plantilla. Diseño, velocidad y SEO vienen incluidos desde el día uno, no como extras.",
     icon: Code2,
     tone: "from-accent/25 to-accent/5",
     iconTone: "bg-accent/20 text-accent",
@@ -78,14 +78,14 @@ const cards = [
       "SEO técnico integrado",
     ],
     seoDetail:
-      "Cuando desarrollamos desde cero dejamos base técnica preparada para posicionamiento: estructura limpia, performance inicial sólida y arquitectura escalable para crecer sin rehacer todo.",
+      "Cuando construyo un sitio desde cero, dejo la base técnica lista para crecer: estructura limpia, buen rendimiento desde el primer día y una arquitectura que no vas a tener que rehacer en un año.",
     highlight: {
       label: "Desde",
       value: "$180.000",
       subtext: "CLP pago único",
     },
     cta: {
-      label: "Conocer desarrollo web",
+      label: "Ver cómo construyo tu sitio",
       href: "/servicios/desarrollo-web",
       external: false,
     },
@@ -108,14 +108,14 @@ export function MainServicesSection() {
       <div className="container mx-auto max-w-7xl">
         <Reveal className="mb-12 sm:mb-16">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Servicios
+            Por dónde empezar
           </p>
           <h2 className="font-display mt-4 text-[28px] font-extrabold leading-[1.05] tracking-tight text-foreground md:text-[64px]">
-            Nuestros servicios<br />
-            <span className="text-primary">principales</span>
+            ¿Qué te está pasando<br />
+            <span className="text-primary">con tu sitio?</span>
           </h2>
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Especializados en optimización técnica para que tu sitio web genere resultados reales
+            Elige la situación que más se parece a la tuya. Si no estás seguro, conversamos y lo decidimos juntos.
           </p>
         </Reveal>
 

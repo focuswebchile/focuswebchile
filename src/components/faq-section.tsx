@@ -99,7 +99,7 @@ export function FAQSection() {
             <span className="text-primary">frecuentes</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground px-4">
-            Resolvemos tus dudas sobre el proceso de desarrollo
+            Resuelvo tus dudas sobre el proceso de desarrollo
           </p>
         </Reveal>
 

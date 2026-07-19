@@ -9,7 +9,7 @@ export function ProcessAuditCta() {
             ¿No estás seguro de qué necesitas?
           </h3>
           <p className="mx-auto mt-3 max-w-xl text-sm text-background/60 sm:text-base">
-            Solicita un diagnóstico inicial y te mostramos con claridad qué está frenando tu sitio.
+            Solicita un diagnóstico inicial y te muestro con claridad qué está frenando tu sitio.
           </p>
           <a
             href="/metodologia"
