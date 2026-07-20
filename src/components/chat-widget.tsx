@@ -156,7 +156,7 @@ export function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 font-sans">
+    <>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -171,7 +171,7 @@ export function ChatWidget() {
               borderColor: "var(--border)",
               borderRadius: "var(--radius)",
             }}
-            className="flex h-[65vh] max-h-[480px] w-[90vw] max-w-[360px] flex-col overflow-hidden border shadow-xl"
+            className="fixed inset-x-3 z-50 flex flex-col overflow-hidden border font-sans shadow-xl [top:max(0.75rem,env(safe-area-inset-top))] [bottom:max(0.75rem,env(safe-area-inset-bottom))] sm:inset-x-auto sm:top-auto sm:bottom-24 sm:right-5 sm:h-[65vh] sm:max-h-[480px] sm:w-[90vw] sm:max-w-[360px]"
           >
               <motion.div
                 variants={sectionVariants}
@@ -332,9 +332,10 @@ export function ChatWidget() {
         )}
       </AnimatePresence>
 
-      <div className="flex items-center gap-2">
+      {!isOpen && (
+      <div className="fixed bottom-5 right-5 z-50 flex items-center gap-2 font-sans">
         <AnimatePresence mode="wait">
-          {!hasEngaged && !isOpen && showBubble && (
+          {!hasEngaged && showBubble && (
             <motion.div
               key="bubble"
               initial={{ opacity: 0, x: 12 }}
@@ -362,7 +363,7 @@ export function ChatWidget() {
               </button>
             </motion.div>
           )}
-          {!hasEngaged && !isOpen && !showBubble && (
+          {!hasEngaged && !showBubble && (
             <motion.span
               key="pill"
               initial={{ opacity: 0, x: 12 }}
@@ -413,6 +414,7 @@ export function ChatWidget() {
           </motion.button>
         </div>
       </div>
-    </div>
+      )}
+    </>
   )
 }
