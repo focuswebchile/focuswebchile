@@ -60,7 +60,7 @@ export function DiferenteTimeline() {
                 }}
               >
                 <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Partimos por entender el problema real
+                  Empiezo por entender el problema real
                 </h3>
               </TimelineContent>
 
@@ -87,7 +87,7 @@ export function DiferenteTimeline() {
                     customVariants={textVariants}
                     className="inline-flex items-center rounded-md border-2 border-dotted border-accent/50 px-2 text-accent"
                   >
-                    diagnosticamos
+                    diagnostico
                   </TimelineContent>{" "}
                   qué está frenando tu sitio: SEO técnico, velocidad, estructura o experiencia de uso. Mi trabajo es
                   convertir esa información en un plan{" "}
@@ -125,7 +125,7 @@ export function DiferenteTimeline() {
                     experiencia
                   </TimelineContent>{" "}
                   para priorizar lo que sí mueve la aguja: rendimiento, indexación, arquitectura y mensajes clave.
-                  Evitamos{" "}
+                  Evito{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -135,7 +135,7 @@ export function DiferenteTimeline() {
                   >
                     cambios cosméticos
                   </TimelineContent>{" "}
-                  y ejecutamos lo que realmente{" "}
+                  y ejecuto lo que realmente{" "}
                   <TimelineContent
                     as="span"
                     timelineRef={sectionRef}
@@ -159,7 +159,7 @@ export function DiferenteTimeline() {
                   Estrategia y ejecución en una misma línea
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
-                  Si el camino es optimizar, optimizamos. Si el camino es rehacer, desarrollamos desde cero.
+                  Si el camino es optimizar, optimizo. Si el camino es rehacer, desarrollo desde cero.
                   Siempre con base técnica sólida para que tu web se entienda mejor en Google y convierta mejor.
                   Te entrego una solución con lo{" "}
                   <TimelineContent

@@ -205,13 +205,13 @@ export function HeroSection() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-foreground shadow-lg shadow-accent/25 transition-colors hover:bg-accent/90"
                 >
-                  Cuéntame qué te pasa con tu sitio
+                  Cuéntame qué necesitas
                 </a>
                 <a
-                  href="/metodologia"
+                  href="/nuestro-proceso"
                   className="inline-flex items-center justify-center rounded-lg border-2 border-foreground/20 px-8 py-4 text-base font-semibold text-foreground transition-colors hover:bg-muted"
                 >
-                  Ver cómo trabajo
+                  Conocer mi proceso
                 </a>
               </div>
 

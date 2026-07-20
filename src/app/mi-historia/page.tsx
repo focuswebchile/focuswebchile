@@ -4,7 +4,6 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SobreMiHero } from "./hero"
 import { TextRevealByWord } from "@/components/ui/text-reveal-by-word"
-import { Layout, MessageCircle, Target } from "lucide-react"
 import { DiferenteTimeline } from "./diferente-timeline"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
@@ -141,8 +140,8 @@ export default function SobreMiPage() {
                   “
                 </span>
                 <p className="font-display text-2xl font-medium leading-snug text-primary text-center sm:text-3xl md:text-4xl">
-                  Antes de diseñar una página, me gusta entender qué necesita realmente el negocio, identificar qué
-                  está frenando su crecimiento y priorizar las mejoras que tendrán un impacto real.
+                  Antes de diseñar una página, me gusta entender qué necesita realmente tu negocio, identificar qué
+                  está frenando tu crecimiento y priorizar las mejoras que tendrán un impacto real.
                 </p>
               </blockquote>
             </div>
@@ -171,10 +170,10 @@ export default function SobreMiPage() {
             </div>
           </div>
         </section>
-        <section aria-labelledby="lo-que-me-mueve-title" className="w-full py-16 md:py-24">
+        <section aria-labelledby="lo-que-me-mueve-title" className="w-full py-12 md:py-16">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
-            <div className="space-y-4 text-center">
-              <h2 id="lo-que-me-mueve-title" className="font-display text-3xl font-semibold sm:text-5xl md:text-7xl">
+            <div className="space-y-2 text-center">
+              <h2 id="lo-que-me-mueve-title" className="font-display text-3xl font-semibold sm:text-5xl md:text-6xl">
                 <span className="text-foreground">Lo que</span>{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   me mueve
@@ -185,59 +184,64 @@ export default function SobreMiPage() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-[3fr_2fr]">
-              <figure className="overflow-hidden rounded-2xl border border-black/5 ring-1 ring-black/5 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.35)] md:h-full">
-                <div className="relative h-full min-h-[420px] w-full overflow-hidden">
+            <div className="mt-8 grid grid-cols-1 gap-10 md:mt-10 md:grid-cols-[380px_1fr] md:items-center md:gap-12 lg:grid-cols-[420px_1fr] lg:gap-16">
+              <div className="relative mx-auto w-full max-w-[320px] md:mx-0 md:max-w-none">
+                <div className="relative aspect-[3/4] w-[78%] overflow-hidden rounded-2xl border border-black/5 ring-1 ring-black/5 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/lo-que-me-mueve.webp"
-                    alt="Felipe Ibar | Focus Web"
+                    src="/felipe_en_computador.webp"
+                    alt="Felipe Ibar trabajando en su computador"
                     fill
-                    className="h-full w-full object-cover opacity-95 saturate-[1.08] contrast-[1.08] brightness-[0.98] !transition-none"
-                    sizes="(max-width: 768px) 100vw, 60vw"
-                    loading="lazy"
+                    className="h-full w-full object-cover"
+                    sizes="(min-width: 768px) 330px, 78vw"
                   />
                 </div>
-                <figcaption className="sr-only">Felipe Ibar y su enfoque de trabajo en Focus Web.</figcaption>
-              </figure>
+                <div className="absolute -bottom-6 -right-6 aspect-[3/4] w-[62%] overflow-hidden rounded-2xl border-4 border-background shadow-[0_18px_40px_-20px_rgba(0,0,0,0.4)] md:-bottom-8 md:-right-8">
+                  <Image
+                    src="/felipe_computador_espalda.webp"
+                    alt="Felipe Ibar de espaldas frente a sus pantallas"
+                    fill
+                    className="h-full w-full object-cover"
+                    sizes="(min-width: 768px) 260px, 62vw"
+                  />
+                </div>
+              </div>
 
-              <div className="flex flex-col gap-8 md:h-full">
-                <article className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-accent/55 bg-white/90 p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(61,58,140,0.25)] md:p-10">
-                  <Layout className="h-7 w-7 text-primary" aria-hidden="true" />
-                  <div className="mt-4 inline-flex w-fit items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+              <div className="space-y-6 md:space-y-7">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">
                     Claridad
-                  </div>
-                  <h3 className="mt-4 font-display text-xl font-semibold text-foreground md:text-2xl">
+                  </p>
+                  <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground sm:text-xl">
                     Diagnóstico claro antes de ejecutar
                   </h3>
-                  <p className="mt-3 text-base text-foreground/70 sm:text-lg">
-                    Antes de mover piezas, reviso qué está fallando de verdad: estructura, SEO on-page, indexación, rendimiento o experiencia móvil. Así evitamos cambios al azar y priorizamos lo que más impacto tiene.
+                  <p className="mt-1.5 text-sm text-foreground/70 sm:text-base">
+                    Antes de mover piezas, reviso qué está fallando de verdad: estructura, SEO on-page, indexación, rendimiento o experiencia móvil. Así evito cambios al azar y priorizo lo que más impacto tiene.
                   </p>
-                </article>
+                </div>
 
-                <article className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-accent/30 bg-white/90 p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(61,58,140,0.25)] md:p-10">
-                  <MessageCircle className="h-7 w-7 text-primary" aria-hidden="true" />
-                  <div className="mt-4 inline-flex w-fit items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">
                     Acompañamiento
-                  </div>
-                  <h3 className="mt-4 font-display text-xl font-semibold text-foreground md:text-2xl">
+                  </p>
+                  <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground sm:text-xl">
                     Transparencia técnica sin humo
                   </h3>
-                  <p className="mt-3 text-base text-foreground/70 sm:text-lg">
-                   Dejamos de lado promesas vacías. Te explico en simple qué está bien, qué está mal y qué conviene hacer primero. Decidimos juntos con criterio y contexto de negocio.
+                  <p className="mt-1.5 text-sm text-foreground/70 sm:text-base">
+                    Dejo de lado promesas vacías. Te explico en simple qué está bien, qué está mal y qué conviene hacer primero. Decidimos juntos con criterio y contexto de negocio.
                   </p>
-                </article>
-                <article className="flex flex-1 flex-col rounded-2xl border border-black/5 ring-1 ring-black/5 border-t-2 border-t-accent/30 bg-white/90 p-8 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-38px_rgba(61,58,140,0.25)] md:p-10">
-                  <Target className="h-7 w-7 text-primary" aria-hidden="true" />
-                  <div className="mt-4 inline-flex w-fit items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                </div>
+
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-primary">
                     Estrategia
-                  </div>
-                  <h3 className="mt-4 font-display text-xl font-semibold text-foreground md:text-2xl">
+                  </p>
+                  <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground sm:text-xl">
                     Base técnica para crecer sin rehacer
                   </h3>
-                  <p className="mt-3 text-base text-foreground/70 sm:text-lg">
-                    Si hay que desarrollar, lo hacemos con SEO técnico y rendimiento desde el inicio. Si no, optimizamos lo existente. El objetivo es el mismo: una web sólida que crezca contigo.
+                  <p className="mt-1.5 text-sm text-foreground/70 sm:text-base">
+                    Si hay que desarrollar, lo hago con SEO técnico y rendimiento desde el inicio. Si no, optimizo lo existente. El objetivo es el mismo: una web sólida que crezca contigo.
                   </p>
-                </article>
+                </div>
               </div>
             </div>
           </div>
@@ -283,7 +287,7 @@ export default function SobreMiPage() {
                     Hablemos de tu proyecto
                   </h2>
                   <p className="text-base text-foreground/70 md:text-lg">
-                    Para revisar qué no está funcionando y qué conviene priorizar primero
+                    Para revisar qué no te está funcionando y qué conviene priorizar primero
                   </p>
                 </div>
                 <a

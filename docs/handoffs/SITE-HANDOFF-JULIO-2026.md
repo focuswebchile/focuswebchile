@@ -1,12 +1,12 @@
 # Focus Web — Handoff del sitio (focusweb-chile) — Julio 2026
 
 **Repositorio:** `focusweb-chile` (Next.js, deploy en Vercel, auto-deploy en push a `main`)
-**Fecha de cierre:** 16 de julio de 2026
+**Fecha de cierre:** 16 de julio de 2026 — actualizado 20 de julio de 2026 (ver sección 5 en adelante)
 **Handoff relacionado:** `docs/handoffs/OPS-HANDOFF-JULIO-2026.md` (infraestructura del agente y n8n en Hetzner)
 
 ---
 
-## Resumen de la sesión
+## Resumen de la sesión (16 de julio)
 
 Punto de vista del sitio (no de la infraestructura): se embebió el widget de chat del asistente de FocusWeb en el sitio en producción (reemplazando el botón flotante de WhatsApp), se pulió su UX en varias rondas de feedback real, se agregaron las páginas legales (Términos y Política de Privacidad), y se ordenó la estructura de archivos del repo (documentación suelta y carpeta de imágenes duplicada).
 
@@ -66,8 +66,59 @@ Motivo: demasiados archivos sueltos en la raíz y una carpeta de imágenes dupli
 
 ---
 
-## 5. Pendiente para retomar (punto de vista sitio)
+## 5. Voz de marca — VOICE.md, auditoría y reescritura de copy (19–20 de julio)
+
+Punto de partida: Felipe subió `Tonovozphome.md` (auditoría inicial del Hero) y luego `VOICE.md` (identidad de marca, principios editoriales, frases prohibidas — la fuente de verdad) y `Homepage.md` (auditoría sección por sección de la home contra `VOICE.md`, con historial de decisiones). Los tres quedaron en la raíz del repo.
+
+**`Homepage.md` documenta dos tipos de chequeo repetibles** (no solo el resultado de una sesión): auditoría por sección contra `VOICE.md`, y "lectura corrida" (leer toda la home de corrido buscando dónde se rompe la sensación de una sola voz — encontró cosas que la auditoría por sección no vio, como verbos en plural sueltos al lado de uno ya corregido). Ver ese doc para el detalle completo, no se repite acá.
+
+**Cambios aplicados en la home**, resumidos (detalle línea por línea en `Homepage.md`):
+- Reescritas de voz "nosotros"/agencia a primera persona singular: sección Servicios (`main-services-section.tsx`) y Proceso (`process-section.tsx`) — títulos de paso que usaban vocabulario literalmente prohibido en `VOICE.md` §9 ("Diagnóstico estratégico", "Implementación técnica") pasaron a verbos cotidianos.
+- Eyebrow del Hero: "Felipe Ibar — diseño web, SEO y automatización" → "Más que una página web".
+- Corregidos 4 "nosotros" sueltos en microcopy de cierre (CTA pre-FAQ, subtítulo FAQ, mensaje de éxito del formulario de contacto — dos veces, en dos rondas de lectura corrida).
+- Autor del blog: de logo/nombre de marca ("FocusWeb") a "Felipe Ibar" con foto real.
+- Caso ABCIS: la cita nombraba "FocusWeb" como entidad en vez de a Felipe — corregido. Además se rebalanceó badge y métricas (menos peso visual/ámbar, más peso a una frase humana de Felipe) sin sacar los números.
+- Resultados/GA4: la sección menos personal de la home (incluía texto crudo de la interfaz de GA4) — se le dio voz de Felipe en los puntos donde no hay un dato que citar (H2, H3, pie de captura), sin tocar chips "GA4", valores ni fechas — esos deben seguir sonando a dato duro para ser creíbles.
+- Footer: sacado el label "Legal" suelto antes de los links de Términos/Privacidad.
+
+**Hero (`hero-section.tsx`):**
+- Párrafo bajo el H1 reescrito por Felipe: "No te entrego una web y desaparezco. Primero entiendo qué necesita tu negocio. Después construyo la solución correcta y sigo contigo para asegurarme de que todo funcione." (ajustado a primera persona singular — la versión enviada tenía "construimos" en plural).
+- CTAs: "Cuéntame qué te pasa con tu sitio" → "Cuéntame qué necesitas" (mismo link WhatsApp); "Ver cómo trabajo" → "Conocer mi proceso", ahora apunta a `/nuestro-proceso` (antes `/metodologia`).
+
+**Sección "Sobre mí" (`about-section.tsx`):**
+- Foto nueva `public/sobremi.png` (retrato, reemplaza `felipe-ibar.webp` en esta sección puntual).
+- Layout invertido: texto a la izquierda, foto a la derecha en desktop (con `lg:order-2`/`lg:order-1`, sin tocar el DOM, para que en mobile la foto siga apareciendo primero como estaba pensado).
+- Foto agrandada dos veces a pedido (columna final: 460px en desktop).
+- H2 "No hago solamente páginas web" partido en dos líneas.
+
+---
+
+## 6. Página Nuestro Proceso — voz + layout (19–20 de julio)
+
+- H1 y bajada nuevos: "Así convierto una idea en resultados" / "No importa si necesitas una web nueva, mejorar la que ya tienes o resolver un problema específico. Primero entiendo tu negocio para recomendarte la mejor solución para ti." (`process-content.tsx`).
+- Reescritura de voz completa del timeline de 4 pasos: títulos "Priorización"/"Ejecución"/"Medición" (consultora) → "Qué hacer primero"/"Manos a la obra"/"Medir lo que importa"; verbos prohibidos por `VOICE.md` §9 ("Implementamos", "Validamos") corregidos a primera persona singular; jerga de gestión de proyectos ("Backlog", "Quick wins") reemplazada.
+- Las 4 cards de valores (Transparencia, Enfoque, Acompañamiento, Calidad): descripciones a primera persona; se sacó el badge "FocusWeb · [Label]" repetido (entidad hablando en vez de Felipe) — no se reemplazó por "Felipe", se eliminó directamente por pedido de Felipe (no aportaba). Layout de esas 4 cards pasó de fila apilada de ancho completo a grilla 2×2, tras el ajuste.
+- Ajustes de layout: título "Lo que puedes esperar del proceso" y el CTA final "¿Vemos si este proceso es para tu proyecto?" partidos en dos líneas (eran una sola línea muy ancha).
+
+---
+
+## 7. Página Mi Historia — voz + layout (19–20 de julio)
+
+**Auditoría de voz** (`page.tsx`, `diferente-timeline.tsx`): mismo patrón sistemático que en Servicios/Proceso — casi cada párrafo abría en "nosotros" y saltaba a "yo"/"tú" en la misma oración. Se dejaron intactas, a pedido explícito, "Quién soy" (ya estaba bien) y la cita de cierre (el "nosotros" ahí es tú-y-yo válido, viene después de "hablemos"). Se corrigieron 8 verbos en plural en "Lo que me mueve" y "Qué me hace diferente", más "el negocio"/"su crecimiento" → "tu negocio"/"tu crecimiento" en una cita.
+
+**Rediseño de layout de "Lo que me mueve"** — pasó por 3 iteraciones en la misma sesión:
+1. Layout original: foto vertical dominante + 3 tarjetas apiladas con padding grande — mucho scroll para leer la sección completa.
+2. Opción B (elegida entre dos propuestas): foto como banner horizontal + 3 tarjetas compactas en fila.
+3. Rediseño final a pedido de Felipe, con mockup propio: foto banner reemplazada por **collage de 2 fotos superpuestas** (`public/felipe_en_computador.webp` atrás, `public/felipe_computador_espalda.webp` adelante con borde tipo polaroid), y las 3 tarjetas pasaron a **lista de texto plano sin bordes/sombra/ícono** (badge + título + párrafo). Los badges se ajustaron de pill sólido grande (chocaba visualmente con los títulos) a eyebrow chico en mayúsculas — mismo patrón que "Qué reviso"/"Qué hago" de Nuestro Proceso, por consistencia con el resto del sitio.
+- No se recortó copy en ningún punto de este rediseño — el ahorro de espacio vino del layout, no del texto.
+
+**Fotos nuevas usadas esta sesión** (subidas directamente a `public/` por Felipe, no son parte del batch de 8-9 fotos del 16 de julio mencionado en la sección 5 original — ver pendiente 2 abajo): `sobremi.png`, `felipe_en_computador.webp`, `felipe_computador_espalda.webp`.
+
+---
+
+## 8. Pendiente para retomar
 
 1. Decidir si versionar `agente-focusweb/` en este repo (hoy sigue sin trackear, a la espera de una decisión explícita de Felipe).
-2. Integrar las 8 fotos nuevas movidas a `public/` en los componentes correspondientes (hero, sección "quién es Felipe", etc.) — sin definir todavía dónde va cada una.
-3. Sin pendientes bloqueantes en el widget de chat — funcionalidad y UX validadas en producción.
+2. Las 8-9 fotos del batch del 16 de julio (`Cara de sorpresa reaccion.png`, `En_computador.png`, `Hablando por telefono.png`, `Manos sobre el teclado.png`, `en_computador_mirando_la_camara.JPG`, `felipe.png`, `imagen_hero_focuswebchile.png`, `seccion_hero_felipe.png`, `Felipe_imagen_seccion_hero.png`) **siguen sin integrarse en ningún componente** — las fotos usadas en la sesión del 19–20 de julio (`sobremi.png`, `felipe_en_computador.webp`, `felipe_computador_espalda.webp`) son subidas nuevas y distintas, no resuelven este pendiente.
+3. La auditoría de voz contra `VOICE.md` cubrió hasta ahora: Home (completa), Nuestro Proceso, Mi Historia. Quedan sin auditar: FAQ, subpáginas de Servicios, Landing page, Metodología, posts del blog.
+4. Sin pendientes bloqueantes en el widget de chat — funcionalidad y UX validadas en producción.

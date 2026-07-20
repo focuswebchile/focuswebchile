@@ -12,7 +12,7 @@ const steps = [
     number: "01",
     title: "Diagnóstico",
     description:
-      "Leemos tu situación real: SEO técnico, velocidad, estructura y objetivo de negocio. Sin supuestos ni recetas genéricas.",
+      "Reviso tu situación real: SEO técnico, velocidad, estructura y objetivo de negocio. Sin supuestos ni recetas genéricas.",
     bullets: [
       "Revisión técnica inicial del sitio",
       "Contexto comercial y objetivo principal",
@@ -22,24 +22,24 @@ const steps = [
   },
   {
     number: "02",
-    title: "Priorización",
+    title: "Qué hacer primero",
     description:
-      "Ordenamos acciones por impacto real: qué corrige más rápido el SEO, la velocidad y la conversión.",
-    bullets: ["Backlog por impacto/esfuerzo", "Quick wins técnicos", "Plan claro por etapas"],
+      "Ordeno las acciones por impacto real: qué corrige más rápido tu SEO, tu velocidad y tu conversión.",
+    bullets: ["Lista de prioridades por impacto y esfuerzo", "Mejoras rápidas de alto impacto", "Plan claro por etapas"],
     cta: { label: "Ver servicios", href: "/servicios" },
   },
   {
     number: "03",
-    title: "Ejecución",
+    title: "Manos a la obra",
     description:
-      "Implementamos lo acordado: optimización sobre sitio existente o desarrollo desde cero cuando realmente conviene.",
+      "Hago lo que acordamos: optimizo tu sitio existente o lo construyo desde cero cuando realmente conviene.",
     bullets: ["SEO técnico y estructura", "Mejoras de rendimiento", "Desarrollo web si aplica"],
     cta: { label: "Conocer desarrollo", href: "/servicios/desarrollo-web" },
   },
   {
     number: "04",
-    title: "Medición",
-    description: "Validamos resultados y ajustamos lo necesario para mantener mejoras sostenibles en tiempo.",
+    title: "Medir lo que importa",
+    description: "Reviso los resultados y ajusto lo necesario para mantener las mejoras en el tiempo.",
     bullets: ["Antes vs después", "Siguiente iteración sugerida", "Acompañamiento en decisiones"],
     cta: { label: "Hablar por WhatsApp", href: "https://wa.me/420733796959" },
   },
@@ -87,11 +87,11 @@ export default function ProcessContent() {
               Nuestro proceso
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight text-balance text-primary">
-              Proceso claro para mejorar SEO, velocidad y resultados
+              Así convierto una idea en resultados
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              No se trata solo de desarrollo web. Partimos por diagnóstico, priorizamos con criterio técnico y
-              ejecutamos lo que realmente mueve la aguja.
+              No importa si necesitas una web nueva, mejorar la que ya tienes o resolver un problema
+              específico. Primero entiendo tu negocio para recomendarte la mejor solución para ti.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="shadow-lg shadow-primary/25" asChild>
@@ -109,33 +109,33 @@ export default function ProcessContent() {
 
       <section className="px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px] pb-16">
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8">
             {[
               {
                 title: "Transparencia total",
                 description:
-                  "Sin tecnicismos ni costos ocultos. Todo claro desde el inicio, con acuerdos y tiempos definidos.",
+                  "Sin tecnicismos ni costos ocultos. Te explico todo claro desde el inicio, con acuerdos y tiempos definidos.",
                 icon: Target,
                 label: "Claridad",
                 tint: "bg-primary/5",
               },
               {
                 title: "Enfoque técnico y de negocio",
-                description: "Cada decisión busca mejorar visibilidad en Google, experiencia y conversión.",
+                description: "Cada decisión que tomo busca mejorar tu visibilidad en Google, tu experiencia y tu conversión.",
                 icon: Sparkles,
                 label: "Foco",
                 tint: "bg-accent/5",
               },
               {
                 title: "Acompañamiento real",
-                description: "Te guiamos en cada etapa. No quedas solo después del lanzamiento.",
+                description: "Te acompaño en cada etapa. No te dejo solo después del lanzamiento.",
                 icon: Users,
                 label: "Guía",
                 tint: "bg-primary/5",
               },
               {
                 title: "Calidad y detalle",
-                description: "SEO técnico, rendimiento y experiencia móvil alineados en una sola ejecución.",
+                description: "Reviso que el SEO técnico, el rendimiento y la experiencia móvil queden alineados en una sola entrega.",
                 icon: ShieldCheck,
                 label: "Precisión",
                 tint: "bg-accent/5",
@@ -151,21 +151,15 @@ export default function ProcessContent() {
                 <Card className="group relative overflow-hidden border-border/40 bg-card/80 px-6 py-7 sm:px-8 sm:py-9 shadow-lg shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/15">
                   <div className={`absolute inset-0 ${item.tint}`} />
                   <div className="absolute -right-16 -top-12 h-40 w-40 rounded-full bg-primary/15 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <div className="inline-flex items-center gap-2 text-primary">
-                        <item.icon className="h-6 w-6" />
-                        <span className="text-xs font-semibold uppercase tracking-wide">{item.label}</span>
-                      </div>
-                      <h3 className="font-display mt-3 text-2xl sm:text-3xl font-semibold text-foreground">{item.title}</h3>
-                      <p className="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl">
-                        {item.description}
-                      </p>
+                  <div className="relative">
+                    <div className="inline-flex items-center gap-2 text-primary">
+                      <item.icon className="h-6 w-6" />
+                      <span className="text-xs font-semibold uppercase tracking-wide">{item.label}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                      <span className="h-2 w-2 rounded-full bg-primary" />
-                      FocusWeb · {item.label}
-                    </div>
+                    <h3 className="font-display mt-3 text-2xl sm:text-3xl font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl">
+                      {item.description}
+                    </p>
                   </div>
                 </Card>
               </motion.div>
@@ -223,10 +217,11 @@ export default function ProcessContent() {
         <div className="mx-auto max-w-[1200px]">
           <div className="space-y-3">
             <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold text-foreground">
-              Lo que puedes esperar <span className="text-primary">del proceso</span>
+              Lo que puedes esperar<br />
+              <span className="text-primary">del proceso</span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
-              Beneficios claros que se sienten en cada etapa, sin repetir el timeline.
+              Beneficios claros que se sienten en cada etapa del proceso.
             </p>
           </div>
 
@@ -306,7 +301,8 @@ export default function ProcessContent() {
             className="text-center space-y-4 sm:space-y-6"
           >
             <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-semibold text-primary">
-              ¿Vemos si este proceso es para tu proyecto?
+              ¿Vemos si este proceso<br />
+              es para tu proyecto?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Conversemos, revisamos tu idea y te decimos con honestidad si podemos ayudarte.
