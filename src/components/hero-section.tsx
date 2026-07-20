@@ -193,9 +193,9 @@ export function HeroSection() {
               </h1>
 
               <p className="max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
-                No te entrego una web y desaparezco. Diagnostico antes de proponerte nada,
-                construyo pensando en tu negocio real, y me quedo viendo que todo funcione —
-                código, SEO, contenido y automatizaciones.
+                No te entrego una web y desaparezco. Primero entiendo qué necesita tu negocio.
+                Después construyo la solución correcta y sigo contigo para asegurarme de que
+                todo funcione.
               </p>
 
               <div className="flex flex-wrap gap-4">
