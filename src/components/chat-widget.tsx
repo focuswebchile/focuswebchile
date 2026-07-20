@@ -304,7 +304,7 @@ export function ChatWidget() {
                   onKeyDown={handleKeyDown}
                   placeholder="Escribe tu mensaje…"
                   rows={1}
-                  className="flex-1 resize-none border bg-transparent px-3 py-2 text-sm outline-none"
+                  className="flex-1 resize-none border bg-transparent px-3 py-2 text-base outline-none sm:text-sm"
                   style={{ borderColor: "var(--border)", borderRadius: "var(--radius)", color: "var(--foreground)" }}
                 />
                 <motion.button
