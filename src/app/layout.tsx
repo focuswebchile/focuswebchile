@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://focusweb.cl"),
   title: "Diseño Web en Chile para Emprendedores | FocusWeb",
   description:
-    "Creamos páginas web, landing pages y tiendas online para emprendedores en Chile. Diseño moderno, SEO y contacto directo por WhatsApp.",
+    "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
   keywords: "desarrollo web chile, landing page chile, sitio web emprendedores, e-commerce chile, diseño web santiago",
   authors: [{ name: "FocusWeb Chile" }],
   creator: "FocusWeb Chile",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     url: "https://focusweb.cl",
     title: "Diseño Web en Chile para Emprendedores | FocusWeb",
     description:
-      "Creamos páginas web, landing pages y tiendas online para emprendedores en Chile. Diseño moderno, SEO y contacto directo por WhatsApp.",
+      "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
     siteName: "FocusWeb Chile",
     images: [
       {
-        url: "https://focusweb.cl/og-home.png?v=2026-01-19",
+        url: "https://focusweb.cl/og-home-inicio.jpg?v=2026-07-22b",
         width: 1200,
         height: 630,
-        alt: "FocusWeb Chile",
+        alt: "FocusWeb Chile - Páginas web que te traen clientes reales",
       },
     ],
   },
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Diseño Web en Chile para Emprendedores | FocusWeb",
     description:
-      "Creamos páginas web, landing pages y tiendas online para emprendedores en Chile. Diseño moderno, SEO y contacto directo por WhatsApp.",
-    images: ["https://focusweb.cl/og-home.png?v=2026-01-19"],
+      "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
+    images: ["https://focusweb.cl/og-home-inicio.jpg?v=2026-07-22b"],
   },
   manifest: "/site.webmanifest",
   icons: {
