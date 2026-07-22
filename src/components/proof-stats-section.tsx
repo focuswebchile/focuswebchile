@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Reveal } from "@/components/ui/reveal"
@@ -33,54 +34,53 @@ export function ProofStatsSection() {
           </p>
         </Reveal>
 
-        {/* Tráfico orgánico */}
+        {/* Lanzamiento y estructura */}
         <Reveal>
           <Card className="grid gap-8 border-border bg-card p-6 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:p-10">
             <div>
-              <p className="inline-flex rounded-full border border-info/25 bg-info/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-info">
-                Tráfico orgánico
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Caso real
               </p>
-              <h3 className="mt-4 text-2xl font-black leading-tight tracking-tight text-foreground sm:text-3xl">
-                Así le fue a un cliente real
+              <h3 className="font-display mt-4 text-2xl font-bold leading-tight tracking-tight text-foreground">
+                Así ayudé a Tiny Van a lanzar su tienda online
               </h3>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                <div className="rounded-xl border border-success/25 bg-success/10 px-4 py-3">
-                  <span className="inline-flex rounded-full bg-success px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-white">GA4</span>
-                  <p className="mt-2 text-3xl font-black text-foreground sm:text-4xl">+99</p>
-                  <p className="mt-1 text-sm text-foreground/85">personas llegaron desde búsquedas orgánicas</p>
+              <div className="mt-6 grid grid-cols-3 gap-3 border-t border-border/60 pt-5 sm:gap-6">
+                <div>
+                  <p className="text-lg font-bold text-foreground/80 sm:text-xl lg:text-2xl">2 semanas</p>
+                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">De la primera reunión a su tienda publicada.</p>
                 </div>
-                <div className="rounded-xl border border-info/25 bg-info/10 px-4 py-3">
-                  <span className="inline-flex rounded-full bg-info px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-white">GA4</span>
-                  <p className="mt-2 text-3xl font-black text-foreground sm:text-4xl">3 min</p>
-                  <p className="mt-1 text-sm text-foreground/85">promedio de lectura e interacción</p>
+                <div>
+                  <p className="text-lg font-bold text-foreground/80 sm:text-xl lg:text-2xl">Diseño propio</p>
+                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">Cada sección pensada para sus productos, sin plantillas genéricas.</p>
                 </div>
-                <div className="rounded-xl border border-amber-300/40 bg-amber-100/50 px-4 py-3">
-                  <span className="inline-flex rounded-full bg-amber-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-white">GA4</span>
-                  <p className="mt-2 text-3xl font-black text-foreground sm:text-4xl">2.9</p>
-                  <p className="mt-1 text-sm text-foreground/85">páginas visitadas por usuario</p>
+                <div>
+                  <p className="text-lg font-bold text-foreground/80 sm:text-xl lg:text-2xl">Proceso claro</p>
+                  <p className="mt-1 text-[11px] leading-tight text-muted-foreground sm:text-xs">Avances ordenados y decisiones claras en cada etapa.</p>
                 </div>
               </div>
-              <div className="mt-4 inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5">
-                <p className="text-xs font-semibold uppercase tracking-[0.06em] text-primary">
-                  Período medido: 1 nov 2025 - 18 feb 2026
-                </p>
-              </div>
+
+              <a
+                href="https://tinyvan.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-1 rounded-md border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+              >
+                Ver página
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
             </div>
 
             <div className="rounded-xl border border-dashed border-border bg-muted/20 p-4">
               <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted/40">
                 <Image
-                  src="/datos-Ga4.webp"
-                  alt="Captura de métricas GA4 del caso real"
+                  src="/tinyvan-home.webp"
+                  alt="Home de Tiny Van en producción"
                   fill
-                  className="object-contain"
+                  className="object-cover object-top"
                   loading="lazy"
                 />
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">
-                Captura real de Google Analytics, sin editar.
-              </p>
             </div>
           </Card>
         </Reveal>

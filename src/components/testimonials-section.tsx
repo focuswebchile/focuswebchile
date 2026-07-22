@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Reveal } from "@/components/ui/reveal"
-import { Star } from "lucide-react"
+import { ArrowUpRight, Star } from "lucide-react"
 import { useSiteToggles } from "@/components/toggle-sections"
 
 const testimonials = [
@@ -15,6 +15,7 @@ const testimonials = [
       "En solo 2 semanas tenía mi tienda online funcionando. El tráfico superó mis expectativas y el diseño quedó buenísimo. Feliz de seguir trabajando con Felipe.",
     rating: 5,
     avatar: "/alvaro.webp",
+    url: "https://tinyvan.cl",
   },
   {
     name: "Verki Bambas",
@@ -24,6 +25,7 @@ const testimonials = [
       "Coordinamos todo desde Europa y fue impecable. Felipe reestructuró la arquitectura técnica, reordenó el SEO y rediseñó el hero. El resultado fue inmediato: mejor rendimiento, mejor posicionamiento y una base sólida para crecer internacionalmente.",
     rating: 5,
     avatar: "/verki.webp",
+    url: "https://www.stayloco.cz",
   },
 ]
 
@@ -72,8 +74,19 @@ export function TestimonialsSection() {
                         <p className="text-xs text-muted-foreground">{t.role}</p>
                       </div>
                     </div>
-                    <div className="inline-flex items-center rounded-md border border-primary/20 bg-primary/10 px-3 py-1">
-                      <span className="text-xs font-semibold text-primary">{t.project}</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="inline-flex items-center rounded-md border border-primary/20 bg-primary/10 px-3 py-1">
+                        <span className="text-xs font-semibold text-primary">{t.project}</span>
+                      </div>
+                      <a
+                        href={t.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-primary/80"
+                      >
+                        Ver página
+                        <ArrowUpRight className="h-3.5 w-3.5" />
+                      </a>
                     </div>
                   </div>
                 </div>
