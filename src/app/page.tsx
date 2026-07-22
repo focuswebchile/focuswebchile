@@ -5,9 +5,9 @@ import { HomeSections } from "@/components/home-sections"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "SEO Técnico y Posicionamiento Web en Chile | FocusWeb",
+  title: "Diseño Web en Chile para Emprendedores | FocusWeb",
   description:
-    "¿Tu sitio web no vende o carga lento? Optimizamos el SEO técnico y la velocidad de tu página en Chile para dominar Google. ¡Cotiza tu auditoría hoy!",
+    "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
   alternates: {
     canonical: "https://focusweb.cl",
   },
@@ -15,23 +15,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: "https://focusweb.cl",
-    title: "SEO Técnico y Posicionamiento Web en Chile | FocusWeb",
+    title: "Diseño Web en Chile para Emprendedores | FocusWeb",
     description:
-      "¿Tu sitio web no vende o carga lento? Optimizamos el SEO técnico y la velocidad de tu página en Chile para dominar Google. ¡Cotiza tu auditoría hoy!",
+      "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
     siteName: "FocusWeb Chile",
     images: [
       {
-        url: "https://focusweb.cl/Optimizacion-web-con-criterio-tecnico.webp",
-        alt: "Optimización web con criterio técnico para negocios en Chile",
+        url: "https://focusweb.cl/og-home-inicio.jpg?v=2026-07-22b",
+        width: 1200,
+        height: 630,
+        alt: "FocusWeb Chile - Páginas web que te traen clientes reales",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO Técnico y Posicionamiento Web en Chile | FocusWeb",
+    title: "Diseño Web en Chile para Emprendedores | FocusWeb",
     description:
-      "¿Tu sitio web no vende o carga lento? Optimizamos el SEO técnico y la velocidad de tu página en Chile para dominar Google. ¡Cotiza tu auditoría hoy!",
-    images: ["https://focusweb.cl/Optimizacion-web-con-criterio-tecnico.webp"],
+      "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
+    images: ["https://focusweb.cl/og-home-inicio.jpg?v=2026-07-22b"],
   },
 }
 
