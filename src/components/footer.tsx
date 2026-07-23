@@ -94,6 +94,7 @@ export function Footer() {
                 href="https://www.instagram.com/focuswebchile"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram de Focus Web Chile"
                 className="w-11 h-11 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
@@ -102,12 +103,14 @@ export function Footer() {
                 href="https://www.facebook.com/people/Focus-Web-Chile/61585246727387"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook de Focus Web Chile"
                 className="w-11 h-11 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
                 <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </a>
               <a
                 href="/contacto"
+                aria-label="Ir a la página de contacto"
                 className="w-11 h-11 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
