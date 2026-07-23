@@ -345,7 +345,11 @@ export default function BlogPostPage() {
                   <a href="/nuestro-proceso" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     cómo trabajamos
                   </a>{" "}
-                  o revisar las{" "}
+                  , revisar cómo{" "}
+                  <a href="/crear-pagina-web-chile" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                    crear tu página web en Chile
+                  </a>{" "}
+                  paso a paso, o revisar las{" "}
                   <a href="/faq" className="text-primary hover:text-primary/80 underline underline-offset-4">
                     preguntas frecuentes
                   </a>{" "}

@@ -185,6 +185,35 @@ const auditoriaWebPageSchema = {
   },
 }
 
+const auditoriaServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://focusweb.cl/servicios/auditoria-seo-tecnico#service",
+  name: "Auditoría SEO Técnica",
+  serviceType: "Auditoría SEO técnica",
+  description:
+    "Servicio de auditoría SEO técnica en Chile con diagnóstico priorizado de indexación, performance y schema markup, en 3 niveles según profundidad de análisis.",
+  provider: {
+    "@type": "Organization",
+    "@id": "https://focusweb.cl/#organization",
+    name: "FocusWeb Chile",
+    url: "https://focusweb.cl",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Chile",
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "CLP",
+    lowPrice: "0",
+    highPrice: "350000",
+    offerCount: "3",
+    availability: "https://schema.org/InStock",
+    url: "https://focusweb.cl/servicios/auditoria-seo-tecnico",
+  },
+}
+
 const auditAreas = [
   {
     title: "1. Análisis de Indexación y Rastreo",
@@ -882,6 +911,10 @@ export default function AuditoriaSeoTecnicoPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(auditoriaWebPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(auditoriaServiceSchema) }}
       />
     </>
   )

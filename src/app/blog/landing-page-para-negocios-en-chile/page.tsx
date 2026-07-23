@@ -543,7 +543,13 @@ export default function LandingPageParaNegociosPage() {
               <h2 className="font-display text-2xl sm:text-3xl font-semibold pt-4">
                 Conclusión: no necesitas una web compleja para empezar
               </h2>
-              <p>Muchas personas creen que necesitan una página web completa desde el inicio.</p>
+              <p>
+                Muchas personas creen que necesitan{" "}
+                <a href="/crear-pagina-web-chile" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  una página web completa
+                </a>{" "}
+                desde el inicio.
+              </p>
 
               <p>Pero en la práctica, una landing page bien hecha puede ser más que suficiente para:</p>
               <ul className="list-disc space-y-2 pl-6 text-foreground/90">

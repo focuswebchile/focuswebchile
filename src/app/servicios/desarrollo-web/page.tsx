@@ -83,6 +83,34 @@ export default function DesarrolloWebPage() {
       },
     ],
   }
+  const desarrolloWebServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://focusweb.cl/servicios/desarrollo-web#service",
+    name: "Desarrollo Web Profesional",
+    serviceType: "Desarrollo web",
+    description:
+      "Servicio de desarrollo web profesional en Chile para landing pages, sitios corporativos y tiendas online con foco en SEO técnico y rendimiento.",
+    provider: {
+      "@type": "Organization",
+      "@id": "https://focusweb.cl/#organization",
+      name: "FocusWeb Chile",
+      url: "https://focusweb.cl",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Chile",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "CLP",
+      lowPrice: "180000",
+      highPrice: "900000",
+      offerCount: "3",
+      availability: "https://schema.org/InStock",
+      url: "https://focusweb.cl/servicios/desarrollo-web",
+    },
+  }
 
   return (
     <>
@@ -120,6 +148,10 @@ export default function DesarrolloWebPage() {
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(desarrolloWebServiceSchema) }}
+      />
     </>
   )
 }

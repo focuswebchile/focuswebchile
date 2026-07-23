@@ -324,7 +324,10 @@ export default function BlogPostPage() {
               </p>
 
               <p>
-                Si ya tienes un negocio andando y quieres ordenar tu presencia online, una página web completa
+                Si ya tienes un negocio andando y quieres ordenar tu presencia online,{" "}
+                <a href="/crear-pagina-web-chile" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                  una página web completa
+                </a>{" "}
                 probablemente sea la mejor opción.
               </p>
 

@@ -7,7 +7,7 @@ import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 import { ArticleAuthorCta } from "@/components/article-author-cta"
 
 export const metadata: Metadata = {
-  title: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
+  title: "Cómo Poner tu Negocio en Google (Guía Mi Negocio Chile)",
   description:
     "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_CL",
     url: "https://focusweb.cl/blog/seo-local-google-business-chile",
-    title: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
+    title: "Cómo Poner tu Negocio en Google (Guía Mi Negocio Chile)",
     description:
       "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
     siteName: "FocusWeb Chile",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
+    title: "Cómo Poner tu Negocio en Google (Guía Mi Negocio Chile)",
     description:
       "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
     images: ["https://focusweb.cl/og-google-business.webp"],
@@ -44,7 +44,7 @@ const articleSchema = {
   "@graph": [
     {
       "@type": "Article",
-      headline: "Google Mi Negocio en Chile: Guía de SEO Local Paso a Paso",
+      headline: "Cómo Poner tu Negocio en Google (Guía Mi Negocio Chile)",
       description:
         "Aprende a registrar, optimizar y posicionar el perfil de Google Mi Negocio de tu empresa en Chile. Atrae clientes locales y multiplica tus ventas hoy.",
       inLanguage: "es-CL",
@@ -502,8 +502,12 @@ export default function SeoLocalGoogleBusinessChilePage() {
                   </summary>
                   <p className="mt-2 text-muted-foreground">
                     No es obligatorio. Puedes aparecer en Google Maps solo con tu ficha bien configurada. Sin embargo,
-                    tener una página web profesional ayuda a generar más confianza y mejorar tu visibilidad cuando las
-                    personas buscan más información sobre tu negocio.
+                    tener{" "}
+                    <a href="/crear-pagina-web-chile" className="text-primary hover:text-primary/80 underline underline-offset-4">
+                      una página web profesional
+                    </a>{" "}
+                    ayuda a generar más confianza y mejorar tu visibilidad cuando las personas buscan más información
+                    sobre tu negocio.
                   </p>
                 </details>
 
