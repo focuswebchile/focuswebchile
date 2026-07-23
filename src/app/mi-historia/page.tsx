@@ -291,7 +291,7 @@ export default function SobreMiPage() {
                   </p>
                 </div>
                 <a
-                  href="https://wa.me/420733796959"
+                  href="https://wa.me/56922261321"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-colors hover:bg-primary/90"

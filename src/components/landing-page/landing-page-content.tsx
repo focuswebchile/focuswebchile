@@ -811,7 +811,7 @@ export default function LandingPageContent() {
             </p>
             <div className="mt-8">
               <a
-                href="https://wa.me/420733796959"
+                href="https://wa.me/56922261321"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors"

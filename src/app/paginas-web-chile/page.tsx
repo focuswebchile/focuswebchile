@@ -226,7 +226,7 @@ export default function PaginasWebChilePage() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://wa.me/420733796959?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
+                  href="https://wa.me/56922261321?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90"
@@ -320,7 +320,7 @@ export default function PaginasWebChilePage() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/420733796959?text=Hola%2C%20me%20interesa%20la%20landing%20page"
+                  href="https://wa.me/56922261321?text=Hola%2C%20me%20interesa%20la%20landing%20page"
                   target="_blank"
                   rel="noreferrer"
                   className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-colors hover:bg-primary/90"
@@ -357,7 +357,7 @@ export default function PaginasWebChilePage() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/420733796959?text=Hola%2C%20me%20interesa%20un%20sitio%20web%20completo"
+                  href="https://wa.me/56922261321?text=Hola%2C%20me%20interesa%20un%20sitio%20web%20completo"
                   target="_blank"
                   rel="noreferrer"
                   className="mt-6 inline-flex items-center justify-center rounded-full border border-primary/40 bg-white px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
@@ -370,7 +370,7 @@ export default function PaginasWebChilePage() {
             <p className="mt-4 text-center text-sm text-foreground/60">
               ¿Necesitas tienda online o algo a medida?{" "}
               <a
-                href="https://wa.me/420733796959"
+                href="https://wa.me/56922261321"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary underline underline-offset-4 hover:text-primary/80"
@@ -446,7 +446,7 @@ export default function PaginasWebChilePage() {
                 Escríbeme por WhatsApp y te respondo hoy con opciones claras para tu negocio.
               </p>
               <a
-                href="https://wa.me/420733796959?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
+                href="https://wa.me/56922261321?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90"
@@ -493,7 +493,7 @@ export default function PaginasWebChilePage() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <a
-                  href="https://wa.me/420733796959?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
+                  href="https://wa.me/56922261321?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-colors hover:bg-primary/90"

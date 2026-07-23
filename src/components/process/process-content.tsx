@@ -41,7 +41,7 @@ const steps = [
     title: "Medir lo que importa",
     description: "Reviso los resultados y ajusto lo necesario para mantener las mejoras en el tiempo.",
     bullets: ["Antes vs después", "Siguiente iteración sugerida", "Acompañamiento en decisiones"],
-    cta: { label: "Hablar por WhatsApp", href: "https://wa.me/420733796959" },
+    cta: { label: "Hablar por WhatsApp", href: "https://wa.me/56922261321" },
   },
 ]
 
@@ -95,7 +95,7 @@ export default function ProcessContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="shadow-lg shadow-primary/25" asChild>
-                <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/56922261321" target="_blank" rel="noreferrer">
                   Evaluar idea
                 </a>
               </Button>
@@ -308,7 +308,7 @@ export default function ProcessContent() {
               Conversemos, revisamos tu idea y te decimos con honestidad si podemos ayudarte.
             </p>
             <Button size="lg" className="shadow-lg shadow-primary/25" asChild>
-              <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/56922261321" target="_blank" rel="noreferrer">
                 Contactar por WhatsApp
               </a>
             </Button>

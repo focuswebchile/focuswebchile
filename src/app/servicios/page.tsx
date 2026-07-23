@@ -829,7 +829,7 @@ export default function ServiciosPage() {
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Link>
                 <a
-                  href="https://wa.me/420733796959"
+                  href="https://wa.me/56922261321"
                   target="_blank"
                   rel="noreferrer"
                   className="group inline-flex items-center rounded-full border border-white/60 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20"

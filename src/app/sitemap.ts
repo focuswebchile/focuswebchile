@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contacto`, lastModified: rebrand },
     { url: `${baseUrl}/faq`, lastModified: rebrand },
     { url: `${baseUrl}/blog`, lastModified: rebrand },
-    { url: `${baseUrl}/blog/como-crear-una-pagina-web-en-chile`, lastModified: rebrand },
     { url: `${baseUrl}/blog/landing-page-vs-pagina-web`, lastModified: rebrand },
     { url: `${baseUrl}/blog/instagram-a-tienda-online`, lastModified: rebrand },
     { url: `${baseUrl}/blog/errores-paginas-web-pymes-chile`, lastModified: rebrand },
@@ -30,9 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/seguridad-web-pymes`, lastModified: rebrand },
     { url: `${baseUrl}/blog/landing-page-para-negocios-en-chile`, lastModified: rebrand },
     { url: `${baseUrl}/crear-pagina-web-chile`, lastModified: rebrand },
+    { url: `${baseUrl}/paginas-web-chile`, lastModified: rebrand },
     { url: `${baseUrl}/mi-historia`, lastModified: miHistoria },
     { url: `${baseUrl}/metodologia`, lastModified: rebrand },
-    { url: `${baseUrl}/mapa-del-sitio`, lastModified: rebrand },
     { url: `${baseUrl}/check-list-ecommerce`, lastModified: rebrand },
   ]
 }

@@ -188,7 +188,7 @@ export function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm uppercase tracking-wide text-muted-foreground">WhatsApp</p>
-                  <p className="text-base font-semibold">+420 733 796 959</p>
+                  <p className="text-base font-semibold">+56 9 2226 1321</p>
                 </div>
               </div>
             </Card>

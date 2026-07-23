@@ -238,7 +238,7 @@ export default function TermsPage() {
                   El soporte y las consultas relacionadas con proyectos en curso se canalizan a través de:
                 </p>
                 <ul className="mt-4 list-disc space-y-2 pl-5">
-                  <li>WhatsApp: +420 733 796 959</li>
+                  <li>WhatsApp: +56 9 2226 1321</li>
                   <li>Correo electrónico: contacto@focusweb.cl</li>
                   <li>Instagram: @focuswebchile</li>
                 </ul>
@@ -335,7 +335,7 @@ export default function TermsPage() {
                   <strong className="block text-foreground">Focus Web Chile</strong>
                   contacto@focusweb.cl
                   <br />
-                  +420 733 796 959
+                  +56 9 2226 1321
                   <br />
                   focusweb.cl
                 </p>

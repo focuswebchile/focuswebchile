@@ -254,7 +254,7 @@ export function AuditoriaSeoCtaForm() {
             {isSubmitting ? "Enviando..." : "Enviar"}
           </button>
           <a
-            href="https://wa.me/420733796959"
+            href="https://wa.me/56922261321"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-primary/35 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/15"

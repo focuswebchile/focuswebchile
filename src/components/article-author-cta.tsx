@@ -30,7 +30,7 @@ export function ArticleAuthorCta() {
           Auditar gratis mi sitio
         </Link>
         <a
-          href="https://wa.me/420733796959"
+          href="https://wa.me/56922261321"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center justify-center rounded-full border border-primary/40 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"

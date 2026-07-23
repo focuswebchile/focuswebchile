@@ -148,7 +148,7 @@ export function Footer() {
 
             <p className="flex items-center justify-center sm:justify-end gap-2 text-center sm:text-right">
               <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Hecho en Chile para emprender online
+              Hecho en Chile · Remoto desde Praga
             </p>
           </div>
         </div>

@@ -304,7 +304,7 @@ export default function MetodologiaPage() {
               Ir al diagnóstico inicial
             </Link>
             <Link
-              href="https://wa.me/420733796959"
+              href="https://wa.me/56922261321"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"

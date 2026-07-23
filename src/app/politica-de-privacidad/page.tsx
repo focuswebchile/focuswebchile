@@ -180,7 +180,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p className="mt-4">
                   Para ejercer cualquiera de estos derechos, puede escribirnos a <strong>contacto@focusweb.cl</strong>{" "}
-                  o por <strong>WhatsApp al +420 733 796 959</strong>, indicando su solicitud. Responderemos dentro de
+                  o por <strong>WhatsApp al +56 9 2226 1321</strong>, indicando su solicitud. Responderemos dentro de
                   un plazo razonable.
                 </p>
               </section>
@@ -227,7 +227,7 @@ export default function PrivacyPage() {
                   <strong className="block text-foreground">Focus Web Chile</strong>
                   contacto@focusweb.cl
                   <br />
-                  +420 733 796 959
+                  +56 9 2226 1321
                   <br />
                   focusweb.cl
                 </p>

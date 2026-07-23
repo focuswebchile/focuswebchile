@@ -2187,7 +2187,7 @@ export default function CheckListEcommercePage() {
 
                       <div className="mt-8 flex flex-wrap items-center gap-4">
                         <a
-                          href="https://wa.me/420733796959"
+                          href="https://wa.me/56922261321"
                           target="_blank"
                           rel="noreferrer"
                           className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-transform duration-300 hover:-translate-y-0.5"
@@ -2241,7 +2241,7 @@ export default function CheckListEcommercePage() {
                               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                                 WhatsApp
                               </p>
-                              <p className="text-sm font-semibold text-foreground">+420 733 796 959</p>
+                              <p className="text-sm font-semibold text-foreground">+56 9 2226 1321</p>
                             </div>
                           </div>
                         </div>

@@ -57,7 +57,7 @@ const serviceConfigs = [
     delay: 0.2,
     cta: {
       label: "Solicitar cotización",
-      href: "https://wa.me/420733796959",
+      href: "https://wa.me/56922261321",
       external: true,
     },
   },
@@ -71,7 +71,7 @@ const serviceConfigs = [
     delay: 0.3,
     cta: {
       label: "Solicitar cotización",
-      href: "https://wa.me/420733796959",
+      href: "https://wa.me/56922261321",
       external: true,
     },
   },

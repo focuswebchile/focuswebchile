@@ -194,7 +194,7 @@ export function Header() {
                   ),
                 )}
               <Button size="sm" className="shadow-lg shadow-accent/25 text-xs lg:text-sm" asChild>
-                <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/56922261321" target="_blank" rel="noreferrer">
                   Comenzar
                 </a>
               </Button>
@@ -293,7 +293,7 @@ export function Header() {
                 )
               ))}
               <Button className="mt-2 sm:mt-4 shadow-lg shadow-accent/25 h-12 text-base" asChild>
-                <a href="https://wa.me/420733796959" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/56922261321" target="_blank" rel="noreferrer">
                   Comenzar ahora
                 </a>
               </Button>

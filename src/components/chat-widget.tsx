@@ -140,7 +140,7 @@ export function ChatWidget() {
         {
           role: "assistant",
           content:
-            "Perdona, tuve un problema técnico justo ahora. Puedes escribirle directo a Felipe por WhatsApp: https://wa.me/420733796959",
+            "Perdona, tuve un problema técnico justo ahora. Puedes escribirle directo a Felipe por WhatsApp: https://wa.me/56922261321",
         },
       ])
     } finally {
