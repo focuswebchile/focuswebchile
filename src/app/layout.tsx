@@ -62,6 +62,9 @@ export const metadata: Metadata = {
       "Páginas web rápidas y efectivas para negocios en Chile. Sin plantillas genéricas: diseño a medida, optimizado para convertir, con soporte directo por WhatsApp.",
     images: ["https://focusweb.cl/og-home-inicio.jpg?v=2026-07-22b"],
   },
+  other: {
+    "facebook-domain-verification": "5sw5now7t1i7etoc8auxs773v1dw2e",
+  },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
