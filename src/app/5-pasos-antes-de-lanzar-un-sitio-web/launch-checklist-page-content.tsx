@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Script from "next/script"
 import { AlertCircle } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -192,9 +191,7 @@ export function LaunchChecklistPageContent({ pageUrl }: LaunchChecklistPageProps
 
   return (
     <>
-      <Script id="launch-checklist-schema" type="application/ld+json">
-        {JSON.stringify(pageSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="px-4 pt-24 sm:px-6 sm:pt-28">

@@ -239,6 +239,16 @@ export default function ServiciosPage() {
                 No vendemos paquetes genéricos. Identificamos tu situación, priorizamos lo que más impacto tiene y
                 ejecutamos con criterio.
               </p>
+              <div className="mt-7">
+                <a
+                  href="https://wa.me/56922261321"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-foreground shadow-lg shadow-accent/25 transition-colors hover:bg-accent/90"
+                >
+                  Cuéntame qué necesitas
+                </a>
+              </div>
             </div>
           </div>
         </section>

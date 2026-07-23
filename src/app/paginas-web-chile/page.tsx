@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -196,9 +195,7 @@ const faqs = [
 export default function PaginasWebChilePage() {
   return (
     <>
-      <Script id="paginas-web-chile-schema" type="application/ld+json">
-        {JSON.stringify(pageSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
 

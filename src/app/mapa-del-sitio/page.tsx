@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
@@ -87,9 +86,7 @@ const pageSchema = {
 export default function SiteMapPage() {
   return (
     <>
-      <Script id="sitemap-page-schema" type="application/ld+json">
-        {JSON.stringify(pageSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24">

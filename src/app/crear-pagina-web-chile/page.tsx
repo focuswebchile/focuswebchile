@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
@@ -75,9 +74,7 @@ const pageSchema = {
 export default function CrearPaginaWebChilePage() {
   return (
     <>
-      <Script id="crear-pagina-web-chile-schema" type="application/ld+json">
-        {JSON.stringify(pageSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         {/* Hero image */}
@@ -91,6 +88,7 @@ export default function CrearPaginaWebChilePage() {
                 className="object-cover"
                 sizes="(min-width: 1024px) 960px, (min-width: 640px) 90vw, 100vw"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>

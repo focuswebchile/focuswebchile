@@ -117,9 +117,9 @@ export function Header() {
               <Image
                 src="/logo_focus_web.webp"
                 alt="FocusWeb"
-                width={40}
-                height={40}
-                className="h-9 w-9 sm:h-10 sm:w-10 rounded-full"
+                width={44}
+                height={44}
+                className="h-11 w-11 rounded-full"
                 priority
               />
               <span className="hidden xl:inline text-foreground">
@@ -207,7 +207,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden h-9 w-9 sm:h-10 sm:w-10"
+              className="md:hidden h-11 w-11"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >

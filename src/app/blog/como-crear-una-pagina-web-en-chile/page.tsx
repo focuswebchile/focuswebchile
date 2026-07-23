@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
@@ -51,8 +50,8 @@ const articleAndBreadcrumbSchema = {
       inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-como-crea-una-pagina.webp"],
       author: {
-        "@type": "Organization",
-        name: "FocusWeb Chile",
+        "@type": "Person",
+        name: "Felipe Ibar",
       },
       publisher: {
         "@type": "Organization",
@@ -88,9 +87,7 @@ const articleAndBreadcrumbSchema = {
 export default function BlogPostPage() {
   return (
     <>
-      <Script id="blog-como-crear-schema" type="application/ld+json">
-        {JSON.stringify(articleAndBreadcrumbSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleAndBreadcrumbSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">

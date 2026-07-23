@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { SiteBreadcrumb } from "@/components/site-breadcrumb"
@@ -49,7 +48,7 @@ const articleAndBreadcrumbSchema = {
         "Descubre los 10 errores más comunes al crear páginas web en Chile que están costando dinero a las PyMEs.",
       inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-10%20errores.webp"],
-      author: { "@type": "Organization", name: "FocusWeb Chile" },
+      author: { "@type": "Person", name: "Felipe Ibar" },
       publisher: {
         "@type": "Organization",
         name: "FocusWeb Chile",
@@ -81,9 +80,7 @@ const articleAndBreadcrumbSchema = {
 export default function BlogPostPage() {
   return (
     <>
-      <Script id="blog-errores-pymes-schema" type="application/ld+json">
-        {JSON.stringify(articleAndBreadcrumbSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleAndBreadcrumbSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">

@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import LandingPageContent from "@/components/landing-page/landing-page-content"
@@ -143,15 +142,9 @@ export default function LandingPage() {
 
   return (
     <>
-      <Script id="landing-faq-schema" type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </Script>
-      <Script id="landing-webpage-schema" type="application/ld+json">
-        {JSON.stringify(webPageSchema)}
-      </Script>
-      <Script id="landing-breadcrumb-schema" type="application/ld+json">
-        {JSON.stringify(breadcrumbSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <LandingPageContent />

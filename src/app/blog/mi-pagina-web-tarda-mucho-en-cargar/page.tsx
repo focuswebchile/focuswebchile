@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -80,7 +79,7 @@ const articleAndBreadcrumbSchema = {
         "Descubre por qué tu página web tarda mucho en cargar, cómo impacta en SEO y ventas, y qué acciones priorizar para optimizar WordPress en Chile.",
       inLanguage: "es-CL",
       image: ["https://focusweb.cl/og-mi-sitio-carga-lento.webp"],
-      author: { "@type": "Organization", name: "FocusWeb Chile" },
+      author: { "@type": "Person", name: "Felipe Ibar" },
       publisher: {
         "@type": "Organization",
         name: "FocusWeb Chile",
@@ -112,12 +111,8 @@ const articleAndBreadcrumbSchema = {
 export default function BlogPostPage() {
   return (
     <>
-      <Script id="blog-velocidad-article-schema" type="application/ld+json">
-        {JSON.stringify(articleAndBreadcrumbSchema)}
-      </Script>
-      <Script id="blog-velocidad-faq-schema" type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleAndBreadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
         <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12 px-4 sm:px-6">

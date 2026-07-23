@@ -115,6 +115,7 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://focusweb.cl/#organization",
       name: "FocusWeb Chile",
       url: "https://focusweb.cl",
       logo: "https://focusweb.cl/logo-512.png",
@@ -127,6 +128,10 @@ export default function RootLayout({
         },
       ],
       availableLanguage: "es-CL",
+      sameAs: [
+        "https://www.instagram.com/focuswebchile",
+        "https://www.facebook.com/people/Focus-Web-Chile/61585246727387",
+      ],
     },
     {
       "@context": "https://schema.org",
@@ -141,12 +146,7 @@ export default function RootLayout({
     <html lang="es-CL" suppressHydrationWarning>
       <body className={`${bricolageGrotesque.variable} ${plusJakartaSans.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Script
-            id="structured-data"
-            type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-          />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
           <Script
             id="ga4-src"
             src="https://www.googletagmanager.com/gtag/js?id=G-33SDJFM25D"
