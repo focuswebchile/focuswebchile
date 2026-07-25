@@ -161,13 +161,13 @@ export default function SobreMiPage() {
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="space-y-2 text-center">
               <h2 id="lo-que-me-mueve-title" className="font-display text-3xl font-semibold sm:text-5xl md:text-6xl">
-                <span className="text-foreground">Lo que</span>{" "}
+                <span className="text-foreground">Mi forma de</span>{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  me mueve
+                  entender tu proyecto
                 </span>
               </h2>
               <p className="text-base text-foreground/70 sm:text-lg">
-                Diagnóstico, SEO técnico y desarrollo con foco en resultados
+                Cada decisión parte de entender el problema antes de buscar una solución.
               </p>
             </div>
 
