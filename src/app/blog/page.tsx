@@ -132,6 +132,7 @@ export default function BlogPage() {
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 960px, (min-width: 640px) 90vw, 100vw"
                   priority
+                  fetchPriority="high"
                 />
               </div>
             </div>

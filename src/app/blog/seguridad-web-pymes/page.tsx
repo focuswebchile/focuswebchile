@@ -109,6 +109,7 @@ export default function SeguridadWebPymesPage() {
                     className="object-cover"
                     sizes="(min-width: 1024px) 720px, (min-width: 640px) 90vw, 100vw"
                     priority
+                    fetchPriority="high"
                   />
                 </div>
               </div>

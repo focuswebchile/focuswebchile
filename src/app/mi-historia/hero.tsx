@@ -16,6 +16,7 @@ export function SobreMiHero() {
               alt="Felipe Ibar"
               fill
               priority
+              fetchPriority="high"
               className="object-cover object-top md:object-cover lg:object-contain lg:object-top"
               sizes="(min-width: 1280px) 1100px, (min-width: 1024px) 90vw, 100vw"
             />

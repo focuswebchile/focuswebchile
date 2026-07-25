@@ -174,6 +174,7 @@ export function HeroSection() {
                   className="h-auto w-[680px] max-w-none object-contain 2xl:w-[clamp(860px,43vw,1150px)]"
                   sizes="(min-width: 1280px) 45vw, 0px"
                   priority
+                  fetchPriority="high"
                 />
               </div>
             </div>

@@ -701,7 +701,7 @@ export default function AuditoriaSeoTecnicoPage() {
                   </ul>
                 </article>
 
-                <article className="rounded-2xl border border-amber-500/50 bg-amber-100/70 p-5">
+                <article className="rounded-2xl border border-accent/45 bg-accent/10 p-5">
                   <h3 className="text-xl font-bold text-foreground">A 90 días (con correcciones + contenido básico):</h3>
                   <ul className="mt-3 space-y-2 text-base leading-relaxed text-foreground/80">
                     <li>✓ Aumento de páginas indexadas</li>
@@ -820,8 +820,8 @@ export default function AuditoriaSeoTecnicoPage() {
                   </div>
                 </article>
 
-                <article className="rounded-2xl border border-amber-500/50 bg-amber-100/70 p-5">
-                  <p className="inline-flex rounded-full border border-amber-500/50 bg-amber-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-amber-700">
+                <article className="rounded-2xl border border-accent/45 bg-accent/10 p-5">
+                  <p className="inline-flex rounded-full border border-accent/40 bg-accent/15 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-accent">
                     Nivel avanzado
                   </p>
                   <h3 className="mt-3 text-2xl font-bold text-foreground">Auditoría Premium</h3>

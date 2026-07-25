@@ -94,6 +94,7 @@ export default function BlogPostPage() {
                 className="object-cover"
                 sizes="(min-width: 1024px) 960px, (min-width: 640px) 90vw, 100vw"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>
