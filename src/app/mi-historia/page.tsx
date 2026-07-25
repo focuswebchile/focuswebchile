@@ -245,12 +245,12 @@ export default function SobreMiPage() {
                   “
                 </span>
                 <p className="text-2xl font-medium leading-relaxed text-foreground md:text-3xl">
-                  Bueno, ahora que me conoces un poco mejor,{" "}
+                  Si llegaste hasta aquí, ya sabes cómo trabajo. Ahora{" "}
                   <span className="text-primary underline decoration-primary/40 underline-offset-4">
-                    hablemos
-                  </span>
-                  . Cuéntame qué te preocupa hoy: si no apareces en Google, si tu sitio carga lento o si necesitas
-                  construir una base técnica mejor. Lo revisamos juntos y definimos el siguiente paso.
+                    cuéntame
+                  </span>{" "}
+                  qué necesitas: si quieres crear tu primera página web, mejorar la que ya tienes o resolver un
+                  problema técnico. Lo revisamos juntos y definimos el siguiente paso.
                 </p>
                 <span className="pointer-events-none absolute -bottom-10 right-6 text-6xl text-primary/20 md:-bottom-12 md:text-7xl">
                   ”
