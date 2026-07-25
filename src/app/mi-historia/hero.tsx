@@ -1,51 +1,68 @@
 "use client"
 
 import Image from "next/image"
+import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
+/**
+ * Hero — dos capas independientes, sin contenedor centrado compartido.
+ */
 export function SobreMiHero() {
-  const marqueeText = "Hola, soy Felipe · Focus Web ·"
-  const imageSrc = "/Imagen-hero.webp"
+  const imageSrc = "/felipe_webiste_mihistoria.png"
 
   return (
-    <section className="w-full px-6 md:px-10 pt-6 md:pt-8 pb-12 md:pb-16">
-      <div className="mx-auto w-full rounded-3xl overflow-hidden bg-accent-soft md:min-h-[70vh] lg:min-h-[85vh]">
-        <div className="relative h-full w-full overflow-hidden">
-          <div className="relative w-full min-h-[70vh] sm:min-h-[75vh] md:aspect-auto md:min-h-[70vh] lg:min-h-[85vh]">
-            <Image
-              src={imageSrc}
-              alt="Felipe Ibar"
-              fill
-              priority
-              fetchPriority="high"
-              className="object-cover object-top md:object-cover lg:object-contain lg:object-top"
-              sizes="(min-width: 1280px) 1100px, (min-width: 1024px) 90vw, 100vw"
-            />
-          </div>
+    <section className="relative w-full overflow-hidden bg-background pt-[120px] md:h-[100svh] md:pt-[68px]">
+      {/* Breadcrumb */}
+      <div className="absolute left-6 top-[80px] z-20 md:left-10 md:top-[130px]">
+        <SiteBreadcrumb
+          items={[{ label: "Inicio", href: "/" }, { label: "Mi historia" }]}
+        />
+      </div>
 
-          <div className="absolute inset-0 flex items-end justify-center md:items-center md:justify-center">
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-accent-soft/80 via-accent-soft/30 to-transparent md:hidden" />
-            <div className="relative w-full overflow-hidden">
-              <p className="sr-only">{marqueeText}</p>
-              <div className="flex w-full overflow-hidden">
-                <div className="flex w-max items-center gap-8 whitespace-nowrap animate-[marquee_22s_linear_infinite]" aria-hidden="true">
-                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-foreground lg:text-foreground lg:uppercase">
-                    {marqueeText}
-                  </span>
-                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-foreground lg:text-foreground lg:uppercase">
-                    {marqueeText}
-                  </span>
-                </div>
-                <div className="flex w-max items-center gap-8 whitespace-nowrap animate-[marquee_22s_linear_infinite]" aria-hidden="true">
-                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-foreground lg:text-foreground lg:uppercase">
-                    {marqueeText}
-                  </span>
-                  <span className="text-[clamp(2.5rem,12vw,6rem)] md:text-[clamp(3rem,12vw,8rem)] lg:text-[clamp(4.5rem,12vw,10rem)] font-extrabold lg:font-black tracking-tight lg:leading-none text-foreground lg:text-foreground lg:uppercase">
-                    {marqueeText}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* CAPA 1 — foto */}
+      <div className="relative z-0 h-[51vh] w-full overflow-hidden md:absolute md:left-1/2 md:top-[76px] md:bottom-0 md:h-auto md:w-[calc(100svh-76px)] md:-translate-x-1/2">
+        <Image
+          src={imageSrc}
+          alt="Felipe Ibar"
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="select-none object-cover object-top"
+        />
+
+        {/* Degradado inferior — ahora activo en mobile y desktop */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 block h-[35%] bg-[linear-gradient(to_top,var(--background)_0%,var(--background)_20%,color-mix(in_srgb,var(--background)_60%,transparent)_55%,transparent_100%)] md:h-[45%]"
+        />
+      </div>
+
+      {/* CAPA 2 — texto */}
+      <div className="relative z-10 mt-6 px-6 md:absolute md:inset-0 md:mt-0 md:px-0">
+        {/* Párrafo */}
+        <div className="md:absolute md:left-[calc(50%+(100svh-76px)/2+7px)] md:top-[48%] md:max-w-[50ch]">
+          <p className="text-base md:text-lg leading-relaxed text-foreground/75 md:text-left">
+            Mi camino comenzó estudiando marketing en Canadá, pero fue
+            ayudando a emprendedores donde encontré lo que realmente quería
+            hacer. Hoy diseño sitios web claros, rápidos y pensados para que
+            las personas entiendan el valor de un negocio desde el primer
+            momento.
+          </p>
+        </div>
+
+        {/* Titular */}
+        <div className="mt-8 md:absolute md:bottom-36 md:left-10 md:mt-0">
+          <p className="mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-foreground/70">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+            Mi historia
+          </p>
+          <h1 className="font-display text-[1.75rem] font-extrabold leading-[1.15] tracking-[-0.01em] text-foreground [text-wrap:pretty] md:text-[3.50rem] md:leading-[1.10] md:[text-wrap:normal]">
+              Cada negocio tiene una historia.
+              <br className="hidden md:inline" />
+              {" "}Yo la convierto en una web
+              <br className="hidden md:inline" />
+              {" "}que inspira confianza.
+               </h1>
         </div>
       </div>
     </section>

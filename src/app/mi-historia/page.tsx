@@ -5,7 +5,6 @@ import { Footer } from "@/components/footer"
 import { SobreMiHero } from "./hero"
 import { TextRevealByWord } from "@/components/ui/text-reveal-by-word"
 import { DiferenteTimeline } from "./diferente-timeline"
-import { SiteBreadcrumb } from "@/components/site-breadcrumb"
 
 export const metadata: Metadata = {
   title: "Mi historia | FocusWeb",
@@ -78,18 +77,6 @@ export default function SobreMiPage() {
     <>
       <Header />
       <main className="min-h-screen bg-background gradient-mesh">
-        <h1 className="sr-only">Mi historia en Focus Web</h1>
-        <section aria-label="Breadcrumb" className="px-6 pt-24 md:px-10 md:pt-28">
-          <div className="w-full">
-            <SiteBreadcrumb
-              className="mb-2"
-              items={[
-                { label: "Inicio", href: "/" },
-                { label: "Mi historia" },
-              ]}
-            />
-          </div>
-        </section>
         <SobreMiHero />
         <section aria-labelledby="quien-soy-title" className="w-full py-5 md:py-5">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">

@@ -60,7 +60,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className, textClas
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top+=120",
-        end: "bottom center",
+        end: "bottom bottom",
         pin: pinRef.current,
         pinSpacing: true,
         anticipatePin: 0,
