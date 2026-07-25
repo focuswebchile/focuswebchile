@@ -1,10 +1,43 @@
-# FocusWeb – llms.txt
-User-agent: *
-Disallow: /admin/
+# Focus Web Chile
 
-Sitemap: https://focusweb.cl/sitemap.xml
+> Estudio de diseño web y SEO técnico en Chile, enfocado en pymes y
+> emprendedores. Sitios rápidos, con SEO técnico bien hecho desde el
+> inicio, sin plantillas genéricas.
 
-## About
-Site: https://focusweb.cl
-Purpose: Desarrollo y diseño web para pymes y emprendedores en Chile.
-Language: es-CL
+Focus Web Chile ofrece diagnóstico técnico, SEO, optimización de
+velocidad y desarrollo web para negocios chilenos que necesitan una
+base clara antes de crecer. Contacto directo por WhatsApp, sin
+intermediarios.
+
+## Servicios
+
+- [Servicios](https://focusweb.cl/servicios): Resumen de todos los servicios (SEO técnico, desarrollo web, velocidad)
+- [Auditoría SEO Técnica](https://focusweb.cl/servicios/auditoria-seo-tecnico): Diagnóstico priorizado de indexación, performance y schema markup
+- [Desarrollo Web](https://focusweb.cl/servicios/desarrollo-web): Landing pages, sitios corporativos y tiendas online
+- [Optimización de Velocidad Web](https://focusweb.cl/servicios/optimizacion-velocidad-web): Core Web Vitals y performance técnico
+- [Crear página web en Chile](https://focusweb.cl/crear-pagina-web-chile): Guía práctica para crear un sitio desde cero
+- [Páginas web en Chile](https://focusweb.cl/paginas-web-chile): Precios y proceso de creación de un sitio
+- [Landing pages](https://focusweb.cl/landing-page): Páginas de conversión enfocadas en un solo objetivo
+
+## Sobre Focus Web
+
+- [Mi historia](https://focusweb.cl/mi-historia): Quién es Felipe Ibar y por qué existe Focus Web Chile
+- [Metodología](https://focusweb.cl/metodologia): Cómo se trabaja cada proyecto, paso a paso
+- [Nuestro proceso](https://focusweb.cl/nuestro-proceso): Proceso de trabajo de principio a fin
+- [Preguntas frecuentes](https://focusweb.cl/faq): FAQ sobre servicios, precios y tiempos
+- [Contacto](https://focusweb.cl/contacto): Cómo iniciar un proyecto
+
+## Blog
+
+- [Blog](https://focusweb.cl/blog): Artículos sobre SEO técnico y desarrollo web para pymes chilenas
+- [Landing page vs página web](https://focusweb.cl/blog/landing-page-vs-pagina-web): Diferencias clave y cuándo conviene cada una
+- [Cómo poner tu negocio en Google (Mi Negocio)](https://focusweb.cl/blog/seo-local-google-business-chile): Guía de SEO local y Google Business Profile
+- [Por qué mi página web tarda mucho en cargar](https://focusweb.cl/blog/mi-pagina-web-tarda-mucho-en-cargar): Diagnóstico y solución de sitios lentos
+- [Errores comunes en páginas web de pymes en Chile](https://focusweb.cl/blog/errores-paginas-web-pymes-chile)
+- [Seguridad web para pymes](https://focusweb.cl/blog/seguridad-web-pymes): Por qué proteger tu sitio es una inversión
+- [Landing page para negocios en Chile](https://focusweb.cl/blog/landing-page-para-negocios-en-chile)
+- [5 pasos antes de lanzar un sitio web](https://focusweb.cl/blog/5-pasos-antes-de-lanzar-un-sitio-web): Checklist técnico previo al lanzamiento
+
+## Optional
+
+- [Checklist ecommerce](https://focusweb.cl/check-list-ecommerce): Checklist de 47 puntos antes de lanzar una tienda online
