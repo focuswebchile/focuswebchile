@@ -160,8 +160,9 @@ export default function SobreMiPage() {
         <section aria-labelledby="lo-que-me-mueve-title" className="w-full py-12 md:py-16">
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="space-y-2 text-center">
-              <h2 id="lo-que-me-mueve-title" className="font-display text-3xl font-semibold sm:text-5xl md:text-6xl">
-                <span className="text-foreground">Mi forma de</span>{" "}
+              <h2 id="lo-que-me-mueve-title" className="font-display text-4xl font-semibold sm:text-5xl md:text-7xl">
+                <span className="text-foreground">Mi forma de</span>
+                <br />
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   entender tu proyecto
                 </span>
