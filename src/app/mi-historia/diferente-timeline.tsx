@@ -60,7 +60,7 @@ export function DiferenteTimeline() {
                 }}
               >
                 <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Empiezo por entender el problema real
+                  Entiendo el contexto
                 </h3>
               </TimelineContent>
 
@@ -111,7 +111,7 @@ export function DiferenteTimeline() {
             </span>
               <div className="space-y-4 text-left">
                 <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Te ahorro prueba y error
+                  Tomo decisiones con criterio
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
                   Uso mi{" "}
@@ -156,7 +156,7 @@ export function DiferenteTimeline() {
             </span>
               <div className="space-y-4 text-left">
                 <h3 className="font-display text-2xl font-semibold text-foreground sm:text-3xl md:text-4xl text-left">
-                  Estrategia y ejecución en una misma línea
+                  Construyo para que puedas crecer
                 </h3>
                 <p className="text-base leading-relaxed text-foreground/70 sm:text-lg md:text-xl">
                   Si el camino es optimizar, optimizo. Si el camino es rehacer, desarrollo desde cero.

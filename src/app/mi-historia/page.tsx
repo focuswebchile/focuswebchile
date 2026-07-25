@@ -200,7 +200,7 @@ export default function SobreMiPage() {
                     Claridad
                   </p>
                   <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground sm:text-xl">
-                    01. Entiendo el contexto
+                    Diagnóstico claro antes de ejecutar
                   </h3>
                   <p className="mt-1.5 text-sm text-foreground/70 sm:text-base">
                     Antes de mover piezas, reviso qué está fallando de verdad: estructura, SEO on-page, indexación, rendimiento o experiencia móvil. Así evito cambios al azar y priorizo lo que más impacto tiene.
@@ -212,7 +212,7 @@ export default function SobreMiPage() {
                     Acompañamiento
                   </p>
                   <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground sm:text-xl">
-                    02. Tomo decisiones con criterio
+                    Transparencia técnica sin humo
                   </h3>
                   <p className="mt-1.5 text-sm text-foreground/70 sm:text-base">
                     Dejo de lado promesas vacías. Te explico en simple qué está bien, qué está mal y qué conviene hacer primero. Decidimos juntos con criterio y contexto de negocio.
@@ -224,7 +224,7 @@ export default function SobreMiPage() {
                     Estrategia
                   </p>
                   <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground sm:text-xl">
-                    03. Construyo para que puedas crecer
+                    Base técnica para crecer sin rehacer
                   </h3>
                   <p className="mt-1.5 text-sm text-foreground/70 sm:text-base">
                     Si hay que desarrollar, lo hago con SEO técnico y rendimiento desde el inicio. Si no, optimizo lo existente. El objetivo es el mismo: una web sólida que crezca contigo.
